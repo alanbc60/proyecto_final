@@ -1,0 +1,1619 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  /*elimina el scroll del eje x*/
+}
+
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 3;
+  width: 100%;
+  top: 0;
+}
+
+.navbar {
+  z-index: 2;
+  position: absolute;
+  position: -webkit-sticky;
+  flex-wrap: wrap;
+  /*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
+  justify-content: space-between;
+  /*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
+  border-bottom: 15px black;
+  background-color: #ebf5fc;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+/* === Personalización de logo === */
+/* contenedor logo */
+.logo {
+  margin-right: 50px;
+  background-color: red;
+  color: white;
+  width: 130px;
+  height: 50px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  /* texto logo */
+  /* Modificar el texto al pasar el cursor */
+}
+
+.logo a {
+  padding-top: 10px;
+  color: white;
+  text-decoration: none;
+  /*Quita el subrayado del enlace*/
+  display: inline-block;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.logo a:hover {
+  color: red;
+}
+
+/* modificar el contenedor logo cuando pasamos en el logo */
+.logo:hover {
+  background-color: white;
+  color: red;
+}
+
+/* Contenedor principal de productos*/
+.lista_enlaces {
+  list-style: none;
+  /*   quitar viñetas a los números*/
+  display: flex;
+  /*colocar elemento uno a lado de otro hasta que haya espacio */
+  gap: 10px;
+  /*Espaciado entre botones*/
+  margin-right: 5px;
+}
+
+/* ocultar el icono de menu hamburguesa y casilla de credito */
+#barra_desplegable,
+.navbar label {
+  display: none;
+  /*Ocultar la casilla de verificación y la etiqueta en pantallas grandes.*/
+}
+
+/* Personalización general de los enlaces(tambien usado en las categorias de productos) */
+.enlace_item {
+  display: inline-block;
+  color: red;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.enlace_item:hover {
+  background-color: red;
+  color: white;
+}
+
+/* == Personalización  del contendor de la lista de enlaces  ===*/
+/* contenedor principal donde se encuentra producto-hombre y producto-mujer */
+.dropdown-contenedor {
+  display: none;
+  position: absolute;
+  /*se sobrepone sobre la la lista*/
+  background-color: #ebf5fc;
+  height: 290px;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  /* Al pasar el cursor en  una categoria*/
+}
+
+.dropdown-contenedor a:hover {
+  background-color: white;
+  color: red;
+}
+
+/* El cursor abre un contenedor cuando esta en productos */
+.dropdown:hover .dropdown-contenedor {
+  display: block;
+  /*uno abajo de otro*/
+}
+
+/* contendor tipo lista de productos */
+.lista_subenlaces {
+  list-style: none;
+  /*   quitar viñetas a los números*/
+  display: block;
+  gap: 10px;
+  /*Espaciado entre botones*/
+  background-color: #ebf5fc;
+  margin-right: 5px;
+}
+
+/* Texto Hombre y Mujer */
+.dropdown span {
+  color: red;
+  font-size: 15px;
+}
+
+/* == Personalización de categorias == */
+/* Contenedor principal de las categorias hombre y mujer */
+.dropdown_contenedor-categorias {
+  display: none;
+  /*para esconder el contenedor*/
+  background-color: red;
+  width: 160px;
+  max-height: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  transition: max-height .6s ease-out;
+  /* enlaces de las categorias */
+}
+
+.dropdown_contenedor-categorias .categorias_item {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: none;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.item_mujer:hover .dropdown_contenedor-categorias {
+  max-height: 400px;
+  display: block;
+}
+
+.item_mujer:hover .dropdown_contenedor-categorias .categorias_item {
+  display: block;
+}
+
+.item_hombre:hover .dropdown_contenedor-categorias .categorias_item {
+  display: block;
+}
+
+.item_hombre:hover .dropdown_contenedor-categorias {
+  max-height: 400px;
+  display: block;
+}
+
+/* Cuando pasamos el cursor en productos mantenemos el contenedor de categorias */
+.dropdown:hover .dropdown_contenedor-categorias {
+  display: block;
+  /*uno abajo de otro*/
+}
+
+/* Fin de personalización de categorias */
+/* Footer */
+.atributoSeccionFooter, .contenedor_footer .footer_seccion1_logo, .contenedor_footer .footer_seccion2_contacto, .contenedor_footer .footer_cliente, .contenedor_footer .footer_seccion4_redes {
+  color: white;
+  margin: 17px;
+  text-align: center;
+}
+
+.contenedor_footer {
+  width: auto;
+  margin-top: auto;
+  display: grid;
+  gap: 10px;
+  box-shadow: 6px 1px 10px 6px red;
+  margin-top: 10px;
+  background-color: red;
+  /* Indicar cuantas columnas tendra */
+  grid-template-columns: repeat(4, 1fr);
+  /* Indicar cuantas filas tendra */
+  grid-template-rows: 230px;
+  grid-template-areas: "footer_seccion1_logo footer_seccion2_contacto footer_cliente footer_seccion4_redes";
+}
+
+.contenedor_footer .footer_seccion4_redes a {
+  color: white;
+  margin: 17px;
+  text-align: center;
+}
+
+/* ================ Página inicio: imagen principal y texto ================ */
+/* boton checar(se usa en la página carrito igual) */
+.btn_checar, .contenedor_principal .contenedor_novedades .card_novedades a {
+  height: 40px;
+  display: inline-block;
+  text-decoration: none;
+  background: red;
+  padding: 9px 40px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #fff;
+  box-shadow: 0 8px 0 #EC2D53;
+  transition: all 0.2s;
+  animation: btn_checar infinite;
+  animation-duration: 20s;
+}
+
+/* animacion del boton checar */
+@keyframes btn_checar {
+  from {
+    background-color: red;
+    box-shadow: 0 8px 0 red;
+  }
+  to {
+    background-color: #0095ff;
+    box-shadow: 0 8px 0 #0095ff;
+  }
+}
+
+.btn_checar:hover, .contenedor_principal .contenedor_novedades .card_novedades a:hover {
+  color: #fff;
+}
+
+.btn_checar:active, .contenedor_principal .contenedor_novedades .card_novedades a:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 red;
+}
+
+/* contenedor principal */
+.contenedor_principal {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 40px;
+  background-color: #ecf7ff;
+  /* Indicar cuantas columnas tendra */
+  grid-template-columns: repeat(3, 1fr);
+  /* Indicar cuantas filas tendra */
+  grid-template-rows: 400px 100px 900px;
+  /* acomodar el grid */
+  grid-template-areas: "principal_imagen principal_texto principal_texto" "titulo_novedades titulo_novedades titulo_novedades" "contenedor_novedades contenedor_novedades contenedor_novedades";
+  /* contenedor de la imagen */
+  /* contenedor donde esta el texto principal y el boton */
+  /* ================ Novedades ================ */
+  /* Personalización del contenedor con texto animado(pensado para la sección inicio y Quienes somos) */
+  /* contenedor principal novedades */
+}
+
+.contenedor_principal .contenedor_principal-imagen {
+  grid-area: principal_imagen;
+}
+
+.contenedor_principal .contenedor_principal-imagen .carousel-indicators {
+  z-index: 1;
+}
+
+.contenedor_principal .contenedor_principal-imagen img {
+  width: 100%;
+  height: 340px;
+  min-height: 350px;
+  object-fit: cover;
+  transition-delay: 1s;
+  transition: width 3s;
+}
+
+.contenedor_principal .contenedor_principal-imagen img:hover {
+  width: 700px;
+}
+
+.contenedor_principal .contenedor_principal-texto {
+  grid-area: principal_texto;
+  background-color: #ecf7ff;
+}
+
+.contenedor_principal .contenedor_principal-texto h1 {
+  background-image: linear-gradient(90deg, #000066 0%, #ff0066 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: index_texto_animado 3s infinite;
+}
+
+.contenedor_principal .contenedor_principal-texto .contenido_principal-texto {
+  font-size: 18px;
+  width: 92%;
+  height: auto;
+  margin-left: 20px;
+}
+
+.contenedor_principal .contenedor_principal-texto .contenedor_boton_checar {
+  margin-left: 20px;
+}
+
+@keyframes index_texto_animado {
+  50% {
+    background-image: linear-gradient(90deg, red 0%, #000066 100%);
+  }
+  from {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+.contenedor_principal .titulo_novedades {
+  grid-area: titulo_novedades;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  display: flex;
+  /* Texto antes de la animación */
+}
+
+.contenedor_principal .titulo_novedades h2 {
+  position: static;
+  font-size: 44px;
+  color: #ebf5fc;
+  -webkit-text-stroke: 5px white;
+  text-transform: uppercase;
+}
+
+.contenedor_principal .contenedor_novedades {
+  grid-area: contenedor_novedades;
+  background-color: #ebf5fc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* card del contenedor novedades */
+}
+
+.contenedor_principal .contenedor_novedades .card_novedades {
+  display: flex;
+  flex-wrap: wrap;
+  width: 295px;
+  height: 400px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+  background: #ebf5fc;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades_imagen {
+  width: 280px;
+  height: 310px;
+  border-radius: 3px;
+  overflow: hidden;
+  padding-top: 13px;
+  margin-left: 9px;
+}
+
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades_imagen img {
+  width: 276px;
+  height: 310px;
+  transition: all 2s ease-in-out;
+}
+
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades_imagen img:hover {
+  transform: scale(1.2, 1.2);
+  cursor: pointer;
+}
+
+.contenedor_principal .contenedor_novedades .card_novedades h2 {
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+.contenedor_principal .contenedor_novedades .card_novedades a {
+  animation: none;
+  background-color: #ebeef1;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.1), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  color: #EC2D53;
+  margin-left: 90px;
+  padding: 5px 20px;
+  height: 35px;
+}
+
+.contenedor_principal .contenedor_novedades .card_novedades a:hover {
+  color: #ebeef1;
+  background-color: red;
+}
+
+/* ==================pagina productos-hombre-mujer   ========== */
+/* boton checar(se usa en la página carrito igual) */
+.btn_agregarProducto, .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton a {
+  margin-top: 10px;
+  width: 70px;
+  height: 30px;
+  color: white;
+  background-color: #0095ff;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.1), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos {
+  background-color: #ebf5fc;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 10px;
+  /* Indicar cuantas columnas tendra */
+  grid-template-columns: repeat(3, auto);
+  /* Indicar cuantas filas tendra */
+  grid-template-rows: auto auto;
+  grid-template-areas: "titulo_categoria titulo_categoria titulo_categoria" "filtro_categorias contenedor_cards_productos contenedor_cards_productos";
+  /* contenedores hijos */
+  /* Ocultar el scrollbar de la  lista productos*/
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .titulo_categoria {
+  grid-area: titulo_categoria;
+  width: 500px;
+  color: white;
+  min-width: 320px;
+  text-align: center;
+  margin-top: 31px;
+  background-color: #0095ff;
+  font-size: 100%;
+  /* personalizacion del contenedor titulo_categoria */
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .titulo_categoria h2 {
+  font-size: 70px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_filtroCategorias {
+  position: -webkit-sticky;
+  position: sticky;
+  grid-area: filtro_categorias;
+  width: 350px;
+  height: 400px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-color: #0095ff;
+  border-radius: 15px;
+  padding-left: 20px;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos {
+  grid-area: contenedor_cards_productos;
+  display: flex;
+  background-color: #ebf5fc;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  justify-content: center;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto {
+  background-color: #ebf5fc;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 222px;
+  height: 340px;
+  margin-top: 20px;
+  margin-left: 15px;
+  padding-right: 30px;
+  margin-bottom: 23px;
+  border-radius: 2px;
+  transition-delay: 1s;
+  transition: width 3s;
+  /* Auste de tamaño de la imagen de cada card */
+  /* contenedor de boton y texto del card */
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen {
+  width: 215px;
+  height: 270px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen img {
+  padding-top: 10px;
+  width: 215px;
+  height: 270px;
+  object-fit: cover;
+  margin-left: 6px;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen img:hover {
+  transform: scale(1.2, 1.2);
+  cursor: pointer;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton {
+  display: flex;
+  flex-wrap: wrap;
+  width: 215px;
+  height: 65px;
+  margin-left: 6px;
+  padding-left: 10px;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton h2 {
+  font-size: 16px;
+  width: 130px;
+  height: auto;
+  font-weight: bold;
+  color: #0095ff;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton a:hover {
+  color: #ebeef1;
+  background-color: red;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton:hover .card_boton_comprar {
+  display: block;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto:hover {
+  transform: scale(1.06);
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos::-webkit-scrollbar {
+  display: none;
+}
+
+/* ================ Página carrito ================ */
+/* contenedor principal */
+.carrito-contenedor_principal {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  margin-top: 8px;
+  gap: 10px;
+  background-color: #ecf7ff;
+  /* Indicar cuantas columnas tendra */
+  grid-template-columns: repeat(3, 1fr);
+  /* Indicar cuantas filas tendra */
+  grid-template-rows: auto 900px;
+  /* acomodar el grid */
+  grid-template-areas: "texto_carrito texto_carrito texto_carrito" "contenedor_productos contenedor_productos contenedor_precio_total";
+  /* personalizacion del contenedor de productos */
+}
+
+.carrito-contenedor_principal .carrito-texto_principal {
+  grid-area: texto_carrito;
+  background-color: red;
+  color: #ebf5fc;
+  text-align: center;
+}
+
+.carrito-contenedor_principal .carrito-texto_principal h1 {
+  font-size: 40px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.carrito-contenedor_principal .carrito-contenedor_productos {
+  grid-area: contenedor_productos;
+  /* personalizacion del card producto */
+}
+
+.carrito-contenedor_principal .carrito-contenedor_productos .card_producto {
+  display: grid;
+  margin-top: 10px;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+  background: #ebf5fc;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  /* Indicar cuantas columnas tendra */
+  grid-template-columns: repeat(3, 1fr);
+  /* Indicar cuantas filas tendra */
+  grid-template-rows: 200px;
+  /* acomodar el grid */
+  grid-template-areas: "contenedor_imagen_producto contenedor_texto_productos contenedor_texto_productos";
+  /* imagen del producto */
+  /* contenedor hijo de card_producto: Texto producto */
+}
+
+.carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto {
+  grid-area: contenedor_imagen_producto;
+  background-color: red;
+}
+
+.carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto img:hover {
+  transform: scale(1.04);
+}
+
+.carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto {
+  grid-area: contenedor_texto_productos;
+  width: 100%;
+}
+
+.carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto {
+  /* Entrada de texto para aumentar las cantidades */
+  /* Boton de eliminar producto en card producto */
+}
+
+.carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto input {
+  width: 100px;
+  padding: 5px;
+  text-align: center;
+}
+
+.carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto input:hover {
+  background-color: red;
+  color: #ebf5fc;
+}
+
+.carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto .eliminar_producto {
+  bottom: 20px;
+  margin-left: 22px;
+  padding: 10px 25px;
+  background-color: red;
+  color: #ebf5fc;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: end;
+}
+
+.carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto .eliminar_producto:hover {
+  background-color: skyblue;
+  color: #ebf5fc;
+  font-weight: 600;
+  border: 1px solid white;
+}
+
+.carrito-contenedor_principal .carrito-contenedor_precios {
+  grid-area: contenedor_precio_total;
+  max-height: 500px;
+  /* personalizacion de componentes del contenedor precio total */
+  /* Texto del card pagar */
+  /* Boton de card pagar(personalización establecida anteriormente) */
+}
+
+.carrito-contenedor_principal .carrito-contenedor_precios .carrito-contenedor_precios p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.carrito-contenedor_principal .carrito-contenedor_precios .carrito-contenedor_precios a {
+  margin-left: 80px;
+}
+
+/* ============= pagina descuentos =========== */
+.contenedor_principal-descuentos-fechas {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 10px;
+  background-color: #ebf5fc;
+  /* Indicar cuantas columnas tendra */
+  grid-template-columns: repeat(3, 1fr);
+  /* Indicar cuantas filas tendra */
+  grid-template-rows: 100px 400px auto 100px auto;
+  /* acomodar el grid */
+  grid-template-areas: "titulo_descuentos titulo_descuentos titulo_descuentos" "card_img_descuento card_img_descuento texto_descuentos" "contenedor_descuentos contenedor_descuentos contenedor_descuentos" "titulo_fechas titulo_fechas titulo_fechas" "contenedor_fechas contenedor_fechas contenedor_fechas";
+  /* Contenedor del titulo principal de descuentos */
+  /* contenedor y card de la seccion descuentos */
+}
+
+.contenedor_principal-descuentos-fechas .titulo_descuentos {
+  grid-area: titulo_descuentos;
+  color: #ebf5fc;
+  text-align: center;
+  background-color: red;
+  font-size: 100%;
+  /* Texto tiulo descuentos */
+}
+
+.contenedor_principal-descuentos-fechas .titulo_descuentos h2 {
+  font-size: 70px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.contenedor_principal-descuentos-fechas .card_imagen_descuento {
+  grid-area: card_img_descuento;
+}
+
+.contenedor_principal-descuentos-fechas .card_imagen_descuento img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+}
+
+.contenedor_principal-descuentos-fechas .informacion_descuentos_fechas {
+  padding: 10px;
+  grid-area: texto_descuentos;
+  font-size: 20px;
+}
+
+.contenedor_principal-descuentos-fechas .informacion_descuentos_fechas p {
+  font-style: italic;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos {
+  grid-area: contenedor_descuentos;
+  background-color: #ebf5fc;
+  display: flex;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento {
+  width: 400px;
+  height: 220px;
+  background-color: #ebf5fc;
+  margin-left: 12px;
+  margin-top: 23px;
+  border-radius: 20px;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .cobertura_img_card {
+  background-color: #ebf5fc;
+  width: 400px;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 5px solid red;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .texto_card_descuento {
+  width: 335px;
+  height: 200px;
+  margin-left: 20px;
+  justify-content: center;
+  display: none;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .texto_card_descuento h3 {
+  color: red;
+  margin-bottom: 5px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento:hover .cobertura_img_card {
+  display: none;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento:hover .texto_card_descuento {
+  /* position: absolute; */
+  display: block;
+}
+
+.contenedor_principal-descuentos-fechas .titulo_fechas {
+  grid-area: titulo_fechas;
+  color: #ebf5fc;
+  text-align: center;
+  background-color: blue;
+  font-size: 100%;
+}
+
+.contenedor_principal-descuentos-fechas .titulo_fechas h2 {
+  font-size: 70px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_fechas {
+  grid-area: contenedor_fechas;
+  display: flex;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha {
+  width: 400px;
+  height: 220px;
+  background-color: #ebf5fc;
+  margin-left: 12px;
+  margin-top: 23px;
+  animation: card_fecha 9s infinite;
+  transform: skew(20deg);
+  animation-direction: alternate;
+  opacity: .7;
+}
+
+@keyframes card_fecha {
+  0% {
+    transform: skewX(20deg);
+  }
+  100% {
+    transform: skewX(-20deg);
+  }
+}
+
+/* ================= Pagina Quienes somos ==================*/
+.contenedor_principal_quienes-somos {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 10px;
+  background-color: #ebf5fc;
+  /* Indicar cuantas columnas tendra */
+  grid-template-columns: repeat(3, 1fr);
+  /* Indicar cuantas filas tendra */
+  grid-template-rows: auto auto auto 100px auto;
+  /* acomodar el grid */
+  grid-template-areas: "titulo_QuienesSomos titulo_QuienesSomos titulo_QuienesSomos" "texto_conocenos texto_conocenos titulo_amigoMes" "texto_conocenos texto_conocenos imagen_amigoEspecial" "titulo_amigos titulo_amigos titulo_amigos " "contenedor_marcas contenedor_marcas contenedor_marcas";
+  /* Contenedor de titulo y parrafo de la empresa */
+  /* Contenedor de cards de marcas */
+}
+
+.contenedor_principal_quienes-somos .contenedor_titulo_quienesSomos {
+  grid-area: titulo_QuienesSomos;
+  background-color: red;
+  color: white;
+}
+
+.contenedor_principal_quienes-somos .conocenos_textos {
+  background-color: white;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  grid-area: texto_conocenos;
+  margin-left: 20px;
+  font-size: 20px;
+}
+
+.contenedor_principal_quienes-somos .contenedor_titulo_amigoMes {
+  grid-area: titulo_amigoMes;
+  font-style: italic;
+  animation: titulo_amigoMes 14s infinite;
+}
+
+.contenedor_principal_quienes-somos .contenedor_amigoEspecial_instagram {
+  grid-area: imagen_amigoEspecial;
+  width: 300px;
+  height: 420px;
+  /* background-color: blue; */
+  margin-left: 20px;
+}
+
+.contenedor_principal_quienes-somos .contenedor_amigoEspecial_instagram:hover {
+  border: 3px solid silver;
+  box-shadow: 4px 4px 13px rgba(255, 44, 44, 0.8);
+  transform: scale(1.1);
+}
+
+.contenedor_principal_quienes-somos .titulo_amigos {
+  grid-area: titulo_amigos;
+  color: #0095ff;
+  text-align: center;
+  font-size: 190px;
+  padding-bottom: 120px;
+}
+
+.contenedor_principal_quienes-somos .titulo_amigos h2 {
+  font-size: 90px;
+  font-family: cursive;
+}
+
+@keyframes titulo_amigoMes {
+  0% {
+    transform: skewX(20deg);
+  }
+  100% {
+    transform: skewX(-20deg);
+  }
+}
+
+.contenedor_principal_quienes-somos .contenedor-marcas {
+  grid-area: contenedor_marcas;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contenedor_principal_quienes-somos .contenedor-marcas .card_instagram_marca {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 22px;
+  margin-top: 13px;
+}
+
+.contenedor_principal_quienes-somos .contenedor-marcas .card_instagram_marca:hover {
+  transform: scale(1.05);
+}
+
+/* =================== página contactanos ================*/
+.contenedor_principal-contactanos {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  gap: 10px;
+  background-color: #ebf5fc;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  /* Indicar cuantas columnas tendra */
+  grid-template-columns: repeat(2, auto);
+  /* Indicar cuantas filas tendra */
+  grid-template-rows: 100px 300px 300px;
+  /* acomodar el grid */
+  grid-template-areas: "titulo_contactanos titulo_contactanos" "contenedor_info_empresa contenedor_formulario" "contenedor_info_empresa contenedor_formulario";
+  /* Contenedor principal formulario */
+}
+
+.contenedor_principal-contactanos .titulo_contactanos {
+  grid-area: titulo_contactanos;
+  color: #ebf5fc;
+  background-color: red;
+  font-size: 100%;
+  /* Texto tiulo descuentos */
+}
+
+.contenedor_principal-contactanos .titulo_contactanos h2 {
+  margin-top: 0px;
+  font-size: 70px;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.contenedor_principal-contactanos .contenedor_datos_empresa {
+  grid-area: contenedor_info_empresa;
+  list-style: none;
+  align-items: center;
+  text-align: center;
+  padding: 0px 120px 0px 0px;
+}
+
+.contenedor_principal-contactanos .contenedor_datos_empresa .item {
+  margin-bottom: 65px;
+}
+
+.contenedor_principal-contactanos .contenedor_datos_empresa .item h3 {
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.contenedor_principal-contactanos .contenedor_datos_empresa .item span {
+  font-size: 18px;
+}
+
+.contenedor_principal-contactanos .contenedor_datos_empresa .iconos_contacto a {
+  padding: 0px 0px 0px 30px;
+  font-size: 24px;
+}
+
+.contenedor_principal-contactanos .contenedor_formulario {
+  grid-area: contenedor_formulario;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenedor_principal-contactanos .contenedor_formulario:hover {
+  transform: scale(1.03);
+}
+
+/* navbar responsive*/
+@media screen and (max-width: 600px) {
+  header {
+    min-width: 319px;
+    width: auto;
+    overflow-x: hidden;
+  }
+  header .navbar {
+    overflow-x: hidden;
+    min-width: 310px;
+    max-width: 600px;
+    width: auto;
+    background-color: cadetblue;
+  }
+  header .navbar #barra_desplegable:checked ~ .menu_enlaces_navbar {
+    z-index: 1;
+    max-height: 600px;
+    min-width: 310px;
+    margin-right: 5px;
+    margin-left: 10px;
+  }
+  header .navbar label {
+    display: inline-flex;
+    /*Lo convierte en un contenedor flexible en línea para el icono. Se utiliza para centrar el icono dentro de este cuadro.*/
+    align-items: center;
+    cursor: pointer;
+  }
+  header .navbar .menu_enlaces_navbar {
+    min-width: 320px;
+    width: 100%;
+    max-height: 0;
+    /*Hace que la altura máxima sea 0 al lado del menú expandido.*/
+    overflow: hidden;
+  }
+  header .navbar .menu_enlaces_navbar .lista_enlaces {
+    flex-direction: column;
+    /*Cambia la dirección del contenedor flexible. Por defecto es una fila, así que lo cambiamos a columna en pantallas pequeñas.*/
+    align-items: center;
+    padding: 20px;
+  }
+  header .navbar .menu_enlaces_navbar .lista_enlaces .dropdown-contenedor {
+    position: fixed;
+  }
+}
+
+/* Smartphone modo vertical y horizontal para todas las páginas */
+@media screen and (max-width: 600px) and (min-width: 320px) {
+  /* con aaltura aquto se acopla a la redimensacion */
+  .contenedor_principal {
+    display: grid;
+    min-width: 320px;
+    overflow: hidden;
+    grid-template-columns: 1fr;
+    background-color: 0;
+    grid-template-rows: auto auto 100px auto;
+    grid-template-areas: "principal_imagen" "principal_texto" "titulo_novedades" "contenedor_novedades";
+    gap: 10px;
+    /* contenedor de imagen principal */
+  }
+  .contenedor_principal .contenedor_principal-imagen {
+    overflow-x: hidden;
+    width: 98%;
+    max-width: 590px;
+    /* contenedor de imagen principal */
+  }
+  .contenedor_principal .contenedor_principal-imagen img {
+    width: 100%;
+    min-width: 315px;
+    max-width: 590px;
+    min-height: 200px;
+  }
+  .contenedor_principal .contenedor_principal-texto {
+    width: 98%;
+    min-width: 315px;
+    max-width: 590px;
+    margin-top: 0px;
+    /* contenedor de texto principal */
+    /* contenedor del boton checar */
+  }
+  .contenedor_principal .contenedor_principal-texto .contenido_principal-texto {
+    font-size: 15px;
+    margin-top: 0px;
+    padding-right: 4px;
+    text-align: start;
+  }
+  .contenedor_principal .contenedor_principal-texto .contenedor_boton_checar {
+    margin-bottom: 30px;
+    margin-right: 20px;
+    margin-left: 5px;
+  }
+  .contenedor_principal .contenedor_novedades {
+    width: auto;
+    min-width: 320px;
+    max-width: 590px;
+  }
+  .contenedor_principal .contenedor_novedades .card_novedades {
+    background-color: #ebf5fc;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  /* ==== Contenedor principal de filtro categorias y productos */
+  .contenedor_principal-filtroCategorias-listaProductos {
+    display: grid;
+    min-width: 320px;
+    overflow: hidden;
+    gap: 10px;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: 1fr;
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "titulo_categoria" "filtro_categorias" "contenedor_cards_productos";
+  }
+  .contenedor_principal-filtroCategorias-listaProductos .titulo_categoria {
+    width: auto;
+    min-width: 310px;
+  }
+  .contenedor_principal-filtroCategorias-listaProductos .titulo_categoria h2 {
+    width: 100%;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .contenedor_principal-filtroCategorias-listaProductos .contenedor_filtroCategorias {
+    width: 97%;
+    min-width: 315px;
+    margin-right: 2px;
+    margin-left: 0px;
+  }
+  .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos {
+    width: auto;
+    min-width: 320px;
+    max-width: 590px;
+  }
+  .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto {
+    min-width: 315px;
+    /* contenedor de boton y texto del card */
+  }
+  .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen {
+    min-width: 305px;
+  }
+  .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen img {
+    min-width: 295px;
+  }
+  .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton {
+    min-width: 295px;
+  }
+  .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton h2 {
+    width: auto;
+    margin-left: 5px;
+  }
+  .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton a {
+    margin-left: 100px;
+  }
+  /* Footer */
+  .contenedor_footer {
+    width: auto;
+    height: auto;
+    min-width: 320px;
+    margin-top: 20px;
+    background-color: red;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: 1fr;
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "footer_seccion1_logo" "footer_seccion2_contacto" "footer_cliente" "footer_seccion4_redes";
+  }
+  /* === Pagina descuentos ==== */
+  .contenedor_principal-descuentos-fechas {
+    display: grid;
+    min-width: 320px;
+    overflow: hidden;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas: "titulo_descuentos" "card_img_descuento" "texto_descuentos" "contenedor_descuentos" "titulo_fechas" "contenedor_fechas";
+    gap: 10px;
+    /* Contenedor del titulo principal de descuentos */
+    /* contenedor y card de la seccion descuentos */
+  }
+  .contenedor_principal-descuentos-fechas .titulo_descuentos {
+    min-width: 300px;
+    max-width: 590px;
+  }
+  .contenedor_principal-descuentos-fechas .titulo_descuentos h2 {
+    width: 99%;
+    font-size: 40px;
+  }
+  .contenedor_principal-descuentos-fechas .card_imagen_descuento {
+    min-width: 310px;
+    max-width: 590px;
+    margin-left: 3px;
+    width: 98%;
+  }
+  .contenedor_principal-descuentos-fechas .card_imagen_descuento img {
+    width: 100%;
+    min-width: 310px;
+    max-width: 590px;
+    min-height: 200px;
+  }
+  .contenedor_principal-descuentos-fechas .informacion_descuentos_fechas {
+    width: 98%;
+    min-width: 320px;
+    max-width: 590px;
+    margin-top: 0px;
+  }
+  .contenedor_principal-descuentos-fechas .informacion_descuentos_fechas p {
+    padding: 5px;
+  }
+  .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos {
+    width: 100%;
+    min-width: 306px;
+  }
+  .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento {
+    width: 98%;
+    min-width: 306px;
+    background-color: #0095ff;
+    margin-right: 12px;
+  }
+  .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .cobertura_img_card {
+    width: 100%;
+    min-width: 306px;
+  }
+  .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .texto_card_descuento {
+    width: 100%;
+    min-width: 306px;
+    margin-right: 24px;
+  }
+  .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .texto_card_descuento p {
+    margin-right: 34px;
+  }
+  .contenedor_principal-descuentos-fechas .titulo_fechas {
+    width: 99%;
+    min-width: 320px;
+  }
+  .contenedor_principal-descuentos-fechas .titulo_fechas h2 {
+    font-size: 40px;
+  }
+  .contenedor_principal-descuentos-fechas .contenedor_cards_fechas {
+    width: 99%;
+    min-width: 320px;
+  }
+  .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha {
+    margin-right: 12px;
+    height: auto;
+    width: 100%;
+    border-radius: 20px;
+    min-width: 320px;
+  }
+  /* pagina Quienes somos */
+  .contenedor_principal_quienes-somos {
+    display: grid;
+    height: auto;
+    min-width: 320px;
+    overflow: hidden;
+    background-color: azure;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: 1fr;
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: repeat(6, auto);
+    /* acomodar el grid */
+    grid-template-areas: "titulo_QuienesSomos " "texto_conocenos" "titulo_amigoMes" "imagen_amigoEspecial" "titulo_amigos" "contenedor_marcas";
+    gap: 10px;
+  }
+  .contenedor_principal_quienes-somos .contenedor_titulo_quienesSomos {
+    background-color: red;
+    font-size: 50px;
+    color: white;
+  }
+  .contenedor_principal_quienes-somos .conocenos_textos {
+    box-shadow: 4px 2px 4px 3px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    background-color: white;
+    margin-right: 8px;
+    font-size: 12px;
+  }
+  .contenedor_principal_quienes-somos .contenedor_titulo_amigoMes {
+    margin: 10px;
+    justify-content: center;
+  }
+  .contenedor_principal_quienes-somos .contenedor_amigoEspecial_instagram {
+    margin-left: 0px;
+    width: auto;
+    justify-content: center;
+    text-align: center;
+  }
+  .contenedor_principal_quienes-somos .titulo_amigos {
+    margin-top: 10px;
+    color: white;
+    background-color: red;
+    height: 100px;
+  }
+  /* pagina contactanos */
+  .contenedor_principal-contactanos {
+    display: grid;
+    min-width: 320px;
+    overflow: hidden;
+    margin-right: 5px;
+    grid-template-columns: 1fr;
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: auto auto auto;
+    /* acomodar el grid */
+    grid-template-areas: "titulo_contactanos " "contenedor_info_empresa " "contenedor_formulario";
+    /* Contenedor principal formulario */
+  }
+  .contenedor_principal-contactanos .titulo_contactanos {
+    width: 100%;
+    min-width: 320px;
+    margin-top: 20px;
+  }
+  .contenedor_principal-contactanos .titulo_contactanos h2 {
+    width: 100%;
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .contenedor_principal-contactanos .contenedor_datos_empresa {
+    width: 100%;
+    min-width: 320px;
+  }
+  .contenedor_principal-contactanos .contenedor_datos_empresa h3 {
+    margin-left: 70px;
+  }
+  .contenedor_principal-contactanos .contenedor_datos_empresa span {
+    margin-left: 70px;
+  }
+  .contenedor_principal-contactanos .contenedor_datos_empresa a {
+    margin-left: 70px;
+  }
+  .contenedor_principal-contactanos .contenedor_formulario {
+    width: 100%;
+    min-width: 320px;
+  }
+  .contenedor_principal-contactanos .contenedor_formulario form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 320px;
+  }
+  .contenedor_principal-contactanos .contenedor_formulario button {
+    margin-left: 3px;
+  }
+}
+
+/* Smartphone pagina carrito */
+@media screen and (max-width: 530px) and (min-width: 300px) {
+  /* con aaltura aquto se acopla a la redimensacion */
+  .carrito-contenedor_principal {
+    display: grid;
+    height: auto;
+    min-width: 320px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "texto_carrito" "contenedor_productos" "contenedor_precio_total";
+    gap: 10px;
+    /* contenedor principal del card pagar */
+  }
+  .carrito-contenedor_principal .carrito-texto_principal {
+    grid-area: texto_carrito;
+    height: 70px;
+    background-color: red;
+    color: white;
+    text-align: center;
+    margin-top: 1px;
+  }
+  .carrito-contenedor_principal .carrito-texto_principal h1 {
+    font-size: 40px;
+    font-style: oblique;
+    font-weight: bold;
+  }
+  .carrito-contenedor_principal .carrito-contenedor_productos {
+    grid-area: contenedor_productos;
+  }
+  .carrito-contenedor_principal .carrito-contenedor_productos .card_producto {
+    display: grid;
+    width: 99%;
+    min-width: 310px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    gap: 10px;
+    margin-top: 10px;
+    background-color: white;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: 1fr;
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: auto auto;
+    /* acomodar el grid */
+    grid-template-areas: "contenedor_imagen_producto" "contenedor_texto_productos";
+    /*fila 2*/
+  }
+  .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto {
+    grid-area: contenedor_imagen_producto;
+    width: 100%;
+    min-width: 320px;
+    background-color: black;
+  }
+  .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto img {
+    width: 100%;
+    min-width: 320px;
+  }
+  .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto {
+    grid-area: contenedor_texto_productos;
+    width: 100%;
+    min-width: 320px;
+  }
+  .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto .eliminar_producto {
+    margin-left: 0px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  .carrito-contenedor_principal .carrito-contenedor_precios {
+    width: auto;
+    margin-left: 0px;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin: 10px;
+  }
+}
+
+/* páginas index,descuentos,Quienes somos: tablet vertical,telefono horizontal y laptop pequeñas */
+@media screen and (max-width: 890px) and (min-width: 601px) {
+  .contenedor_principal {
+    display: grid;
+    height: auto;
+    min-width: 400px;
+    margin-top: 100px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 100px auto auto;
+    grid-template-areas: "principal_imagen principal_texto principal_texto" "titulo_novedades titulo_novedades titulo_novedades" "contenedor_novedades contenedor_novedades contenedor_novedades";
+    gap: 10px;
+  }
+  /* contenedor de imagen principal */
+  .contenedor_principal-imagen {
+    margin-bottom: 0px;
+    grid-area: principal_imagen;
+    background-color: steelblue;
+    min-height: 400px;
+  }
+  .contenedor_principal-imagen img {
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+  }
+  .contenedor_principal-texto h1 {
+    margin-top: 80px;
+  }
+  .contenido_principal-texto {
+    font-size: 18px;
+    height: auto;
+    width: 92%;
+  }
+  /* pagina descuentos */
+  .contenedor_principal-descuentos-fechas {
+    margin-top: 150px;
+  }
+  /* paginas quienes somos */
+  .contenedor_principal_quienes-somos {
+    margin-top: 170px;
+  }
+  /* pagina contactanos */
+  .contenedor_principal-contactanos {
+    display: grid;
+    min-width: 300px;
+    overflow: hidden;
+    margin-top: 140px;
+    grid-template-columns: 1fr;
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: auto auto auto;
+    /* Contenedor principal formulario */
+  }
+  .contenedor_principal-contactanos .contenedor_datos_empresa {
+    width: 100%;
+    min-width: 290px;
+  }
+  .contenedor_principal-contactanos .contenedor_formulario {
+    width: 90%;
+    min-width: 320px;
+  }
+  .contenedor_principal-contactanos .contenedor_formulario form {
+    display: flex;
+    flex-wrap: wrap;
+    width: 97%;
+    margin-right: 30px;
+    min-width: 300px;
+  }
+  .contenedor_principal-contactanos .contenedor_formulario button {
+    margin-left: 3px;
+  }
+  /* pagina contactanos */
+  .titulo_contactanos {
+    margin-top: 10px;
+    width: 100%;
+    min-width: 320px;
+    padding-top: 10px;
+  }
+  .titulo_contactanos h2 {
+    width: 100%;
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  /* ==== Contenedor principal de filtro categorias y productos */
+  .titulo_categoria {
+    margin-top: 50px;
+  }
+  .contenedor_principal-filtroCategorias-listaProductos {
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    gap: 10px;
+    background-color: white;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: auto;
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "titulo_categoria" "filtro_categorias" "contenedor_cards_productos";
+  }
+}
+
+/* index: laptops */
+@media screen and (max-width: 1400px) and (min-width: 891px) {
+  .contenedor_principal {
+    display: grid;
+    height: auto;
+    min-width: 400px;
+    margin-top: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 100px auto auto;
+    grid-template-areas: "principal_imagen principal_texto principal_texto" "titulo_novedades titulo_novedades titulo_novedades" "contenedor_novedades contenedor_novedades contenedor_novedades";
+    gap: 10px;
+    /* contenedor de imagen principal */
+  }
+  .contenedor_principal .contenedor_principal-imagen {
+    margin-bottom: 0px;
+    grid-area: principal_imagen;
+    background-color: steelblue;
+  }
+  .contenedor_principal .contenido_principal-texto {
+    margin-top: 37px;
+  }
+}
+
+/* pagina carrito: Tablets */
+@media screen and (max-width: 973px) and (min-width: 501px) {
+  /* con aaltura aquto se acopla a la redimensacion */
+  .carrito-contenedor_principal {
+    display: grid;
+    height: auto;
+    min-width: 480px;
+    margin-top: 100px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "texto_carrito" "contenedor_productos" "contenedor_precio_total";
+    gap: 10px;
+  }
+  .card_producto {
+    margin-right: 20px;
+  }
+  .carrito-texto_principal {
+    margin-top: 60px;
+    font-size: 10px;
+  }
+  /* contenedor de imagen principal */
+  .contenedor_principal-imagen {
+    margin-top: 90px;
+    grid-area: principal_imagen;
+    background-color: steelblue;
+  }
+  /* contenedor principal del card pagar */
+  .carrito-contenedor_precios {
+    width: auto;
+    margin-left: 0px;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin-right: 20px;
+  }
+  .eliminar_producto {
+    text-align: end;
+  }
+  /* Footer */
+  .contenedor_footer {
+    display: grid;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: 1fr;
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "footer_seccion1_logo" "footer_seccion2_contacto" "footer_cliente" "footer_seccion4_redes";
+  }
+  /* pagina quienes somos */
+  .contenedor_amigoEspecial_instagram {
+    margin-right: 20px;
+  }
+}
+
+/* paginas Carrito, quienes somos: laptops pequeñas */
+@media screen and (max-width: 1200px) and (min-width: 974px) {
+  .card_producto {
+    margin-right: 20px;
+  }
+  /* contenedor principal del card pagar */
+  .carrito-contenedor_precios {
+    width: auto;
+    margin-left: 0px;
+    border: 1px solid red;
+    border-radius: 5px;
+    margin-right: 22px;
+  }
+  .eliminar_producto {
+    text-align: end;
+  }
+  /* pagina contactanos */
+  .contenedor_amigoEspecial_instagram {
+    margin-right: 20px;
+  }
+}

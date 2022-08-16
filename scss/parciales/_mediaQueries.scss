@@ -1,0 +1,831 @@
+@mixin sizes($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin tamWidthMinimosMaximos($minWidth,$maxWidth){
+    min-width: $minWidth;
+    max-width: $maxWidth;
+}
+@mixin contenedorDisplayGrid($display,$minWidth,$overflow){
+    display: $display;
+    min-width: $minWidth;
+    overflow: $overflow;
+}
+
+/* navbar responsive*/
+@media screen and (max-width: 600px) {
+
+    header {
+        min-width: 319px;
+        width: auto;
+        overflow-x: hidden;
+        
+        .navbar {
+            overflow-x: hidden;
+            @include tamWidthMinimosMaximos(310px , 600px);
+            width: auto;
+            background-color: cadetblue;
+            
+            //contenedor cuando se cliquea el icono 
+            #barra_desplegable:checked~.menu_enlaces_navbar {
+                z-index: 1;
+                max-height: 600px;
+                min-width: 310px;
+                margin-right: 5px;
+                margin-left: 10px;
+                
+            }
+    
+            label {
+                display: inline-flex;
+                /*Lo convierte en un contenedor flexible en línea para el icono. Se utiliza para centrar el icono dentro de este cuadro.*/
+                align-items: center;
+                cursor: pointer;
+            }
+    
+            .menu_enlaces_navbar {
+                min-width: 320px;
+                width: $width-estandar;
+                max-height: 0;
+                /*Hace que la altura máxima sea 0 al lado del menú expandido.*/
+                overflow: hidden;
+    
+                .lista_enlaces {
+                    flex-direction: column;
+                    /*Cambia la dirección del contenedor flexible. Por defecto es una fila, así que lo cambiamos a columna en pantallas pequeñas.*/
+                    align-items: center;
+                    padding: 20px;
+    
+                    .dropdown-contenedor {
+                        position: fixed;
+                    }
+                }
+    
+            }
+    
+    
+        }
+    }
+
+
+
+}
+
+/* Smartphone modo vertical y horizontal para todas las páginas */
+@media screen and (max-width: 600px) and (min-width: 320px) {
+
+    /* con aaltura aquto se acopla a la redimensacion */
+    .contenedor_principal {
+        display: grid;
+        min-width: 320px;
+        overflow: hidden;
+        grid-template-columns: 1fr;
+        background-color: blue($color: #000000);
+        grid-template-rows: auto auto 100px auto;
+        grid-template-areas:
+            "principal_imagen"
+            "principal_texto"
+            "titulo_novedades"
+            "contenedor_novedades";
+        gap: $espacioGridBase;
+
+        /* contenedor de imagen principal */
+        .contenedor_principal-imagen {
+            overflow-x: hidden;
+            width: 98%;
+            max-width: 590px;
+
+
+            /* contenedor de imagen principal */
+            img {
+                width: $width-estandar;
+                @include tamWidthMinimosMaximos(315px , 590px);
+                min-height: 200px;
+            }
+
+        }
+
+        .contenedor_principal-texto {
+            width: 98%;
+            @include tamWidthMinimosMaximos(315px , 590px);
+            margin-top: 0px;
+            /* contenedor de texto principal */
+
+            .contenido_principal-texto {
+                font-size: 15px;
+                margin-top: 0px;
+                padding-right: 4px;
+                text-align: start;
+
+            }
+
+            /* contenedor del boton checar */
+            .contenedor_boton_checar {
+                margin-bottom: 30px;
+                margin-right: 20px;
+                margin-left: 5px;
+            }
+        }
+
+        .contenedor_novedades {
+            width: auto;
+            @include tamWidthMinimosMaximos(320px , 590px);
+            .card_novedades {
+                background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+                margin-left: 0px;
+                margin-right: 0px;
+
+            }
+        }
+
+    }
+
+    /* ==== Contenedor principal de filtro categorias y productos */
+
+    .contenedor_principal-filtroCategorias-listaProductos {
+        display: grid;
+        min-width: 320px;
+        overflow: hidden;
+        gap: $espacioGridBase;
+        /* Indicar cuantas columnas tendra */
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: auto auto auto;
+
+        grid-template-areas:
+            "titulo_categoria"
+            "filtro_categorias"
+            "contenedor_cards_productos";
+
+        .titulo_categoria {
+            width: auto;
+            min-width: 310px;
+
+            h2 {
+                width: 100%;
+                font-size: 40px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+
+        .contenedor_filtroCategorias {
+
+            width: 97%;
+            min-width: 315px;
+            margin-right: 2px;
+            margin-left: 0px;
+        }
+
+
+        .contenedor_listaProductos {
+            width: auto;
+            @include tamWidthMinimosMaximos(320px , 590px);
+
+            .card_producto {
+                min-width: 315px;
+            
+                .card_producto_imagen {
+                    min-width: 305px;
+
+                    img {
+                        min-width: 295px;
+
+                    }
+                }
+
+                /* contenedor de boton y texto del card */
+                .card_producto-texto_boton {
+
+                    min-width: 295px;
+
+                    h2 {
+                        width: auto;
+                        margin-left: 5px;
+
+                    }
+                    a{
+                        margin-left: 100px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    /* Footer */
+    .contenedor_footer {
+        @include sizes(auto, auto);
+        min-width: 320px;
+        margin-top: 20px;
+        background-color: red;
+        /* Indicar cuantas columnas tendra */
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            "footer_seccion1_logo"
+            "footer_seccion2_contacto"
+            "footer_cliente"
+            "footer_seccion4_redes";
+    }
+
+
+    /* === Pagina descuentos ==== */
+    .contenedor_principal-descuentos-fechas {
+        display: grid;
+        min-width: 320px;
+        overflow: hidden;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto;
+        grid-template-areas:
+            "titulo_descuentos"
+            "card_img_descuento"
+            "texto_descuentos"
+            "contenedor_descuentos"
+            "titulo_fechas"
+            "contenedor_fechas";
+        gap: $espacioGridBase;
+
+        /* Contenedor del titulo principal de descuentos */
+
+        .titulo_descuentos {
+            @include tamWidthMinimosMaximos(300px , 590px);
+
+            h2 {
+                width: 99%;
+                font-size: 40px
+            }
+        }
+
+        .card_imagen_descuento {
+            @include tamWidthMinimosMaximos(310px , 590px);
+            margin-left: 3px;
+            width: 98%;
+           
+            img {
+                width: $width-estandar;
+                @include tamWidthMinimosMaximos(310px , 590px);
+                min-height: 200px;
+            }
+        }
+
+        .informacion_descuentos_fechas {
+            width: 98%;
+            @include tamWidthMinimosMaximos(320px , 590px);
+            margin-top: 0px;
+
+            p {
+                padding: 5px;
+            }
+        }
+
+        /* contenedor y card de la seccion descuentos */
+        .contenedor_cards_descuentos {
+            width: $width-estandar;
+            min-width: 306px;
+
+            .card_descuento {
+                width: 98%;
+                min-width: 306px;
+                background-color: #0095ff;
+                margin-right: 12px;
+
+                .cobertura_img_card {
+                    width: $width-estandar;
+                    min-width: 306px;
+                }
+
+                .texto_card_descuento {
+                    width: 100%;
+                    min-width: 306px;
+                    margin-right: 24px;
+
+                    p {
+                        margin-right: 34px;
+                    }
+                }
+            }
+        }
+
+        .titulo_fechas {
+            width: 99%;
+            min-width: 320px;
+
+            h2 {
+                font-size: 40px;
+            }
+        }
+
+        .contenedor_cards_fechas {
+            width: 99%;
+            min-width: 320px;
+
+            .card_fecha {
+                margin-right: 12px;
+                height: auto;
+                width: 100%;
+                border-radius: 20px;
+                min-width: 320px;
+            }
+
+        }
+
+    }
+
+
+
+    /* pagina Quienes somos */
+    .contenedor_principal_quienes-somos {
+        display: grid;
+        height: auto;
+        min-width: 320px;
+        overflow: hidden;
+        background-color: azure;
+        /* Indicar cuantas columnas tendra */
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: repeat(6, auto);
+
+        /* acomodar el grid */
+        grid-template-areas:
+            "titulo_QuienesSomos "
+            "texto_conocenos"
+            "titulo_amigoMes"
+            "imagen_amigoEspecial"
+            "titulo_amigos"
+            "contenedor_marcas";
+        gap: $espacioGridBase;
+
+        .contenedor_titulo_quienesSomos {
+            background-color: red;
+            font-size: 50px;
+            color: white;
+
+        }
+
+        .conocenos_textos {
+            box-shadow: 4px 2px 4px 3px rgba(0, 0, 0, 0.2);
+            justify-content: center;
+            background-color: white;
+            margin-right: 8px;
+            font-size: 12px;
+        }
+
+        .contenedor_titulo_amigoMes {
+            margin: 10px;
+            justify-content: center;
+        }
+
+        .contenedor_amigoEspecial_instagram {
+            margin-left: 0px;
+            width: auto;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .titulo_amigos {
+            margin-top: 10px;
+            color: white;
+            background-color: red;
+            height: 100px;
+
+        }
+
+    }
+
+
+
+    /* pagina contactanos */
+    .contenedor_principal-contactanos {
+        display: grid;
+        min-width: 320px;
+        overflow: hidden;
+        margin-right: 5px;
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: auto auto auto;
+
+        /* acomodar el grid */
+        grid-template-areas:
+            "titulo_contactanos "
+            "contenedor_info_empresa "
+            "contenedor_formulario";
+
+        .titulo_contactanos {
+            width: 100%;
+            min-width: 320px;
+            margin-top: 20px;
+
+            h2 {
+                width: 100%;
+                font-size: 45px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+        }
+
+        .contenedor_datos_empresa {
+            width: 100%;
+            min-width: 320px;
+
+            h3 {
+                margin-left: 70px;
+            }
+
+            span {
+                margin-left: 70px;
+            }
+
+            a {
+                margin-left: 70px;
+            }
+        }
+
+        /* Contenedor principal formulario */
+        .contenedor_formulario {
+            width: 100%;
+            min-width: 320px;
+
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                min-width: 320px;
+            }
+
+            button {
+                margin-left: 3px;
+            }
+
+        }
+
+    }
+
+
+}
+/* Smartphone pagina carrito */
+@media screen and (max-width: 530px) and (min-width: 300px) {
+
+    /* con aaltura aquto se acopla a la redimensacion */
+    .carrito-contenedor_principal {
+        display: grid;
+        height: auto;
+        min-width: 320px;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "texto_carrito"
+            "contenedor_productos"
+            "contenedor_precio_total";
+        gap: $espacioGridBase;
+
+        .carrito-texto_principal {
+            grid-area: texto_carrito;
+            height: 70px;
+            background-color: red;
+            color: white;
+            text-align: center;
+            margin-top: 1px;
+            
+            h1 {
+                font-size: 40px;
+                font-style: oblique;
+                font-weight: bold;
+            }
+        }
+        .carrito-contenedor_productos {
+            grid-area: contenedor_productos;
+            .card_producto {
+                display: grid;
+                width: 99%;
+                min-width: 310px;
+                overflow-y: hidden;
+                overflow-x: hidden;
+        
+                gap: $espacioGridBase;
+                margin-top: 10px;
+                background-color: white;
+                /* Indicar cuantas columnas tendra */
+                grid-template-columns: 1fr;
+                /* Indicar cuantas filas tendra */
+                grid-template-rows: auto auto;
+        
+                /* acomodar el grid */
+                grid-template-areas:
+                    "contenedor_imagen_producto"
+                    "contenedor_texto_productos";
+                /*fila 2*/
+                .carrito_imagen_producto {
+                    grid-area: contenedor_imagen_producto;
+                    width: $width-estandar;
+                    min-width: 320px;
+                    background-color: black;
+                    
+                    img {
+                        width: 100%;
+                        min-width: 320px;
+                    }
+                }
+        
+                .texto-producto {
+                    grid-area: contenedor_texto_productos;
+                    width: $width-estandar;
+                    min-width: 320px;
+
+                    .cantidad_producto{
+                        .eliminar_producto {
+                            margin-left: 0px;
+                            color: white;
+                            cursor: pointer;
+                            border-radius: 5px;
+                            text-decoration: none;
+                    
+                        }
+                    }
+                }
+            }
+        }
+
+
+        /* contenedor principal del card pagar */
+        .carrito-contenedor_precios {
+            width: auto;
+            margin-left: 0px;
+            border: 1px solid red;
+            border-radius: 5px;
+            margin: 10px;
+
+        }
+
+    }
+
+
+
+
+
+
+
+}
+
+
+/* páginas index,descuentos,Quienes somos: tablet vertical,telefono horizontal y laptop pequeñas */
+@media screen and (max-width: 890px) and (min-width: 601px) {
+
+    .contenedor_principal {
+        display: grid;
+        height: auto;
+        min-width: 400px;
+        margin-top: 100px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 100px auto auto;
+        grid-template-areas:
+            "principal_imagen principal_texto principal_texto"
+            "titulo_novedades titulo_novedades titulo_novedades"
+            "contenedor_novedades contenedor_novedades contenedor_novedades";
+        gap: $espacioGridBase;
+    }
+
+    /* contenedor de imagen principal */
+    .contenedor_principal-imagen {
+        margin-bottom: 0px;
+        grid-area: principal_imagen;
+        background-color: steelblue;
+        min-height: 400px;
+        
+        img {
+            height: 100%;
+            min-height: 400px;
+            object-fit: cover;
+        }
+    }
+
+    .contenedor_principal-texto{
+        h1 {
+            margin-top: 80px;
+        }
+    }
+
+    .contenido_principal-texto {
+        font-size: 18px;
+        height: auto;
+        width: 92%;
+    }
+
+    /* pagina descuentos */
+    .contenedor_principal-descuentos-fechas {
+        margin-top: 150px;
+    }
+
+    /* paginas quienes somos */
+    .contenedor_principal_quienes-somos {
+        margin-top: 170px;
+    }
+
+    /* pagina contactanos */
+    .contenedor_principal-contactanos {
+        display: grid;
+        min-width: 300px;
+        overflow: hidden;
+        margin-top: 140px;
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: auto auto auto;
+
+        .contenedor_datos_empresa {
+            width: 100%;
+            min-width: 290px;
+        }
+    
+        /* Contenedor principal formulario */
+        .contenedor_formulario {
+            width: 90%;
+            min-width: 320px;
+            
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                width: 97%;
+                margin-right: 30px;
+                min-width: 300px;
+            }
+        
+            button {
+                margin-left: 3px;
+            }
+        }
+    }
+
+
+    /* pagina contactanos */
+    .titulo_contactanos {
+        margin-top: 10px;
+        width: 100%;
+        min-width: 320px;
+        padding-top: 10px;
+        
+        h2 {
+            width: 100%;
+            font-size: 45px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    }
+
+
+    /* ==== Contenedor principal de filtro categorias y productos */
+    .titulo_categoria {
+        margin-top: 50px;
+    }
+
+    .contenedor_principal-filtroCategorias-listaProductos {
+        width:  $width-estandar;
+        height: $height-estandar;
+        margin-top: 100px;
+        gap: $espacioGridBase;
+        background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+        /* Indicar cuantas columnas tendra */
+        grid-template-columns: auto;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: auto auto auto;
+
+        grid-template-areas:
+            "titulo_categoria"
+            "filtro_categorias"
+            "contenedor_cards_productos";
+
+    }
+
+}
+
+/* index: laptops */
+@media screen and (max-width: 1400px) and (min-width: 891px) {
+
+    .contenedor_principal {
+        display: grid;
+        height: auto;
+        min-width: 400px;
+        margin-top: 10px;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto 100px auto auto;
+        grid-template-areas:
+            "principal_imagen principal_texto principal_texto"
+            "titulo_novedades titulo_novedades titulo_novedades"
+            "contenedor_novedades contenedor_novedades contenedor_novedades";
+        gap: $espacioGridBase;
+        
+        /* contenedor de imagen principal */
+        .contenedor_principal-imagen {
+            margin-bottom: 0px;
+            grid-area: principal_imagen;
+            background-color: steelblue;
+        }
+
+        .contenido_principal-texto {
+            margin-top: 37px;
+        }
+    }
+
+}
+
+/* pagina carrito: Tablets */
+@media screen and (max-width: 973px) and (min-width: 501px) {
+
+    /* con aaltura aquto se acopla a la redimensacion */
+    .carrito-contenedor_principal {
+        display: grid;
+        height: auto;
+        min-width: 480px;
+        margin-top: 100px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+            "texto_carrito"
+            "contenedor_productos"
+            "contenedor_precio_total";
+        gap: $espacioGridBase;
+    }
+
+    .card_producto {
+        margin-right: 20px;
+    }
+
+    .carrito-texto_principal {
+        margin-top: 60px;
+        font-size: 10px;
+    }
+
+    /* contenedor de imagen principal */
+    .contenedor_principal-imagen {
+        margin-top: 90px;
+        grid-area: principal_imagen;
+        background-color: steelblue;
+    }
+
+    /* contenedor principal del card pagar */
+    .carrito-contenedor_precios {
+        width: auto;
+        margin-left: 0px;
+        border: 1px solid red;
+        border-radius: 5px;
+        margin-right: 20px;
+
+    }
+
+    .eliminar_producto {
+        text-align: end;
+    }
+
+    /* Footer */
+    .contenedor_footer {
+        display: grid;
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+        /* Indicar cuantas columnas tendra */
+        grid-template-columns: 1fr;
+        /* Indicar cuantas filas tendra */
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas:
+            "footer_seccion1_logo"
+            "footer_seccion2_contacto"
+            "footer_cliente"
+            "footer_seccion4_redes";
+    }
+
+    /* pagina quienes somos */
+    .contenedor_amigoEspecial_instagram {
+        margin-right: 20px;
+    }
+
+}
+
+/* paginas Carrito, quienes somos: laptops pequeñas */
+@media screen and (max-width: 1200px) and (min-width: 974px) {
+
+    .card_producto {
+        margin-right: 20px;
+    }
+
+    /* contenedor principal del card pagar */
+    .carrito-contenedor_precios {
+        width: auto;
+        margin-left: 0px;
+        border: 1px solid red;
+        border-radius: 5px;
+        margin-right: 22px;
+
+    }
+
+    .eliminar_producto {
+        text-align: end;
+    }
+
+    /* pagina contactanos */
+    .contenedor_amigoEspecial_instagram {
+        margin-right: 20px;
+    }
+}

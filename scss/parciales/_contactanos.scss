@@ -1,0 +1,88 @@
+/* =================== página contactanos ================*/
+
+
+@mixin sizes($width, $height){
+    width: $width;
+    height: $height;
+}
+
+.contenedor_principal-contactanos {
+    @include sizes($width-estandar, $height-estandar);
+    display: grid;
+    gap: 10px;
+    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+    box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+    -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(2, auto);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: 100px 300px 300px;
+
+    /* acomodar el grid */
+    grid-template-areas:
+        "titulo_contactanos titulo_contactanos"
+        "contenedor_info_empresa contenedor_formulario"
+        "contenedor_info_empresa contenedor_formulario";
+
+    .titulo_contactanos {
+        grid-area: titulo_contactanos;
+        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+        font-size: 100%;
+
+        /* Texto tiulo descuentos */
+        h2 {
+            margin-top: 0px;
+            font-size: 70px;
+            font-style: oblique;
+            font-weight: bold;
+        }
+    }
+
+    .contenedor_datos_empresa {
+        grid-area: contenedor_info_empresa;
+        list-style: none;
+        align-items: center;
+        text-align: center;
+        padding: 0px 120px 0px 0px;
+
+        .item {
+            margin-bottom: 65px;
+            h3 {
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+            }
+            span {
+                font-size: 18px;
+            }
+            
+        }
+        
+        .iconos_contacto{
+            a {
+                padding: 0px 0px 0px 30px;
+                font-size: 24px;
+            }
+        }
+        
+    }
+
+    /* Contenedor principal formulario */
+    .contenedor_formulario {
+        grid-area: contenedor_formulario;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedor_formulario:hover {
+        transform: scale(1.03);
+    }
+
+
+}
+
+
+
+
+

@@ -1,0 +1,48 @@
+/* Footer */
+
+
+.atributoSeccionFooter{
+    color: map-get($map: $paleta-colores, $key: 'colorTextoPrincipal');
+    margin: 17px;
+    text-align: center;
+}
+
+.contenedor_footer {
+    width: auto;
+    margin-top: auto;
+    display: grid;
+    gap: 10px;
+    box-shadow: 6px 1px 10px 6px red;
+    margin-top: 10px;
+    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(4, 1fr);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: 230px;
+    grid-template-areas:
+        "footer_seccion1_logo footer_seccion2_contacto footer_cliente footer_seccion4_redes";
+
+    .footer_seccion1_logo {
+        @extend .atributoSeccionFooter;
+    }
+
+    .footer_seccion2_contacto {
+        @extend .atributoSeccionFooter;
+    }
+
+    .footer_cliente {
+        @extend .atributoSeccionFooter;
+    }
+
+    .footer_seccion4_redes {
+        @extend .atributoSeccionFooter;
+
+        a {
+            color: white;
+            margin: 17px;
+            text-align: center;
+        }
+    }
+}
+
+

@@ -1,0 +1,184 @@
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 3;
+    width: 100%;
+    top: 0;
+}
+
+.navbar {
+    z-index: 2;
+    position: absolute;
+    position: -webkit-sticky;
+    flex-wrap: wrap;
+    /*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
+    justify-content: space-between;
+    /*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
+    border-bottom: 15px black;
+    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+    box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+    -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+
+}
+
+/* === Personalización de logo === */
+
+/* contenedor logo */
+.logo {
+    margin-right: 50px;
+    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+    color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+    width: 130px;
+    height: 50px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+
+    /* texto logo */
+    a{
+        padding-top: 10px;
+        color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+        text-decoration: none;
+        /*Quita el subrayado del enlace*/
+        display: inline-block;
+        text-align: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    /* Modificar el texto al pasar el cursor */
+    a:hover {
+        color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+    }
+}
+/* modificar el contenedor logo cuando pasamos en el logo */
+.logo:hover {
+    background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');;
+    color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+}
+
+
+/* Contenedor principal de productos*/
+.lista_enlaces {
+    list-style: none;/*   quitar viñetas a los números*/
+    display: flex;   /*colocar elemento uno a lado de otro hasta que haya espacio */
+    gap: 10px;       /*Espaciado entre botones*/
+    background-color: map-get($map: $paleta-colores, $key: 'colorCard');
+    margin-right: 5px;
+}
+
+/* ocultar el icono de menu hamburguesa y casilla de credito */
+#barra_desplegable,
+.navbar label {
+    display: none;
+    /*Ocultar la casilla de verificación y la etiqueta en pantallas grandes.*/
+}
+
+/* Personalización general de los enlaces(tambien usado en las categorias de productos) */
+.enlace_item {
+    display: inline-block;
+    color: map-get($map: $paleta-colores, $key: 'colorTextoSecundario');
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.enlace_item:hover {
+    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+    color: map-get($map: $paleta-colores, $key: 'colorTextoPrincipal');;
+}
+
+/* == Personalización  del contendor de la lista de enlaces  ===*/
+
+/* contenedor principal donde se encuentra producto-hombre y producto-mujer */
+.dropdown-contenedor {
+    display: none;
+    position: absolute;
+    /*se sobrepone sobre la la lista*/
+    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+    height: 290px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+
+    /* Al pasar el cursor en  una categoria*/
+    a:hover {
+        background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+        color: map-get($map: $paleta-colores, $key: 'colorTextoSecundario');
+    }
+}
+
+/* El cursor abre un contenedor cuando esta en productos */
+.dropdown:hover .dropdown-contenedor {
+    display: block;
+    /*uno abajo de otro*/
+}
+
+/* contendor tipo lista de productos */
+.lista_subenlaces {
+    list-style: none;
+    /*   quitar viñetas a los números*/
+    display: block;
+    gap: 10px;
+    /*Espaciado entre botones*/
+    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+    margin-right: 5px;
+}
+
+/* Texto Hombre y Mujer */
+.dropdown {
+    span {
+        color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+        font-size: 15px;
+    }
+}
+
+/* == Personalización de categorias == */
+
+/* Contenedor principal de las categorias hombre y mujer */
+.dropdown_contenedor-categorias {
+    display: none;
+    /*para esconder el contenedor*/
+    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+    width: 160px;
+    max-height: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    transition: max-height .6s ease-out;
+    /* enlaces de las categorias */
+    .categorias_item {
+        color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+        padding: 12px 16px;
+        text-decoration: none;
+        display: none;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+}
+
+
+.item_mujer:hover .dropdown_contenedor-categorias {
+    max-height: 400px;
+    display: block;
+}
+
+.item_mujer:hover .dropdown_contenedor-categorias .categorias_item {
+    display: block;
+}
+
+.item_hombre:hover .dropdown_contenedor-categorias .categorias_item {
+    display: block;
+}
+
+
+.item_hombre:hover .dropdown_contenedor-categorias {
+    max-height: 400px;
+    display: block;
+}
+
+
+/* Cuando pasamos el cursor en productos mantenemos el contenedor de categorias */
+.dropdown:hover .dropdown_contenedor-categorias {
+    display: block;
+    /*uno abajo de otro*/
+}
+
+/* Fin de personalización de categorias */

@@ -1,0 +1,110 @@
+/* ================= Pagina Quienes somos ==================*/
+
+@mixin sizes($width, $height){
+    width: $width;
+    height: $height;
+}
+
+
+.contenedor_principal_quienes-somos {
+    @include sizes($width-estandar, $height-estandar);
+    display: grid;
+    gap: 10px;
+    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(3, 1fr);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: auto auto auto 100px auto;
+
+    /* acomodar el grid */
+    grid-template-areas:
+        "titulo_QuienesSomos titulo_QuienesSomos titulo_QuienesSomos"
+        "texto_conocenos texto_conocenos titulo_amigoMes"
+        "texto_conocenos texto_conocenos imagen_amigoEspecial"
+        "titulo_amigos titulo_amigos titulo_amigos "
+        "contenedor_marcas contenedor_marcas contenedor_marcas";
+
+    .contenedor_titulo_quienesSomos {
+        grid-area: titulo_QuienesSomos;
+        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+        color: map-get($map: $paleta-colores, $key: 'colorTextoPrincipal');
+    }
+
+    /* Contenedor de titulo y parrafo de la empresa */
+    .conocenos_textos {
+        background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+        box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+                    -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+        grid-area: texto_conocenos;
+        margin-left: 20px;
+        font-size: 20px;
+    }
+
+
+    .contenedor_titulo_amigoMes {
+        grid-area: titulo_amigoMes;
+        font-style: italic;
+        animation: titulo_amigoMes 14s infinite;
+    }
+
+    .contenedor_amigoEspecial_instagram {
+        grid-area: imagen_amigoEspecial;
+        @include sizes( 300px, 420px);
+        /* background-color: blue; */
+        margin-left: 20px;
+    }
+    .contenedor_amigoEspecial_instagram:hover {
+        border: 3px solid silver;
+        box-shadow: 4px 4px 13px rgba(255, 44, 44, 0.8);
+        transform: scale(1.1);
+    }
+
+    .titulo_amigos {
+        grid-area: titulo_amigos;
+        color: map-get($map: $paleta-colores, $key: 'colorTextoTitulosAzul');
+        text-align: center;
+        font-size: 190px;
+        padding-bottom: 120px;
+
+        h2 {
+            font-size: 90px;
+            font-family: cursive;
+
+        }
+    }
+
+    @keyframes titulo_amigoMes {
+        0% {
+            transform: skewX(20deg);
+        }
+    
+        100% {
+            transform: skewX(-20deg);
+        }
+    }
+
+    /* Contenedor de cards de marcas */
+    .contenedor-marcas {
+        grid-area: contenedor_marcas;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .card_instagram_marca {
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 22px;
+            margin-top: 13px;
+        }
+
+        .card_instagram_marca:hover {
+            transform: scale(1.05);
+        }
+
+    }
+
+}
+
+
+
+

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Última modificsción de esta página usando Bootstrap -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página de inicio de nook nook eccommerce, donde esta página inicio
+                                      se contara con una vista de productos de novedad y un pequeño diseño de un patrocinador o marca"/>
+    <meta name="keywords" content=" NOOKNOOK, nook nook, inicio nook nook"/>
+    <title>Inicio - nook nook</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- icono de menú para la navbar -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+    <!-- ============= Cabecera de la página  ============== -->
+    <header class="mb-5">
+        <!-- Contenedor del logo y lista de elementos -->
+        <nav class="navbar">
+            <div class="container-fluid">
+                <!-- Fondo del logo y texto -->
+                <div class="logo">
+                    <a href="../index.html"><b>NOOK NOOK</b></a>
+                </div>
+
+                <!-- creamos un checkbox y lo abrimos al seleccionar el label (responsive)-->
+                <input type="checkbox" id="barra_desplegable">
+                <label for="barra_desplegable">
+                    <i class="ri-menu-line"></i>
+                </label>
+                <!-- Fin del contenedor  del label responsive -->
+                <div class="menu_enlaces_navbar">
+                    <!-- Lista de enlaces del navbar -->
+                    <ul class="lista_enlaces">
+                        <!-- Elemento de lista: productos -->
+                        <li class="dropdown">
+                            <a href="#" class="enlace_item">Productos</a>
+                            <div class="dropdown-contenedor">
+
+                                <ul class="lista_subenlaces">
+                                    <!-- productos-hombres -->
+                                    <li class="item_hombre" id="mn1">
+                                        <a class="btn" href="#mn1">Hombre</a>
+                                        <!-- Categorias de producstos-hombres -->
+                                        <div class="dropdown_contenedor-categorias">
+                                            <a class="categorias_item"
+                                                href="./pages/seccionProductos/hombre-chamarras.html">Chamarras</a>
+                                            <a class="categorias_item"
+                                                href="./pages/seccionProductos/hombre-playeras.html">Playeras</a>
+                                            <a class="categorias_item"
+                                                href="./pages/seccionProductos/hombre-pantalones.html">Pantalones</a>
+                                        </div>
+                                    </li>
+
+                                    <!-- priductos- mujeres -->
+                                    <li class="item_mujer" id="mn2">
+                                        <a class="btn" href="#mn2">Mujer</a>
+                                        <!-- Categorias de producstos-hombres -->
+                                        <div class="dropdown_contenedor-categorias">
+                                            <a class="categorias_item"
+                                                href="./pages/seccionProductos/mujer-pantalones.html">Pants</a>
+                                            <a class="categorias_item"
+                                                href="./pages/seccionProductos/mujer-chamarras.html">Chamarras</a>
+                                            <a class="categorias_item"
+                                                href="./pages/seccionProductos/mujer-playeras.html">Playeras</a>
+                                            <a class="categorias_item"
+                                                href="./pages/seccionProductos/mujer-blusas.html">Blusas</a>
+                                        </div>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </li>
+                        <!-- Fin de elemento de lista : producto -->
+
+
+                        <!-- Elemento de lista carritos -->
+                        <li class="enlace_secciones">
+                            <a class="enlace_item" href="pages/carrito.html"> Carrito </a>
+                        </li>
+                        <!-- Fin de elemento de lista: carrito -->
+
+                        <!-- Elemento de lista fechas & descuentos -->
+                        <li class="enlace_secciones">
+                            <a class="enlace_item" href="pages/fechas_descuentos.html"> Fechas & descuentos </a>
+                        </li>
+                        <!-- Fin de elemento de lista fechas & descuentos -->
+
+                        <!-- Elemento de lista:  Quienes somos-->
+                        <li class="enlace_secciones">
+                            <a class="enlace_item" href="pages/quienes_somos.html"> Quienes somos </a>
+                        </li>
+                        <!-- Fin de elemento de lista: Quienes somos -->
+
+                        <!-- Elemento de lista: contactanos -->
+                        <li class="enlace_secciones">
+                            <a class="enlace_item" href="pages/contactanos.html"> Contactanos </a>
+                        </li>
+                        <!-- Fin de elemento de lista: contactanos -->
+
+                    </ul>
+                    <!-- Fin de la lista de enlaces en la navbar -->
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <!-- ============= fin de cabecera de la página  ============== -->
+
+    <!-- ============= Contenido principal de la página  ============== -->
+    <main>
+        <!--Sección 1 :  contiene las imágenes principales -->
+        <section class>
+            <div class="contenedor_principal">
+
+                <!-- Contenedor de la imagen principal de la sección 1 -->
+                <div class="contenedor_principal-imagen carousel slide" data-bs-ride="carousel" id="carouselIndex">
+                
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselIndex" data-bs-slide-to="0" class="active"
+                                    aria-current="true" aria-label="Slide 1">
+                            </button>
+                            <button type="button" data-bs-target="#carouselIndex" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselIndex" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">    
+                                <img src="imagenes/principal.png" alt="Malandro_principal">
+                            </div>
+                
+                            <div class="carousel-item">
+                                <img src="imagenes/blusa.png" alt="Malandro_principal">             
+                            </div>
+                
+        
+                        </div>
+                        
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndex" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Atras</span>
+                        </button>
+                
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselIndex" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+                    </div>
+                <!-- Fin del contenedor de la imagen principal  -->
+
+                <!-- contenedor de texto de la sección 1 -->
+                <div class="contenedor_principal-texto">
+                    <h1><b>MALANDRO HA LLEGADO</b></h1>
+                    <div class="contenido_principal-texto">
+                        <p>
+                            MALANDRO es una marca indumentaria nacida en la ciudad de México en 2016, fundada
+                            por un proyecto donde convergen diversos sectores creativos (fotógrafos, publicistas
+                            diseñadores textiles y gráficos), inspirada por el Streetwear Culture.
+
+                            <br>
+                            MALANDRO se ha extendido para convertirse en un líder de creación de prendas y diseños
+                            únicos que se enorgullece por crear piezas de la mejor calidad que la gente quiere, pero
+                            también de darles un poco de lo que necesitan.
+                        </p>
+                    </div>
+                    <div class="contenedor_boton_checar">
+                        <a href="./pages/seccionProductos/hombre-chamarras.html" class="btn_checar">Checar</a>
+                    </div>
+                </div>
+                <!-- Fin del contenedor de texto de la sección 1 -->
+
+
+                <!-- Contenedor de la sección 1: titulo novedades -->
+                <div class="titulo_novedades">
+                    <h2 data-text="Novedades">Novedades</h2>
+                </div>
+                <!-- Fin del contenedor titulo novedades -->
+
+                <!-- Contenddor card novedades -->
+                <div class="contenedor_novedades">
+
+                    <!-- card 1 -->
+
+                    <div class="card_novedades">
+                        <div class="card_novedades_imagen">
+                            <img src="imagenes/catrin.webp" alt="">
+                        </div>
+                        <h2>El catrin <br> $700 MX</h2>
+                        <a href="./pages/carrito.html">Agregar</a>
+
+                    </div>
+
+                    <!-- card 2 -->
+                    <div class="card_novedades">
+
+                        <div class="card_novedades_imagen">
+                            <img src="imagenes/chamarra_blanca.png" alt="">
+                        </div>
+                        <h2>El catrin <br> $700 MX</h2>
+                        <a href="./pages/carrito.html">Agregar</a>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="card_novedades">
+
+                        <div class="card_novedades_imagen">
+                            <img src="imagenes/corazon_chamarra.png" alt="">
+                        </div>
+                        <h2>El catrin <br> $700 MX</h2>
+                        <a href="./pages/carrito.html">Agregar</a>
+                    </div>
+
+                    <!-- card 4 -->
+                    <div class="card_novedades">
+
+                        <div class="card_novedades_imagen">
+                            <img src="imagenes/love_pants_dama.png" alt="">
+                        </div>
+                        <h2>El catrin <br> $700 MX</h2>
+                        <a href="./pages/carrito.html">Agregar</a>
+                    </div>
+
+                    <!-- card 5 -->
+                    <div class="card_novedades">
+
+                        <div class="card_novedades_imagen">
+                            <img src="imagenes/pants_casual.png" alt="">
+                        </div>
+                        <h2>El catrin <br> $700 MX</h2>
+                        <a href="./pages/carrito.html">Agregar</a>
+                    </div>
+
+                    <!-- card 6 -->
+                    <div class="card_novedades">
+
+                        <div class="card_novedades_imagen">
+                            <img src="imagenes/playera hombre necio.png" alt="">
+                        </div>
+                        <h2>El catrin <br> $700 MX</h2>
+                        <a href="./pages/carrito.html">Agregar</a>
+                    </div>
+
+                    <!--  card 7 -->
+                    <div class="card_novedades">
+
+                        <div class="card_novedades_imagen">
+                            <img src="imagenes/playera_ballena.png" alt="">
+                        </div>
+
+                        <h2>El catrin <br> $700 MX</h2>
+                        <a href="./pages/carrito.html">Agregar</a>
+                    </div>
+
+                    <!--  card 8 -->
+                    <div class="card_novedades">
+
+                        <div class="card_novedades_imagen">
+                            <img src="imagenes/corazon_chamarra.png" alt="">
+                        </div>
+                        <h2>El catrin <br> $700 MX</h2>
+                        <a href="./pages/carrito.html">Agregar</a>
+                    </div>
+
+                </div>
+                <!-- Fin del contenedor novedades -->
+            </div>
+            <section>
+    </main>
+    <!-- ============= Fin del contenido principal de la página  ============== -->
+    <footer>
+        <div class="contenedor_footer">
+            <!-- columna 1: titulo y descripción -->
+            <div class="footer_seccion1_logo">
+                <h3>NOOK NOOK</h3>
+                <p>Está página fue creada <br>
+                    con fines educativos
+                </p>
+            </div>
+            <!--Columna 2: contactos que tiene la empresa  -->
+            <div class="footer_seccion2_contacto">
+                <h3>Sobre nosotros</h3>
+                <p>nook_nook@gmail.com</p>
+                <p>México, CDMX, Viaducto</p>
+                <p>553883838383</p>
+            </div>
+            <!-- columna 3: atención a cliente -->
+            <div class="footer_cliente">
+                <h3>Atencion al cliente</h3>
+                <p>Terminos y condiciones</a>
+                <p>Preguntas frecuentes</p>
+
+            </div>
+            <!-- columna 4: redes sociales -->
+            <div class="footer_seccion4_redes">
+                <h3>Siguenos en:</h3>
+                <a href="https://www.facebook.com">Facebook</a>
+                <br>
+                <a href="https://www.twitter.com">Twitter</a>
+                <br>
+                <a href="https://www.Instagram.com">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+<script>
+    $('card_boton').click(function () {
+        $('alert').removeClass("hide");
+    });
+</script>
+
+</html>

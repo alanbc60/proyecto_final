@@ -1,0 +1,149 @@
+/* ================ Página carrito ================ */
+
+
+@mixin sizes($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin contenedorGrid($grid,$marginTop,$gap){
+    display: $grid;
+    margin-top: $marginTop;
+    gap: $gap;
+}
+
+/* contenedor principal */
+.carrito-contenedor_principal {
+    @include sizes($width-estandar, $height-estandar);
+    @include contenedorGrid(grid, 8px, 10px);
+    background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(3, 1fr);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: auto 900px;
+
+    /* acomodar el grid */
+    grid-template-areas:
+        "texto_carrito texto_carrito texto_carrito"
+        "contenedor_productos contenedor_productos contenedor_precio_total";
+
+    .carrito-texto_principal {
+        grid-area: texto_carrito;
+        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+        text-align: center;
+
+        h1 {
+            font-size: 40px;
+            font-style: oblique;
+            font-weight: bold;
+        }
+    }
+
+    /* personalizacion del contenedor de productos */
+    .carrito-contenedor_productos {
+        grid-area: contenedor_productos;
+
+        /* personalizacion del card producto */
+        .card_producto {
+            @include contenedorGrid(grid, 10px, 10px);
+            margin-bottom: 20px;
+            margin-left: 5px;
+            background: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+            box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+            -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+            border-radius: 5px;
+            /* Indicar cuantas columnas tendra */
+            grid-template-columns: repeat(3, 1fr);
+            /* Indicar cuantas filas tendra */
+            grid-template-rows: 200px;
+            /* acomodar el grid */
+            grid-template-areas:
+                "contenedor_imagen_producto contenedor_texto_productos contenedor_texto_productos";
+
+
+            /* imagen del producto */
+            .carrito_imagen_producto {
+                grid-area: contenedor_imagen_producto;
+                background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+
+                img {
+                    @include sizes($width-estandar, $height-estandar);
+                    object-fit: $acoplamiento-imagen;
+                }
+                img:hover {
+                    transform: scale(1.04);
+                }
+                
+            }
+            
+            /* contenedor hijo de card_producto: Texto producto */
+            .texto-producto {
+                grid-area: contenedor_texto_productos;
+                background: map-get($map: $paleta-colores, $key: 'colorCard');
+
+                width:  $width-estandar;
+                .cantidad_producto{
+                    /* Entrada de texto para aumentar las cantidades */
+                    input {
+                        width: 100px;
+                        padding: 5px;
+                        text-align: center;
+                    }
+                    input:hover {
+                        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+                    }
+                    
+                    /* Boton de eliminar producto en card producto */
+                    .eliminar_producto {
+                        bottom: 20px;
+                        margin-left: 22px;
+                        padding: 10px 25px;
+                        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+                        cursor: pointer;
+                        border-radius: 5px;
+                        text-decoration: none;
+                        text-align: end;
+
+                    }
+
+                    .eliminar_producto:hover {
+                        background-color: skyblue;
+                        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+                        font-weight: 600;
+                        border: 1px solid white;
+
+                    }
+                }
+
+            }
+        }
+    }
+    .carrito-contenedor_precios{
+        grid-area: contenedor_precio_total;
+        max-height: 500px;
+        /* personalizacion de componentes del contenedor precio total */
+
+
+        /* Texto del card pagar */
+        .carrito-contenedor_precios p {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 20px;
+            
+        }
+
+        /* Boton de card pagar(personalización establecida anteriormente) */
+        .carrito-contenedor_precios a {
+            margin-left: 80px;
+
+        }
+    }
+    
+}
+
+
+

@@ -1,0 +1,177 @@
+/* ============= pagina descuentos =========== */
+@mixin sizes($width, $height){
+    width: $width;
+    height: $height;
+}
+
+@mixin atributosDisplayFlex($display,$marginTop,$wrap,$center,$marginBottom){
+    display: $display;
+    margin-top: $marginTop;
+    flex-wrap: $wrap;
+    justify-content: $center;
+    margin-bottom: $marginBottom;
+}
+
+.contenedor_principal-descuentos-fechas {
+    @include sizes($width-estandar, $height-estandar);
+    display: grid;
+    gap: 10px;
+    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+    /* Indicar cuantas columnas tendra */
+    grid-template-columns: repeat(3, 1fr);
+    /* Indicar cuantas filas tendra */
+    grid-template-rows: 100px 400px auto 100px auto;
+
+    /* acomodar el grid */
+    grid-template-areas:
+        "titulo_descuentos titulo_descuentos titulo_descuentos"
+        "card_img_descuento card_img_descuento texto_descuentos"
+        "contenedor_descuentos contenedor_descuentos contenedor_descuentos"
+        "titulo_fechas titulo_fechas titulo_fechas"
+        "contenedor_fechas contenedor_fechas contenedor_fechas";
+
+    /* Contenedor del titulo principal de descuentos */
+    .titulo_descuentos {
+        grid-area: titulo_descuentos;
+        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+        text-align: center;
+        background-color: red;
+        font-size: $fontMaxima;
+
+        /* Texto tiulo descuentos */
+        h2 {
+            font-size: 70px;
+            font-style: oblique;
+            font-weight: bold;
+        }
+
+    }
+
+    .card_imagen_descuento {
+        grid-area: card_img_descuento;
+
+        img {
+            @include sizes($width-estandar, 340px);
+            object-fit: $acoplamiento-imagen;
+
+        }
+
+    }
+
+    .informacion_descuentos_fechas {
+        padding: 10px;
+        grid-area: texto_descuentos;
+        font-size: 20px;
+        
+        p {
+            font-style: italic;
+        }
+    }
+
+    /* contenedor y card de la seccion descuentos */
+    .contenedor_cards_descuentos {
+        grid-area: contenedor_descuentos;
+        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+        @include atributosDisplayFlex(flex, 10px, wrap, center, 10px);
+
+        .card_descuento {
+            @include sizes( 400px, 220px);
+            background-color:map-get($map: $paleta-colores, $key: 'colorPrincipal');
+            margin-left: 12px;
+            margin-top: 23px;
+            border-radius: 20px;
+
+
+            .cobertura_img_card {
+                background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+
+                @include sizes(400px, 220px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+            
+                border: 5px solid red;
+                box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+            }
+            
+            .texto_card_descuento {
+
+                @include sizes(335px, 200px);
+                margin-left: 20px;
+                justify-content: center;
+                display: none;
+                h3 {
+                    color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                    margin-bottom: 5px;
+                    font-size: 24px;
+                    text-align: center;
+                }
+        
+            }
+        }
+
+        .card_descuento:hover .cobertura_img_card {
+            display: none;
+        }
+
+        .card_descuento:hover .texto_card_descuento {
+            /* position: absolute; */
+            display: block;
+        }
+    }
+
+    .titulo_fechas {
+        grid-area: titulo_fechas;
+        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+        text-align: center;
+        background-color: blue;
+        font-size: $fontMaxima;
+        
+        h2 {
+            font-size: 70px;
+            font-style: oblique;
+            font-weight: bold;
+        }
+    }
+    
+    .contenedor_cards_fechas {
+        grid-area: contenedor_fechas;
+        @include atributosDisplayFlex(flex, 10px, wrap, center, 10px);
+
+        .card_fecha {
+            @include sizes(400px, 220px);
+            background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+            margin-left: 12px;
+            margin-top: 23px;
+            animation: card_fecha 9s infinite;
+            transform: skew(20deg);
+            animation-direction: alternate;
+            opacity: .7;
+        }
+        
+        @keyframes card_fecha {
+            0% {
+              transform: skewX(20deg);
+            }
+            100% {
+              transform: skewX(-20deg);
+            }
+        }
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
