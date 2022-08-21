@@ -53,17 +53,18 @@
     gap: 40px;
     background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
     /* Indicar cuantas columnas tendra */
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     /* Indicar cuantas filas tendra */
-    grid-template-rows: 400px 100px 900px;
+    grid-template-rows: 450px 100px 900px;
 
     /* acomodar el grid */
-    grid-template-areas: "principal_imagen principal_texto principal_texto"
-                         "titulo_novedades titulo_novedades titulo_novedades"
-                         "contenedor_novedades contenedor_novedades contenedor_novedades";
+    grid-template-areas: "principal_imagen  principal_texto"
+                         "titulo_novedades  titulo_novedades"
+                         "contenedor_novedades contenedor_novedades";
  
     /* contenedor de la imagen */
     .contenedor_principal-imagen {
+        margin-left: 5px;
         grid-area: principal_imagen;
 
         .carousel-indicators{
@@ -71,8 +72,8 @@
         }
 
         img {
-            @include sizes($width-estandar, 340px);
-            min-height: 350px;
+            @include sizes($width-estandar, 400px);
+            min-height: 400px;
             object-fit: $acoplamiento-imagen;
             transition-delay: 1s;
             transition: width 3s;
@@ -180,29 +181,39 @@
                     cursor: pointer;
                 }
             }
-    
-            h2 {
-                padding-left: 10px;
-                font-size: 18px;
+
+            .card_novedades_texto{
+                width: 170px;
+                h2 {
+                    padding-left: 10px;
+                    font-size: 16px;
+                }
             }
-    
+
+            .card_novedades_boton{
             //Uso del extend
-            a {
-                @extend .btn_checar;
-                animation: none;
-                background-color: map-get($map: $paleta-colores, $key: 'colorBotonAgregar');
-                box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.1),
-                        -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
-                // color: #00a037;
-                color: #EC2D53;
-                margin-left: 90px;
-                padding: 5px 20px;
-                height: 35px;
+                a{
+                    @extend .btn_checar;
+                    animation: none;
+                    background-color: map-get($map: $paleta-colores, $key: 'colorBotonAgregar');
+                    box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.1),
+                            -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+                    // color: #00a037;
+                    color: #EC2D53;
+                    margin-top:  10px;
+                    margin-left: 10px;
+                    padding: 5px 20px;
+                    height: 35px;
+                }
+
+                a:hover{
+                    color: map-get($map: $paleta-colores, $key: 'colorBotonAgregar');
+                    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                }
             }
-            a:hover{
-                color: map-get($map: $paleta-colores, $key: 'colorBotonAgregar');
-                background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-            }
+
+    
+
         }
 
 

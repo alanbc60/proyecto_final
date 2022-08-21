@@ -17,61 +17,19 @@
 @media screen and (max-width: 600px) {
 
     header {
-        min-width: 319px;
-        width: auto;
-        overflow-x: hidden;
-        
+
         .navbar {
-            overflow-x: hidden;
-            @include tamWidthMinimosMaximos(310px , 600px);
-            width: auto;
-            background-color: cadetblue;
             
-            //contenedor cuando se cliquea el icono 
-            #barra_desplegable:checked~.menu_enlaces_navbar {
-                z-index: 1;
-                max-height: 600px;
-                min-width: 310px;
-                margin-right: 5px;
-                margin-left: 10px;
-                
-            }
-    
-            label {
-                display: inline-flex;
-                /*Lo convierte en un contenedor flexible en línea para el icono. Se utiliza para centrar el icono dentro de este cuadro.*/
-                align-items: center;
-                cursor: pointer;
-            }
-    
-            .menu_enlaces_navbar {
-                min-width: 320px;
-                width: $width-estandar;
-                max-height: 0;
-                /*Hace que la altura máxima sea 0 al lado del menú expandido.*/
-                overflow: hidden;
-    
-                .lista_enlaces {
-                    flex-direction: column;
-                    /*Cambia la dirección del contenedor flexible. Por defecto es una fila, así que lo cambiamos a columna en pantallas pequeñas.*/
-                    align-items: center;
-                    padding: 20px;
-    
-                    .dropdown-contenedor {
-                        position: fixed;
-                    }
-                }
-    
-            }
-    
-    
+            display: none;
         }
+        .wrapper{
+            display: block;
+        }
+ 
+
     }
 
-
-
 }
-
 /* Smartphone modo vertical y horizontal para todas las páginas */
 @media screen and (max-width: 600px) and (min-width: 320px) {
 

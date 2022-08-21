@@ -94,9 +94,9 @@
             transition-delay: 1s;
             transition: width 3s;
 
+
             /* Auste de tamaño de la imagen de cada card */
             .card_producto_imagen {
-
                 @include sizes( 215px, 270px);
                 border-radius: 3px;
                 overflow: hidden;
@@ -112,36 +112,43 @@
                     cursor: pointer;
                 }
             }
-
-            /* contenedor de boton y texto del card */
-            .card_producto-texto_boton {
+            .card_producto-texto-boton{
                 display: flex;
-                flex-wrap: wrap;
+
                 @include sizes( 215px, 65px);
-                margin-left: 6px;
-                padding-left: 10px;
-
                 
+                 /* contenedor de boton y texto del card */
+                .card_producto-texto{
+                    background-color: red;
+                    @include sizes( 160px, 65px);
+                    margin-left: 6px;
 
-                 h2 {
-                    font-size: 16px;
-                    @include sizes( 130px, auto);
-                    font-weight: bold;
-                    color: map-get($map: $paleta-colores, $key: 'colorTextoTitulosAzul');
+                     h2 {
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: map-get($map: $paleta-colores, $key: 'colorTextoTitulosAzul');
+                    }
+                
                 }
-            
-                a{
-                    @extend .btn_agregarProducto;
+                .card_producto_boton{
+                    margin-top: 10px;
+                    margin-left: 20px;
+                    background-color: brown;
+                    a{
+                        @extend .btn_agregarProducto;
+                    }
+                    a:hover{
+                        color: map-get($map: $paleta-colores, $key: 'colorBotonAgregar');
+                        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                    }
+
                 }
-                a:hover{
-                    color: map-get($map: $paleta-colores, $key: 'colorBotonAgregar');
-                    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                .card_producto-texto_boton:hover .card_boton_comprar {
+                    display: block;
                 }
-            
             }
-            .card_producto-texto_boton:hover .card_boton_comprar {
-                display: block;
-            }
+
+
                 
         }
         .card_producto:hover {
@@ -154,5 +161,4 @@
         display: none;
     }
 }
-
 
