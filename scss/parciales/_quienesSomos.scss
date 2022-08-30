@@ -32,11 +32,12 @@
 
     /* Contenedor de titulo y parrafo de la empresa */
     .conocenos_textos {
-        background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+        @include sizes( 970px, auto);
+        background-color: blue;
         box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
                     -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
         grid-area: texto_conocenos;
-        margin-left: 20px;
+        margin-left: 60px;
         font-size: 20px;
     }
 
@@ -51,7 +52,7 @@
         grid-area: imagen_amigoEspecial;
         @include sizes( 300px, 420px);
         /* background-color: blue; */
-        margin-left: 20px;
+        margin-left: 10px;
     }
     .contenedor_amigoEspecial_instagram:hover {
         border: 3px solid silver;
@@ -92,7 +93,7 @@
 
         .card_instagram_marca {
             margin-left: 10px;
-            margin-right: 10px;
+            margin-right: 20px;
             margin-bottom: 22px;
             margin-top: 13px;
         }

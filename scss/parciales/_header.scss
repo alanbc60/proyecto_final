@@ -4,19 +4,32 @@ header {
     z-index: 3;
     width: 100%;
     top: 0;
+    // background-color: blue;
 }
-
-.navbar {
+.navbar_general{
     z-index: 2;
     position: absolute;
     position: -webkit-sticky;
     flex-wrap: wrap;/*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
     justify-content: space-between;/*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
-    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-    box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-    -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+    background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
 
 }
+
+.navbar_landing_page{
+    z-index: 2;
+    position: absolute;
+    position: -webkit-sticky;
+    flex-wrap: wrap;/*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
+    justify-content: space-between;/*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
+    background-color: map-get($map: $paleta-colores, $key: 'fondoTransparente');
+
+}
+
+.navbar_landing_page:hover{
+    background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+}
+
 
 /* === Personalización de logo === */
 
@@ -54,6 +67,8 @@ header {
 }
 
 
+
+
 /* Contenedor principal de productos*/
 .lista_enlaces {
     list-style: none;/*   quitar viñetas a los números*/
@@ -61,7 +76,71 @@ header {
     gap: 10px;       /*Espaciado entre botones*/
     background-color: map-get($map: $paleta-colores, $key: 'colorCard');
     margin-right: 5px;
+    
+    /* Texto Hombre y Mujer */
+    .dropdown,.enlace_secciones{
+        span {
+            color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+            font-size: 15px;
+        }
+        
+        /* Personalización general de los enlaces(tambien usado en las categorias de productos) */
+        .enlace_item {
+            display: inline-block;
+            color: map-get($map: $paleta-colores, $key: 'colorTextoSecundario');
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            list-style: none;
+        }
+        .enlace_item:hover {
+            background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+            color: map-get($map: $paleta-colores, $key: 'colorTextoPrincipal');;
+        }
+
+        /*TODO: poner una clase auxilar para indicar que es la navbar de la landing page */
+        // enlace item del landing page
+        .enlace_item_landing_page {
+            display: inline-block;
+            color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            list-style: none;
+        }
+    }
 }
+
+// Personalizacion del navbar para landing page
+header.scroll_bajar{
+    background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+
+}
+
+// cuando hacemos scroll aplicamos estilo el contenedor del enlace
+header.scroll_bajar .navbar_landing_page .enlace_item_landing_page{
+    color: red;
+
+}
+
+
+header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
+    color: white;
+
+}
+
+.navbar_landing_page:hover .enlace_item_landing_page{
+    color: red;
+}
+
+.navbar_landing_page .enlace_item_landing_page:hover {
+    background-color: red;
+    color: white;    
+}
+
+// personalizacion de scroll del header general
+
+
 
 /* ocultar el icono de menu hamburguesa y casilla de credito */
 #barra_desplegable,
@@ -70,20 +149,7 @@ header {
     /*Ocultar la casilla de verificación y la etiqueta en pantallas grandes.*/
 }
 
-/* Personalización general de los enlaces(tambien usado en las categorias de productos) */
-.enlace_item {
-    display: inline-block;
-    color: map-get($map: $paleta-colores, $key: 'colorTextoSecundario');
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    list-style: none;
-}
 
-.enlace_item:hover {
-    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-    color: map-get($map: $paleta-colores, $key: 'colorTextoPrincipal');;
-}
 
 /* == Personalización  del contendor de la lista de enlaces  ===*/
 
@@ -121,13 +187,6 @@ header {
     margin-right: 5px;
 }
 
-/* Texto Hombre y Mujer */
-.dropdown {
-    span {
-        color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-        font-size: 15px;
-    }
-}
 
 /* == Personalización de categorias == */
 
@@ -155,20 +214,19 @@ header {
 .item_mujer:hover .dropdown_contenedor-categorias {
     max-height: 400px;
     display: block;
-}
-
-.item_mujer:hover .dropdown_contenedor-categorias .categorias_item {
-    display: block;
-}
-
-.item_hombre:hover .dropdown_contenedor-categorias .categorias_item {
-    display: block;
+    .categorias_item {
+        display: block;
+    }
 }
 
 
 .item_hombre:hover .dropdown_contenedor-categorias {
     max-height: 400px;
     display: block;
+    
+    .categorias_item {
+        display: block;
+    }
 }
 
 
@@ -179,17 +237,46 @@ header {
 }
 
 
+
+
+
+
 //sidebar
 .wrapper{
     display: none;
+    // navbar
+    .section {
+        width: calc(100% - 225px);
+        margin-left: 225px;
+        transition: all 0.5s ease;
+        //navegacion bar
+
+        .top_navbar {
+            background: rgb(7, 105, 185);
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding: 0 30px;
+
+            .hamburger a {
+                font-size: 28px;
+                color: #f4fbff;
+            }
+            
+            .hamburger a:hover {
+                color: #a2ecff;
+            }
+        
+        }
+    }
+
     .sidebar {
-        background: rgb(5, 68, 104);
+        background: #4063b9;
         position: fixed;
         top: 0;
         left: 0;
         width: 225px;
         height: 100%;
-        padding: 20px 0;
         transition: all 0.5s ease;
         
         .profile {
@@ -213,80 +300,52 @@ header {
             border-radius: 50%;
             margin: 0 auto;
         }
+        // lista que contiene la sidebar
+        ul{
+            list-style: none;
+            width: 220px;
+        }
+
+        ul li{
+            width: 190px;
+        }
+        // enlaces de la sidebar
+        ul li a {
+            display: block;
+            padding: 13px 30px;
+            border-bottom: 1px solid orange;
+            color: rgb(241, 237, 237);
+            font-size: 16px;
+            position: relative;
+            .icon {
+                color: #dee4ec;
+                width: 30px;
+                display: inline-block;
+            }
+        }
+        ul li a:hover, ul li a.active {
+            color: #0c7db1;
+            background: white;
+            border-right: 2px solid rgb(5, 68, 104);
+            .icon {
+                color: #0c7db1;
+            }
+        }
+        ul li a:hover:before,
+        ul li a.active:before {
+            display: block;
+        }
     }
 }
 
-
-
-
-
-
-
-
-
-.wrapper .sidebar ul li a {
-    display: block;
-    padding: 13px 30px;
-    border-bottom: 1px solid orange;
-    color: rgb(241, 237, 237);
-    font-size: 16px;
-    position: relative;
-}
-
-.wrapper .sidebar ul li a .icon {
-    color: #dee4ec;
-    width: 30px;
-    display: inline-block;
-}
-
-.wrapper .sidebar ul li a:hover,
-.wrapper .sidebar ul li a.active {
-    color: #0c7db1;
-    background: white;
-    border-right: 2px solid rgb(5, 68, 104);
-}
-
-.wrapper .sidebar ul li a:hover .icon,
-.wrapper .sidebar ul li a.active .icon {
-    color: #0c7db1;
-}
-
-.wrapper .sidebar ul li a:hover:before,
-.wrapper .sidebar ul li a.active:before {
-    display: block;
-}
-
-//navegacion bar
-
-.wrapper .section {
-    width: calc(100% - 225px);
-    margin-left: 225px;
-    transition: all 0.5s ease;
-}
-
-.wrapper .section .top_navbar {
-    background: rgb(7, 105, 185);
-    height: 50px;
-    display: flex;
-    align-items: center;
-    padding: 0 30px;
-
-}
-
-.wrapper .section .top_navbar .hamburger a {
-    font-size: 28px;
-    color: #f4fbff;
-}
-
-.wrapper .section .top_navbar .hamburger a:hover {
-    color: #a2ecff;
-}
-
-body.active .wrapper .sidebar {
-    left: -225px;
-}
-
-body.active .wrapper .section {
-    margin-left: 0;
-    width: 100%;
+body.active .wrapper{
+    // desplaza la sidebar horizontalmente
+    .sidebar {
+     left: -225px;
+    }
+    // desplaza el icono que muestra a la navbar
+    .section {
+        margin-left: 0;
+        width: 100%;
+    }
 }

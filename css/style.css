@@ -21,7 +21,7 @@ header {
   top: 0;
 }
 
-.navbar {
+.navbar_general {
   z-index: 2;
   position: absolute;
   position: -webkit-sticky;
@@ -29,8 +29,22 @@ header {
   /*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
   justify-content: space-between;
   /*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
-  background-color: #ebf5fc;
-  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  background-color: white;
+}
+
+.navbar_landing_page {
+  z-index: 2;
+  position: absolute;
+  position: -webkit-sticky;
+  flex-wrap: wrap;
+  /*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
+  justify-content: space-between;
+  /*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
+  background-color: tranparent;
+}
+
+.navbar_landing_page:hover {
+  background-color: white;
 }
 
 /* === Personalización de logo === */
@@ -77,17 +91,20 @@ header {
   gap: 10px;
   /*Espaciado entre botones*/
   margin-right: 5px;
+  /* Texto Hombre y Mujer */
 }
 
-/* ocultar el icono de menu hamburguesa y casilla de credito */
-#barra_desplegable,
-.navbar label {
-  display: none;
-  /*Ocultar la casilla de verificación y la etiqueta en pantallas grandes.*/
+.lista_enlaces .dropdown, .lista_enlaces .enlace_secciones {
+  /* Personalización general de los enlaces(tambien usado en las categorias de productos) */
+  /*TODO: poner una clase auxilar para indicar que es la navbar de la landing page */
 }
 
-/* Personalización general de los enlaces(tambien usado en las categorias de productos) */
-.enlace_item {
+.lista_enlaces .dropdown span, .lista_enlaces .enlace_secciones span {
+  color: red;
+  font-size: 15px;
+}
+
+.lista_enlaces .dropdown .enlace_item, .lista_enlaces .enlace_secciones .enlace_item {
   display: inline-block;
   color: red;
   text-align: center;
@@ -96,9 +113,46 @@ header {
   list-style: none;
 }
 
-.enlace_item:hover {
+.lista_enlaces .dropdown .enlace_item:hover, .lista_enlaces .enlace_secciones .enlace_item:hover {
   background-color: red;
   color: white;
+}
+
+.lista_enlaces .dropdown .enlace_item_landing_page, .lista_enlaces .enlace_secciones .enlace_item_landing_page {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  list-style: none;
+}
+
+header.scroll_bajar {
+  background-color: white;
+}
+
+header.scroll_bajar .navbar_landing_page .enlace_item_landing_page {
+  color: red;
+}
+
+header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
+  color: white;
+}
+
+.navbar_landing_page:hover .enlace_item_landing_page {
+  color: red;
+}
+
+.navbar_landing_page .enlace_item_landing_page:hover {
+  background-color: red;
+  color: white;
+}
+
+/* ocultar el icono de menu hamburguesa y casilla de credito */
+#barra_desplegable,
+.navbar label {
+  display: none;
+  /*Ocultar la casilla de verificación y la etiqueta en pantallas grandes.*/
 }
 
 /* == Personalización  del contendor de la lista de enlaces  ===*/
@@ -136,12 +190,6 @@ header {
   margin-right: 5px;
 }
 
-/* Texto Hombre y Mujer */
-.dropdown span {
-  color: red;
-  font-size: 15px;
-}
-
 /* == Personalización de categorias == */
 /* Contenedor principal de las categorias hombre y mujer */
 .dropdown_contenedor-categorias {
@@ -173,12 +221,12 @@ header {
   display: block;
 }
 
-.item_hombre:hover .dropdown_contenedor-categorias .categorias_item {
+.item_hombre:hover .dropdown_contenedor-categorias {
+  max-height: 400px;
   display: block;
 }
 
-.item_hombre:hover .dropdown_contenedor-categorias {
-  max-height: 400px;
+.item_hombre:hover .dropdown_contenedor-categorias .categorias_item {
   display: block;
 }
 
@@ -192,14 +240,36 @@ header {
   display: none;
 }
 
+.wrapper .section {
+  width: calc(100% - 225px);
+  margin-left: 225px;
+  transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar {
+  background: #0769b9;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+}
+
+.wrapper .section .top_navbar .hamburger a {
+  font-size: 28px;
+  color: #f4fbff;
+}
+
+.wrapper .section .top_navbar .hamburger a:hover {
+  color: #a2ecff;
+}
+
 .wrapper .sidebar {
-  background: #054468;
+  background: #4063b9;
   position: fixed;
   top: 0;
   left: 0;
   width: 225px;
   height: 100%;
-  padding: 20px 0;
   transition: all 0.5s ease;
 }
 
@@ -226,6 +296,15 @@ header {
   margin: 0 auto;
 }
 
+.wrapper .sidebar ul {
+  list-style: none;
+  width: 220px;
+}
+
+.wrapper .sidebar ul li {
+  width: 190px;
+}
+
 .wrapper .sidebar ul li a {
   display: block;
   padding: 13px 30px;
@@ -241,44 +320,19 @@ header {
   display: inline-block;
 }
 
-.wrapper .sidebar ul li a:hover,
-.wrapper .sidebar ul li a.active {
+.wrapper .sidebar ul li a:hover, .wrapper .sidebar ul li a.active {
   color: #0c7db1;
   background: white;
   border-right: 2px solid #054468;
 }
 
-.wrapper .sidebar ul li a:hover .icon,
-.wrapper .sidebar ul li a.active .icon {
+.wrapper .sidebar ul li a:hover .icon, .wrapper .sidebar ul li a.active .icon {
   color: #0c7db1;
 }
 
 .wrapper .sidebar ul li a:hover:before,
 .wrapper .sidebar ul li a.active:before {
   display: block;
-}
-
-.wrapper .section {
-  width: calc(100% - 225px);
-  margin-left: 225px;
-  transition: all 0.5s ease;
-}
-
-.wrapper .section .top_navbar {
-  background: #0769b9;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  padding: 0 30px;
-}
-
-.wrapper .section .top_navbar .hamburger a {
-  font-size: 28px;
-  color: #f4fbff;
-}
-
-.wrapper .section .top_navbar .hamburger a:hover {
-  color: #a2ecff;
 }
 
 body.active .wrapper .sidebar {
@@ -362,18 +416,88 @@ body.active .wrapper .section {
   height: 100%;
   display: grid;
   gap: 40px;
+  margin-top: -88px;
   background-color: #ecf7ff;
   /* Indicar cuantas columnas tendra */
   grid-template-columns: repeat(2, 1fr);
   /* Indicar cuantas filas tendra */
-  grid-template-rows: 450px 100px 900px;
+  grid-template-rows: 950px 450px 100px 900px;
   /* acomodar el grid */
-  grid-template-areas: "principal_imagen  principal_texto" "titulo_novedades  titulo_novedades" "contenedor_novedades contenedor_novedades";
+  grid-template-areas: "landing_page landing_page" "principal_imagen  principal_texto" "titulo_novedades  titulo_novedades" "contenedor_novedades contenedor_novedades";
   /* contenedor de la imagen */
   /* contenedor donde esta el texto principal y el boton */
   /* ================ Novedades ================ */
   /* Personalización del contenedor con texto animado(pensado para la sección inicio y Quienes somos) */
   /* contenedor principal novedades */
+}
+
+.contenedor_principal .contenedor_principal_landing {
+  grid-area: landing_page;
+  position: relative;
+  background-image: linear-gradient(rgba(5, 0, 136, 0.5), rgba(5, 0, 136, 0.5)), url(../imagenes/fondo_landing_page.jpg);
+  width: 100%;
+  height: 920px;
+  color: #fff;
+}
+
+.contenedor_principal .contenedor_principal_landing .contenedor_landing {
+  position: absolute;
+  margin-top: 110px;
+  /* background-color: blue; */
+  margin-left: 10px;
+}
+
+.contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo {
+  width: auto;
+  height: auto;
+  /* background-color: red; */
+}
+
+.contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo .slide-left {
+  color: #fff;
+  font-size: 120px;
+  line-height: 140px;
+  font-weight: bold;
+  animation: slideleft 1s linear forwards;
+}
+
+.contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_texto {
+  /* background-color: green; */
+  width: 100%;
+  height: auto;
+}
+
+.contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_texto p {
+  font-size: 20px;
+  color: white;
+  animation-delay: 1s;
+}
+
+.contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones {
+  display: inline-block;
+}
+
+.contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones .btn {
+  border: 2px solid #fff;
+  padding: 10px 35px;
+  border-radius: 30px;
+  margin-right: 15px;
+}
+
+@keyframes slideleft {
+  0% {
+    transform: translate(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px);
+    opacity: 1;
+  }
 }
 
 .contenedor_principal .contenedor_principal-imagen {
@@ -387,7 +511,7 @@ body.active .wrapper .section {
 
 .contenedor_principal .contenedor_principal-imagen img {
   width: 100%;
-  height: 400px;
+  height: 450px;
   min-height: 400px;
   object-fit: cover;
   transition-delay: 1s;
@@ -976,10 +1100,12 @@ body.active .wrapper .section {
 }
 
 .contenedor_principal_quienes-somos .conocenos_textos {
-  background-color: white;
+  width: 970px;
+  height: auto;
+  background-color: blue;
   box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
   grid-area: texto_conocenos;
-  margin-left: 20px;
+  margin-left: 60px;
   font-size: 20px;
 }
 
@@ -994,7 +1120,7 @@ body.active .wrapper .section {
   width: 300px;
   height: 420px;
   /* background-color: blue; */
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .contenedor_principal_quienes-somos .contenedor_amigoEspecial_instagram:hover {
@@ -1034,7 +1160,7 @@ body.active .wrapper .section {
 
 .contenedor_principal_quienes-somos .contenedor-marcas .card_instagram_marca {
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 20px;
   margin-bottom: 22px;
   margin-top: 13px;
 }
@@ -1120,6 +1246,12 @@ body.active .wrapper .section {
   header .wrapper {
     display: block;
   }
+  header .wrapper .sidebar {
+    display: none;
+  }
+  header .wrapper:hover .sidebar {
+    display: block;
+  }
 }
 
 /* Smartphone modo vertical y horizontal para todas las páginas */
@@ -1131,10 +1263,58 @@ body.active .wrapper .section {
     overflow: hidden;
     grid-template-columns: 1fr;
     background-color: 0;
-    grid-template-rows: auto auto 100px auto;
-    grid-template-areas: "principal_imagen" "principal_texto" "titulo_novedades" "contenedor_novedades";
+    grid-template-rows: 600px auto auto 100px auto;
+    grid-template-areas: "landing_page" "principal_imagen" "principal_texto" "titulo_novedades" "contenedor_novedades";
     gap: 10px;
     /* contenedor de imagen principal */
+  }
+  .contenedor_principal .contenedor_principal_landing {
+    width: auto;
+    min-width: 320px;
+    max-width: 600px;
+    background-color: yellow;
+  }
+  .contenedor_principal .contenedor_principal_landing .contenedor_landing {
+    width: 95%;
+    min-width: 280px;
+    background-color: transparent;
+    margin-right: 12px;
+    height: 700px;
+  }
+  .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo {
+    width: auto;
+    min-width: 280px;
+    height: auto;
+    background-color: red;
+  }
+  .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo .slide-left {
+    color: white;
+    font-size: 92px;
+    line-height: 140px;
+    font-weight: bold;
+    min-width: 260px;
+    width: auto;
+  }
+  .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_texto {
+    /* background-color: green; */
+    width: 100%;
+    height: auto;
+  }
+  .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_texto p {
+    color: white;
+  }
+  .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones {
+    display: inline-block;
+  }
+  .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones .btn {
+    border: 2px solid #fff;
+    padding: 10px 35px;
+    border-radius: 30px;
+    margin-right: 15px;
   }
   .contenedor_principal .contenedor_principal-imagen {
     overflow-x: hidden;
