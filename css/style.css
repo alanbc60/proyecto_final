@@ -1051,7 +1051,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 {
   grid-area: contenedor_secundario1;
   background-color: blue;
-  background-image: url(../../imagenes/imagenes_descuentos/descuentos_blusas2.jpg);
+  background-image: url(../imagenes/imagenes_descuentos/descuentos_blusas2.jpg);
   background-size: 460px 300px;
   background-color: pink;
   padding: 10px;
@@ -1091,7 +1091,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario2 {
   grid-area: contenedor_secundario2;
-  background-image: url(../../imagenes/imagenes_descuentos/descuentos_chamarras.png);
+  background-image: url(../imagenes/imagenes_descuentos/descuentos_chamarras.png);
   background-size: 440px 300px;
   padding: 10px;
   text-align: center;
