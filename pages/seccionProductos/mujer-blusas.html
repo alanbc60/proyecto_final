@@ -2,504 +2,758 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Página enfocada en productos de mujer. En esta página mostramos todos los productos 
-    disponible de las blusas que contamos en la tienda virtual nook nook" />
+  <meta name="description" content="Página enfocada en productos de hombre. En esta página mostramos todos los productos 
+  disponibles de las chamarras que contamos en la tienda virtual nook nook" />
 
-    <meta name="keywords" content=" Blusas mujer nooknook, Blusas nook nook, productos mujer Nook Nook" />
-    <title>Blusas Mujer - nook nook</title>
-    <link rel="stylesheet" href="../../css/style.css">
+  <meta name="keywords" content=" Chamarras hombre nooknook, Chamarras nook nook, productos hombre Nook Nook" />
+  <title>Chamarras hombre - nook nook</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <!-- icono de menú para la navbar -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-    <!-- icono de menú para la navbar -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- icono de la navbar (version movil) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 </head>
 
 <body>
-    <!-- ============= Cabecera de la página  ============== -->
-    <header>
-        <!-- Contenedor del logo y lista de elementos -->
-        <nav class="navbar navbar_general">
-            <!-- Fondo del logo y texto -->
-            <div class="logo">
-                <a href="../../index.html"><b>NOOK NOOK</b></a>
-            </div>
 
-            <!-- creamos un checkbox y lo abrimos al seleccionar el label (responsive)-->
-            <input type="checkbox" id="barra_desplegable">
-            <label for="barra_desplegable">
-                <i class="ri-menu-line"></i>
-            </label>
-            <!-- Fin del contenedor  del label responsive -->
-            <div class="menu_enlaces_navbar">
-                <!-- Lista de enlaces del navbar -->
-                <ul class="lista_enlaces">
-                    <!-- Elemento de lista: productos -->
-                    <li class="dropdown">
-                        <a href="#" class="enlace_item">Productos</a>
-                        <div class="dropdown-contenedor">
+  <!-- ============= Cabecera de la página  ============== -->
+  <header>
+    <!-- Contenedor del logo y lista de elementos -->
+    <nav class="navbar navbar_general">
+      <div class="container-fluid">
+        <!-- Fondo del logo y texto -->
+        <div class="logo">
+          <a href="../../index.html"><b>NOOK NOOK</b></a>
+        </div>
 
-                            <ul class="lista_subenlaces">
-                                <!-- productos-hombres -->
-                                <li class="item_hombre" id="mn1">
-                                    <a class="btn" href="#mn1">Hombre</a>
-                                    <!-- Categorias de producstos-hombres -->
-                                    <div class="dropdown_contenedor-categorias">
-                                        <a class="categorias_item"
-                                            href="../seccionProductos/hombre-chamarras.html">Chamarras</a>
-                                        <a class="categorias_item"
-                                            href="../seccionProductos/hombre-playeras.html">Playeras</a>
-                                        <a class="categorias_item"
-                                            href="../seccionProductos/hombre-pantalones.html">Pantalones</a>
+        <!-- Fin del contenedor  del label responsive -->
+        <div class="menu_enlaces_navbar">
+          <!-- Lista de enlaces del navbar -->
+          <ul class="lista_enlaces">
+            <!-- Elemento de lista: productos -->
+            <li class="dropdown">
+              <a href="#" class="enlace_item">Productos</a>
+              <div class="dropdown-contenedor">
+
+                <ul class="lista_subenlaces">
+                  <!-- productos-hombres -->
+                  <li class="item_hombre" id="mn1">
+                    <a class="btn" href="#mn1">Hombre</a>
+                    <!-- Categorias de producstos-hombres -->
+                    <div class="dropdown_contenedor-categorias">
+                      <a class="categorias_item" href="../seccionProductos/hombre-chamarras.html">Chamarras</a>
+                      <a class="categorias_item" href="../seccionProductos/hombre-playeras.html">Playeras</a>
+                      <a class="categorias_item" href="../seccionProductos/hombre-pantalones.html">Pantalones</a>
+                    </div>
+                  </li>
+
+                  <!-- priductos- mujeres -->
+                  <li class="item_mujer" id="mn2">
+                    <a class="btn" href="#mn2">Mujer</a>
+                    <!-- Categorias de producstos-hombres -->
+                    <div class="dropdown_contenedor-categorias">
+                      <a class="categorias_item" href="../seccionProductos/mujer-pantalones.html">Pants</a>
+                      <a class="categorias_item" href="../seccionProductos/mujer-chamarras.html">Chamarras</a>
+                      <a class="categorias_item" href="../seccionProductos/mujer-playeras.html">Playeras</a>
+                      <a class="categorias_item" href="../seccionProductos/mujer-blusas.html">Blusas</a>
+                    </div>
+                  </li>
+                </ul>
+
+
+              </div>
+            </li>
+            <!-- Fin de elemento de lista : producto -->
+
+
+            <!-- Elemento de lista carritos -->
+            <li class="enlace_secciones">
+              <a class="enlace_item" href="../carrito.html"> Carrito </a>
+            </li>
+            <!-- Fin de elemento de lista: carrito -->
+
+            <!-- Elemento de lista fechas & descuentos -->
+            <li class="enlace_secciones">
+              <a class="enlace_item" href="../fechas_descuentos.html"> Fechas & descuentos </a>
+            </li>
+            <!-- Fin de elemento de lista fechas & descuentos -->
+
+            <!-- Elemento de lista:  Quienes somos-->
+            <li class="enlace_secciones">
+              <a class="enlace_item" href="../quienes_somos.html"> Quienes somos </a>
+            </li>
+            <!-- Fin de elemento de lista: Quienes somos -->
+
+            <!-- Elemento de lista: contactanos -->
+            <li class="enlace_secciones">
+              <a class="enlace_item" href="../contactanos.html"> Contactanos </a>
+            </li>
+            <!-- Fin de elemento de lista: contactanos -->
+
+          </ul>
+          <!-- Fin de la lista de enlaces en la navbar -->
+        </div>
+      </div>
+    </nav>
+
+            <!-- navbar y sidebar para version movil -->
+            <div class="contenedor_principal-navbar_sidebar">
+            
+              <div class="top_navbar">
+                      <!-- logo de la marca -->
+                      <div class="logo_mini">
+                          <a href="../../index.html"><b>NOOK NOOK</b></a>
+                      </div>
+  
+                      <div class="hamburger">
+                          <a href="#">
+                              <i class="fas fa-bars"></i>
+                          </a>
+                      </div>
+              </div>
+                   
+              
+              <div class="sidebar">
+                  <div class="profile">
+                      <img src="../../imagenes/foto_usuario.jpg" alt="profile_picture">
+                      <h3>Cesar Gael</h3>
+                      
+                  </div>
+                  <ul>
+                      <li>
+                          <a class="enlace_item_landing_page" href="../../index.html">  
+                              <span class="icon"><i class="fas fa-home"></i></span>
+                              <span class="item">Inicio</span>
+  
+                          </a>
+                      </li>
+                      
+                          <!-- productos hombre -->
+                          <li>
+                              <a class=" collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#home-collapse" aria-expanded="true">
+                                <span class="icon"><i class="fas fa-tshirt"></i></span>
+                                <span class="item">Hombre</span>
+                              </a>
+                              <div class="collapse align-items-center" id="home-collapse">
+                                  <!-- categorias de productos hombre -->
+                                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
+                                      <!-- hombres - chamarras -->
+                                    <li>
+                                      <div class="sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/hombre-chamarras.html">Chamarras</a>
+                                      </div>
+                                    </li>
+  
+                                    <li>
+                                      <div class=" sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/hombre-playeras.html">Playeras</a>
+                                          
+                                      </div>
+                                    </li>
+  
+                                    <li>
+                                      <div class=" sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/hombre-pantalones.html">Pantalones</a>
+                                      </div>
+                                    </li>
+                                  </ul>
+                
+                              </div>
+                          </li>
+  
+                          <!-- Productos mujer -->
+                          <li>
+                              <a data-bs-toggle="collapse"
+                                data-bs-target="#productos-mujer" aria-expanded="true">
+                                <span class="icon"><i class="fas fa-tshirt"></i></span>
+                                <span class="item">Mujer</span>
+                              </a>
+                              <div class="collapse align-items-center" id="productos-mujer">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
+                                  <li>
+                                    <div class="sidebar_subcategorias_productos">
+                                      <a href="../seccionProductos/mujer-pantalones.html">Pants</a>
+  
+  
                                     </div>
-                                </li>
-
-                                <!-- priductos- mujeres -->
-                                <li class="item_mujer" id="mn2">
-                                    <a class="btn" href="#mn2">Mujer</a>
-                                    <!-- Categorias de producstos-hombres -->
-                                    <div class="dropdown_contenedor-categorias">
-                                        <a class="categorias_item"
-                                            href="../seccionProductos/mujer-pantalones.html">Pants</a>
-                                        <a class="categorias_item"
-                                            href="../seccionProductos/mujer-chamarras.html">Chamarras</a>
-                                        <a class="categorias_item"
-                                            href="../seccionProductos/mujer-playeras.html">Playeras</a>
-                                        <a class="categorias_item"
-                                            href="../seccionProductos/mujer-blusas.html">Blusas</a>
+                                  </li>
+                                  <!-- mujer - chamarras -->
+                                  <li>
+                                    <div class="sidebar_subcategorias_productos">
+                                      <a href="../seccionProductos/mujer-chamarras.html">Chamarras</a>
                                     </div>
-                                </li>
-                            </ul>
+                                  </li>
+                                  <!-- mujer - Playeras -->
+                                  <li>
+                                    <div class="sidebar_subcategorias_productos">
+                                          
+                                      <a href="../seccionProductos/mujer-playeras.html">Playeras</a>
+                                      </div>
+                                  </li>
+                                  <!-- mujer - Blusas -->
+                                  <li>
+                                      <div class="sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/mujer-blusas.html">Blusas</a> 
+                                      </div>
+                                  </li>
+                                </ul>
+                
+                              </div>
+                          </li>
+                          
+                      
+                      <li>
+                          <a href="../carrito.html">
+                              <span class="icon"><i class="fas fa-cart-plus"></i></span>
+                              <span class="item">Carrito</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../fechas_descuentos.html">
+                              <span class="icon"><i class="fas fa-calendar-plus"></i></span>
+                              <span class="item">Fechas y desc</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../quienes_somos.html">
+                              <span class="icon"><i class="fas fa-search"></i></span>
+                              <span class="item">Quienes somos</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../contactanos.html">
+                              <span class="icon"><i class="fas fa-user-friends"></i></span>
+                              <span class="item">Contactanos</span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+              
+          </div>        
+          <!-- Fin del contenedor principal navbar sidebar -->
+  </header>
+  <!-- ============= fin de cabecera de la página  ============== -->
 
+  <!-- ============= Contenido principal de la página  ============== -->
+  <main>
+    <!-- Sección 1: Tiene el contenedor de contactanos  -->
+    <section>
 
-                        </div>
-                    </li>
-                    <!-- Fin de elemento de lista : producto -->
+      <div class="contenedor_principal-filtroCategorias-listaProductos">
+        <div class="titulo_categoria">
+          <h2>BLUSAS</h2>
+        </div>
+        <div class="contenedor_filtroCategorias">
+          <h1>Categorias</h1>
+          <ul class="list-group">
+            <!-- Género -->
+            <li class="list-group-item" aria-current="true">
+              <button class="btn btn-toggle d-inline-flex rounded border-0 collapsed" data-bs-toggle="collapse"
+                data-bs-target="#home-collapse" aria-expanded="true">
+                Género
+              </button>
+              <div class="collapse align-items-center" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioHombre">
+                      <label class="form-check-label" for="flexRadioHombre">
+                        Hombre
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioMujer">
+                      <label class="form-check-label" for="flexRadioMujer">
+                        Mujer
+                      </label>
+                    </div>
+                  </li>
+                </ul>
 
+              </div>
+            </li>
+            <!-- Categoría -->
+            <li class="list-group-item" aria-current="true">
+              <button class="btn btn-toggle d-inline-flex rounded border-0 collapsed" data-bs-toggle="collapse"
+                data-bs-target="#filtro_categoria" aria-expanded="true">
+                Categoría
+              </button>
+              <div class="collapse align-items-center" id="filtro_categoria">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
+                  <!-- item playera -->
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="categoria-flexRadio" id="flexRadioPlayera">
+                      <label class="form-check-label" for="flexRadioHombre">
+                        Playera
+                      </label>
+                    </div>
+                  </li>
+                  <!-- item Camisa -->
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="categoria-flexRadio" id="flexRadioCamisa">
+                      <label class="form-check-label" for="flexRadioCamisa">
+                        Camisa
+                      </label>
+                    </div>
+                  </li>
+                  <!-- Playera -->
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="categoria-flexRadio" id="flexRadioPlayera">
+                      <label class="form-check-label" for="flexRadioPlayera">
+                        Playera
+                      </label>
+                    </div>
+                  </li>
+                  <!-- Chamarra -->
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="categoria-flexRadio" id="flexRadioChamarra">
+                      <label class="form-check-label" for="flexRadioChamarra">
+                        Chamarra
+                      </label>
+                    </div>
+                  </li>
+                  <!-- Sudadera -->
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="categoria-flexRadio" id="flexRadioSudadera">
+                      <label class="form-check-label" for="flexRadioSudadera">
+                        Sudadera
+                      </label>
+                    </div>
+                  </li>
+                  <!-- Pantalón -->
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="categoria-flexRadio" id="flexRadioPantalón">
+                      <label class="form-check-label" for="flexRadioPantalón">
+                        Pantalón
+                      </label>
+                    </div>
+                  </li>
+                  <!-- Short -->
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="categoria-flexRadio" id="flexRadioShort">
+                      <label class="form-check-label" for="flexRadioShort">
+                        Short
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
 
-                    <!-- Elemento de lista carritos -->
-                    <li class="enlace_secciones">
-                        <a class="enlace_item" href="../carrito.html"> Carrito </a>
-                    </li>
-                    <!-- Fin de elemento de lista: carrito -->
+            </li>
 
-                    <!-- Elemento de lista fechas & descuentos -->
-                    <li class="enlace_secciones">
-                        <a class="enlace_item" href="../fechas_descuentos.html"> Fechas & descuentos </a>
-                    </li>
-                    <!-- Fin de elemento de lista fechas & descuentos -->
+            <!-- Precio -->
+            <li class="list-group-item" aria-current="true">
+              <button class="btn btn-toggle d-inline-flex rounded border-0 collapsed" data-bs-toggle="collapse"
+                data-bs-target="#filtro_precio" aria-expanded="true">
+                Precio
+              </button>
+              <div class="collapse align-items-center" id="filtro_precio">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioPrecio" id="flexRadioPrecioMenor">
+                      <label class="form-check-label" for="flexRadioPrecioMenor">
+                        $100 - $500
+                      </label>
+                    </div>
 
-                    <!-- Elemento de lista:  Quienes somos-->
-                    <li class="enlace_secciones">
-                        <a class="enlace_item" href="../quienes_somos.html"> Quienes somos </a>
-                    </li>
-                    <!-- Fin de elemento de lista: Quienes somos -->
+                  </li>
 
-                    <!-- Elemento de lista: contactanos -->
-                    <li class="enlace_secciones">
-                        <a class="enlace_item" href="../contactanos.html"> Contactanos </a>
-                    </li>
-                    <!-- Fin de elemento de lista: contactanos -->
+                  <li>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="flexRadioPrecio" id="flexRadioPrecioMayor">
+                      <label class="form-check-label" for="flexRadioPrecioMayor">
+                        Mayor a $500
+                      </label>
+                    </div>
+                  </li>
 
                 </ul>
-                <!-- Fin de la lista de enlaces en la navbar -->
-            </div>
-        </nav>
-    </header>
-    <!-- ============= fin de cabecera de la página  ============== -->
+              </div>
 
-    <!-- ============= Contenido principal de la página  ============== -->
-    <main>
-        <!-- Sección 1: Tiene el contenedor de contactanos  -->
-        <section>
-            <div class="contenedor_principal-filtroCategorias-listaProductos">
-                <div class="titulo_categoria">
-                    <h2>BLUSAS</h2>
-                </div>
-                <!-- Filtro categorias -->
-                <div class="contenedor_filtroCategorias">
-                    <h1>Categorias</h1>
-                    <ul class="list-group">
-                        <!-- Género -->
-                        <li class="list-group-item" aria-current="true">
-                            <button class="btn btn-toggle d-inline-flex rounded border-0 collapsed"
-                                data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-                                Género
-                            </button>
-                            <div class="collapse align-items-center" id="home-collapse">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
-                                    <li>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioHombre">
-                                            <label class="form-check-label" for="flexRadioHombre">
-                                                Hombre
-                                            </label>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioMujer">
-                                            <label class="form-check-label" for="flexRadioMujer">
-                                                Mujer
-                                            </label>
-                                        </div>
-                                    </li>
-                                </ul>
+            </li>
 
-                            </div>
-                        </li>
-                        <!-- Categoría -->
-                        <li class="list-group-item" aria-current="true">
-                            <button class="btn btn-toggle d-inline-flex rounded border-0 collapsed"
-                                data-bs-toggle="collapse" data-bs-target="#filtro_categoria" aria-expanded="true">
-                                Categoría
-                            </button>
-                            <div class="collapse align-items-center" id="filtro_categoria">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
-                                    <!-- item playera -->
-                                    <li>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="categoria-flexRadio"
-                                                id="flexRadioPlayera">
-                                            <label class="form-check-label" for="flexRadioHombre">
-                                                Playera
-                                            </label>
-                                        </div>
-                                    </li>
-                                    <!-- item Camisa -->
-                                    <li>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="categoria-flexRadio"
-                                                id="flexRadioCamisa">
-                                            <label class="form-check-label" for="flexRadioCamisa">
-                                                Camisa
-                                            </label>
-                                        </div>
-                                    </li>
-                                    <!-- Playera -->
-                                    <li>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="categoria-flexRadio"
-                                                id="flexRadioPlayera">
-                                            <label class="form-check-label" for="flexRadioPlayera">
-                                                Playera
-                                            </label>
-                                        </div>
-                                    </li>
-                                    <!-- Chamarra -->
-                                    <li>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="categoria-flexRadio"
-                                                id="flexRadioChamarra">
-                                            <label class="form-check-label" for="flexRadioChamarra">
-                                                Chamarra
-                                            </label>
-                                        </div>
-                                    </li>
-                                    <!-- Sudadera -->
-                                    <li>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="categoria-flexRadio"
-                                                id="flexRadioSudadera">
-                                            <label class="form-check-label" for="flexRadioSudadera">
-                                                Sudadera
-                                            </label>
-                                        </div>
-                                    </li>
-                                    <!-- Pantalón -->
-                                    <li>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="categoria-flexRadio"
-                                                id="flexRadioPantalón">
-                                            <label class="form-check-label" for="flexRadioPantalón">
-                                                Pantalón
-                                            </label>
-                                        </div>
-                                    </li>
-                                    <!-- Short -->
-                                    <li>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="categoria-flexRadio"
-                                                id="flexRadioShort">
-                                            <label class="form-check-label" for="flexRadioShort">
-                                                Short
-                                            </label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
+          </ul>
 
-                        </li>
-
-                        <!-- Precio -->
-                        <li class="list-group-item" aria-current="true">
-                            <button class="btn btn-toggle d-inline-flex rounded border-0 collapsed"
-                                data-bs-toggle="collapse" data-bs-target="#filtro_precio" aria-expanded="true">
-                                Precio
-                            </button>
-                            <div class="collapse align-items-center" id="filtro_precio">
-                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
-                                    <li>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioPrecio"
-                                                id="flexRadioPrecioMenor">
-                                            <label class="form-check-label" for="flexRadioPrecioMenor">
-                                                $100 - $500
-                                            </label>
-                                        </div>
-
-                                    </li>
-
-                                    <li>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioPrecio"
-                                                id="flexRadioPrecioMayor">
-                                            <label class="form-check-label" for="flexRadioPrecioMayor">
-                                                Mayor a $500
-                                            </label>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </div>
-
-                        </li>
-
-                    </ul>
-
-                </div>
-                <!-- Fin del  contenedor filtros aplicados -->
-
-                <!-- Contenedor : lista de productos de la categoria -->
-                <div class="contenedor_listaProductos">
-
-                    <!-- Fila 1 -->
-                    <!-- Card producto 1 -->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 1 -->
-
-                    <!-- Card prooducto 2-->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 2 -->
-
-                    <!-- Card producto 3 -->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 3 -->
-
-                    <!-- Card producto 4 -->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 4 -->
-
-                    <!-- Fila 2 -->
-                    <!-- Card prooducto 1-->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 1 -->
-
-                    <!-- Card producto 2 -->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 2 -->
-
-
-                    <!-- Card producto 3 -->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 3 -->
-
-                    <!-- Card prooducto 4-->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 4 -->
-
-                    <!-- Fila 3 -->
-
-                    <!-- Card producto 1 -->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 1 -->
-
-                    <!-- Card producto 2 -->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 2 -->
-
-
-                    <!-- Card producto 3 -->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 3 -->
-
-                    <!-- Card prooducto 4-->
-                    <div class="card_producto">
-                        <div class="card_producto_imagen">
-                            <img src="../../imagenes/blusa.png" alt="">
-                        </div>
-
-                        <div class="card_producto-texto_boton">
-                            <h2>Blusa corazon<br> $700 MX</h2>
-                            <a href="../../pages/carrito.html">Agregar</a>
-
-                        </div>
-                    </div>
-                    <!-- Fin de card producto 4 -->
-
-                    <!-- Fin de fila 3 -->
-                </div>
-                <!-- Fin del contenedor -->
-            </div>
-        </section>
-        <!-- Fin de la sección del contenido principal -->
-    </main>
-    <!-- ============= Fin del contenido principal de la página  ============== -->
-
-    <!-- ============= Pie de página ============= -->
-    <footer>
-        <div class="contenedor_footer">
-            <!-- columna 1: titulo y descripción -->
-            <div class="footer_seccion1_logo">
-                <h3>NOOK NOOK</h3>
-                <p>Está página fue creada <br>
-                    con fines educativos
-                </p>
-            </div>
-            <!--Columna 2: contactos que tiene la empresa  -->
-            <div class="footer_seccion2_contacto">
-                <h3>Sobre nosotros</h3>
-                <p>nook_nook@gmail.com</p>
-                <p>México, CDMX, Viaducto</p>
-                <p>553883838383</p>
-            </div>
-            <!-- columna 3: atención a cliente -->
-            <div class="footer_cliente">
-                <h3>Atencion al cliente</h3>
-                <p>Terminos y condiciones</p>
-
-                <p>Preguntas frecuentes</p>
-
-            </div>
-            <!-- columna 4: redes sociales -->
-            <div class="footer_seccion4_redes">
-                <h3>Siguenos en:</h3>
-                <a href="https://www.facebook.com">Facebook</a>
-                <br>
-                <a href="https://www.twitter.com">Twitter</a>
-                <br>
-                <a href="https://www.Instagram.com">Instagram</a>
-            </div>
         </div>
-    </footer>
-    <!-- ============= Fin de pie de página ============= -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Contenedor : lista de productos de la categoria -->
+        <div class="contenedor_listaProductos">
+
+
+          <!-- Card producto 1 -->
+          <div class="card_producto">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/01_blusa.png" alt="lista productos blusa 1">
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 1 -->
+
+          <!-- Card prooducto 2-->
+          <div class="card_producto">
+
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/02_blusa_hombre_necio.png" alt="lista productos blusa 2">
+              <!-- contenedor etiqueta nuevo -->
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <!-- contenedor num descuento -->
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
+
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 2 -->
+
+          <!-- Card producto 3 -->
+          <div class="card_producto">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/03_blusa_mariposas.jpeg" alt="lista productos blusa 3">
+
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 3 -->
+
+          <!-- Card producto 4 -->
+          <div class="card_producto">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/04_blusa_roja_comun.jpg" alt="lista productos blusa 4">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 4 -->
+
+          <!-- Fila 2 -->
+
+          <!-- Card prooducto 1-->
+          <div class="card_producto">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/05_candy_top.jpeg" alt="lista productos blusa 5">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 1 -->
+
+          <!-- Card producto 2 -->
+          <div class="card_producto">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/06_medusas_bailarinas.png" alt="lista productos blusa 6">
+
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 2 -->
+
+          <!-- Card producto 3 -->
+          <div class="card_producto">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/07_rabbit_top.png" alt="lista productos blusa 7">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 3 -->
+
+          <!-- Card prooducto 4-->
+          <div class="card_producto">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/08_vintage_baby.png" alt="lista productos blusa 8">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 4 -->
+
+          <!-- Fila 3 -->
+
+          <!-- Card producto 1 -->
+          <div class="card_producto">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/09_blusa_tunica_estampado.jpeg" alt="lista productos blusa 9">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 1 -->
+
+          <!-- Card producto 2 -->
+          <div class="card_producto">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/10_blusa_tipo_tunica.jpeg" alt="lista productos blusa 10">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 2 -->
+          <!-- Card producto 3 -->
+          <div class="card_producto">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/11_blusa_tipo_tunica_larga.jpeg" alt="lista productos blusa 11">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 3 -->
+
+          <!-- Card prooducto 4-->
+          <div class="card_producto">
+            <div class="card_producto_imagen">
+              <img src="../../imagenes/blusas/12_blusa_tipo_tunica_estampada.jpeg" alt="lista productos blusa 12">
+
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
+
+            </div>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- Fin de card producto 4 -->
+
+
+
+        </div>
+        <!-- Fin del contenedor -->
+      </div>
+    </section>
+    <!-- Fin de la sección del contenido principal -->
+  </main>
+  <!-- ============= Fin del contenido principal de la página  ============== -->
+
+  <!-- ============= Pie de página ============= -->
+  <footer>
+    <div class="contenedor_footer">
+      <!-- columna 1: titulo y descripción -->
+      <div class="footer_seccion1_logo">
+        <h3>NOOK NOOK</h3>
+        <p>Está página fue creada <br>
+          con fines educativos
+        </p>
+      </div>
+      <!--Columna 2: contactos que tiene la empresa  -->
+      <div class="footer_seccion2_contacto">
+        <h3>Sobre nosotros</h3>
+        <p>nook_nook@gmail.com</p>
+        <p>México, CDMX, Viaducto</p>
+        <p>553883838383</p>
+      </div>
+      <!-- columna 3: atención a cliente -->
+      <div class="footer_cliente">
+        <h3>Atencion al cliente</h3>
+        <p>Terminos y condiciones</p>
+
+        <p>Preguntas frecuentes</p>
+
+      </div>
+      <!-- columna 4: redes sociales -->
+      <div class="footer_seccion4_redes">
+        <h3>Siguenos en:</h3>
+        <a href="https://www.facebook.com">Facebook</a>
+        <br>
+        <a href="https://www.twitter.com">Twitter</a>
+        <br>
+        <a href="https://www.Instagram.com">Instagram</a>
+      </div>
+    </div>
+  </footer>
+  <!-- ============= Fin de pie de página ============= -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+
+    var hamburger = document.querySelector(".hamburger");
+    hamburger.addEventListener("click", function(){
+            document.querySelector("body").classList.toggle("active");
+    });
+  </script>
 </body>
 
 </html>

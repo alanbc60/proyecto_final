@@ -148,13 +148,6 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
   color: white;
 }
 
-/* ocultar el icono de menu hamburguesa y casilla de credito */
-#barra_desplegable,
-.navbar label {
-  display: none;
-  /*Ocultar la casilla de verificación y la etiqueta en pantallas grandes.*/
-}
-
 /* == Personalización  del contendor de la lista de enlaces  ===*/
 /* contenedor principal donde se encuentra producto-hombre y producto-mujer */
 .dropdown-contenedor {
@@ -236,59 +229,37 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
   /*uno abajo de otro*/
 }
 
-.wrapper {
+.contenedor_principal-navbar_sidebar {
   display: none;
 }
 
-.wrapper .section {
-  width: calc(100% - 225px);
-  margin-left: 225px;
-  transition: all 0.5s ease;
-}
-
-.wrapper .section .top_navbar {
-  background: #0769b9;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  padding: 0 30px;
-}
-
-.wrapper .section .top_navbar .hamburger a {
-  font-size: 28px;
-  color: #f4fbff;
-}
-
-.wrapper .section .top_navbar .hamburger a:hover {
-  color: #a2ecff;
-}
-
-.wrapper .sidebar {
+.contenedor_principal-navbar_sidebar .sidebar {
+  display: none;
   background: #4063b9;
   position: fixed;
   top: 0;
   left: 0;
-  width: 225px;
+  width: 210px;
   height: 100%;
   transition: all 0.5s ease;
 }
 
-.wrapper .sidebar .profile {
+.contenedor_principal-navbar_sidebar .sidebar .profile {
   margin-bottom: 30px;
   text-align: center;
 }
 
-.wrapper .sidebar .profile h3 {
+.contenedor_principal-navbar_sidebar .sidebar .profile h3 {
   color: #ffffff;
   margin: 10px 0 5px;
 }
 
-.wrapper .sidebar .profile p {
+.contenedor_principal-navbar_sidebar .sidebar .profile p {
   color: #cef0fd;
   font-size: 14px;
 }
 
-.wrapper .sidebar img {
+.contenedor_principal-navbar_sidebar .sidebar img {
   display: block;
   width: 100px;
   height: 100px;
@@ -296,52 +267,130 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
   margin: 0 auto;
 }
 
-.wrapper .sidebar ul {
-  list-style: none;
+.contenedor_principal-navbar_sidebar .sidebar ul {
   width: 220px;
+  margin-left: -20px;
+  text-decoration: none;
 }
 
-.wrapper .sidebar ul li {
+.contenedor_principal-navbar_sidebar .sidebar ul li {
   width: 190px;
+  list-style: none;
+  text-decoration: none;
 }
 
-.wrapper .sidebar ul li a {
+.contenedor_principal-navbar_sidebar .sidebar .sidebar_subcategorias_productos {
+  width: 190px;
+  background-color: aqua;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.contenedor_principal-navbar_sidebar .sidebar .sidebar_subcategorias_productos a {
+  width: 100%;
+  padding: 4px 10px;
+  color: blue;
+}
+
+.contenedor_principal-navbar_sidebar .sidebar .sidebar_subcategorias_productos:hover {
+  background-color: red;
+  color: white;
+}
+
+.contenedor_principal-navbar_sidebar .sidebar ul li a {
   display: block;
-  padding: 13px 30px;
+  padding: 13px 10px;
   border-bottom: 1px solid orange;
   color: #f1eded;
   font-size: 16px;
   position: relative;
+  text-decoration: none;
 }
 
-.wrapper .sidebar ul li a .icon {
+.contenedor_principal-navbar_sidebar .sidebar ul li a .icon {
   color: #dee4ec;
   width: 30px;
   display: inline-block;
 }
 
-.wrapper .sidebar ul li a:hover, .wrapper .sidebar ul li a.active {
+.contenedor_principal-navbar_sidebar .sidebar ul li a:hover, .contenedor_principal-navbar_sidebar .sidebar ul li a.active {
   color: #0c7db1;
   background: white;
-  border-right: 2px solid #054468;
 }
 
-.wrapper .sidebar ul li a:hover .icon, .wrapper .sidebar ul li a.active .icon {
+.contenedor_principal-navbar_sidebar .sidebar ul li a:hover .icon, .contenedor_principal-navbar_sidebar .sidebar ul li a.active .icon {
   color: #0c7db1;
 }
 
-.wrapper .sidebar ul li a:hover:before,
-.wrapper .sidebar ul li a.active:before {
+.contenedor_principal-navbar_sidebar .sidebar ul li a:hover:before,
+.contenedor_principal-navbar_sidebar .sidebar ul li a.active:before {
   display: block;
 }
 
-body.active .wrapper .sidebar {
-  left: -225px;
+.contenedor_principal-navbar_sidebar .top_navbar {
+  width: 100%;
+  transition: all 0.5s ease;
+  background: #0769b9;
+  height: auto;
+  display: flex;
+  padding-left: 7px;
 }
 
-body.active .wrapper .section {
-  margin-left: 0;
-  width: 100%;
+.contenedor_principal-navbar_sidebar .top_navbar .logo_mini {
+  display: block;
+  background-color: red;
+  height: 40px;
+  width: 100px;
+  margin-right: 136px;
+  margin-top: 3px;
+  margin-bottom: 6px;
+  padding-top: 5px;
+  padding-left: 4px;
+}
+
+.contenedor_principal-navbar_sidebar .top_navbar .logo_mini a {
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  width: 80%;
+  color: white;
+}
+
+.contenedor_principal-navbar_sidebar .top_navbar .hamburger {
+  margin-left: 40px;
+}
+
+.contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
+  font-size: 28px;
+  color: white;
+}
+
+.contenedor_principal-navbar_sidebar .top_navbar .hamburger a:hover {
+  color: white;
+}
+
+body.active .contenedor_principal-navbar_sidebar .sidebar {
+  display: block;
+  left: -2px;
+}
+
+body.active .contenedor_principal-navbar_sidebar .top_navbar {
+  background-color: #ffffff;
+  width: calc(100% - 210px);
+  margin-left: 210px;
+}
+
+body.active .contenedor_principal-navbar_sidebar .top_navbar .logo_mini {
+  display: none;
+}
+
+body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger {
+  margin-left: 60px;
+}
+
+body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
+  color: #4063b9;
 }
 
 /* Footer */
@@ -645,16 +694,13 @@ body.active .wrapper .section {
 /* ==================pagina productos-hombre-mujer   ========== */
 /* boton checar(se usa en la página carrito igual) */
 .btn_agregarProducto, .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto_boton a {
-  margin-top: 10px;
-  width: 70px;
-  height: 30px;
   color: white;
-  background-color: #0095ff;
-  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.1), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.1);
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
   font-weight: bold;
+  padding: 0px 40px 0px 40px;
 }
 
 .contenedor_principal-filtroCategorias-listaProductos {
@@ -717,71 +763,101 @@ body.active .wrapper .section {
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto {
-  background-color: #ebf5fc;
-  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  width: 225px;
+  height: 350px;
+  background-color: white;
+  border: 2px solid #0095ff;
+  border-radius: 10px;
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  width: 222px;
-  height: 340px;
   margin-top: 20px;
   margin-left: 15px;
-  padding-right: 30px;
   margin-bottom: 23px;
-  border-radius: 2px;
+  padding: 9px 9px 8px 8px;
   transition-delay: 1s;
   transition: width 3s;
   /* Auste de tamaño de la imagen de cada card */
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen {
-  width: 215px;
-  height: 270px;
-  border-radius: 3px;
+  width: 208px;
+  height: 250px;
   overflow: hidden;
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen img {
-  padding-top: 10px;
-  width: 215px;
-  height: 270px;
+  position: absolute;
+  width: 208px;
+  height: 250px;
   object-fit: cover;
-  margin-left: 6px;
+  padding-right: 2px;
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen img:hover {
-  transform: scale(1.2, 1.2);
+  transform: scale(1.07, 1.07);
   cursor: pointer;
 }
 
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen .contenedor-nuevo {
+  margin: 6px;
+  position: relative;
+  width: 50px;
+  height: 26px;
+  background-color: white;
+  color: blue;
+  text-align: center;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen .contenedor-nuevo p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen .contenedor-numDescuento {
+  margin: 6px;
+  position: relative;
+  width: 50px;
+  height: 26px;
+  background-color: white;
+  color: green;
+  text-align: center;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen .contenedor-numDescuento p {
+  font-size: 15px;
+  font-weight: bold;
+}
+
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton {
-  display: flex;
-  width: 215px;
-  height: 65px;
+  width: 100%;
+  height: auto;
   /* contenedor de boton y texto del card */
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto-texto {
-  background-color: red;
-  width: 160px;
-  height: 65px;
-  margin-left: 6px;
+  width: 100%;
+  height: 46px;
+  margin-bottom: 5px;
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto-texto h2 {
-  font-size: 14px;
+  font-size: 17px;
   font-weight: bold;
-  color: #0095ff;
+}
+
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto-texto p {
+  font-size: 15px;
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto_boton {
-  margin-top: 10px;
-  margin-left: 20px;
-  background-color: brown;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  background-color: #0095ff;
 }
 
-.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto_boton a:hover {
-  color: #ebeef1;
-  background-color: red;
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto_boton a {
+  width: 200px;
+  height: 30px;
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto-texto_boton:hover .card_boton_comprar {
@@ -806,11 +882,11 @@ body.active .wrapper .section {
   gap: 10px;
   background-color: #ecf7ff;
   /* Indicar cuantas columnas tendra */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   /* Indicar cuantas filas tendra */
-  grid-template-rows: auto 900px;
+  grid-template-rows: auto auto;
   /* acomodar el grid */
-  grid-template-areas: "texto_carrito texto_carrito texto_carrito" "contenedor_productos contenedor_productos contenedor_precio_total";
+  grid-template-areas: "texto_carrito  texto_carrito" "contenedor_productos  contenedor_precio_total";
   /* personalizacion del contenedor de productos */
 }
 
@@ -833,20 +909,20 @@ body.active .wrapper .section {
 }
 
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto {
+  width: 98%;
   display: grid;
   margin-top: 10px;
   gap: 10px;
   margin-bottom: 20px;
   margin-left: 5px;
-  background: #ebf5fc;
   box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   /* Indicar cuantas columnas tendra */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 330px 400px;
   /* Indicar cuantas filas tendra */
-  grid-template-rows: 200px;
+  grid-template-rows: 230px;
   /* acomodar el grid */
-  grid-template-areas: "contenedor_imagen_producto contenedor_texto_productos contenedor_texto_productos";
+  grid-template-areas: "contenedor_imagen_producto contenedor_texto_productos";
   /* imagen del producto */
   /* contenedor hijo de card_producto: Texto producto */
 }
@@ -869,6 +945,8 @@ body.active .wrapper .section {
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto {
   grid-area: contenedor_texto_productos;
   width: 100%;
+  margin-top: 40px;
+  padding-left: 10px;
 }
 
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto {
@@ -935,77 +1013,197 @@ body.active .wrapper .section {
   /* Indicar cuantas columnas tendra */
   grid-template-columns: repeat(3, 1fr);
   /* Indicar cuantas filas tendra */
-  grid-template-rows: 100px 400px auto 100px auto;
+  grid-template-rows: auto 295px 295px auto auto auto;
   /* acomodar el grid */
-  grid-template-areas: "titulo_descuentos titulo_descuentos titulo_descuentos" "card_img_descuento card_img_descuento texto_descuentos" "contenedor_descuentos contenedor_descuentos contenedor_descuentos" "titulo_fechas titulo_fechas titulo_fechas" "contenedor_fechas contenedor_fechas contenedor_fechas";
+  grid-template-areas: "titulo_descuentos_fechas     titulo_descuentos_fechas     titulo_descuentos_fechas " "contenedor_carousel   contenedor_carousel   contenedor_secundario1" "contenedor_carousel   contenedor_carousel   contenedor_secundario2" "contenedor_descuentos contenedor_descuentos contenedor_descuentos " "titulo_fechas         titulo_fechas         titulo_fechas " "contenedor_fechas     contenedor_fechas     contenedor_fechas ";
   /* Contenedor del titulo principal de descuentos */
   /* contenedor y card de la seccion descuentos */
 }
 
-.contenedor_principal-descuentos-fechas .titulo_descuentos {
-  grid-area: titulo_descuentos;
-  color: #ebf5fc;
+.contenedor_principal-descuentos-fechas .titulo_descuentos_fechas {
+  grid-area: titulo_descuentos_fechas;
+  color: red;
+  background-color: white;
   text-align: center;
-  background-color: red;
   font-size: 100%;
   /* Texto tiulo descuentos */
 }
 
-.contenedor_principal-descuentos-fechas .titulo_descuentos h2 {
-  font-size: 70px;
+.contenedor_principal-descuentos-fechas .titulo_descuentos_fechas h2 {
+  font-size: 30px;
   font-style: oblique;
   font-weight: bold;
 }
 
-.contenedor_principal-descuentos-fechas .card_imagen_descuento {
-  grid-area: card_img_descuento;
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-carousel {
+  grid-area: contenedor_carousel;
 }
 
-.contenedor_principal-descuentos-fechas .card_imagen_descuento img {
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-carousel .contenedor_imagen_carousel img {
   width: 100%;
-  height: 340px;
+  height: 600px;
   object-fit: cover;
 }
 
-.contenedor_principal-descuentos-fechas .informacion_descuentos_fechas {
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 {
+  grid-area: contenedor_secundario1;
+  background-color: blue;
+  background-image: url(../../imagenes/imagenes_descuentos/descuentos_blusas2.jpg);
+  background-size: 460px 300px;
+  background-color: pink;
   padding: 10px;
-  grid-area: texto_descuentos;
-  font-size: 20px;
+  text-align: center;
+  image-rendering: optimizeSpeed;
 }
 
-.contenedor_principal-descuentos-fechas .informacion_descuentos_fechas p {
-  font-style: italic;
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 .descuentos_secundario1-texto-boton {
+  background-color: transparent;
+  width: 230px;
+  height: 210px;
+  margin: 0px auto;
+  margin-top: 25px;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 .descuentos_secundario1-texto-boton .descuentos_secundario1-texto h1 {
+  font-size: 40px;
+  color: white;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 .descuentos_secundario1-texto-boton .descuentos_secundario1-boton {
+  margin-top: 25px;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 .descuentos_secundario1-texto-boton .descuentos_secundario1-boton a {
+  color: white;
+  background-color: green;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 .descuentos_secundario1-texto-boton .descuentos_secundario1-boton .btn_descuentos {
+  border: 2px solid #fff;
+  padding: 10px 35px;
+  border-radius: 30px;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario2 {
+  grid-area: contenedor_secundario2;
+  background-image: url(../../imagenes/imagenes_descuentos/descuentos_chamarras.png);
+  background-size: 440px 300px;
+  padding: 10px;
+  text-align: center;
+  image-rendering: optimizeSpeed;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario2 .descuentos_secundario2-texto-boton {
+  background-color: transparent;
+  width: 230px;
+  height: 220px;
+  margin: 0px auto;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario2 .descuentos_secundario2-texto-boton .descuentos_secundario2-texto h1 {
+  font-size: 40px;
+  color: black;
+  animation: animacion_descuento_secundario2 12s linear;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario2 .descuentos_secundario2-texto-boton .descuentos_secundario2-boton {
+  margin-top: 25px;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario2 .descuentos_secundario2-texto-boton .descuentos_secundario2-boton a {
+  color: white;
+  background-color: darkslategrey;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario2 .descuentos_secundario2-texto-boton .descuentos_secundario2-boton .btn_descuentos {
+  border: 2px solid white;
+  padding: 10px 35px;
+  border-radius: 30px;
+}
+
+@keyframes animacion_descuento_secundario2 {
+  0% {
+    transform: translate(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+}
+
+.contenedor_principal-descuentos-fechas .titulo_descuentos {
+  grid-area: titulo_descuentos;
+  color: red;
+  text-align: center;
+  background-color: khaki;
+  font-size: 100%;
+  margin-top: 10px;
+  /* Texto tiulo descuentos */
+}
+
+.contenedor_principal-descuentos-fechas .titulo_descuentos h2 {
+  font-size: 50px;
+  font-style: oblique;
+  font-weight: bold;
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos {
   grid-area: contenedor_descuentos;
-  background-color: #ebf5fc;
+  background-color: #ecf7ff;
   display: flex;
-  margin-top: 10px;
+  margin-top: 0px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   margin-bottom: 10px;
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento {
-  width: 400px;
-  height: 220px;
-  background-color: #ebf5fc;
+  width: 460px;
+  height: 250px;
   margin-left: 12px;
-  margin-top: 23px;
-  border-radius: 20px;
+  margin-top: 15px;
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .cobertura_img_card {
   background-color: #ebf5fc;
-  width: 400px;
-  height: 220px;
+  width: 460px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
-  border: 5px solid red;
+  border-radius: 8px;
+  border: 3px solid white;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+  opacity: .8;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .color_variado1 {
+  background-color: red;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .color_variado2 {
+  background-color: cornsilk;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .color_variado3 {
+  background-color: #0095ff;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .color_variado4 {
+  background-color: cornflowerblue;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .color_variado5 {
+  background-color: green;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .color_variado6 {
+  background-color: blanchedalmond;
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .texto_card_descuento {
@@ -1017,7 +1215,7 @@ body.active .wrapper .section {
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .texto_card_descuento h3 {
-  color: red;
+  color: blue;
   margin-bottom: 5px;
   font-size: 24px;
   text-align: center;
@@ -1036,12 +1234,12 @@ body.active .wrapper .section {
   grid-area: titulo_fechas;
   color: #ebf5fc;
   text-align: center;
-  background-color: blue;
+  background-color: red;
   font-size: 100%;
 }
 
 .contenedor_principal-descuentos-fechas .titulo_fechas h2 {
-  font-size: 70px;
+  font-size: 50px;
   font-style: oblique;
   font-weight: bold;
 }
@@ -1051,28 +1249,55 @@ body.active .wrapper .section {
   display: flex;
   margin-top: 10px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: start;
   margin-bottom: 10px;
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha {
-  width: 400px;
-  height: 220px;
-  background-color: #ebf5fc;
+  width: 460px;
+  height: 180px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
   margin-left: 12px;
   margin-top: 23px;
-  animation: card_fecha 9s infinite;
+  padding-left: 15px;
+  animation: card_fecha 1s infinite;
   transform: skew(20deg);
   animation-direction: alternate;
-  opacity: .7;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-icono {
+  width: 130px;
+  height: 130px;
+  min-height: 130px;
+  margin-top: 22px;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-texto {
+  margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 290px;
+  height: 130px;
+  background-color: white;
+  min-height: 130px;
+  margin-top: 22px;
+  margin-right: 5px;
+  padding: 5px;
+}
+
+.contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-texto h3 {
+  font-size: 28px;
+  color: red;
 }
 
 @keyframes card_fecha {
   0% {
-    transform: skewX(20deg);
+    transform: skewX(1deg);
   }
   100% {
-    transform: skewX(-20deg);
+    transform: skewX(-1deg);
   }
 }
 
@@ -1082,50 +1307,89 @@ body.active .wrapper .section {
   height: 100%;
   display: grid;
   gap: 10px;
+  margin-top: 10px;
   background-color: #ebf5fc;
   /* Indicar cuantas columnas tendra */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   /* Indicar cuantas filas tendra */
-  grid-template-rows: auto auto auto 100px auto;
+  grid-template-rows: auto auto 100px auto;
   /* acomodar el grid */
-  grid-template-areas: "titulo_QuienesSomos titulo_QuienesSomos titulo_QuienesSomos" "texto_conocenos texto_conocenos titulo_amigoMes" "texto_conocenos texto_conocenos imagen_amigoEspecial" "titulo_amigos titulo_amigos titulo_amigos " "contenedor_marcas contenedor_marcas contenedor_marcas";
+  grid-template-areas: "texto_conocenos     texto_conocenos     contenedor_servicios contenedor_servicios" "texto_conocenos     texto_conocenos     contenedor_servicios contenedor_servicios" "titulo_amigos       titulo_amigos       titulo_amigos        titulo_amigos " "contenedor_marcas   contenedor_marcas   contenedor_marcas    contenedor_marcas";
   /* Contenedor de titulo y parrafo de la empresa */
   /* Contenedor de cards de marcas */
 }
 
-.contenedor_principal_quienes-somos .contenedor_titulo_quienesSomos {
-  grid-area: titulo_QuienesSomos;
-  background-color: red;
-  color: white;
-}
-
 .contenedor_principal_quienes-somos .conocenos_textos {
-  width: 970px;
+  width: 800px;
   height: auto;
-  background-color: blue;
   box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
   grid-area: texto_conocenos;
-  margin-left: 60px;
-  font-size: 20px;
-}
-
-.contenedor_principal_quienes-somos .contenedor_titulo_amigoMes {
-  grid-area: titulo_amigoMes;
-  font-style: italic;
-  animation: titulo_amigoMes 14s infinite;
-}
-
-.contenedor_principal_quienes-somos .contenedor_amigoEspecial_instagram {
-  grid-area: imagen_amigoEspecial;
-  width: 300px;
-  height: 420px;
-  /* background-color: blue; */
   margin-left: 10px;
+  font-size: 20px;
+  background-color: azure;
 }
 
-.contenedor_principal_quienes-somos .contenedor_amigoEspecial_instagram:hover {
-  border: 3px solid silver;
-  box-shadow: 4px 4px 13px rgba(255, 44, 44, 0.8);
+.contenedor_principal_quienes-somos .conocenos_textos .titulo_conocenos {
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  background-color: aqua;
+  color: red;
+  padding-top: 10px;
+  margin-bottom: 5px;
+}
+
+.contenedor_principal_quienes-somos .contenedor_servicios {
+  grid-area: contenedor_servicios;
+  width: 500px;
+  height: auto;
+  /* background-color: blue; */
+  margin-left: 30px;
+}
+
+.contenedor_principal_quienes-somos .contenedor_servicios .titulo_servicios {
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  background-color: red;
+  color: white;
+  padding-top: 10px;
+  margin-bottom: 5px;
+}
+
+.contenedor_principal_quienes-somos .contenedor_servicios .card_servicio {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+.contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-img {
+  width: 90px;
+  height: auto;
+  background-color: red;
+  padding-left: 12px;
+}
+
+.contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-img img {
+  width: 60px;
+  height: 60px;
+  filter: invert(0.88);
+}
+
+.contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-texto {
+  background-color: white;
+  width: calc(100% - 90px);
+  height: auto;
+  padding-left: 6px;
+}
+
+.contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-texto h1 {
+  font-size: 23px;
+}
+
+.contenedor_principal_quienes-somos .contenedor_servicios .card_servicio:hover {
   transform: scale(1.1);
 }
 
@@ -1243,13 +1507,7 @@ body.active .wrapper .section {
   header .navbar {
     display: none;
   }
-  header .wrapper {
-    display: block;
-  }
-  header .wrapper .sidebar {
-    display: none;
-  }
-  header .wrapper:hover .sidebar {
+  header .contenedor_principal-navbar_sidebar {
     display: block;
   }
 }
@@ -1272,7 +1530,7 @@ body.active .wrapper .section {
     width: auto;
     min-width: 320px;
     max-width: 600px;
-    background-color: yellow;
+    height: auto;
   }
   .contenedor_principal .contenedor_principal_landing .contenedor_landing {
     width: 95%;
@@ -1380,10 +1638,16 @@ body.active .wrapper .section {
     margin-bottom: 20px;
   }
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_filtroCategorias {
-    width: 97%;
-    min-width: 315px;
-    margin-right: 2px;
-    margin-left: 0px;
+    min-width: 300px;
+    width: 94%;
+    height: auto;
+    margin-right: 0px;
+    margin-left: 6px;
+    padding-bottom: 10px;
+  }
+  .contenedor_principal-filtroCategorias-listaProductos .contenedor_filtroCategorias .list-group {
+    min-width: auto;
+    margin-right: 10px;
   }
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos {
     width: auto;
@@ -1391,7 +1655,8 @@ body.active .wrapper .section {
     max-width: 590px;
   }
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto {
-    min-width: 315px;
+    min-width: 310px;
+    margin-right: 12px;
     /* contenedor de boton y texto del card */
   }
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen {
@@ -1427,21 +1692,34 @@ body.active .wrapper .section {
   .contenedor_principal-descuentos-fechas {
     display: grid;
     min-width: 320px;
+    height: auto;
+    background-color: yellow;
     overflow: hidden;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
-    grid-template-areas: "titulo_descuentos" "card_img_descuento" "texto_descuentos" "contenedor_descuentos" "titulo_fechas" "contenedor_fechas";
+    grid-template-rows: auto auto auto auto auto auto auto auto auto;
+    grid-template-areas: "titulo_descuentos" "descuento_carousel" "contenedor_descuentos-secundario1" "contenedor_descuentos-secundario2" "card_img_descuento" "texto_descuentos" "contenedor_descuentos" "titulo_fechas" "contenedor_fechas";
     gap: 10px;
     /* Contenedor del titulo principal de descuentos */
     /* contenedor y card de la seccion descuentos */
   }
-  .contenedor_principal-descuentos-fechas .titulo_descuentos {
+  .contenedor_principal-descuentos-fechas .titulo_descuentos_fechas {
+    grid-area: titulo_descuentos;
     min-width: 300px;
     max-width: 590px;
   }
-  .contenedor_principal-descuentos-fechas .titulo_descuentos h2 {
+  .contenedor_principal-descuentos-fechas .titulo_descuentos_fechas h2 {
     width: 99%;
     font-size: 40px;
+  }
+  .contenedor_principal-descuentos-fechas .contenedor_descuentos-carousel {
+    grid-area: descuentos_carousel;
+    display: none;
+  }
+  .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 {
+    grid-area: contenedor_descuentos-secundario1;
+  }
+  .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario2 {
+    grid-area: contenedor_descuentos-secundario2;
   }
   .contenedor_principal-descuentos-fechas .card_imagen_descuento {
     min-width: 310px;
@@ -1494,15 +1772,16 @@ body.active .wrapper .section {
     font-size: 40px;
   }
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas {
-    width: 99%;
-    min-width: 320px;
+    width: auto;
+    min-width: 315px;
+    background-color: #0095ff;
   }
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha {
-    margin-right: 12px;
+    margin-left: 0px;
     height: auto;
-    width: 100%;
+    width: auto;
     border-radius: 20px;
-    min-width: 320px;
+    min-width: 300px;
   }
   /* pagina Quienes somos */
   .contenedor_principal_quienes-somos {
@@ -1632,7 +1911,7 @@ body.active .wrapper .section {
   }
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto {
     display: grid;
-    width: 99%;
+    width: 97%;
     min-width: 310px;
     overflow-y: hidden;
     overflow-x: hidden;
@@ -1650,17 +1929,18 @@ body.active .wrapper .section {
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto {
     grid-area: contenedor_imagen_producto;
     width: 100%;
-    min-width: 320px;
+    min-width: 310px;
     background-color: black;
   }
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto img {
     width: 100%;
-    min-width: 320px;
+    min-width: 310px;
   }
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto {
     grid-area: contenedor_texto_productos;
     width: 100%;
-    min-width: 320px;
+    min-width: 310px;
+    margin-top: 0px;
   }
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto .eliminar_producto {
     margin-left: 0px;

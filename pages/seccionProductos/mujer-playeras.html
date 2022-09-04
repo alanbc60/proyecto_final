@@ -6,115 +6,252 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Página priductos Muer. En esta página mostramos todos los productos 
-    disponible de playeras , que contamos en la tienda virtual nook nook"/>
+  <meta name="description" content="Página enfocada en productos de hombre. En esta página mostramos todos los productos 
+  disponible de las playeras que contamos en la tienda virtual nook nook"/>
 
-  <meta name="keywords" content=" playeras mujer nooknok, playeras nook-nook, productos Nook Nook"/>
-  <title>Playeras Mujer - nook nook</title>
+  <meta name="keywords" content=" Playeras hombre nooknook, Playeras nook nook, productos hombre Nook Nook"/>
+  <title>Playeras hombre - nook nook</title>
   <link rel="stylesheet" href="../../css/style.css">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- icono de menú para la navbar -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- icono de la navbar (version movil) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
 </head>
 
+
 <body>
+
   <!-- ============= Cabecera de la página  ============== -->
   <header>
     <!-- Contenedor del logo y lista de elementos -->
     <nav class="navbar navbar_general">
-      <!-- Fondo del logo y texto -->
-      <div class="logo">
-        <a href="../../index.html"><b>NOOK NOOK</b></a>
-      </div>
+      <div class="container-fluid">
+        <!-- Fondo del logo y texto -->
+        <div class="logo">
+          <a href="../../index.html"><b>NOOK NOOK</b></a>
+        </div>
 
-      <!-- creamos un checkbox y lo abrimos al seleccionar el label (responsive)-->
-      <input type="checkbox" id="barra_desplegable">
-      <label for="barra_desplegable">
-        <i class="ri-menu-line"></i>
-      </label>
-      <!-- Fin del contenedor  del label responsive -->
-      <div class="menu_enlaces_navbar">
-        <!-- Lista de enlaces del navbar -->
-        <ul class="lista_enlaces">
-          <!-- Elemento de lista: productos -->
-          <li class="dropdown">
-            <a href="#" class="enlace_item">Productos</a>
-            <div class="dropdown-contenedor">
+        <!-- Fin del contenedor  del label responsive -->
+        <div class="menu_enlaces_navbar">
+          <!-- Lista de enlaces del navbar -->
+          <ul class="lista_enlaces">
+            <!-- Elemento de lista: productos -->
+            <li class="dropdown">
+              <a href="#" class="enlace_item">Productos</a>
+              <div class="dropdown-contenedor">
 
-              <ul class="lista_subenlaces">
-                <!-- productos-hombres -->
-                <li class="item_hombre" id="mn1">
-                  <a class="btn" href="#mn1">Hombre</a>
-                  <!-- Categorias de producstos-hombres -->
-                  <div class="dropdown_contenedor-categorias">
-                    <a class="categorias_item" href="../seccionProductos/hombre-chamarras.html">Chamarras</a>
-                    <a class="categorias_item" href="../seccionProductos/hombre-playeras.html">Playeras</a>
-                    <a class="categorias_item" href="../seccionProductos/hombre-pantalones.html">Pantalones</a>
-                  </div>
-                </li>
+                <ul class="lista_subenlaces">
+                  <!-- productos-hombres -->
+                  <li class="item_hombre" id="mn1">
+                    <a class="btn" href="#mn1">Hombre</a>
+                    <!-- Categorias de producstos-hombres -->
+                    <div class="dropdown_contenedor-categorias">
+                      <a class="categorias_item" href="../seccionProductos/hombre-chamarras.html">Chamarras</a>
+                      <a class="categorias_item" href="../seccionProductos/hombre-playeras.html">Playeras</a>
+                      <a class="categorias_item" href="../seccionProductos/hombre-pantalones.html">Pantalones</a>
+                    </div>
+                  </li>
 
-                <!-- priductos- mujeres -->
-                <li class="item_mujer" id="mn2">
-                  <a class="btn" href="#mn2">Mujer</a>
-                  <!-- Categorias de producstos-hombres -->
-                  <div class="dropdown_contenedor-categorias">
-                    <a class="categorias_item" href="../seccionProductos/mujer-pantalones.html">Pants</a>
-                    <a class="categorias_item" href="../seccionProductos/mujer-chamarras.html">Chamarras</a>
-                    <a class="categorias_item" href="../seccionProductos/mujer-playeras.html">Playeras</a>
-                    <a class="categorias_item" href="../seccionProductos/mujer-blusas.html">Blusas</a>
-                  </div>
-                </li>
-              </ul>
+                  <!-- priductos- mujeres -->
+                  <li class="item_mujer" id="mn2">
+                    <a class="btn" href="#mn2">Mujer</a>
+                    <!-- Categorias de producstos-hombres -->
+                    <div class="dropdown_contenedor-categorias">
+                      <a class="categorias_item" href="../seccionProductos/mujer-pantalones.html">Pants</a>
+                      <a class="categorias_item" href="../seccionProductos/mujer-chamarras.html">Chamarras</a>
+                      <a class="categorias_item" href="../seccionProductos/mujer-playeras.html">Playeras</a>
+                      <a class="categorias_item" href="../seccionProductos/mujer-blusas.html">Blusas</a>
+                    </div>
+                  </li>
+                </ul>
 
 
-            </div>
-          </li>
-          <!-- Fin de elemento de lista : producto -->
+              </div>
+            </li>
+            <!-- Fin de elemento de lista : producto -->
 
 
-          <!-- Elemento de lista carritos -->
-          <li class="enlace_secciones">
-            <a class="enlace_item" href="../carrito.html"> Carrito </a>
-          </li>
-          <!-- Fin de elemento de lista: carrito -->
+            <!-- Elemento de lista carritos -->
+            <li class="enlace_secciones">
+              <a class="enlace_item" href="../carrito.html"> Carrito </a>
+            </li>
+            <!-- Fin de elemento de lista: carrito -->
 
-          <!-- Elemento de lista fechas & descuentos -->
-          <li class="enlace_secciones">
-            <a class="enlace_item" href="../fechas_descuentos.html"> Fechas & descuentos </a>
-          </li>
-          <!-- Fin de elemento de lista fechas & descuentos -->
+            <!-- Elemento de lista fechas & descuentos -->
+            <li class="enlace_secciones">
+              <a class="enlace_item" href="../fechas_descuentos.html"> Fechas & descuentos </a>
+            </li>
+            <!-- Fin de elemento de lista fechas & descuentos -->
 
-          <!-- Elemento de lista:  Quienes somos-->
-          <li class="enlace_secciones">
-            <a class="enlace_item" href="../quienes_somos.html"> Quienes somos </a>
-          </li>
-          <!-- Fin de elemento de lista: Quienes somos -->
+            <!-- Elemento de lista:  Quienes somos-->
+            <li class="enlace_secciones">
+              <a class="enlace_item" href="../quienes_somos.html"> Quienes somos </a>
+            </li>
+            <!-- Fin de elemento de lista: Quienes somos -->
 
-          <!-- Elemento de lista: contactanos -->
-          <li class="enlace_secciones">
-            <a class="enlace_item" href="../contactanos.html"> Contactanos </a>
-          </li>
-          <!-- Fin de elemento de lista: contactanos -->
+            <!-- Elemento de lista: contactanos -->
+            <li class="enlace_secciones">
+              <a class="enlace_item" href="../contactanos.html"> Contactanos </a>
+            </li>
+            <!-- Fin de elemento de lista: contactanos -->
 
-        </ul>
-        <!-- Fin de la lista de enlaces en la navbar -->
+          </ul>
+          <!-- Fin de la lista de enlaces en la navbar -->
+        </div>
       </div>
     </nav>
+
+            <!-- navbar y sidebar para version movil -->
+            <div class="contenedor_principal-navbar_sidebar">
+            
+              <div class="top_navbar">
+                      <!-- logo de la marca -->
+                      <div class="logo_mini">
+                          <a href="../../index.html"><b>NOOK NOOK</b></a>
+                      </div>
+  
+                      <div class="hamburger">
+                          <a href="#">
+                              <i class="fas fa-bars"></i>
+                          </a>
+                      </div>
+              </div>
+                   
+              
+              <div class="sidebar">
+                  <div class="profile">
+                      <img src="../../imagenes/foto_usuario.jpg" alt="profile_picture">
+                      <h3>Cesar Gael</h3>
+                      
+                  </div>
+                  <ul>
+                      <li>
+                          <a class="enlace_item_landing_page" href="../../index.html">  
+                              <span class="icon"><i class="fas fa-home"></i></span>
+                              <span class="item">Inicio</span>
+  
+                          </a>
+                      </li>
+                      
+                          <!-- productos hombre -->
+                          <li>
+                              <a class=" collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#home-collapse" aria-expanded="true">
+                                <span class="icon"><i class="fas fa-tshirt"></i></span>
+                                <span class="item">Hombre</span>
+                              </a>
+                              <div class="collapse align-items-center" id="home-collapse">
+                                  <!-- categorias de productos hombre -->
+                                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
+                                      <!-- hombres - chamarras -->
+                                    <li>
+                                      <div class="sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/hombre-chamarras.html">Chamarras</a>
+                                      </div>
+                                    </li>
+  
+                                    <li>
+                                      <div class=" sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/hombre-playeras.html">Playeras</a>
+                                          
+                                      </div>
+                                    </li>
+  
+                                    <li>
+                                      <div class=" sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/hombre-pantalones.html">Pantalones</a>
+                                      </div>
+                                    </li>
+                                  </ul>
+                
+                              </div>
+                          </li>
+  
+                          <!-- Productos mujer -->
+                          <li>
+                              <a data-bs-toggle="collapse"
+                                data-bs-target="#productos-mujer" aria-expanded="true">
+                                <span class="icon"><i class="fas fa-tshirt"></i></span>
+                                <span class="item">Mujer</span>
+                              </a>
+                              <div class="collapse align-items-center" id="productos-mujer">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
+                                  <li>
+                                    <div class="sidebar_subcategorias_productos">
+                                      <a href="../seccionProductos/mujer-pantalones.html">Pants</a>
+  
+  
+                                    </div>
+                                  </li>
+                                  <!-- mujer - chamarras -->
+                                  <li>
+                                    <div class="sidebar_subcategorias_productos">
+                                      <a href="../seccionProductos/mujer-chamarras.html">Chamarras</a>
+                                    </div>
+                                  </li>
+                                  <!-- mujer - Playeras -->
+                                  <li>
+                                    <div class="sidebar_subcategorias_productos">
+                                          
+                                      <a href="../seccionProductos/mujer-playeras.html">Playeras</a>
+                                      </div>
+                                  </li>
+                                  <!-- mujer - Blusas -->
+                                  <li>
+                                      <div class="sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/mujer-blusas.html">Blusas</a> 
+                                      </div>
+                                  </li>
+                                </ul>
+                
+                              </div>
+                          </li>
+                          
+                      
+                      <li>
+                          <a href="../carrito.html">
+                              <span class="icon"><i class="fas fa-cart-plus"></i></span>
+                              <span class="item">Carrito</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../fechas_descuentos.html">
+                              <span class="icon"><i class="fas fa-calendar-plus"></i></span>
+                              <span class="item">Fechas y desc</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../quienes_somos.html">
+                              <span class="icon"><i class="fas fa-search"></i></span>
+                              <span class="item">Quienes somos</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../contactanos.html">
+                              <span class="icon"><i class="fas fa-user-friends"></i></span>
+                              <span class="item">Contactanos</span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+              
+          </div>        
+          <!-- Fin del contenedor principal navbar sidebar -->
   </header>
   <!-- ============= fin de cabecera de la página  ============== -->
 
   <!-- ============= Contenido principal de la página  ============== -->
   <main>
-    <!-- Sección 1: Tiene el contenedor de contactanos  -->
+    <!-- Sección 1: Tiene el contenedor de categorias y lista de productos  -->
     <section>
 
       <div class="contenedor_principal-filtroCategorias-listaProductos">
         <div class="titulo_categoria">
           <h2>PLAYERAS</h2>
         </div>
-        <!-- Filtro categorias -->
         <div class="contenedor_filtroCategorias">
           <h1>Categorias</h1>
           <ul class="list-group">
@@ -257,173 +394,315 @@
           </ul>
 
         </div>
-        <!-- Fin del  contenedor filtros aplicados -->
 
         <!-- Contenedor : lista de productos de la categoria -->
         <div class="contenedor_listaProductos">
+
+
           <!-- Card producto 1 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/01_mujer_especial_damas.png" alt="playera mujer 1">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Fit slim</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 1 -->
 
           <!-- Card prooducto 2-->
           <div class="card_producto">
+
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/02_mujer_playera hombre necio.png" alt="playera mujer 2">
+              <!-- contenedor etiqueta nuevo -->
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <!-- contenedor num descuento -->
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
+
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>
+                  Jogger Largo Cortes</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 2 -->
 
           <!-- Card producto 3 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/03_mujer_playera_ballena.png" alt="playera mujer 3">
+
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Fit skinny formal</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 3 -->
 
           <!-- Card producto 4 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/04_mujer_3032.jpeg" alt="playera mujer 4">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Jogger fit retro</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
-          <!-- Fin de card producto 4 -->          
+          <!-- Fin de card producto 4 -->
 
           <!-- Fila 2 -->
 
-          <!-- Card producto 1 -->
+          <!-- Card prooducto 1-->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/05_playera_malan_unisex.jpeg" alt="playera mujer 5">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Malandro fit casual</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 1 -->
 
-          <!-- Card prooducto 2-->
+          <!-- Card producto 2 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/06_mujer_3032889_A.jpeg" alt="playera mujer 6">
+
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>fit slim oscuro</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 2 -->
 
           <!-- Card producto 3 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/07_mujer_3033019_A.jpeg" alt="playera mujer 7">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Azulado fit casual</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 3 -->
 
-          <!-- Card producto 4 -->
+          <!-- Card prooducto 4-->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/08_3033021_A.jpeg" alt="playera mujer 8">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Crema fir casual</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
-          <!-- Fin de card producto 4 -->          
-
-          <!-- Fin de fila 2 -->
+          <!-- Fin de card producto 4 -->
 
           <!-- Fila 3 -->
 
           <!-- Card producto 1 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/09_mujer_playera_carita_damas.png" alt="playera mujer 9">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Jogger Largo Cortes</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 1 -->
 
-          <!-- Card prooducto 2-->
+          <!-- Card producto 2 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/10_mujer_playera_huella.jpeg" alt="playera mujer 1">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Fit skinny formal</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 2 -->
-
           <!-- Card producto 3 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/011_hombre_playera.jpeg" alt="playera mujer 11">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Jogger fit retro</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 3 -->
 
-          <!-- Card producto 4 -->
+          <!-- Card prooducto 4-->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/vintage_baby.png" alt="">
+              <img src="../../imagenes/Playeras/012_playera_harry_potter.jpeg" alt="playera mujer 12">
+
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
+
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>Vintage Baby<br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Malandro fit retro</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
-          <!-- Fin de card producto 4 -->          
+          <!-- Fin de card producto 4 -->
 
-          <!-- Fin de fila 3 -->
+
+
         </div>
         <!-- Fin del contenedor -->
       </div>
@@ -470,6 +749,13 @@
   </footer>
   <!-- ============= Fin de pie de página ============= -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+
+    var hamburger = document.querySelector(".hamburger");
+    hamburger.addEventListener("click", function(){
+            document.querySelector("body").classList.toggle("active");
+    });
+  </script>
 </body>
 
 </html>

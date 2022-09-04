@@ -13,10 +13,14 @@
   <title>Chamarras hombre - nook nook</title>
 
   <link rel="stylesheet" href="../../css/style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <!-- icono de menú para la navbar -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- icono de la navbar (version movil) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
 </head>
 
 <body>
@@ -31,11 +35,6 @@
           <a href="../../index.html"><b>NOOK NOOK</b></a>
         </div>
 
-        <!-- creamos un checkbox y lo abrimos al seleccionar el label (responsive)-->
-        <input type="checkbox" id="barra_desplegable">
-        <label for="barra_desplegable">
-          <i class="ri-menu-line"></i>
-        </label>
         <!-- Fin del contenedor  del label responsive -->
         <div class="menu_enlaces_navbar">
           <!-- Lista de enlaces del navbar -->
@@ -104,8 +103,144 @@
           <!-- Fin de la lista de enlaces en la navbar -->
         </div>
       </div>
-
     </nav>
+
+            <!-- navbar y sidebar para version movil -->
+            <div class="contenedor_principal-navbar_sidebar">
+            
+              <div class="top_navbar">
+                      <!-- logo de la marca -->
+                      <div class="logo_mini">
+                          <a href="../../index.html"><b>NOOK NOOK</b></a>
+                      </div>
+  
+                      <div class="hamburger">
+                          <a href="#">
+                              <i class="fas fa-bars"></i>
+                          </a>
+                      </div>
+              </div>
+                   
+              
+              <div class="sidebar">
+                  <div class="profile">
+                      <img src="../../imagenes/foto_usuario.jpg" alt="profile_picture">
+                      <h3>Cesar Gael</h3>
+                      
+                  </div>
+                  <ul>
+                      <li>
+                          <a class="enlace_item_landing_page" href="../../index.html">  
+                              <span class="icon"><i class="fas fa-home"></i></span>
+                              <span class="item">Inicio</span>
+  
+                          </a>
+                      </li>
+                      
+                          <!-- productos hombre -->
+                          <li>
+                              <a class=" collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#home-collapse" aria-expanded="true">
+                                <span class="icon"><i class="fas fa-tshirt"></i></span>
+                                <span class="item">Hombre</span>
+                              </a>
+                              <div class="collapse align-items-center" id="home-collapse">
+                                  <!-- categorias de productos hombre -->
+                                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
+                                      <!-- hombres - chamarras -->
+                                    <li>
+                                      <div class="sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/hombre-chamarras.html">Chamarras</a>
+                                      </div>
+                                    </li>
+  
+                                    <li>
+                                      <div class=" sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/hombre-playeras.html">Playeras</a>
+                                          
+                                      </div>
+                                    </li>
+  
+                                    <li>
+                                      <div class=" sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/hombre-pantalones.html">Pantalones</a>
+                                      </div>
+                                    </li>
+                                  </ul>
+                
+                              </div>
+                          </li>
+  
+                          <!-- Productos mujer -->
+                          <li>
+                              <a data-bs-toggle="collapse"
+                                data-bs-target="#productos-mujer" aria-expanded="true">
+                                <span class="icon"><i class="fas fa-tshirt"></i></span>
+                                <span class="item">Mujer</span>
+                              </a>
+                              <div class="collapse align-items-center" id="productos-mujer">
+                                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small align-items-center">
+                                  <li>
+                                    <div class="sidebar_subcategorias_productos">
+                                      <a href="../seccionProductos/mujer-pantalones.html">Pants</a>
+  
+  
+                                    </div>
+                                  </li>
+                                  <!-- mujer - chamarras -->
+                                  <li>
+                                    <div class="sidebar_subcategorias_productos">
+                                      <a href="../seccionProductos/mujer-chamarras.html">Chamarras</a>
+                                    </div>
+                                  </li>
+                                  <!-- mujer - Playeras -->
+                                  <li>
+                                    <div class="sidebar_subcategorias_productos">
+                                          
+                                      <a href="../seccionProductos/mujer-playeras.html">Playeras</a>
+                                      </div>
+                                  </li>
+                                  <!-- mujer - Blusas -->
+                                  <li>
+                                      <div class="sidebar_subcategorias_productos">
+                                          <a href="../seccionProductos/mujer-blusas.html">Blusas</a> 
+                                      </div>
+                                  </li>
+                                </ul>
+                
+                              </div>
+                          </li>
+                          
+                      
+                      <li>
+                          <a href="../carrito.html">
+                              <span class="icon"><i class="fas fa-cart-plus"></i></span>
+                              <span class="item">Carrito</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../fechas_descuentos.html">
+                              <span class="icon"><i class="fas fa-calendar-plus"></i></span>
+                              <span class="item">Fechas y desc</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../quienes_somos.html">
+                              <span class="icon"><i class="fas fa-search"></i></span>
+                              <span class="item">Quienes somos</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="../contactanos.html">
+                              <span class="icon"><i class="fas fa-user-friends"></i></span>
+                              <span class="item">Contactanos</span>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+              
+          </div>        
+          <!-- Fin del contenedor principal navbar sidebar -->
   </header>
   <!-- ============= fin de cabecera de la página  ============== -->
 
@@ -268,58 +403,99 @@
           <!-- Card producto 1 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/01_chamarra_blanca.png" alt="">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
             </div>
 
             <div class="card_producto-texto-boton">
               <div class="card_producto-texto">
-                <h2>Chamarra <br> El catrin <br> $700 MX</h2>
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
               </div>
-  
+
               <div class="card_producto_boton">
                 <a href="../../pages/carrito.html">Agregar</a>
               </div>
             </div>
-     
+
           </div>
           <!-- Fin de card producto 1 -->
 
           <!-- Card prooducto 2-->
           <div class="card_producto">
+
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/02_hombre_Chamarra_Rombeau.jpg" alt="">
+              <!-- contenedor etiqueta nuevo -->
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <!-- contenedor num descuento -->
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
+
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>El catrin <br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 2 -->
 
           <!-- Card producto 3 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/03_hombre_chamarra_stranger.jpeg" alt="">
+
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>El catrin <br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 3 -->
 
           <!-- Card producto 4 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/04_corazon_chamarra.png" alt="">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>El catrin <br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 4 -->
 
@@ -328,52 +504,99 @@
           <!-- Card prooducto 1-->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/05_el_catrin.png" alt="">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>El catrin <br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 1 -->
 
           <!-- Card producto 2 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/06_hombre_sudadera_human.jpeg" alt="">
+
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>El catrin <br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 2 -->
 
           <!-- Card producto 3 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/07_hombre_sudadera_human_roja.jpeg" alt="">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>El catrin <br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 3 -->
 
           <!-- Card prooducto 4-->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/08_hombre_chamarra_bomber.jpeg" alt="">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>El catrin <br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 4 -->
 
@@ -382,48 +605,99 @@
           <!-- Card producto 1 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/09_hombre_chamarra_harringlone.jpeg" alt="">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
             </div>
 
-            <div class="card_producto-texto_boton">
-              <h2>El catrin <br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 1 -->
 
           <!-- Card producto 2 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/10_hombre_chamarra_bomber_oscura.jpeg" alt="">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
             </div>
-            <div class="card_producto-texto_boton">
-              <h2>El catrin <br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 2 -->
           <!-- Card producto 3 -->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/11_hombre_chamarra_casual_rompevientos.jpeg" alt="">
+
+              <div class="contenedor-nuevo">
+                <p>New</p>
+              </div>
             </div>
-            <div class="card_producto-texto_boton">
-              <h2>El catrin <br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 3 -->
 
           <!-- Card prooducto 4-->
           <div class="card_producto">
             <div class="card_producto_imagen">
-              <img src="../../imagenes/catrin.webp" alt="">
+              <img src="../../imagenes/chamarras/12_hombre_chamarra_bomber_desuede.jpeg" alt="">
+
+              <div class="contenedor-numDescuento">
+                <p>-10%</p>
+              </div>
+
             </div>
-            <div class="card_producto-texto_boton">
-              <h2>El catrin <br> $700 MX</h2>
-              <a href="../../pages/carrito.html">Agregar</a>
+
+            <div class="card_producto-texto-boton">
+              <div class="card_producto-texto">
+                <h2>Chamarra el catrin</h2>
+                <p> $700 MX</p>
+              </div>
+
+              <div class="card_producto_boton">
+                <a href="../../pages/carrito.html">Agregar</a>
+              </div>
             </div>
+
           </div>
           <!-- Fin de card producto 4 -->
 
@@ -475,6 +749,14 @@
   </footer>
   <!-- ============= Fin de pie de página ============= -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+
+      var hamburger = document.querySelector(".hamburger");
+      hamburger.addEventListener("click", function(){
+              document.querySelector("body").classList.toggle("active");
+      });
+ </script>
+</body>
 </body>
 
 </html>

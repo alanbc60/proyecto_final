@@ -4,11 +4,11 @@
     height: $height;
 }
 
-@mixin atributosDisplayFlex($display,$marginTop,$wrap,$center,$marginBottom){
+@mixin atributosDisplayFlex($display,$marginTop,$wrap,$contenidoJustificado,$marginBottom){
     display: $display;
     margin-top: $marginTop;
     flex-wrap: $wrap;
-    justify-content: $center;
+    justify-content: $contenidoJustificado;
     margin-bottom: $marginBottom;
 }
 
@@ -20,79 +20,208 @@
     /* Indicar cuantas columnas tendra */
     grid-template-columns: repeat(3, 1fr);
     /* Indicar cuantas filas tendra */
-    grid-template-rows: 100px 400px auto 100px auto;
+    grid-template-rows: auto 295px 295px auto auto auto;
 
     /* acomodar el grid */
     grid-template-areas:
-        "titulo_descuentos titulo_descuentos titulo_descuentos"
-        "card_img_descuento card_img_descuento texto_descuentos"
-        "contenedor_descuentos contenedor_descuentos contenedor_descuentos"
-        "titulo_fechas titulo_fechas titulo_fechas"
-        "contenedor_fechas contenedor_fechas contenedor_fechas";
+        "titulo_descuentos_fechas     titulo_descuentos_fechas     titulo_descuentos_fechas "
+        "contenedor_carousel   contenedor_carousel   contenedor_secundario1"
+        "contenedor_carousel   contenedor_carousel   contenedor_secundario2"
+        "contenedor_descuentos contenedor_descuentos contenedor_descuentos "
+        "titulo_fechas         titulo_fechas         titulo_fechas "
+        "contenedor_fechas     contenedor_fechas     contenedor_fechas ";
 
+        .titulo_descuentos_fechas {
+            grid-area: titulo_descuentos_fechas;
+            color: red;
+            background-color: white;
+            text-align: center;
+            font-size: $fontMaxima;
+    
+            /* Texto tiulo descuentos */
+            h2 {
+                font-size: 30px;
+                font-style: oblique;
+                font-weight: bold;
+
+            }
+    
+        }
     /* Contenedor del titulo principal de descuentos */
+    .contenedor_descuentos-carousel {
+        grid-area: contenedor_carousel;
+        .contenedor_imagen_carousel{
+            img {
+                @include sizes($width-estandar, 600px);
+                object-fit: $acoplamiento-imagen;
+            
+            }
+        }
+
+    }
+
+    .contenedor_descuentos-secundario1 {
+        grid-area: contenedor_secundario1;
+        background-color: blue;
+        background-image: url(../../imagenes/imagenes_descuentos/descuentos_blusas2.jpg);
+        background-size: 460px 300px;
+        background-color: pink;
+        
+        padding: 10px;
+        text-align: center;
+        image-rendering: optimizeSpeed;
+        .descuentos_secundario1-texto-boton{
+            background-color: transparent;
+            width: 230px;
+            height: 210px;
+            margin:0px auto;
+            margin-top: 25px;
+            
+            .descuentos_secundario1-texto{
+                h1{
+                    font-size: 40px;
+                    color: white;
+                }
+            }
+            .descuentos_secundario1-boton{
+                margin-top: 25px;
+                a{
+                    color: white;
+                    background-color: green;
+                    text-decoration: none;
+                    font-weight: bold;
+                    
+                }
+                .btn_descuentos{
+                    border: 2px solid #fff;
+                    // background-color: white;
+                    padding: 10px 35px;
+                    border-radius: 30px;
+
+                    
+                }
+            }
+        }
+
+    }
+    .contenedor_descuentos-secundario2 {
+        grid-area: contenedor_secundario2;
+        background-image: url(../../imagenes/imagenes_descuentos/descuentos_chamarras.png);
+        background-size: 440px 300px;
+        padding: 10px;
+        text-align: center;
+        image-rendering: optimizeSpeed;
+
+
+        .descuentos_secundario2-texto-boton{
+            background-color: transparent;
+            width: 230px;
+            height: 220px;
+            margin:0px auto;
+            .descuentos_secundario2-texto{
+                h1{
+                    font-size: 40px;
+                    color: black;
+                    animation: animacion_descuento_secundario2 12s linear;
+                }
+            }
+            .descuentos_secundario2-boton{
+                margin-top: 25px;
+                a{
+                    color: white;
+                    background-color: darkslategrey;
+                    text-decoration: none;
+                    font-weight: bold;
+                    
+                }
+                .btn_descuentos{
+                    border: 2px solid white;
+                    padding: 10px 35px;
+                    border-radius: 30px;                    
+                }
+            }
+        }
+        @keyframes animacion_descuento_secundario2{
+            0%{
+                transform: translate(100px);
+                opacity: 0;
+            }
+            100%{
+                transform: translate(0px);
+                opacity: 1;
+            }
+        }
+    }
+
     .titulo_descuentos {
         grid-area: titulo_descuentos;
-        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+        color: red;
         text-align: center;
-        background-color: red;
+        // width: 950px;
+        
+        // background-color: lavenderblush;
+        background-color: khaki;
         font-size: $fontMaxima;
+        margin-top: 10px;
+        // margin: 0px auto;
 
         /* Texto tiulo descuentos */
         h2 {
-            font-size: 70px;
+            font-size: 50px;
             font-style: oblique;
             font-weight: bold;
         }
 
     }
 
-    .card_imagen_descuento {
-        grid-area: card_img_descuento;
-
-        img {
-            @include sizes($width-estandar, 340px);
-            object-fit: $acoplamiento-imagen;
-
-        }
-
-    }
-
-    .informacion_descuentos_fechas {
-        padding: 10px;
-        grid-area: texto_descuentos;
-        font-size: 20px;
-        
-        p {
-            font-style: italic;
-        }
-    }
-
     /* contenedor y card de la seccion descuentos */
     .contenedor_cards_descuentos {
         grid-area: contenedor_descuentos;
-        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-        @include atributosDisplayFlex(flex, 10px, wrap, center, 10px);
+        // background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+        background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
+        @include atributosDisplayFlex(flex, 0px, wrap, start, 10px);
+
 
         .card_descuento {
-            @include sizes( 400px, 220px);
-            background-color:map-get($map: $paleta-colores, $key: 'colorPrincipal');
+            @include sizes( 460px, 250px);
+            // background-color:map-get($map: $paleta-colores, $key: 'colorPrincipal');
+
             margin-left: 12px;
-            margin-top: 23px;
-            border-radius: 20px;
+            margin-top: 15px;
+            // border-radius: 20px;
 
 
             .cobertura_img_card {
-                background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+                // background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+                background-color:  #ebf5fc;
 
-                @include sizes(400px, 220px);
+                @include sizes(460px, 250px);
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                border-radius: 20px;
+                border-radius: 8px;
             
-                border: 5px solid red;
+                border: 3px solid white;
                 box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+                opacity: .8;
+            }
+            .color_variado1{
+                background-color: red;
+            }
+            .color_variado2{
+                background-color: cornsilk;
+            }
+            .color_variado3{
+                background-color: #0095ff;
+            }
+            .color_variado4{
+                background-color: cornflowerblue;
+            }
+            .color_variado5{
+                background-color: green;
+            }
+            .color_variado6{
+                background-color: blanchedalmond;
             }
             
             .texto_card_descuento {
@@ -102,7 +231,7 @@
                 justify-content: center;
                 display: none;
                 h3 {
-                    color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                    color: blue;
                     margin-bottom: 5px;
                     font-size: 24px;
                     text-align: center;
@@ -124,12 +253,13 @@
     .titulo_fechas {
         grid-area: titulo_fechas;
         color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+        // width: 800px;
         text-align: center;
-        background-color: blue;
+        background-color: red;
         font-size: $fontMaxima;
         
         h2 {
-            font-size: 70px;
+            font-size: 50px;
             font-style: oblique;
             font-weight: bold;
         }
@@ -137,25 +267,54 @@
     
     .contenedor_cards_fechas {
         grid-area: contenedor_fechas;
-        @include atributosDisplayFlex(flex, 10px, wrap, center, 10px);
+        @include atributosDisplayFlex(flex, 10px, wrap, start, 10px);
 
         .card_fecha {
-            @include sizes(400px, 220px);
-            background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+            @include sizes(460px, 180px);
+            display: flex;
+            flex-wrap: wrap;
+            // background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+            background-color: white;
             margin-left: 12px;
             margin-top: 23px;
-            animation: card_fecha 9s infinite;
+            padding-left: 15px;
+            animation: card_fecha 1s infinite;
             transform: skew(20deg);
             animation-direction: alternate;
-            opacity: .7;
+
+
+            .card_fecha-icono{
+
+                @include sizes(130px, 130px);
+                min-height: 130px;
+                margin-top: 22px;
+            }
+
+            .card_fecha-texto{
+                margin-left: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                @include sizes(290px, 130px);
+                background-color: white;
+                min-height: 130px;
+                margin-top: 22px;
+                margin-right: 5px;
+                padding: 5px;
+                h3{
+                    font-size: 28px;
+                    color: red;
+                }
+            }
+
+
         }
         
         @keyframes card_fecha {
             0% {
-              transform: skewX(20deg);
+              transform: skewX(1deg);
             }
             100% {
-              transform: skewX(-20deg);
+              transform: skewX(-1deg);
             }
         }
     }

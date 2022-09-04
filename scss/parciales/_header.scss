@@ -141,16 +141,6 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
 // personalizacion de scroll del header general
 
 
-
-/* ocultar el icono de menu hamburguesa y casilla de credito */
-#barra_desplegable,
-.navbar label {
-    display: none;
-    /*Ocultar la casilla de verificación y la etiqueta en pantallas grandes.*/
-}
-
-
-
 /* == Personalización  del contendor de la lista de enlaces  ===*/
 
 /* contenedor principal donde se encuentra producto-hombre y producto-mujer */
@@ -237,45 +227,18 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
 }
 
 
-
-
-
-
 //sidebar
-.wrapper{
+.contenedor_principal-navbar_sidebar{
     display: none;
     // navbar
-    .section {
-        width: calc(100% - 225px);
-        margin-left: 225px;
-        transition: all 0.5s ease;
-        //navegacion bar
-
-        .top_navbar {
-            background: rgb(7, 105, 185);
-            height: 50px;
-            display: flex;
-            align-items: center;
-            padding: 0 30px;
-
-            .hamburger a {
-                font-size: 28px;
-                color: #f4fbff;
-            }
-            
-            .hamburger a:hover {
-                color: #a2ecff;
-            }
-        
-        }
-    }
 
     .sidebar {
+        display: none;
         background: #4063b9;
         position: fixed;
         top: 0;
         left: 0;
-        width: 225px;
+        width: 210px;
         height: 100%;
         transition: all 0.5s ease;
         
@@ -302,21 +265,44 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
         }
         // lista que contiene la sidebar
         ul{
-            list-style: none;
+            
             width: 220px;
+            margin-left: -20px;
+            text-decoration: none;
         }
 
         ul li{
             width: 190px;
+            list-style: none;
+            text-decoration: none;
         }
+        .sidebar_subcategorias_productos{
+            width: 190px;
+            background-color: aqua;
+            margin-left: 20px;
+            align-items: center;
+            a{
+                width: 100%;
+                padding: 4px 10px;
+                color: blue;
+            }
+
+        } 
+        .sidebar_subcategorias_productos:hover{
+            background-color: red;
+            color: white;
+        }
+        
+
         // enlaces de la sidebar
         ul li a {
             display: block;
-            padding: 13px 30px;
+            padding: 13px 10px;
             border-bottom: 1px solid orange;
             color: rgb(241, 237, 237);
             font-size: 16px;
             position: relative;
+            text-decoration: none;
             .icon {
                 color: #dee4ec;
                 width: 30px;
@@ -326,7 +312,6 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
         ul li a:hover, ul li a.active {
             color: #0c7db1;
             background: white;
-            border-right: 2px solid rgb(5, 68, 104);
             .icon {
                 color: #0c7db1;
             }
@@ -336,16 +321,76 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
             display: block;
         }
     }
+
+    .top_navbar {
+        width: 100%;
+        transition: all 0.5s ease;
+        background: map-get($map: $paleta-colores, $key: 'colornavbarSidebar');
+        height: auto;
+        display: flex;
+        padding-left: 7px;
+        .logo_mini{
+            display: block;
+            background-color: red;
+            height: 40px;
+            width: 100px;
+            // espaciado externo
+            margin-right: 136px;
+            margin-top: 3px;
+            margin-bottom: 6px;
+            
+            // espaciado interno
+            padding-top: 5px;
+            padding-left: 4px;
+        
+            a{
+                font-size: 14px;
+                font-weight: bold;
+                text-decoration: none;
+                text-align: center;
+                width: 80%;
+                color: white;
+            }
+        }
+        .hamburger{
+            margin-left: 40px;
+        }
+        .hamburger a {
+            font-size: 28px;
+            color: white;
+        }
+        
+        .hamburger a:hover {
+            color: white;
+        }
+    
+    }
+
+
 }
 
-body.active .wrapper{
-    // desplaza la sidebar horizontalmente
-    .sidebar {
-     left: -225px;
-    }
+
+//Despues de oprimir el icono de menu hamburguesa
+body.active .contenedor_principal-navbar_sidebar{
+
     // desplaza el icono que muestra a la navbar
-    .section {
-        margin-left: 0;
-        width: 100%;
+
+    .sidebar {
+        display: block;
+        left: -2px;
+    }
+    .top_navbar {
+        background-color: #ffffff;
+        width: calc(100% - 210px);
+        margin-left: 210px;
+        .logo_mini{
+            display: none;
+        }
+        .hamburger{
+            margin-left: 60px;
+            a{
+                color: #4063b9;
+            }
+        }
     }
 }

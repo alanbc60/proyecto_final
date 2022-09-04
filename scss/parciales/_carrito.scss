@@ -18,14 +18,14 @@
     @include contenedorGrid(grid, 8px, 10px);
     background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
     /* Indicar cuantas columnas tendra */
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     /* Indicar cuantas filas tendra */
-    grid-template-rows: auto 900px;
+    grid-template-rows: auto auto;
 
     /* acomodar el grid */
     grid-template-areas:
-        "texto_carrito texto_carrito texto_carrito"
-        "contenedor_productos contenedor_productos contenedor_precio_total";
+        "texto_carrito  texto_carrito"
+        "contenedor_productos  contenedor_precio_total";
 
     .carrito-texto_principal {
         grid-area: texto_carrito;
@@ -46,20 +46,21 @@
 
         /* personalizacion del card producto */
         .card_producto {
+            width: 98%;
             @include contenedorGrid(grid, 10px, 10px);
             margin-bottom: 20px;
             margin-left: 5px;
-            background: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+            // background: map-get($map: $paleta-colores, $key: 'colorPrincipal');
             box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
             -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
             border-radius: 5px;
             /* Indicar cuantas columnas tendra */
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: 330px 400px;
             /* Indicar cuantas filas tendra */
-            grid-template-rows: 200px;
+            grid-template-rows: 230px;
             /* acomodar el grid */
             grid-template-areas:
-                "contenedor_imagen_producto contenedor_texto_productos contenedor_texto_productos";
+                "contenedor_imagen_producto contenedor_texto_productos";
 
 
             /* imagen del producto */
@@ -81,8 +82,9 @@
             .texto-producto {
                 grid-area: contenedor_texto_productos;
                 background: map-get($map: $paleta-colores, $key: 'colorCard');
-
                 width:  $width-estandar;
+                margin-top: 40px;
+                padding-left: 10px;
                 .cantidad_producto{
                     /* Entrada de texto para aumentar las cantidades */
                     input {
