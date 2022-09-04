@@ -247,6 +247,7 @@
                 img {
                     @include sizes(276px, 310px);
                     transition: all 2s ease-in-out;
+                    object-fit: $acoplamiento-imagen;
                 }
             
                 img:hover {

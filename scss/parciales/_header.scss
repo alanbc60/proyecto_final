@@ -231,6 +231,7 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
 .contenedor_principal-navbar_sidebar{
     display: none;
     // navbar
+    
 
     .sidebar {
         display: none;
@@ -353,7 +354,9 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
             }
         }
         .hamburger{
-            margin-left: 40px;
+            
+            margin-left: auto;
+            margin-right: 5px;
         }
         .hamburger a {
             font-size: 28px;
@@ -387,7 +390,8 @@ body.active .contenedor_principal-navbar_sidebar{
             display: none;
         }
         .hamburger{
-            margin-left: 60px;
+            margin-left: auto;
+            margin-right: 5px;
             a{
                 color: #4063b9;
             }

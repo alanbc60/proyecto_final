@@ -40,17 +40,6 @@
         margin-left: 10px;
         font-size: 20px;
         background-color: azure;
-
-        // se puede crear un mixin de este y servicios
-        .titulo_conocenos{
-            width: 100%;
-            height: 80px;
-            text-align: center;
-            background-color: aqua;
-            color: red;
-            padding-top: 10px;
-            margin-bottom: 5px;
-        }
     }
 
 
@@ -111,7 +100,6 @@
         grid-area: titulo_amigos;
         color: map-get($map: $paleta-colores, $key: 'colorTextoTitulosAzul');
         text-align: center;
-        font-size: 190px;
         padding-bottom: 120px;
 
         h2 {
@@ -143,6 +131,11 @@
             margin-right: 20px;
             margin-bottom: 22px;
             margin-top: 13px;
+            iframe{
+                width: 300px; 
+                height: 420;
+            }
+
         }
 
         .card_instagram_marca:hover {
