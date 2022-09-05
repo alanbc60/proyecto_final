@@ -330,7 +330,7 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 .contenedor_principal-navbar_sidebar .top_navbar {
   width: 100%;
   transition: all 0.5s ease;
-  background: #0769b9;
+  background-color: transparent;
   height: auto;
   display: flex;
   padding-left: 7px;
@@ -359,16 +359,16 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 
 .contenedor_principal-navbar_sidebar .top_navbar .hamburger {
   margin-left: auto;
-  margin-right: 5px;
+  margin-right: 7px;
 }
 
 .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   font-size: 28px;
-  color: white;
+  color: rgba(255, 0, 0, 0.808);
 }
 
 .contenedor_principal-navbar_sidebar .top_navbar .hamburger a:hover {
-  color: white;
+  color: rgba(255, 0, 0, 0.808);
 }
 
 body.active .contenedor_principal-navbar_sidebar .sidebar {
@@ -1515,7 +1515,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   /* con aaltura aquto se acopla a la redimensacion */
   .contenedor_principal {
     display: grid;
-    min-width: 320px;
+    min-width: 310px;
     max-width: 600px;
     overflow: hidden;
     grid-template-columns: 1fr;
@@ -1532,11 +1532,10 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     height: auto;
   }
   .contenedor_principal .contenedor_principal_landing .contenedor_landing {
-    width: 95%;
+    width: auto;
     min-width: 280px;
-    background-color: transparent;
     margin-right: 12px;
-    height: 700px;
+    height: auto;
   }
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo {
     width: auto;
@@ -1575,44 +1574,101 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   }
   .contenedor_principal .contenedor_principal-imagen {
     overflow-x: hidden;
-    width: 98%;
+    width: auto;
     max-width: 590px;
+    min-width: 310px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 0px;
     /* contenedor de imagen principal */
   }
   .contenedor_principal .contenedor_principal-imagen img {
     width: 100%;
-    min-width: 315px;
+    min-width: 310px;
     max-width: 590px;
     min-height: 200px;
   }
   .contenedor_principal .contenedor_principal-texto {
-    width: 98%;
-    min-width: 315px;
+    width: auto;
+    min-width: 310px;
     max-width: 590px;
+    padding-left: 5px;
+    padding-right: 5px;
     margin-top: 0px;
     /* contenedor de texto principal */
     /* contenedor del boton checar */
   }
+  .contenedor_principal .contenedor_principal-texto h1 {
+    width: 100%;
+    font-size: 24px;
+  }
   .contenedor_principal .contenedor_principal-texto .contenido_principal-texto {
+    width: auto;
+    min-width: 310px;
     font-size: 15px;
     margin-top: 0px;
-    padding-right: 4px;
+    margin-left: 0px;
+    padding-right: 5px;
+    padding-left: 5px;
     text-align: start;
   }
   .contenedor_principal .contenedor_principal-texto .contenedor_boton_checar {
+    width: 100%;
     margin-bottom: 30px;
-    margin-right: 20px;
-    margin-left: 5px;
+    margin-left: 0px;
+  }
+  .contenedor_principal .titulo_novedades {
+    width: auto;
+    min-width: 310px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .contenedor_principal .contenedor_novedades {
     width: auto;
+    justify-content: start;
     min-width: 320px;
     max-width: 590px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .contenedor_principal .contenedor_novedades .card_novedades {
+    width: auto;
+    height: auto;
+    min-width: 310px;
+    max-width: 590px;
     background-color: #ebf5fc;
     margin-left: 0px;
     margin-right: 0px;
+  }
+  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_imagen {
+    min-width: 300px;
+    width: 100%;
+    height: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 1px;
+  }
+  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_imagen img {
+    width: 100%;
+    min-width: 300px;
+    height: 350px;
+    object-fit: cover;
+  }
+  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_texto {
+    width: auto;
+    min-width: 187px;
+    max-width: 200px;
+    margin-left: 5px;
+  }
+  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_texto h2 {
+    padding-left: 0px;
+    min-width: 187px;
+    max-width: 200px;
+  }
+  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-boton {
+    width: 100%;
+    margin-left: auto;
+    right: auto;
   }
   /* ==== Contenedor principal de filtro categorias y productos */
   .contenedor_principal-filtroCategorias-listaProductos {
@@ -1656,13 +1712,16 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto {
     min-width: 310px;
     margin-right: 12px;
+    height: auto;
     /* contenedor de boton y texto del card */
   }
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen {
     min-width: 305px;
+    height: 350px;
   }
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen img {
     min-width: 295px;
+    height: 350px;
   }
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton {
     min-width: 295px;

@@ -326,7 +326,8 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
     .top_navbar {
         width: 100%;
         transition: all 0.5s ease;
-        background: map-get($map: $paleta-colores, $key: 'colornavbarSidebar');
+        // background: map-get($map: $paleta-colores, $key: 'colornavbarSidebar');
+        background-color: transparent;
         height: auto;
         display: flex;
         padding-left: 7px;
@@ -356,15 +357,15 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
         .hamburger{
             
             margin-left: auto;
-            margin-right: 5px;
+            margin-right: 7px;
         }
         .hamburger a {
             font-size: 28px;
-            color: white;
+            color: rgba(255, 0, 0, 0.808);
         }
         
         .hamburger a:hover {
-            color: white;
+            color: rgba(255, 0, 0, 0.808);
         }
     
     }
