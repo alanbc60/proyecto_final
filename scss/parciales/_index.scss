@@ -15,33 +15,39 @@
     padding: 9px 40px;
     border-radius: 5px;
     font-weight: bold;
-    color: #fff;
-    box-shadow: 0 8px 0 #EC2D53;
+    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+    box-shadow: 0 8px 0;
     transition: all 0.2s;
     animation: btn_checar infinite;
     animation-duration: 20s;
 }
 
+.box_shadow-generico{
+    background: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+    box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
+               -10px -10px 10px -1px rgba(255, 255, 255, 0.70); 
+}
+
 /* animacion del boton checar */
 @keyframes btn_checar {
     from {
-        background-color: red;
-        box-shadow: 0 8px 0 red;
+        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');;
+        box-shadow: 0 8px 0 map-get($map: $paleta-colores, $key: 'colorSecundario');;
     }
 
     to {
-        background-color: #0095ff;
-        box-shadow: 0 8px 0 #0095ff;
+        background-color: map-get($map: $paleta-colores, $key: 'colorAzulClaro-Auxiliar');
+        box-shadow: 0 8px 0 map-get($map: $paleta-colores, $key: 'colorAzulClaro-Auxiliar');
     }
 }
 
 .btn_checar:hover {
-    color: #fff;
+    color: map-get($map: $paleta-colores, $key: 'colorBlanco');;
 }
 
 .btn_checar:active {
     transform: translateY(4px);
-    box-shadow: 0 4px 0 red;
+    box-shadow: 0 4px 0 map-get($map: $paleta-colores, $key: 'colorSecundario');
 }
 
 
@@ -72,11 +78,12 @@
     .contenedor_principal_landing{
         grid-area: landing_page;
         position: relative;
-        background-image: linear-gradient(rgba(5,0,136,0.5),rgba(5,0,136,0.5)),url(../imagenes/fondo_landing_page.jpg);
-        width: 100%;
-        height: 920px;
-        color: #fff;
-
+        background-image: linear-gradient( map-get($map: $paleta-colores, $key: 'colorFondoLanding1'), 
+                          map-get($map: $paleta-colores, $key: 'colorFondoLanding2')),
+                          url(../imagenes/fondo_landing_page.jpg);
+        width: $width-estandar;
+        @include sizes(auto, 920px);
+        color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         
         .contenedor_landing{
             position: absolute;
@@ -85,11 +92,10 @@
             margin-left: 10px;
     
             .landing_page_contenedor_titulo{
-                width: auto;
-                height: auto;
+                @include sizes(auto, auto);
                 /* background-color: red; */
                 .slide-left {
-                    color: #fff;
+                    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                     font-size: 120px;
                     line-height: 140px;
                     font-weight: bold;
@@ -99,11 +105,10 @@
             
             .landing_page_contenedor_texto{
                 /* background-color: green; */
-                width: 100%;
-                height: auto;
+                @include sizes(100%, auto);
                 p{
                     font-size: 20px;
-                    color: white;
+                    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                     animation-delay: 1s;
                 }
             }
@@ -112,11 +117,11 @@
                 display: inline-block;
                 
                 a{
-                    color: #fff;
+                    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                     text-decoration: none;
                 }
                 .btn{
-                    border: 2px solid #fff;
+                    border: 2px solid map-get($map: $paleta-colores, $key: 'colorBlanco');
                     padding: 10px 35px;
                     border-radius: 30px;
                     margin-right: 15px;
@@ -163,7 +168,8 @@
         background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
 
         h1 {
-            background-image: linear-gradient(90deg, #000066 0%, #ff0066 100%);
+            background-image: linear-gradient(90deg, map-get($map: $paleta-colores, $key: 'colorLetrasAnimadas')  0%,
+                              map-get($map: $paleta-colores, $key: 'colorSecundario')  100%);
             color: transparent;
             -webkit-background-clip: text;
             animation: index_texto_animado 3s infinite;
@@ -183,7 +189,8 @@
 
     @keyframes index_texto_animado {
         50% {
-            background-image: linear-gradient(90deg, red 0%, #000066 100%);
+            background-image: linear-gradient(90deg, map-get($map: $paleta-colores, $key: 'colorSecundario') 0%, 
+                              map-get($map: $paleta-colores, $key: 'colorLetrasAnimadas') 0% 100%);
         }
         from {
             transform: translateY(5px);
@@ -208,7 +215,7 @@
             position: static;
             font-size: 44px;
             color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-            -webkit-text-stroke: 5px white;
+            -webkit-text-stroke: 5px map-get($map: $paleta-colores, $key: 'colorBlanco');
             text-transform: uppercase;
         }
 
@@ -231,9 +238,7 @@
             margin-left: 20px;
             margin-right: 20px;
             margin-top: 30px;
-            background: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-            box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-                       -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+            @extend .box_shadow-generico;
             backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.18);
 
@@ -256,35 +261,38 @@
                 }
             }
 
-            .card_novedades_texto{
-                width: 170px;
-                h2 {
-                    padding-left: 10px;
-                    font-size: 16px;
+            .card_novedades-texto-boton{
+                display: flex;
+                @include sizes(280px, auto);
+                .card_novedades_texto{
+                    width: 170px;
+                    h2 {
+                        padding-left: 10px;
+                        font-size: 16px;
+                    }
                 }
+    
+                .card_novedades_boton{
+                    a{
+                        @extend .btn_checar;
+                        animation: none;
+                        @extend .box_shadow-generico;
+                        // color: #00a037;
+                        color: map-get($map: $paleta-colores, $key: 'colorLetrasBoton');
+                        margin-top:  10px;
+                        margin-left: 10px;
+                        padding: 5px 20px;
+                        height: 35px;
+                    }
+    
+                    a:hover{
+                        color: map-get($map: $paleta-colores, $key: 'colorBotonAgregar');
+                        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                    }
+                }
+    
             }
 
-            .card_novedades_boton{
-            //Uso del extend
-                a{
-                    @extend .btn_checar;
-                    animation: none;
-                    background-color: map-get($map: $paleta-colores, $key: 'colorBotonAgregar');
-                    box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.1),
-                            -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
-                    // color: #00a037;
-                    color: #EC2D53;
-                    margin-top:  10px;
-                    margin-left: 10px;
-                    padding: 5px 20px;
-                    height: 35px;
-                }
-
-                a:hover{
-                    color: map-get($map: $paleta-colores, $key: 'colorBotonAgregar');
-                    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-                }
-            }
 
     
 

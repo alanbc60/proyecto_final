@@ -46,7 +46,7 @@
 
         /* personalizacion del card producto */
         .card_producto {
-            width: 98%;
+            width: auto;
             @include contenedorGrid(grid, 10px, 10px);
             margin-bottom: 20px;
             margin-left: 5px;
@@ -55,9 +55,9 @@
             -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
             border-radius: 5px;
             /* Indicar cuantas columnas tendra */
-            grid-template-columns: 330px 400px;
+            grid-template-columns: auto 400px;
             /* Indicar cuantas filas tendra */
-            grid-template-rows: 230px;
+            grid-template-rows: auto;
             /* acomodar el grid */
             grid-template-areas:
                 "contenedor_imagen_producto contenedor_texto_productos";
@@ -66,12 +66,16 @@
             /* imagen del producto */
             .carrito_imagen_producto {
                 grid-area: contenedor_imagen_producto;
-                background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                object-fit: $acoplamiento-imagen;
+                @include sizes(280px, 230px);
+                padding: 5px;
+                
 
                 img {
                     @include sizes($width-estandar, $height-estandar);
                     object-fit: $acoplamiento-imagen;
                 }
+                
                 img:hover {
                     transform: scale(1.04);
                 }
@@ -82,7 +86,7 @@
             .texto-producto {
                 grid-area: contenedor_texto_productos;
                 background: map-get($map: $paleta-colores, $key: 'colorCard');
-                width:  $width-estandar;
+                width:  auto;
                 margin-top: 40px;
                 padding-left: 10px;
                 .cantidad_producto{

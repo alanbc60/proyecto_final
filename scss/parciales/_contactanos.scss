@@ -9,10 +9,8 @@
 .contenedor_principal-contactanos {
     @include sizes($width-estandar, $height-estandar);
     display: grid;
-    gap: 10px;
-    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-    box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-    -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+    gap: $espacioGridBase;
+    background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
     /* Indicar cuantas columnas tendra */
     grid-template-columns: repeat(2, 1fr);
     /* Indicar cuantas filas tendra */
@@ -26,17 +24,17 @@
 
     .titulo_contactanos {
         grid-area: titulo_contactanos;
-        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-        font-size: 100%;
+        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+        color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+        font-size: $fontMaxima;
 
 
         /* Texto tiulo descuentos */
         h2 {
-            margin-top: 0px;
             font-size: 70px;
             font-style: oblique;
             font-weight: bold;
+            margin-top: 0px;
         }
     }
 
@@ -46,6 +44,7 @@
         list-style: none;
         align-items: center;
         text-align: center;
+
         .item {
             margin-bottom: 65px;
             h3 {

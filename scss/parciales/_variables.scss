@@ -9,18 +9,27 @@ $espacioGridBase: 10px;
 //Mapa 
 
 $paleta-colores: (
+
+    'colorFondoLanding1': rgba(5,0,136,0.5),
+    'colorFondoLanding2': rgba(5,0,136,0.5),
     'colorPrincipal': #ebf5fc,
+    'colorBlanco': white,
     'colorSecundario': red,
+    'colorLetrasAnimadas': #000066,
+    'colorLetrasBoton': #EC2D53,
+    'colorTextoSecundario': red,
     'segundoColorPrincipal':#ecf7ff,
     'colorTerciario':#ecf0f3,
     'colorBotonAgregar': #ebeef1,
     'colorFondoBlanco': white,
     'colorTextoPrincipal': white,
-    'colorTextoTitulosAzul': #0095ff,
-    'colorTextoSecundario': red,
+    'colorAzulClaro-Auxiliar': #0095ff,
     'colorFondoAzul': blue,
     'fondoTransparente': tranparent,
     'colornavbarSidebar': rgb(7, 105, 185)
-
 );
+
+// $paleta_colores-cars{
+//     ''
+// }
 

@@ -377,7 +377,7 @@ body.active .contenedor_principal-navbar_sidebar .sidebar {
 }
 
 body.active .contenedor_principal-navbar_sidebar .top_navbar {
-  background-color: #ffffff;
+  background-color: white;
   width: calc(100% - 210px);
   margin-left: 210px;
 }
@@ -417,15 +417,23 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   grid-template-areas: "footer_seccion1_logo footer_seccion2_contacto footer_cliente footer_seccion4_redes";
 }
 
+.contenedor_footer .footer_seccion2_contacto a {
+  color: white;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
 .contenedor_footer .footer_seccion4_redes a {
   color: white;
-  margin: 17px;
+  margin: 10px;
   text-align: center;
+  text-decoration: none;
 }
 
 /* ================ Página inicio: imagen principal y texto ================ */
 /* boton checar(se usa en la página carrito igual) */
-.btn_checar, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_boton a {
+.btn_checar, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
   height: 40px;
   display: inline-block;
   text-decoration: none;
@@ -433,11 +441,16 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   padding: 9px 40px;
   border-radius: 5px;
   font-weight: bold;
-  color: #fff;
-  box-shadow: 0 8px 0 #EC2D53;
+  color: white;
+  box-shadow: 0 8px 0;
   transition: all 0.2s;
   animation: btn_checar infinite;
   animation-duration: 20s;
+}
+
+.box_shadow-generico, .contenedor_principal .contenedor_novedades .card_novedades, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
+  background: #ebf5fc;
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
 }
 
 /* animacion del boton checar */
@@ -452,11 +465,11 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   }
 }
 
-.btn_checar:hover, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_boton a:hover {
-  color: #fff;
+.btn_checar:hover, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:hover {
+  color: white;
 }
 
-.btn_checar:active, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_boton a:active {
+.btn_checar:active, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:active {
   transform: translateY(4px);
   box-shadow: 0 4px 0 red;
 }
@@ -487,8 +500,9 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   position: relative;
   background-image: linear-gradient(rgba(5, 0, 136, 0.5), rgba(5, 0, 136, 0.5)), url(../imagenes/fondo_landing_page.jpg);
   width: 100%;
+  width: auto;
   height: 920px;
-  color: #fff;
+  color: white;
 }
 
 .contenedor_principal .contenedor_principal_landing .contenedor_landing {
@@ -505,7 +519,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo .slide-left {
-  color: #fff;
+  color: white;
   font-size: 120px;
   line-height: 140px;
   font-weight: bold;
@@ -529,12 +543,12 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones a {
-  color: #fff;
+  color: white;
   text-decoration: none;
 }
 
 .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones .btn {
-  border: 2px solid #fff;
+  border: 2px solid white;
   padding: 10px 35px;
   border-radius: 30px;
   margin-right: 15px;
@@ -579,7 +593,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .contenedor_principal .contenedor_principal-texto h1 {
-  background-image: linear-gradient(90deg, #000066 0%, #ff0066 100%);
+  background-image: linear-gradient(90deg, #000066 0%, red 100%);
   color: transparent;
   -webkit-background-clip: text;
   animation: index_texto_animado 3s infinite;
@@ -598,7 +612,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 @keyframes index_texto_animado {
   50% {
-    background-image: linear-gradient(90deg, red 0%, #000066 100%);
+    background-image: linear-gradient(90deg, red 0%, #000066 0% 100%);
   }
   from {
     transform: translateY(5px);
@@ -642,8 +656,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 30px;
-  background: #ebf5fc;
-  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -669,19 +681,23 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   cursor: pointer;
 }
 
-.contenedor_principal .contenedor_novedades .card_novedades .card_novedades_texto {
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton {
+  display: flex;
+  width: 280px;
+  height: auto;
+}
+
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_texto {
   width: 170px;
 }
 
-.contenedor_principal .contenedor_novedades .card_novedades .card_novedades_texto h2 {
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_texto h2 {
   padding-left: 10px;
   font-size: 16px;
 }
 
-.contenedor_principal .contenedor_novedades .card_novedades .card_novedades_boton a {
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
   animation: none;
-  background-color: #ebeef1;
-  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.1), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
   color: #EC2D53;
   margin-top: 10px;
   margin-left: 10px;
@@ -689,7 +705,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   height: 35px;
 }
 
-.contenedor_principal .contenedor_novedades .card_novedades .card_novedades_boton a:hover {
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:hover {
   color: #ebeef1;
   background-color: red;
 }
@@ -728,7 +744,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   min-width: 320px;
   text-align: center;
   margin-top: 31px;
-  background-color: #0095ff;
   font-size: 100%;
   /* personalizacion del contenedor titulo_categoria */
 }
@@ -912,7 +927,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto {
-  width: 98%;
+  width: auto;
   display: grid;
   margin-top: 10px;
   gap: 10px;
@@ -921,9 +936,9 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   /* Indicar cuantas columnas tendra */
-  grid-template-columns: 330px 400px;
+  grid-template-columns: auto 400px;
   /* Indicar cuantas filas tendra */
-  grid-template-rows: 230px;
+  grid-template-rows: auto;
   /* acomodar el grid */
   grid-template-areas: "contenedor_imagen_producto contenedor_texto_productos";
   /* imagen del producto */
@@ -932,7 +947,10 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto {
   grid-area: contenedor_imagen_producto;
-  background-color: red;
+  object-fit: cover;
+  width: 280px;
+  height: 230px;
+  padding: 5px;
 }
 
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto img {
@@ -947,7 +965,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto {
   grid-area: contenedor_texto_productos;
-  width: 100%;
+  width: auto;
   margin-top: 40px;
   padding-left: 10px;
 }
@@ -1388,7 +1406,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .contenedor_principal_quienes-somos .titulo_amigos {
   grid-area: titulo_amigos;
-  color: #0095ff;
   text-align: center;
   padding-bottom: 120px;
 }
@@ -1436,8 +1453,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   height: 100%;
   display: grid;
   gap: 10px;
-  background-color: #ebf5fc;
-  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+  background-color: white;
   /* Indicar cuantas columnas tendra */
   grid-template-columns: repeat(2, 1fr);
   /* Indicar cuantas filas tendra */
@@ -1449,17 +1465,17 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .contenedor_principal-contactanos .titulo_contactanos {
   grid-area: titulo_contactanos;
-  color: #ebf5fc;
-  background-color: red;
+  background-color: white;
+  color: red;
   font-size: 100%;
   /* Texto tiulo descuentos */
 }
 
 .contenedor_principal-contactanos .titulo_contactanos h2 {
-  margin-top: 0px;
   font-size: 70px;
   font-style: oblique;
   font-weight: bold;
+  margin-top: 0px;
 }
 
 .contenedor_principal-contactanos .contenedor_datos_empresa {
@@ -1512,47 +1528,46 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 /* Smartphone modo vertical y horizontal para todas las páginas */
 @media screen and (max-width: 600px) and (min-width: 320px) {
-  /* con aaltura aquto se acopla a la redimensacion */
+  /* =========== Página index ===========*/
   .contenedor_principal {
     display: grid;
     min-width: 310px;
     max-width: 600px;
     overflow: hidden;
     grid-template-columns: 1fr;
-    background-color: 0;
     grid-template-rows: 600px auto auto 100px auto;
     grid-template-areas: "landing_page" "principal_imagen" "principal_texto" "titulo_novedades" "contenedor_novedades";
     gap: 10px;
     /* contenedor de imagen principal */
+    /* contenedor de texto principal */
   }
   .contenedor_principal .contenedor_principal_landing {
     width: auto;
+    height: auto;
     min-width: 320px;
     max-width: 600px;
-    height: auto;
   }
   .contenedor_principal .contenedor_principal_landing .contenedor_landing {
     width: auto;
+    height: auto;
     min-width: 280px;
     margin-right: 12px;
-    height: auto;
   }
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo {
     width: auto;
-    min-width: 280px;
     height: auto;
+    min-width: 280px;
     background-color: red;
   }
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo .slide-left {
+    width: auto;
     color: white;
     font-size: 92px;
     line-height: 140px;
     font-weight: bold;
     min-width: 260px;
-    width: auto;
   }
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_texto {
-    /* background-color: green; */
     width: 100%;
     height: auto;
   }
@@ -1563,20 +1578,20 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     display: inline-block;
   }
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones a {
-    color: #fff;
+    color: white;
     text-decoration: none;
   }
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones .btn {
-    border: 2px solid #fff;
+    border: 2px solid white;
     padding: 10px 35px;
     border-radius: 30px;
     margin-right: 15px;
   }
   .contenedor_principal .contenedor_principal-imagen {
-    overflow-x: hidden;
     width: auto;
-    max-width: 590px;
     min-width: 310px;
+    max-width: 590px;
+    overflow: hidden;
     padding-left: 5px;
     padding-right: 5px;
     margin-left: 0px;
@@ -1595,7 +1610,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     padding-left: 5px;
     padding-right: 5px;
     margin-top: 0px;
-    /* contenedor de texto principal */
     /* contenedor del boton checar */
   }
   .contenedor_principal .contenedor_principal-texto h1 {
@@ -1606,11 +1620,11 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     width: auto;
     min-width: 310px;
     font-size: 15px;
+    text-align: start;
     margin-top: 0px;
     margin-left: 0px;
     padding-right: 5px;
     padding-left: 5px;
-    text-align: start;
   }
   .contenedor_principal .contenedor_principal-texto .contenedor_boton_checar {
     width: 100%;
@@ -1635,42 +1649,49 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     width: auto;
     height: auto;
     min-width: 310px;
-    max-width: 590px;
+    max-width: 590;
     background-color: #ebf5fc;
     margin-left: 0px;
     margin-right: 0px;
   }
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_imagen {
-    min-width: 300px;
     width: 100%;
     height: auto;
+    min-width: 300px;
     margin-left: 5px;
     margin-right: 5px;
     margin-top: 1px;
   }
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_imagen img {
     width: 100%;
-    min-width: 300px;
     height: 350px;
+    min-width: 300px;
     object-fit: cover;
   }
-  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_texto {
-    width: auto;
+  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton {
+    width: 100%;
+    height: auto;
+    min-width: 300px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_texto {
+    width: 100%;
     min-width: 187px;
-    max-width: 200px;
     margin-left: 5px;
   }
-  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_texto h2 {
+  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_texto h2 {
     padding-left: 0px;
     min-width: 187px;
     max-width: 200px;
   }
-  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-boton {
-    width: 100%;
-    margin-left: auto;
-    right: auto;
+  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton {
+    width: auto;
   }
-  /* ==== Contenedor principal de filtro categorias y productos */
+  .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
+    margin-left: 0px;
+  }
+  /* =========== Contenedor principal de filtro categorias y productos =========== */
   .contenedor_principal-filtroCategorias-listaProductos {
     display: grid;
     min-width: 320px;
@@ -1733,7 +1754,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton a {
     margin-left: 100px;
   }
-  /* Footer */
+  /* =========== Footer =========== */
   .contenedor_footer {
     width: auto;
     height: auto;
@@ -1746,7 +1767,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     grid-template-rows: repeat(4, auto);
     grid-template-areas: "footer_seccion1_logo" "footer_seccion2_contacto" "footer_cliente" "footer_seccion4_redes";
   }
-  /* === Pagina descuentos ==== */
+  /* =========== Pagina descuentos ============ */
   .contenedor_principal-descuentos-fechas {
     display: grid;
     min-width: 320px;
@@ -1857,7 +1878,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     color: black;
     font-weight: 100;
   }
-  /* pagina Quienes somos */
+  /* =========== pagina Quienes somos =========== */
   .contenedor_principal_quienes-somos {
     display: grid;
     height: auto;
@@ -1938,7 +1959,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-left: 0px;
     margin-right: 0px;
   }
-  /* pagina contactanos */
+  /* =========== pagina contactanos =========== */
   .contenedor_principal-contactanos {
     display: grid;
     min-width: 320px;
@@ -1956,7 +1977,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   .contenedor_principal-contactanos .titulo_contactanos {
     width: auto;
     min-width: 310px;
-    margin-top: 20px;
   }
   .contenedor_principal-contactanos .titulo_contactanos h2 {
     width: 100%;
@@ -1978,7 +1998,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   .contenedor_principal-contactanos .contenedor_formulario {
     width: auto;
     min-width: 310px;
-    background-color: #0095ff;
+    background-color: #ecf7ff;
   }
   .contenedor_principal-contactanos .contenedor_formulario form {
     display: flex;
@@ -1991,9 +2011,8 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   }
 }
 
-/* Smartphone pagina carrito */
+/* =========== Smartphone pagina carrito =========== */
 @media screen and (max-width: 530px) and (min-width: 300px) {
-  /* con aaltura aquto se acopla a la redimensacion */
   .carrito-contenedor_principal {
     display: grid;
     height: auto;
@@ -2021,33 +2040,37 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   }
   .carrito-contenedor_principal .carrito-contenedor_productos {
     grid-area: contenedor_productos;
+    min-width: 320px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto {
-    display: grid;
-    width: 97%;
     min-width: 310px;
+    min-height: 350px;
+    display: grid;
+    width: auto;
     overflow-y: hidden;
     overflow-x: hidden;
+    margin-left: 0px;
     gap: 10px;
     margin-top: 10px;
     background-color: white;
-    /* Indicar cuantas columnas tendra */
     grid-template-columns: 1fr;
-    /* Indicar cuantas filas tendra */
     grid-template-rows: auto auto;
     /* acomodar el grid */
     grid-template-areas: "contenedor_imagen_producto" "contenedor_texto_productos";
-    /*fila 2*/
   }
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto {
     grid-area: contenedor_imagen_producto;
     width: 100%;
-    min-width: 310px;
-    background-color: black;
+    min-width: 300px;
+    min-height: 350px;
+    background-color: red;
   }
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto img {
     width: 100%;
-    min-width: 310px;
+    height: 100%;
+    min-width: 300px;
   }
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto {
     grid-area: contenedor_texto_productos;
@@ -2068,205 +2091,5 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     border: 1px solid red;
     border-radius: 5px;
     margin: 10px;
-  }
-}
-
-/* páginas index,descuentos,Quienes somos: tablet vertical,telefono horizontal y laptop pequeñas */
-@media screen and (max-width: 890px) and (min-width: 601px) {
-  .contenedor_principal {
-    display: grid;
-    height: auto;
-    min-width: 400px;
-    margin-top: 100px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto 100px auto auto;
-    grid-template-areas: "principal_imagen principal_texto principal_texto" "titulo_novedades titulo_novedades titulo_novedades" "contenedor_novedades contenedor_novedades contenedor_novedades";
-    gap: 10px;
-  }
-  /* contenedor de imagen principal */
-  .contenedor_principal-imagen {
-    margin-bottom: 0px;
-    grid-area: principal_imagen;
-    background-color: steelblue;
-    min-height: 400px;
-  }
-  .contenedor_principal-imagen img {
-    height: 100%;
-    min-height: 400px;
-    object-fit: cover;
-  }
-  .contenedor_principal-texto h1 {
-    margin-top: 80px;
-  }
-  .contenido_principal-texto {
-    font-size: 18px;
-    height: auto;
-    width: 92%;
-  }
-  /* pagina descuentos */
-  .contenedor_principal-descuentos-fechas {
-    margin-top: 150px;
-  }
-  /* paginas quienes somos */
-  .contenedor_principal_quienes-somos {
-    margin-top: 170px;
-  }
-  /* pagina contactanos */
-  .contenedor_principal-contactanos {
-    display: grid;
-    min-width: 300px;
-    overflow: hidden;
-    margin-top: 140px;
-    grid-template-columns: 1fr;
-    /* Indicar cuantas filas tendra */
-    grid-template-rows: auto auto auto;
-    /* Contenedor principal formulario */
-  }
-  .contenedor_principal-contactanos .contenedor_datos_empresa {
-    width: 100%;
-    min-width: 290px;
-  }
-  .contenedor_principal-contactanos .contenedor_formulario {
-    width: 90%;
-    min-width: 320px;
-  }
-  .contenedor_principal-contactanos .contenedor_formulario form {
-    display: flex;
-    flex-wrap: wrap;
-    width: 97%;
-    margin-right: 30px;
-    min-width: 300px;
-  }
-  .contenedor_principal-contactanos .contenedor_formulario button {
-    margin-left: 3px;
-  }
-  /* pagina contactanos */
-  .titulo_contactanos {
-    margin-top: 10px;
-    width: 100%;
-    min-width: 320px;
-    padding-top: 10px;
-  }
-  .titulo_contactanos h2 {
-    width: 100%;
-    font-size: 45px;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  /* ==== Contenedor principal de filtro categorias y productos */
-  .titulo_categoria {
-    margin-top: 50px;
-  }
-  .contenedor_principal-filtroCategorias-listaProductos {
-    width: 100%;
-    height: 100%;
-    margin-top: 100px;
-    gap: 10px;
-    background-color: white;
-    /* Indicar cuantas columnas tendra */
-    grid-template-columns: auto;
-    /* Indicar cuantas filas tendra */
-    grid-template-rows: auto auto auto;
-    grid-template-areas: "titulo_categoria" "filtro_categorias" "contenedor_cards_productos";
-  }
-}
-
-/* index: laptops */
-@media screen and (max-width: 1400px) and (min-width: 891px) {
-  .contenedor_principal {
-    display: grid;
-    height: auto;
-    min-width: 400px;
-    margin-top: 10px;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto 100px auto auto;
-    grid-template-areas: "principal_imagen principal_texto principal_texto" "titulo_novedades titulo_novedades titulo_novedades" "contenedor_novedades contenedor_novedades contenedor_novedades";
-    gap: 10px;
-    /* contenedor de imagen principal */
-  }
-  .contenedor_principal .contenedor_principal-imagen {
-    margin-bottom: 0px;
-    grid-area: principal_imagen;
-    background-color: steelblue;
-  }
-  .contenedor_principal .contenido_principal-texto {
-    margin-top: 37px;
-  }
-}
-
-/* pagina carrito: Tablets */
-@media screen and (max-width: 973px) and (min-width: 501px) {
-  /* con aaltura aquto se acopla a la redimensacion */
-  .carrito-contenedor_principal {
-    display: grid;
-    height: auto;
-    min-width: 480px;
-    margin-top: 100px;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: "texto_carrito" "contenedor_productos" "contenedor_precio_total";
-    gap: 10px;
-  }
-  .card_producto {
-    margin-right: 20px;
-  }
-  .carrito-texto_principal {
-    margin-top: 60px;
-    font-size: 10px;
-  }
-  /* contenedor de imagen principal */
-  .contenedor_principal-imagen {
-    margin-top: 90px;
-    grid-area: principal_imagen;
-    background-color: steelblue;
-  }
-  /* contenedor principal del card pagar */
-  .carrito-contenedor_precios {
-    width: auto;
-    margin-left: 0px;
-    border: 1px solid red;
-    border-radius: 5px;
-    margin-right: 20px;
-  }
-  .eliminar_producto {
-    text-align: end;
-  }
-  /* Footer */
-  .contenedor_footer {
-    display: grid;
-    width: 100%;
-    height: auto;
-    margin-top: 10px;
-    /* Indicar cuantas columnas tendra */
-    grid-template-columns: 1fr;
-    /* Indicar cuantas filas tendra */
-    grid-template-rows: repeat(4, auto);
-    grid-template-areas: "footer_seccion1_logo" "footer_seccion2_contacto" "footer_cliente" "footer_seccion4_redes";
-  }
-  /* pagina quienes somos */
-  .contenedor_amigoEspecial_instagram {
-    margin-right: 20px;
-  }
-}
-
-/* paginas Carrito, quienes somos: laptops pequeñas */
-@media screen and (max-width: 1200px) and (min-width: 974px) {
-  .card_producto {
-    margin-right: 20px;
-  }
-  /* contenedor principal del card pagar */
-  .carrito-contenedor_precios {
-    width: auto;
-    margin-left: 0px;
-    border: 1px solid red;
-    border-radius: 5px;
-    margin-right: 22px;
-  }
-  .eliminar_producto {
-    text-align: end;
-  }
-  /* pagina contactanos */
-  .contenedor_amigoEspecial_instagram {
-    margin-right: 20px;
   }
 }

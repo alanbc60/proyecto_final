@@ -384,7 +384,7 @@ body.active .contenedor_principal-navbar_sidebar{
         left: -2px;
     }
     .top_navbar {
-        background-color: #ffffff;
+        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         width: calc(100% - 210px);
         margin-left: 210px;
         .logo_mini{

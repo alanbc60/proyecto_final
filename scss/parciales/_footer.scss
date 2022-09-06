@@ -28,6 +28,12 @@
 
     .footer_seccion2_contacto {
         @extend .atributoSeccionFooter;
+        a {
+            color: white;
+            margin: 10px;
+            text-align: center;
+            text-decoration: none;
+        }
     }
 
     .footer_cliente {
@@ -39,8 +45,9 @@
 
         a {
             color: white;
-            margin: 17px;
+            margin: 10px;
             text-align: center;
+            text-decoration: none;
         }
     }
 }
