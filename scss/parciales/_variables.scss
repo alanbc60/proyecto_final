@@ -5,31 +5,57 @@ $width-estandar: 100%;
 $height-estandar: 100%;
 $fontMaxima: 100%;
 $espacioGridBase: 10px;
+$letrasNegrillas: bold;
+$alineacionAlCentro: center;
 
 //Mapa 
 
 $paleta-colores: (
 
+    //Colores especificos para la navbar -version escritorio
+    'colorBoxShadowCategorias': rgba(0, 0, 0, 0.2),
+    // colores exclusivos para el index
     'colorFondoLanding1': rgba(5,0,136,0.5),
     'colorFondoLanding2': rgba(5,0,136,0.5),
+    'colorLetrasAnimadas': #000066,
+    'colorLetrasBoton': #EC2D53,
+    'colorBotonAgregar': #ebeef1,
+
+    // Colores generales aplicadas a todas las páginas
+    'colorAzul': blue,
     'colorPrincipal': #ebf5fc,
     'colorBlanco': white,
     'colorSecundario': red,
-    'colorLetrasAnimadas': #000066,
-    'colorLetrasBoton': #EC2D53,
+    'colorNegro': black,
     'colorTextoSecundario': red,
     'segundoColorPrincipal':#ecf7ff,
     'colorTerciario':#ecf0f3,
-    'colorBotonAgregar': #ebeef1,
-    'colorFondoBlanco': white,
-    'colorTextoPrincipal': white,
+
+    // Colores exclusivos de productos
+    'colorBordeProducto': #0095ff,
+    'colorNumDescuento': green,
+
+    //Colores exclusivos de Descuentos
+    'colorBotonDescuentos1' : rgb(3, 138, 3),
+    'colorBotonDescuentos2':  darkslategrey,
+    'colorVariadoDescuento2': cornsilk,
+    'colorVariadoDescuento3': #0390f4,
+    'colorVariadoDescuento4': cornflowerblue,   
+    'colorVariadoDescuento5': rgb(1, 137, 1),
+    'colorVariadoDescuento6': blanchedalmond,
+
+    //Colores exclusivos de la pagina carrito
+    'colorFondoHoverBotonEliminar':skyblue,
+
+    // Colores de la sidebar
+    'colorPrincipalSidebar': #4063b9,
+    'colorSubategoriasSidebar': aqua,
     'colorAzulClaro-Auxiliar': #0095ff,
-    'colorFondoAzul': blue,
+    'colorIconoHamburguesa': rgba(255, 0, 0, 0.808),
+
     'fondoTransparente': tranparent,
-    'colornavbarSidebar': rgb(7, 105, 185)
+    'colornavbarSidebar': rgb(7, 105, 185),
+    // colores box shadow genericos
+    'colorBoxShadow1':rgba(10, 99, 169, 0.16), 
+    'colorBoxShadow2':rgba(255, 255, 255, 0.70)
 );
-
-// $paleta_colores-cars{
-//     ''
-// }
-

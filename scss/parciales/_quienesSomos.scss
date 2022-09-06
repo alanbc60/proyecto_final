@@ -1,16 +1,16 @@
-/* ================= Pagina Quienes somos ==================*/
+/* ================= Pagina Quienes somos (revisada)==================*/
 
-@mixin sizes($width, $height){
+@mixin sizes($width, $height) {
     width: $width;
     height: $height;
 }
 
 
 .contenedor_principal_quienes-somos {
-    @include sizes($width-estandar, $height-estandar);
     display: grid;
-    gap: 10px;
-    margin-top: 10px;
+    @include sizes($width-estandar, $height-estandar);
+    gap: $espacioGridBase;
+    margin-top: 2px;
     background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
     /* Indicar cuantas columnas tendra */
     grid-template-columns: repeat(4, 1fr);
@@ -24,72 +24,69 @@
         "titulo_amigos       titulo_amigos       titulo_amigos        titulo_amigos "
         "contenedor_marcas   contenedor_marcas   contenedor_marcas    contenedor_marcas";
 
-    // .contenedor_titulo_quienesSomos {
-    //     grid-area: titulo_QuienesSomos;
-    //     background-color: map-get($map: $paleta-colores, $key: 'colorTextoPrincipal');
-    //     color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-    //     text-align: center;
-    // }
-
     /* Contenedor de titulo y parrafo de la empresa */
     .conocenos_textos {
-        @include sizes( 800px, auto);
-        box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-                    -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
         grid-area: texto_conocenos;
-        margin-left: 10px;
+        @include sizes(800px, auto);
+        background-color: map-get($map: $paleta-colores, $key: 'colorTerciario');
+        box-shadow: 10px 10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow1'),
+            -10px -10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow2');
+
         font-size: 20px;
-        background-color: azure;
+        margin-left: 10px;
+
     }
 
 
     .contenedor_servicios {
         grid-area: contenedor_servicios;
-        @include sizes( 500px, auto);
-        /* background-color: blue; */
+        @include sizes(500px, auto);
         margin-left: 30px;
-        .titulo_servicios{
-            width: 100%;
-            height: 80px;
-            text-align: center;
-            background-color: red;
-            color: white;
+
+        .titulo_servicios {
+            @include sizes(100%, 80px);
+            text-align: $alineacionAlCentro;
+            background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+            color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+            // espaciado  interno
             padding-top: 10px;
+            // Espaciado externo
             margin-bottom: 5px;
         }
-        .card_servicio{
+
+        .card_servicio {
             display: flex;
             flex-wrap: wrap;
-            width: 100%;
-            height: auto;
+            @include sizes(100%, auto);
 
             margin-bottom: 5px;
-            .card_servicio-img{
-                // border-radius: 45px;
-                width: 90px;
-                height: auto;
-                background-color: red;
-                 
+
+            .card_servicio-img {
+                @include sizes(90px, auto);
+                background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                ;
+                // Espaciado interno 
                 padding-left: 12px;
-               
-                img{
-                    width: 60px;
-                    height: 60px;   
+
+                img {
+                    @include sizes(60px, 60px);
                     filter: invert(0.88);
                 }
             }
-            .card_servicio-texto{
-                background-color: white;
-                width: calc(100% - 90px);
-                height: auto;
+
+            .card_servicio-texto {
+                @include sizes(calc(100% - 90px), auto);
+                background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                 padding-left: 6px;
-                h1{
+
+                h1 {
                     font-size: 23px;
-                    
+
                 }
             }
         }
-        .card_servicio:hover{
+
+        .card_servicio:hover {
             transform: scale(1.1);
         }
 
@@ -98,8 +95,8 @@
 
     .titulo_amigos {
         grid-area: titulo_amigos;
-        color: map-get($map: $paleta-colores, $key: 'colorTextoTitulosAzul');
-        text-align: center;
+        color: map-get($map: $paleta-colores, $key: 'colorAzulClaro-Auxiliar');
+        text-align: $alineacionAlCentro;
         padding-bottom: 120px;
 
         h2 {
@@ -113,7 +110,7 @@
         0% {
             transform: skewX(20deg);
         }
-    
+
         100% {
             transform: skewX(-20deg);
         }
@@ -123,19 +120,15 @@
     .contenedor-marcas {
         grid-area: contenedor_marcas;
         display: flex;
-        justify-content: center;
         flex-wrap: wrap;
+        justify-content: center;
+
 
         .card_instagram_marca {
             margin-left: 10px;
             margin-right: 20px;
             margin-bottom: 22px;
             margin-top: 13px;
-            iframe{
-                width: 300px; 
-                height: 420;
-            }
-
         }
 
         .card_instagram_marca:hover {
@@ -145,7 +138,3 @@
     }
 
 }
-
-
-
-

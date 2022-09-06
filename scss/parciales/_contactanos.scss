@@ -10,7 +10,8 @@
     @include sizes($width-estandar, $height-estandar);
     display: grid;
     gap: $espacioGridBase;
-    background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+    margin-top: 2px;
+    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
     /* Indicar cuantas columnas tendra */
     grid-template-columns: repeat(2, 1fr);
     /* Indicar cuantas filas tendra */
@@ -24,10 +25,10 @@
 
     .titulo_contactanos {
         grid-area: titulo_contactanos;
-        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
         color: map-get($map: $paleta-colores, $key: 'colorSecundario');
         font-size: $fontMaxima;
-
+        text-align: $alineacionAlCentro;
 
         /* Texto tiulo descuentos */
         h2 {
@@ -43,7 +44,7 @@
         width: auto;
         list-style: none;
         align-items: center;
-        text-align: center;
+        text-align: $alineacionAlCentro;
 
         .item {
             margin-bottom: 65px;

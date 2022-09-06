@@ -1,6 +1,6 @@
-/* ==================pagina productos-hombre-mujer   ========== */
+/* ==================pagina productos-hombre-mujer (revisado)  ========== */
 
-@mixin sizes($width, $height){
+@mixin sizes($width, $height) {
     width: $width;
     height: $height;
 }
@@ -9,9 +9,8 @@
 /* boton checar(se usa en la página carrito igual) */
 .btn_agregarProducto {
     color: map-get($map: $paleta-colores, $key: 'colorTextoPrincipal');
-    box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.1);
     text-decoration: none;
-    text-align: center;
+    text-align: $alineacionAlCentro;
     border-radius: 5px;
     font-weight: bold;
     padding: 0px 40px 0px 40px;
@@ -20,10 +19,10 @@
 
 
 .contenedor_principal-filtroCategorias-listaProductos {
+    display: grid;
     background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
     @include sizes($width-estandar, $height-estandar);
-    display: grid;
-    gap: 10px;
+    gap: $espacioGridBase;
     /* Indicar cuantas columnas tendra */
     grid-template-columns: repeat(3, auto);
     /* Indicar cuantas filas tendra */
@@ -36,50 +35,52 @@
     .titulo_categoria {
         grid-area: titulo_categoria;
         width: 500px;
-        color: white;
         min-width: 320px;
-        text-align: center;
-        margin-top: 31px;
-        background-color: map-get($map: $paleta-colores, $key: 'colorTextoTitulosAzul');
-        font-size: 100%;
+        color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+        background-color: map-get($map: $paleta-colores, $key: 'colorBordeProducto');
+        font-size: $fontMaxima;
+        text-align: $alineacionAlCentro;
+        margin-top: 6px;
+
         /* personalizacion del contenedor titulo_categoria */
-        
+
         h2 {
             font-size: 70px;
             font-style: oblique;
-            font-weight: bold;
+            font-weight: $letrasNegrillas;
         }
     }
+
     .contenedor_filtroCategorias {
+        grid-area: filtro_categorias;
+        @include sizes(350px, 400px);
         position: -webkit-sticky;
         position: sticky;
-        grid-area: filtro_categorias;
-        @include sizes( 350px, 400px);
+        // Espaciado externo
         margin-right: 10px;
         margin-left: 10px;
         margin-top: 10px;
-        border-color: #0095ff;
-    
+
         border-radius: 15px;
         padding-left: 20px;
     }
+
     .contenedor_listaProductos {
         grid-area: contenedor_cards_productos;
         display: flex;
-        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
         flex-wrap: wrap;
+        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
         overflow-y: scroll;
         overflow-x: hidden;
         justify-content: center;
+        // Espaciado externo
         margin-right: 10px;
         margin-top: 10px;
 
         .card_producto {
-            @include sizes( 225px, 350px);
-            background-color: white;
-            // box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-            //            -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
-            border: 2px solid #0095ff;
+            @include sizes(225px, auto);
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+            border: 2px solid map-get($map: $paleta-colores, $key: 'colorBordeProducto');
             border-radius: 10px;
             backdrop-filter: blur(12px);
 
@@ -97,99 +98,104 @@
 
             /* Auste de tamaño de la imagen de cada card */
             .card_producto_imagen {
-
-                @include sizes( 208px, 250px);
+                @include sizes(208px, 250px);
                 overflow: hidden;
-
 
                 img {
                     position: absolute;
-                    @include sizes( 208px, 250px);
+                    @include sizes(208px, 250px);
                     object-fit: $acoplamiento-imagen;
                     padding-right: 2px;
-                    
+
                 }
+
                 img:hover {
                     transform: scale(1.07, 1.07);
                     cursor: pointer;
                 }
-                .contenedor-nuevo{
+
+                .contenedor-nuevo {
                     margin: 6px;
                     position: relative;
                     width: 50px;
                     height: 26px;
-                    background-color: white;
-                    color: blue;
-                    text-align: center;
+                    background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+                    color: map-get($map: $paleta-colores, $key: 'colorAzul');
+                    text-align: $alineacionAlCentro;
+
                     // padding-bottom: 6px;
-                    p{
+                    p {
                         font-size: 15px;
-                        font-weight: bold;
+                        font-weight: $letrasNegrillas;
                     }
                 }
-                .contenedor-numDescuento{
+
+                .contenedor-numDescuento {
                     margin: 6px;
                     position: relative;
                     width: 50px;
                     height: 26px;
-                    background-color: white;
-                    color: green;
-                    text-align: center;
+                    background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+                    color: map-get($map: $paleta-colores, $key: 'colorNumDescuento');
+                    text-align: $alineacionAlCentro;
+
                     // padding-bottom: 6px;
-                    p{
+                    p {
                         font-size: 15px;
-                        font-weight: bold;
+                        font-weight: $letrasNegrillas;
                     }
                 }
             }
-            .card_producto-texto-boton{
-                @include sizes( 100%, auto);
-                 /* contenedor de boton y texto del card */
-                .card_producto-texto{
-                    @include sizes( 100%, 46px);
+
+            .card_producto-texto-boton {
+                @include sizes(100%, auto);
+
+                /* contenedor de boton y texto del card */
+                .card_producto-texto {
+                    @include sizes(100%, 46px);
                     margin-bottom: 5px;
 
-                     h2 {
+                    h2 {
                         font-size: 17px;
                         font-weight: bold;
                     }
-                    p{
+
+                    p {
                         font-size: 15px;
-                       
+
                     }
-                
+
                 }
-                .card_producto_boton{
-                    @include sizes( 100%, auto);
-                    text-align: center;
-                    background-color: #0095ff;
-                    a{
-                        @include sizes(200px, 30px);
+
+                .card_producto_boton {
+                    @include sizes(100%, 28px);
+                    text-align: $alineacionAlCentro;
+                    background-color: map-get($map: $paleta-colores, $key: 'colorBordeProducto');
+
+                    a {
+                        @include sizes(200px, 28px);
                         @extend .btn_agregarProducto;
+                        color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
                     }
-                    // a:hover{
-                    //     color: map-get($map: $paleta-colores, $key: 'colorBotonAgregar');
-                    //     background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-                    // }
 
                 }
+
                 .card_producto-texto_boton:hover .card_boton_comprar {
                     display: block;
                 }
             }
 
-
-                
         }
+
         .card_producto:hover {
-        transform: scale(1.06);
+            transform: scale(1.06);
         }
 
     }
+
     /* Ocultar el scrollbar de la  lista productos*/
     .contenedor_listaProductos::-webkit-scrollbar {
         display: none;
     }
 }
-

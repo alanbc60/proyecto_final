@@ -14,6 +14,14 @@
     overflow: $overflow;
 }
 
+@mixin contenedorGeneralDescuentos($miDisplay,$gridArea,$tamWidth,$minWidth,$maxWidth){
+    display: $miDisplay;
+    grid-area: $gridArea;
+    width: $tamWidth;
+    min-width: $minWidth;
+    max-width: $maxWidth;
+}
+
 /* navbar responsive*/
 @media screen and (max-width: 600px) {
 
@@ -25,20 +33,16 @@
             display: block;
         
         }
-
     }
-
 }
-
 
 /* Smartphone modo vertical y horizontal para todas las páginas */
 @media screen and (max-width: 600px) and (min-width: 320px) {
 
-    
     /* =========== Página index ===========*/
     .contenedor_principal {
 
-        @include contenedorDisplayGrid(grid, 310px, 600px, hidden);
+        @include contenedorDisplayGrid(grid, 320px, 600px, hidden);
         grid-template-columns: 1fr;
         grid-template-rows: 600px auto auto 100px auto;
         grid-template-areas:
@@ -48,7 +52,6 @@
             "titulo_novedades"
             "contenedor_novedades";
         gap: $espacioGridBase;
-
 
         // contenedor de landing page
         .contenedor_principal_landing{
@@ -70,7 +73,7 @@
                         color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                         font-size: 92px;
                         line-height: 140px;
-                        font-weight: bold;
+                        font-weight: $letrasNegrillas;
                         min-width: 260px;
                     }   
                 }
@@ -97,7 +100,6 @@
                     }
                 }
             
-
             }
         }
 
@@ -126,6 +128,7 @@
         .contenedor_principal-texto {
             width: auto;
             @include tamWidthMinimosMaximos(310px , 590px);
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             //Espaciado interno
             padding-left: 5px;
             padding-right: 5px;
@@ -133,12 +136,13 @@
             margin-top: 0px;
 
             h1{
-                width: 100%;
+                width: $width-estandar;
                 font-size: 24px;
             }
             .contenido_principal-texto {
                 width: auto;
                 min-width: 310px;
+                background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                 font-size: 15px;
                 text-align: start;
                 // Espaciado externo
@@ -152,7 +156,7 @@
 
             /* contenedor del boton checar */
             .contenedor_boton_checar {
-                width: 100%;
+                width: $width-estandar;
                 margin-bottom: 30px;
                 margin-left: 0px;
             }
@@ -169,6 +173,7 @@
             width: auto;
             justify-content: start;
             @include tamWidthMinimosMaximos(320px , 590px);
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             // Espaciado interno
             padding-left: 5px;
             padding-right: 5px;
@@ -199,18 +204,17 @@
                 .card_novedades-texto-boton{
                     @include sizes(100%, auto);
                     min-width: 300px;
-                    // espacio interno
+                    // espacio externo
                     margin-left: 5px;
                     margin-right: 5px;    
                     .card_novedades_texto{
-                        width: 100%;
+                        width: $width-estandar;
                         min-width: 187px;
                         // Espaciado externo
                         margin-left: 5px;
                         h2{
+                            @include tamWidthMinimosMaximos(187px, 200px);
                             padding-left: 0px;
-                            min-width: 187px;
-                            max-width: 200px;
                         }
                     }
                     .card_novedades_boton{
@@ -229,11 +233,9 @@
     }
 
     /* =========== Contenedor principal de filtro categorias y productos =========== */
-
     .contenedor_principal-filtroCategorias-listaProductos {
-        display: grid;
-        min-width: 320px;
-        overflow: hidden;
+        @include contenedorDisplayGrid(grid, 320px, 600px, hidden);
+        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         gap: $espacioGridBase;
         /* Indicar cuantas columnas tendra */
         grid-template-columns: 1fr;
@@ -258,9 +260,8 @@
         }
 
         .contenedor_filtroCategorias {
+            @include sizes(94%, auto);
             min-width: 300px;
-            width: 94%;
-            height: auto;
             margin-right: 0px;
             margin-left: 6px;
             padding-bottom: 10px;
@@ -275,11 +276,13 @@
         .contenedor_listaProductos {
             width: auto;
             @include tamWidthMinimosMaximos(320px , 590px);
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
             .card_producto {
                 min-width: 310px;
                 margin-right: 12px;
                 height: auto;
+                background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
                 .card_producto_imagen {
                     min-width: 305px;
                     height: 350px;
@@ -287,20 +290,18 @@
                     img {
                         min-width: 295px;
                         height: 350px;
-
                     }
                 }
 
                 /* contenedor de boton y texto del card */
                 .card_producto-texto_boton {
-
                     min-width: 295px;
 
                     h2 {
                         width: auto;
                         margin-left: 5px;
-
                     }
+
                     a{
                         margin-left: 100px;
                     }
@@ -314,7 +315,6 @@
         @include sizes(auto, auto);
         min-width: 320px;
         margin-top: 20px;
-        background-color: red;
         /* Indicar cuantas columnas tendra */
         grid-template-columns: 1fr;
         /* Indicar cuantas filas tendra */
@@ -328,13 +328,13 @@
 
     /* =========== Pagina descuentos ============ */
     .contenedor_principal-descuentos-fechas {
-        display: grid;
-        min-width: 320px;
-        max-width: 599px;
+        @include contenedorDisplayGrid(grid, 310px, 600px, hidden);
+        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+        // Espaciado interno
         padding-left: 5px;
         padding-right: 5px;
         height: auto;
-        overflow: hidden;
+        gap: $espacioGridBase;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto auto auto auto auto auto;
         grid-template-areas:
@@ -347,14 +347,13 @@
             "contenedor_descuentos"
             "titulo_fechas"
             "contenedor_fechas";
-        gap: $espacioGridBase;
+
 
         /* Contenedor del titulo principal de descuentos */
 
         .titulo_descuentos_fechas {
-            grid-area: titulo_descuentos;
-            width: auto;
-            @include tamWidthMinimosMaximos(310px , 590px);
+            @include contenedorGeneralDescuentos(block, titulo_descuentos, auto, 310px, 590px);
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
             h2 {
                 width: 99%;
@@ -362,39 +361,34 @@
             }
         }
         .contenedor_descuentos-carousel{
-            width: auto;
-            @include tamWidthMinimosMaximos(310px , 590px);
-            grid-area: descuentos_carousel;
-            display: none;
+            @include contenedorGeneralDescuentos(none, descuentos_carousel, auto, 310px, 590px);
         }
         .contenedor_descuentos-secundario1{
-            grid-area: contenedor_descuentos-secundario1;
-            width: auto;
-            @include tamWidthMinimosMaximos(310px , 590px);
+            @include contenedorGeneralDescuentos(block, contenedor_descuentos-secundario1, auto, 310px, 590px);
 
         }
         .contenedor_descuentos-secundario2{
-           grid-area: contenedor_descuentos-secundario2;
-           width: auto;
-           @include tamWidthMinimosMaximos(310px , 590px);
+            @include contenedorGeneralDescuentos(block, contenedor_descuentos-secundario2, auto, 310px, 590px); 
         }
 
         /* contenedor y card de la seccion descuentos */
         .contenedor_cards_descuentos {
             width: auto;
             @include tamWidthMinimosMaximos(310px , 590px);
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
             .card_descuento {
-                width: 100%;
+                width: $width-estandar;
                 min-width: 310px;
                 margin-left: 0px;
+
                 .cobertura_img_card {
                     width: $width-estandar;
                     min-width: 310px;
                 }
 
                 .texto_card_descuento {
-                    width: 100%;
+                    width: $width-estandar;
                     min-width: 310px;
                     margin-right: 24px;
 
@@ -417,12 +411,9 @@
         .contenedor_cards_fechas {
             width: auto;
             min-width: 310px;
-            background-color: #0095ff;
-
 
             .card_fecha {
                 margin-left: 0px;
-                background-color: beige;
                 height: auto;
                 border-radius: 20px;
                 min-width: 300px;
@@ -430,49 +421,42 @@
 
                 .card_fecha-icono{
                     padding-top: 5px;
-                    width: 90px;
-                    height: 60px;
-                    background-color: red;
+                    @include sizes(90px, 60px);
+                    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                    
                     img{
-                        width: 90px;
-                        height: auto;
+                        filter: invert(1);
+                        @include sizes(90px, auto);
                     }
                 }
                 .card_fecha-texto{
+                    @include sizes(calc(100% - 110px), auto);
                     min-height:  100px;
                     min-width:   180px;
                     margin-left: 0px;
-                    width: calc(100% - 110px);
-                    height: auto;
+                    background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                     padding-top: 20px;
-                    background-color: #0095ff;
                     
                     h3{
                         font-size: 20px;
-                        color: black;
                         font-weight: 100;
                 
                     }
                 }
             }
-
         }
-
     }
 
     /* =========== pagina Quienes somos =========== */
     .contenedor_principal_quienes-somos {
-        display: grid;
+        @include contenedorDisplayGrid(grid, 310px, 600px, hidden);
         height: auto;
-        min-width: 320px;
-        max-width: 599px;
+        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+        // Espaciado interno
         padding-left: 5px;
         padding-right: 5px;
-        overflow: hidden;
-        background-color: azure;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(6, auto);
-
         /* acomodar el grid */
         grid-template-areas:
             "texto_conocenos"
@@ -482,39 +466,39 @@
         gap: $espacioGridBase;
 
         .conocenos_textos {
-            box-shadow: 4px 2px 4px 3px rgba(0, 0, 0, 0.2);
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             justify-content: center;
-            background-color: white;
             margin-left: 0px;
             font-size: 12px;
             width: auto;
             min-width: 310px;
             text-align: center;
         }
+
         .contenedor_servicios{
             grid-area: contenedor_servicios;
-            width: auto;
-            height: auto;
+            @include sizes(auto, auto);
             min-width: 310px;
             margin-left: 0px;
 
             .titulo_servicios{
                 height: auto;
-                
                 min-width: 310px;
                 padding-top: 0px;
+
                 h1{
                     font-size: 35px;
                 }
             }
+
             .card_servicio{
                 min-width: 310px;
 
                 .card_servicio-img{
-                    width: 60px;
-                    height: auto;
+                    @include sizes(60px, auto);
                     padding-left: 0px;
                     margin-right: 8px;
+
                     img{
                         width: 60px;
                         
@@ -522,7 +506,6 @@
                 }
 
                 .card_servicio-texto{
-                    background-color: #0095ff;
                     width: calc(100% - 70px);
                     h1{
                         font-size: 20px;
@@ -532,24 +515,24 @@
                     }
                 }
             }
-
         }
 
         .titulo_amigos {
-            background-color: red;
+            background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+            color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             min-width: 310px;
             height: auto;
             padding-bottom: 0px;
             h2{
                 font-size: 30px;
             }
-
         }
+
         .contenedor-marcas{
             height: auto;
             min-width: 310px;
             .card_instagram_marca{
-                background-color: yellow;
+                background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
                 margin-left:  0px;
                 margin-right: 0px;
             }
@@ -559,12 +542,10 @@
 
     /* =========== pagina contactanos =========== */
     .contenedor_principal-contactanos {
-        display: grid;
-        min-width: 320px;
-        max-width: 599px;
+        @include contenedorDisplayGrid(grid, 310px, 600px, hidden);
+        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         padding-left: 5px;
         padding-right: 5px;
-        overflow: hidden;
         grid-template-columns: 1fr;
         /* Indicar cuantas filas tendra */
         grid-template-rows: auto auto auto;
@@ -578,9 +559,10 @@
         .titulo_contactanos {
             width: auto;
             min-width: 310px;
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
             h2 {
-                width: 100%;
+                width: $width-estandar;
                 font-size: 45px;
                 text-align: center;
                 margin-bottom: 20px;
@@ -590,11 +572,13 @@
         .contenedor_datos_empresa {
             width: auto;
             min-width: 310px;
-            // background-color: #0095ff;
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             justify-content: center;
+
             .item{
                 justify-content: center;
             }
+
             .iconos_contacto{
                 justify-content: start;
             }
@@ -605,72 +589,65 @@
         .contenedor_formulario {
             width: auto;
             min-width: 310px;
-            background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
             form {
                 display: flex;
                 flex-wrap: wrap;
-                width: 100%;
+                width: $width-estandar;
                 min-width: 310px;
             }
 
             button {
                 margin-left: 3px;
             }
-
         }
 
     }
 
 }
 /* =========== Smartphone pagina carrito =========== */
-@media screen and (max-width: 530px) and (min-width: 300px) {
+@media screen and (max-width: 590px) and (min-width: 320px) {
 
     .carrito-contenedor_principal {
-        display: grid;
+        @include contenedorDisplayGrid(grid, 310px, 600px, hidden);
+        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         height: auto;
-        min-width: 320px;
-        overflow-y: hidden;
-        overflow-x: hidden;
         grid-template-columns: 1fr;
+        gap: $espacioGridBase;
         grid-template-rows: auto auto auto;
         grid-template-areas:
             "texto_carrito"
             "contenedor_productos"
             "contenedor_precio_total";
-        gap: $espacioGridBase;
 
         .carrito-texto_principal {
             grid-area: texto_carrito;
             height: 70px;
-            background-color: red;
-            color: white;
+            color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             text-align: center;
             margin-top: 1px;
             
             h1 {
                 font-size: 40px;
                 font-style: oblique;
-                font-weight: bold;
+                font-weight: $letrasNegrillas;
             }
         }
+
         .carrito-contenedor_productos {
             grid-area: contenedor_productos;
             min-width: 320px;
             padding-left: 5px;
             padding-right: 5px;
+
             .card_producto {
-                min-width: 310px;
-                min-height: 350px;
-                display: grid;
-                width: auto;
-                overflow-y: hidden;
-                overflow-x: hidden;
-                margin-left: 0px;
-        
+                @include contenedorDisplayGrid(grid, 310px, 100%, hidden);
                 gap: $espacioGridBase;
+                min-height: 350px;
+                margin-left: 0px;
                 margin-top: 10px;
-                background-color: white;
+                background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto;
         
@@ -682,14 +659,13 @@
                 
                 .carrito_imagen_producto {
                     grid-area: contenedor_imagen_producto;
-                    width: 100%;
+                    width: $width-estandar;
                     min-width: 300px;
                     min-height: 350px;
-                    background-color: red;
+                    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
                     
                     img {
-                        width: 100%;
-                        height: 100%;
+                        @include sizes(100%, 100%);
                         min-width: 300px;
                     }
                 }
@@ -703,7 +679,7 @@
                     .cantidad_producto{
                         .eliminar_producto {
                             margin-left: 0px;
-                            color: white;
+                            color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                             cursor: pointer;
                             border-radius: 5px;
                             text-decoration: none;
@@ -719,7 +695,7 @@
         .carrito-contenedor_precios {
             width: auto;
             margin-left: 0px;
-            border: 1px solid red;
+            border: 1px solid map-get($map: $paleta-colores, $key: 'colorSecundario');
             border-radius: 5px;
             margin: 10px;
 

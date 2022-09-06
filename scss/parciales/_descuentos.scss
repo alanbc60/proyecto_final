@@ -1,10 +1,10 @@
-/* ============= pagina descuentos =========== */
-@mixin sizes($width, $height){
+/* ============= pagina descuentos (Revisado)=========== */
+@mixin sizes($width, $height) {
     width: $width;
     height: $height;
 }
 
-@mixin atributosDisplayFlex($display,$marginTop,$wrap,$contenidoJustificado,$marginBottom){
+@mixin atributosDisplayFlex($display, $marginTop, $wrap, $contenidoJustificado, $marginBottom) {
     display: $display;
     margin-top: $marginTop;
     flex-wrap: $wrap;
@@ -17,6 +17,7 @@
     display: grid;
     gap: 10px;
     background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+    margin-top: 2px;
     /* Indicar cuantas columnas tendra */
     grid-template-columns: repeat(3, 1fr);
     /* Indicar cuantas filas tendra */
@@ -31,30 +32,31 @@
         "titulo_fechas         titulo_fechas         titulo_fechas "
         "contenedor_fechas     contenedor_fechas     contenedor_fechas ";
 
-        .titulo_descuentos_fechas {
-            grid-area: titulo_descuentos_fechas;
-            color: red;
-            background-color: white;
-            text-align: center;
-            font-size: $fontMaxima;
-    
-            /* Texto tiulo descuentos */
-            h2 {
-                font-size: 30px;
-                font-style: oblique;
-                font-weight: bold;
+    .titulo_descuentos_fechas {
+        grid-area: titulo_descuentos_fechas;
+        color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+        text-align: $alineacionAlCentro;
+        font-size: $fontMaxima;
 
-            }
-    
+        /* Texto tiulo descuentos */
+        h2 {
+            font-size: 44px;
+            font-style: oblique;
+            font-weight: bold;
         }
+
+    }
+
     /* Contenedor del titulo principal de descuentos */
     .contenedor_descuentos-carousel {
         grid-area: contenedor_carousel;
-        .contenedor_imagen_carousel{
+
+        .contenedor_imagen_carousel {
             img {
                 @include sizes($width-estandar, 600px);
                 object-fit: $acoplamiento-imagen;
-            
+
             }
         }
 
@@ -62,91 +64,96 @@
 
     .contenedor_descuentos-secundario1 {
         grid-area: contenedor_secundario1;
-        background-color: blue;
         background-image: url(../imagenes/imagenes_descuentos/descuentos_blusas2.jpg);
         background-size: 460px 300px;
-        background-color: pink;
-        
+
         padding: 10px;
-        text-align: center;
+        text-align: $alineacionAlCentro;
         image-rendering: optimizeSpeed;
-        .descuentos_secundario1-texto-boton{
+
+        .descuentos_secundario1-texto-boton {
+            @include sizes(230px, 210px);
             background-color: transparent;
-            width: 230px;
-            height: 210px;
-            margin:0px auto;
+            margin: 0px auto;
             margin-top: 25px;
-            
-            .descuentos_secundario1-texto{
-                h1{
+
+            .descuentos_secundario1-texto {
+                h1 {
                     font-size: 40px;
-                    color: white;
+                    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                 }
             }
-            .descuentos_secundario1-boton{
+
+            .descuentos_secundario1-boton {
                 margin-top: 25px;
-                a{
-                    color: white;
-                    background-color: green;
+
+                a {
+                    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+                    background-color: map-get($map: $paleta-colores, $key: 'colorBotonDescuentos1');
                     text-decoration: none;
                     font-weight: bold;
-                    
+
                 }
-                .btn_descuentos{
-                    border: 2px solid #fff;
-                    // background-color: white;
+
+                .btn_descuentos {
+                    border: 2px solid map-get($map: $paleta-colores, $key: 'colorBlanco');
                     padding: 10px 35px;
                     border-radius: 30px;
 
-                    
+
                 }
             }
         }
 
     }
+
     .contenedor_descuentos-secundario2 {
         grid-area: contenedor_secundario2;
         background-image: url(../imagenes/imagenes_descuentos/descuentos_chamarras.png);
         background-size: 440px 300px;
         padding: 10px;
-        text-align: center;
+        text-align: $alineacionAlCentro;
         image-rendering: optimizeSpeed;
 
 
-        .descuentos_secundario2-texto-boton{
+        .descuentos_secundario2-texto-boton {
+            @include sizes(230px, 220px);
             background-color: transparent;
-            width: 230px;
-            height: 220px;
-            margin:0px auto;
-            .descuentos_secundario2-texto{
-                h1{
+            margin: 0px auto;
+
+            .descuentos_secundario2-texto {
+                h1 {
                     font-size: 40px;
-                    color: black;
+                    color: map-get($map: $paleta-colores, $key: 'colorNegro');
                     animation: animacion_descuento_secundario2 12s linear;
                 }
             }
-            .descuentos_secundario2-boton{
+
+            .descuentos_secundario2-boton {
                 margin-top: 25px;
-                a{
-                    color: white;
-                    background-color: darkslategrey;
+
+                a {
+                    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+                    background-color: map-get($map: $paleta-colores, $key: 'colorBotonDescuentos2');
                     text-decoration: none;
                     font-weight: bold;
-                    
                 }
-                .btn_descuentos{
-                    border: 2px solid white;
+
+                .btn_descuentos {
+                    border: 2px solid map-get($map: $paleta-colores, $key: 'colorBlanco');
                     padding: 10px 35px;
-                    border-radius: 30px;                    
+                    border-radius: 30px;
                 }
             }
         }
-        @keyframes animacion_descuento_secundario2{
-            0%{
+
+        @keyframes animacion_descuento_secundario2 {
+            0% {
                 transform: translate(100px);
                 opacity: 0;
             }
-            100%{
+
+            100% {
                 transform: translate(0px);
                 opacity: 1;
             }
@@ -155,15 +162,10 @@
 
     .titulo_descuentos {
         grid-area: titulo_descuentos;
-        color: red;
-        text-align: center;
-        // width: 950px;
-        
-        // background-color: lavenderblush;
-        background-color: khaki;
+        color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+        text-align: $alineacionAlCentro;
         font-size: $fontMaxima;
         margin-top: 10px;
-        // margin: 0px auto;
 
         /* Texto tiulo descuentos */
         h2 {
@@ -171,72 +173,62 @@
             font-style: oblique;
             font-weight: bold;
         }
-
     }
 
     /* contenedor y card de la seccion descuentos */
     .contenedor_cards_descuentos {
         grid-area: contenedor_descuentos;
-        // background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
         background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
         @include atributosDisplayFlex(flex, 0px, wrap, start, 10px);
 
-
         .card_descuento {
-            @include sizes( 460px, 250px);
-            // background-color:map-get($map: $paleta-colores, $key: 'colorPrincipal');
-
+            @include sizes(460px, 250px);
             margin-left: 12px;
             margin-top: 15px;
-            // border-radius: 20px;
-
 
             .cobertura_img_card {
-                // background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-                background-color:  #ebf5fc;
-
                 @include sizes(460px, 250px);
                 display: flex;
+                background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
                 justify-content: center;
                 align-items: center;
                 border-radius: 8px;
-            
-                border: 3px solid white;
+
+                border: 3px solid map-get($map: $paleta-colores, $key: 'colorBlanco');
                 box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
                 opacity: .8;
             }
-            .color_variado1{
-                background-color: red;
+
+            .color_variado1 {
+                background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
             }
-            .color_variado2{
-                background-color: cornsilk;
+
+            .color_variado2 {
+                background-color: map-get($map: $paleta-colores, $key: 'colorVariadoDescuento2');
             }
-            .color_variado3{
-                background-color: #0095ff;
+
+            .color_variado3 {
+                background-color: map-get($map: $paleta-colores, $key: 'colorVariadoDescuento3');
             }
-            .color_variado4{
-                background-color: cornflowerblue;
+
+            .color_variado4 {
+                background-color: map-get($map: $paleta-colores, $key: 'colorVariadoDescuento4');
             }
-            .color_variado5{
-                background-color: green;
+
+            .color_variado5 {
+                background-color: map-get($map: $paleta-colores, $key: 'colorVariadoDescuento5');
             }
-            .color_variado6{
-                background-color: blanchedalmond;
+
+            .color_variado6 {
+                background-color: map-get($map: $paleta-colores, $key: 'colorVariadoDescuento6');
             }
-            
+
             .texto_card_descuento {
 
                 @include sizes(335px, 200px);
                 margin-left: 20px;
                 justify-content: center;
                 display: none;
-                h3 {
-                    color: blue;
-                    margin-bottom: 5px;
-                    font-size: 24px;
-                    text-align: center;
-                }
-        
             }
         }
 
@@ -254,17 +246,17 @@
         grid-area: titulo_fechas;
         color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
         // width: 800px;
-        text-align: center;
-        background-color: red;
+        text-align: $alineacionAlCentro;
+        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
         font-size: $fontMaxima;
-        
+
         h2 {
             font-size: 50px;
             font-style: oblique;
             font-weight: bold;
         }
     }
-    
+
     .contenedor_cards_fechas {
         grid-area: contenedor_fechas;
         @include atributosDisplayFlex(flex, 10px, wrap, start, 10px);
@@ -274,7 +266,6 @@
             display: flex;
             flex-wrap: wrap;
             // background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-            background-color: white;
 
             // espaciado externo
             margin-left: 12px;
@@ -285,54 +276,42 @@
             animation-direction: alternate;
 
 
-            .card_fecha-icono{
+            .card_fecha-icono {
 
                 @include sizes(130px, 130px);
                 min-height: 130px;
                 margin-top: 22px;
             }
 
-            .card_fecha-texto{
-                margin-left: 10px;
+            .card_fecha-texto {
                 display: flex;
                 flex-wrap: wrap;
                 @include sizes(290px, 130px);
-                background-color: white;
+                background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
                 min-height: 130px;
                 margin-top: 22px;
+                margin-left: 10px;
                 margin-right: 5px;
                 padding: 5px;
-                h3{
-                    font-size: 28px;
-                    color: red;
+
+                h3 {
+                    font-size: 25px;
+                    color: map-get($map: $paleta-colores, $key: 'colorSecundario');
                 }
             }
 
-
         }
-        
+
         @keyframes card_fecha {
             0% {
-              transform: skewX(1deg);
+                transform: skewX(1deg);
             }
+
             100% {
-              transform: skewX(-1deg);
+                transform: skewX(-1deg);
             }
         }
     }
-    
-    
+
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

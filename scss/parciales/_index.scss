@@ -1,7 +1,7 @@
-/* ================ Página inicio: imagen principal y texto ================ */
+//Revisado
 
 
-@mixin sizes($width, $height){
+@mixin sizes($width, $height) {
     width: $width;
     height: $height;
 }
@@ -14,7 +14,7 @@
     background: map-get($map: $paleta-colores, $key: 'colorSecundario');
     padding: 9px 40px;
     border-radius: 5px;
-    font-weight: bold;
+    font-weight: $letrasNegrillas;
     color: map-get($map: $paleta-colores, $key: 'colorBlanco');
     box-shadow: 0 8px 0;
     transition: all 0.2s;
@@ -22,17 +22,17 @@
     animation-duration: 20s;
 }
 
-.box_shadow-generico{
+.box_shadow-generico {
     background: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-    box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-               -10px -10px 10px -1px rgba(255, 255, 255, 0.70); 
+    box-shadow: 10px 10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow1'),
+        -10px -10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow2');
 }
 
 /* animacion del boton checar */
 @keyframes btn_checar {
     from {
-        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');;
-        box-shadow: 0 8px 0 map-get($map: $paleta-colores, $key: 'colorSecundario');;
+        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+        box-shadow: 0 8px 0 map-get($map: $paleta-colores, $key: 'colorSecundario');
     }
 
     to {
@@ -42,7 +42,7 @@
 }
 
 .btn_checar:hover {
-    color: map-get($map: $paleta-colores, $key: 'colorBlanco');;
+    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 }
 
 .btn_checar:active {
@@ -60,7 +60,6 @@
     gap: 40px;
     // se ocupa en el landing page
     margin-top: -88px;
-
     background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
     /* Indicar cuantas columnas tendra */
     grid-template-columns: repeat(2, 1fr);
@@ -68,59 +67,60 @@
     grid-template-rows: 950px 450px 100px 900px;
 
     /* acomodar el grid */
-    grid-template-areas: 
-                        "landing_page landing_page"
-                        "principal_imagen  principal_texto"
-                         "titulo_novedades  titulo_novedades"
-                         "contenedor_novedades contenedor_novedades";
- 
+    grid-template-areas:
+        "landing_page          landing_page"
+        "principal_imagen      principal_texto"
+        "titulo_novedades     titulo_novedades"
+        "contenedor_novedades contenedor_novedades";
+
     //contenedor landing page
-    .contenedor_principal_landing{
+    .contenedor_principal_landing {
         grid-area: landing_page;
         position: relative;
-        background-image: linear-gradient( map-get($map: $paleta-colores, $key: 'colorFondoLanding1'), 
-                          map-get($map: $paleta-colores, $key: 'colorFondoLanding2')),
-                          url(../imagenes/fondo_landing_page.jpg);
+        background-image: linear-gradient(map-get($map: $paleta-colores, $key: 'colorFondoLanding1'),
+                map-get($map: $paleta-colores, $key: 'colorFondoLanding2')),
+            url(../imagenes/fondo_landing_page.jpg);
         width: $width-estandar;
         @include sizes(auto, 920px);
         color: map-get($map: $paleta-colores, $key: 'colorBlanco');
-        
-        .contenedor_landing{
+
+        .contenedor_landing {
             position: absolute;
             margin-top: 110px;
-            /* background-color: blue; */
             margin-left: 10px;
-    
-            .landing_page_contenedor_titulo{
+
+            .landing_page_contenedor_titulo {
                 @include sizes(auto, auto);
-                /* background-color: red; */
+
                 .slide-left {
                     color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                     font-size: 120px;
                     line-height: 140px;
-                    font-weight: bold;
+                    font-weight: $letrasNegrillas;
                     animation: slideleft 1s linear forwards;
-                }            
+                }
             }
-            
-            .landing_page_contenedor_texto{
+
+            .landing_page_contenedor_texto {
                 /* background-color: green; */
                 @include sizes(100%, auto);
-                p{
+
+                p {
                     font-size: 20px;
                     color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                     animation-delay: 1s;
                 }
             }
-    
-            .landing_page_contenedor_botones{
+
+            .landing_page_contenedor_botones {
                 display: inline-block;
-                
-                a{
+
+                a {
                     color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                     text-decoration: none;
                 }
-                .btn{
+
+                .btn {
                     border: 2px solid map-get($map: $paleta-colores, $key: 'colorBlanco');
                     padding: 10px 35px;
                     border-radius: 30px;
@@ -129,12 +129,14 @@
             }
         }
     }
-    @keyframes slideleft{
-        0%{
+
+    @keyframes slideleft {
+        0% {
             transform: translate(100px);
             opacity: 0;
         }
-        100%{
+
+        100% {
             transform: translate(0px);
             opacity: 1;
         }
@@ -145,7 +147,7 @@
         margin-left: 5px;
         grid-area: principal_imagen;
 
-        .carousel-indicators{
+        .carousel-indicators {
             z-index: 1;
         }
 
@@ -166,10 +168,12 @@
     .contenedor_principal-texto {
         grid-area: principal_texto;
         background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
+        animation: animacion_contenedor_principal-texto 3s linear;
+
 
         h1 {
-            background-image: linear-gradient(90deg, map-get($map: $paleta-colores, $key: 'colorLetrasAnimadas')  0%,
-                              map-get($map: $paleta-colores, $key: 'colorSecundario')  100%);
+            background-image: linear-gradient(90deg, map-get($map: $paleta-colores, $key: 'colorLetrasAnimadas') 0%,
+                    map-get($map: $paleta-colores, $key: 'colorSecundario') 100%);
             color: transparent;
             -webkit-background-clip: text;
             animation: index_texto_animado 3s infinite;
@@ -178,8 +182,8 @@
         .contenido_principal-texto {
             font-size: 18px;
             @include sizes(92%, auto);
-            // margin-right: 230px;
             margin-left: 20px;
+
         }
 
         .contenedor_boton_checar {
@@ -187,17 +191,31 @@
         }
     }
 
+    @keyframes animacion_contenedor_principal-texto {
+        0% {
+            transform: translate(100px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translate(0px);
+            opacity: 1;
+        }
+    }
+
     @keyframes index_texto_animado {
         50% {
-            background-image: linear-gradient(90deg, map-get($map: $paleta-colores, $key: 'colorSecundario') 0%, 
-                              map-get($map: $paleta-colores, $key: 'colorLetrasAnimadas') 0% 100%);
+            background-image: linear-gradient(90deg, map-get($map: $paleta-colores, $key: 'colorSecundario') 0%,
+                    map-get($map: $paleta-colores, $key: 'colorLetrasAnimadas') 0% 100%);
         }
+
         from {
             transform: translateY(5px);
-          }
-          to {
+        }
+
+        to {
             transform: translateY(-5px);
-          }
+        }
     }
 
     /* ================ Novedades ================ */
@@ -205,10 +223,11 @@
     /* Personalización del contenedor con texto animado(pensado para la sección inicio y Quienes somos) */
     .titulo_novedades {
         grid-area: titulo_novedades;
+        display: flex;
         justify-content: center;
         align-items: center;
         background-color: map-get($map: $paleta-colores, $key: 'colorTextoSecundario');
-        display: flex;
+
 
         /* Texto antes de la animación */
         h2 {
@@ -224,17 +243,17 @@
     /* contenedor principal novedades */
     .contenedor_novedades {
         grid-area: contenedor_novedades;
-
-        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
         display: flex;
         flex-wrap: wrap;
+        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+
         justify-content: center;
-    
+
         /* card del contenedor novedades */
         .card_novedades {
             display: flex;
             flex-wrap: wrap;
-            @include sizes( 295px, 400px);
+            @include sizes(295px, 400px);
             margin-left: 20px;
             margin-right: 20px;
             margin-top: 30px;
@@ -248,53 +267,51 @@
                 overflow: hidden;
                 padding-top: 13px;
                 margin-left: 9px;
-            
+
                 img {
                     @include sizes(276px, 310px);
                     transition: all 2s ease-in-out;
                     object-fit: $acoplamiento-imagen;
                 }
-            
+
                 img:hover {
                     transform: scale(1.2, 1.2);
                     cursor: pointer;
                 }
             }
 
-            .card_novedades-texto-boton{
+            .card_novedades-texto-boton {
                 display: flex;
                 @include sizes(280px, auto);
-                .card_novedades_texto{
+
+                .card_novedades_texto {
                     width: 170px;
+
                     h2 {
                         padding-left: 10px;
                         font-size: 16px;
                     }
                 }
-    
-                .card_novedades_boton{
-                    a{
+
+                .card_novedades_boton {
+                    a {
                         @extend .btn_checar;
                         animation: none;
                         @extend .box_shadow-generico;
-                        // color: #00a037;
                         color: map-get($map: $paleta-colores, $key: 'colorLetrasBoton');
-                        margin-top:  10px;
+                        margin-top: 10px;
                         margin-left: 10px;
                         padding: 5px 20px;
                         height: 35px;
                     }
-    
-                    a:hover{
+
+                    a:hover {
                         color: map-get($map: $paleta-colores, $key: 'colorBotonAgregar');
                         background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
                     }
                 }
-    
+
             }
-
-
-    
 
         }
 
@@ -302,8 +319,3 @@
     }
 
 }
-
-
-
-
-

@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +14,31 @@ body {
   background-color: #ecf7ff;
 }
 
+.enlace_item-generico,
+.lista_enlaces .dropdown .enlace_item,
+.lista_enlaces .enlace_secciones .enlace_item,
+.lista_enlaces .dropdown .enlace_item_landing_page,
+.lista_enlaces .enlace_secciones .enlace_item_landing_page {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  list-style: none;
+}
+
+.navbar-generica,
+.navbar_general,
+.navbar_landing_page {
+  z-index: 2;
+  position: absolute;
+  position: -webkit-sticky;
+  flex-wrap: wrap;
+  /*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
+  justify-content: space-between;
+  /*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
+  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
 header {
   position: -webkit-sticky;
   position: sticky;
@@ -22,54 +48,40 @@ header {
 }
 
 .navbar_general {
-  z-index: 2;
-  position: absolute;
-  position: -webkit-sticky;
-  flex-wrap: wrap;
-  /*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
-  justify-content: space-between;
-  /*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
-  background-color: white;
+  background-color: #ebf5fc;
 }
 
 .navbar_landing_page {
-  z-index: 2;
-  position: absolute;
-  position: -webkit-sticky;
-  flex-wrap: wrap;
-  /*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
-  justify-content: space-between;
-  /*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
   background-color: tranparent;
 }
 
 .navbar_landing_page:hover {
-  background-color: white;
+  background-color: #ebf5fc;
 }
 
-/* === Personalización de logo === */
+/* ====== Personalización de logo ======= */
 /* contenedor logo */
 .logo {
-  margin-right: 50px;
-  background-color: red;
-  color: white;
   width: 130px;
   height: 50px;
+  background-color: red;
+  color: white;
   margin-bottom: 10px;
   margin-left: 10px;
+  margin-right: 50px;
   /* texto logo */
   /* Modificar el texto al pasar el cursor */
 }
 
 .logo a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
   padding-top: 10px;
   color: white;
   text-decoration: none;
   /*Quita el subrayado del enlace*/
-  display: inline-block;
-  text-align: center;
-  height: 100%;
-  width: 100%;
 }
 
 .logo a:hover {
@@ -85,7 +97,7 @@ header {
 /* Contenedor principal de productos*/
 .lista_enlaces {
   list-style: none;
-  /*   quitar viñetas a los números*/
+  /*quitar viñetas a los números*/
   display: flex;
   /*colocar elemento uno a lado de otro hasta que haya espacio */
   gap: 10px;
@@ -94,37 +106,26 @@ header {
   /* Texto Hombre y Mujer */
 }
 
-.lista_enlaces .dropdown, .lista_enlaces .enlace_secciones {
-  /* Personalización general de los enlaces(tambien usado en las categorias de productos) */
-  /*TODO: poner una clase auxilar para indicar que es la navbar de la landing page */
-}
-
-.lista_enlaces .dropdown span, .lista_enlaces .enlace_secciones span {
+.lista_enlaces .dropdown span,
+.lista_enlaces .enlace_secciones span {
   color: red;
   font-size: 15px;
 }
 
-.lista_enlaces .dropdown .enlace_item, .lista_enlaces .enlace_secciones .enlace_item {
-  display: inline-block;
+.lista_enlaces .dropdown .enlace_item,
+.lista_enlaces .enlace_secciones .enlace_item {
   color: red;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  list-style: none;
 }
 
-.lista_enlaces .dropdown .enlace_item:hover, .lista_enlaces .enlace_secciones .enlace_item:hover {
+.lista_enlaces .dropdown .enlace_item:hover,
+.lista_enlaces .enlace_secciones .enlace_item:hover {
   background-color: red;
   color: white;
 }
 
-.lista_enlaces .dropdown .enlace_item_landing_page, .lista_enlaces .enlace_secciones .enlace_item_landing_page {
-  display: inline-block;
+.lista_enlaces .dropdown .enlace_item_landing_page,
+.lista_enlaces .enlace_secciones .enlace_item_landing_page {
   color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  list-style: none;
 }
 
 header.scroll_bajar {
@@ -148,7 +149,7 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
   color: white;
 }
 
-/* == Personalización  del contendor de la lista de enlaces  ===*/
+/* ========== Personalización  del contendor de la lista de enlaces  =============*/
 /* contenedor principal donde se encuentra producto-hombre y producto-mujer */
 .dropdown-contenedor {
   display: none;
@@ -174,16 +175,16 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 
 /* contendor tipo lista de productos */
 .lista_subenlaces {
-  list-style: none;
-  /*   quitar viñetas a los números*/
   display: block;
+  list-style: none;
+  /*quitar viñetas a los números*/
   gap: 10px;
   /*Espaciado entre botones*/
   background-color: #ebf5fc;
   margin-right: 5px;
 }
 
-/* == Personalización de categorias == */
+/* ====== Personalización de categorias ====== */
 /* Contenedor principal de las categorias hombre y mujer */
 .dropdown_contenedor-categorias {
   display: none;
@@ -191,23 +192,23 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
   background-color: red;
   width: 160px;
   max-height: 0;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.2);
   transition: max-height .6s ease-out;
   /* enlaces de las categorias */
 }
 
 .dropdown_contenedor-categorias .categorias_item {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
   display: none;
   flex-wrap: wrap;
+  color: white;
+  text-decoration: none;
   text-align: left;
+  padding: 12px 16px;
 }
 
 .item_mujer:hover .dropdown_contenedor-categorias {
-  max-height: 400px;
   display: block;
+  max-height: 400px;
 }
 
 .item_mujer:hover .dropdown_contenedor-categorias .categorias_item {
@@ -215,8 +216,8 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 }
 
 .item_hombre:hover .dropdown_contenedor-categorias {
-  max-height: 400px;
   display: block;
+  max-height: 400px;
 }
 
 .item_hombre:hover .dropdown_contenedor-categorias .categorias_item {
@@ -235,12 +236,12 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 
 .contenedor_principal-navbar_sidebar .sidebar {
   display: none;
+  width: 210px;
+  height: 100%;
   background: #4063b9;
   position: fixed;
   top: 0;
   left: 0;
-  width: 210px;
-  height: 100%;
   transition: all 0.5s ease;
 }
 
@@ -250,7 +251,7 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 }
 
 .contenedor_principal-navbar_sidebar .sidebar .profile h3 {
-  color: #ffffff;
+  color: white;
   margin: 10px 0 5px;
 }
 
@@ -300,26 +301,28 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 .contenedor_principal-navbar_sidebar .sidebar ul li a {
   display: block;
   padding: 13px 10px;
-  border-bottom: 1px solid orange;
-  color: #f1eded;
+  border-bottom: 1px solid white;
+  color: white;
   font-size: 16px;
   position: relative;
   text-decoration: none;
 }
 
 .contenedor_principal-navbar_sidebar .sidebar ul li a .icon {
-  color: #dee4ec;
+  color: white;
   width: 30px;
   display: inline-block;
 }
 
-.contenedor_principal-navbar_sidebar .sidebar ul li a:hover, .contenedor_principal-navbar_sidebar .sidebar ul li a.active {
-  color: #0c7db1;
+.contenedor_principal-navbar_sidebar .sidebar ul li a:hover,
+.contenedor_principal-navbar_sidebar .sidebar ul li a.active {
+  color: #4063b9;
   background: white;
 }
 
-.contenedor_principal-navbar_sidebar .sidebar ul li a:hover .icon, .contenedor_principal-navbar_sidebar .sidebar ul li a.active .icon {
-  color: #0c7db1;
+.contenedor_principal-navbar_sidebar .sidebar ul li a:hover .icon,
+.contenedor_principal-navbar_sidebar .sidebar ul li a.active .icon {
+  color: #4063b9;
 }
 
 .contenedor_principal-navbar_sidebar .sidebar ul li a:hover:before,
@@ -329,18 +332,18 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 
 .contenedor_principal-navbar_sidebar .top_navbar {
   width: 100%;
-  transition: all 0.5s ease;
-  background-color: transparent;
   height: auto;
+  transition: all 0.5s ease;
+  background-color: tranparent;
   display: flex;
   padding-left: 7px;
 }
 
 .contenedor_principal-navbar_sidebar .top_navbar .logo_mini {
   display: block;
-  background-color: red;
-  height: 40px;
   width: 100px;
+  height: 40px;
+  background-color: red;
   margin-right: 136px;
   margin-top: 3px;
   margin-bottom: 6px;
@@ -349,12 +352,12 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 }
 
 .contenedor_principal-navbar_sidebar .top_navbar .logo_mini a {
+  width: 80%;
+  color: #ebf5fc;
   font-size: 14px;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
-  width: 80%;
-  color: white;
 }
 
 .contenedor_principal-navbar_sidebar .top_navbar .hamburger {
@@ -377,7 +380,7 @@ body.active .contenedor_principal-navbar_sidebar .sidebar {
 }
 
 body.active .contenedor_principal-navbar_sidebar .top_navbar {
-  background-color: white;
+  background-color: #ebf5fc;
   width: calc(100% - 210px);
   margin-left: 210px;
 }
@@ -392,16 +395,10 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger {
 }
 
 body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
-  color: #4063b9;
+  color: red;
 }
 
-/* Footer */
-.atributoSeccionFooter, .contenedor_footer .footer_seccion1_logo, .contenedor_footer .footer_seccion2_contacto, .contenedor_footer .footer_cliente, .contenedor_footer .footer_seccion4_redes {
-  color: white;
-  margin: 17px;
-  text-align: center;
-}
-
+/* Footer (Revisado)*/
 .contenedor_footer {
   width: auto;
   margin-top: auto;
@@ -417,23 +414,47 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   grid-template-areas: "footer_seccion1_logo footer_seccion2_contacto footer_cliente footer_seccion4_redes";
 }
 
+.contenedor_footer .footer_seccion1_logo {
+  color: #ebf5fc;
+  margin: 17px;
+  text-align: center;
+}
+
+.contenedor_footer .footer_seccion2_contacto {
+  color: #ebf5fc;
+  margin: 17px;
+  text-align: center;
+}
+
 .contenedor_footer .footer_seccion2_contacto a {
-  color: white;
+  color: #ebf5fc;
   margin: 10px;
   text-align: center;
   text-decoration: none;
+}
+
+.contenedor_footer .footer_cliente {
+  color: #ebf5fc;
+  margin: 17px;
+  text-align: center;
+}
+
+.contenedor_footer .footer_seccion4_redes {
+  color: #ebf5fc;
+  margin: 17px;
+  text-align: center;
 }
 
 .contenedor_footer .footer_seccion4_redes a {
-  color: white;
+  color: #ebf5fc;
   margin: 10px;
   text-align: center;
   text-decoration: none;
 }
 
-/* ================ Página inicio: imagen principal y texto ================ */
 /* boton checar(se usa en la página carrito igual) */
-.btn_checar, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
+.btn_checar,
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
   height: 40px;
   display: inline-block;
   text-decoration: none;
@@ -448,7 +469,9 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   animation-duration: 20s;
 }
 
-.box_shadow-generico, .contenedor_principal .contenedor_novedades .card_novedades, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
+.box_shadow-generico,
+.contenedor_principal .contenedor_novedades .card_novedades,
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
   background: #ebf5fc;
   box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
 }
@@ -459,17 +482,20 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     background-color: red;
     box-shadow: 0 8px 0 red;
   }
+
   to {
     background-color: #0095ff;
     box-shadow: 0 8px 0 #0095ff;
   }
 }
 
-.btn_checar:hover, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:hover {
+.btn_checar:hover,
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:hover {
   color: white;
 }
 
-.btn_checar:active, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:active {
+.btn_checar:active,
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:active {
   transform: translateY(4px);
   box-shadow: 0 4px 0 red;
 }
@@ -487,7 +513,10 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   /* Indicar cuantas filas tendra */
   grid-template-rows: 950px 450px 100px 900px;
   /* acomodar el grid */
-  grid-template-areas: "landing_page landing_page" "principal_imagen  principal_texto" "titulo_novedades  titulo_novedades" "contenedor_novedades contenedor_novedades";
+  grid-template-areas: "landing_page          landing_page"
+    "principal_imagen      principal_texto"
+    "titulo_novedades     titulo_novedades"
+    "contenedor_novedades contenedor_novedades";
   /* contenedor de la imagen */
   /* contenedor donde esta el texto principal y el boton */
   /* ================ Novedades ================ */
@@ -508,14 +537,12 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 .contenedor_principal .contenedor_principal_landing .contenedor_landing {
   position: absolute;
   margin-top: 110px;
-  /* background-color: blue; */
   margin-left: 10px;
 }
 
 .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo {
   width: auto;
   height: auto;
-  /* background-color: red; */
 }
 
 .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo .slide-left {
@@ -559,6 +586,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     transform: translate(100px);
     opacity: 0;
   }
+
   100% {
     transform: translate(0px);
     opacity: 1;
@@ -590,6 +618,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 .contenedor_principal .contenedor_principal-texto {
   grid-area: principal_texto;
   background-color: #ecf7ff;
+  animation: animacion_contenedor_principal-texto 3s linear;
 }
 
 .contenedor_principal .contenedor_principal-texto h1 {
@@ -610,13 +639,27 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   margin-left: 20px;
 }
 
+@keyframes animacion_contenedor_principal-texto {
+  0% {
+    transform: translate(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+}
+
 @keyframes index_texto_animado {
   50% {
     background-image: linear-gradient(90deg, red 0%, #000066 0% 100%);
   }
+
   from {
     transform: translateY(5px);
   }
+
   to {
     transform: translateY(-5px);
   }
@@ -624,10 +667,10 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .contenedor_principal .titulo_novedades {
   grid-area: titulo_novedades;
+  display: flex;
   justify-content: center;
   align-items: center;
   background-color: red;
-  display: flex;
   /* Texto antes de la animación */
 }
 
@@ -641,9 +684,9 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .contenedor_principal .contenedor_novedades {
   grid-area: contenedor_novedades;
-  background-color: #ebf5fc;
   display: flex;
   flex-wrap: wrap;
+  background-color: #ebf5fc;
   justify-content: center;
   /* card del contenedor novedades */
 }
@@ -710,11 +753,10 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   background-color: red;
 }
 
-/* ==================pagina productos-hombre-mujer   ========== */
+/* ==================pagina productos-hombre-mujer (revisado)  ========== */
 /* boton checar(se usa en la página carrito igual) */
-.btn_agregarProducto, .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto_boton a {
-  color: white;
-  box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.1);
+.btn_agregarProducto,
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto_boton a {
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
@@ -723,16 +765,17 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .contenedor_principal-filtroCategorias-listaProductos {
+  display: grid;
   background-color: #ebf5fc;
   width: 100%;
   height: 100%;
-  display: grid;
   gap: 10px;
   /* Indicar cuantas columnas tendra */
   grid-template-columns: repeat(3, auto);
   /* Indicar cuantas filas tendra */
   grid-template-rows: auto auto;
-  grid-template-areas: "titulo_categoria titulo_categoria titulo_categoria" "filtro_categorias contenedor_cards_productos contenedor_cards_productos";
+  grid-template-areas: "titulo_categoria titulo_categoria titulo_categoria"
+    "filtro_categorias contenedor_cards_productos contenedor_cards_productos";
   /* contenedores hijos */
   /* Ocultar el scrollbar de la  lista productos*/
 }
@@ -740,11 +783,12 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 .contenedor_principal-filtroCategorias-listaProductos .titulo_categoria {
   grid-area: titulo_categoria;
   width: 500px;
-  color: white;
   min-width: 320px;
-  text-align: center;
-  margin-top: 31px;
+  color: white;
+  background-color: #0095ff;
   font-size: 100%;
+  text-align: center;
+  margin-top: 6px;
   /* personalizacion del contenedor titulo_categoria */
 }
 
@@ -755,15 +799,14 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_filtroCategorias {
-  position: -webkit-sticky;
-  position: sticky;
   grid-area: filtro_categorias;
   width: 350px;
   height: 400px;
+  position: -webkit-sticky;
+  position: sticky;
   margin-right: 10px;
   margin-left: 10px;
   margin-top: 10px;
-  border-color: #0095ff;
   border-radius: 15px;
   padding-left: 20px;
 }
@@ -771,8 +814,8 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos {
   grid-area: contenedor_cards_productos;
   display: flex;
-  background-color: #ebf5fc;
   flex-wrap: wrap;
+  background-color: #ebf5fc;
   overflow-y: scroll;
   overflow-x: hidden;
   justify-content: center;
@@ -782,7 +825,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto {
   width: 225px;
-  height: 350px;
+  height: auto;
   background-color: white;
   border: 2px solid #0095ff;
   border-radius: 10px;
@@ -868,14 +911,15 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto_boton {
   width: 100%;
-  height: auto;
+  height: 28px;
   text-align: center;
   background-color: #0095ff;
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto_boton a {
   width: 200px;
-  height: 30px;
+  height: 28px;
+  color: white;
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto-texto_boton:hover .card_boton_comprar {
@@ -896,7 +940,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   width: 100%;
   height: 100%;
   display: grid;
-  margin-top: 8px;
+  margin-top: 0px;
   gap: 10px;
   background-color: #ecf7ff;
   /* Indicar cuantas columnas tendra */
@@ -904,19 +948,21 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   /* Indicar cuantas filas tendra */
   grid-template-rows: auto auto;
   /* acomodar el grid */
-  grid-template-areas: "texto_carrito  texto_carrito" "contenedor_productos  contenedor_precio_total";
+  grid-template-areas: "texto_carrito  texto_carrito"
+    "contenedor_productos  contenedor_precio_total";
   /* personalizacion del contenedor de productos */
+  /* personalizacion de componentes del contenedor precio total */
 }
 
 .carrito-contenedor_principal .carrito-texto_principal {
   grid-area: texto_carrito;
-  background-color: red;
   color: #ebf5fc;
   text-align: center;
 }
 
 .carrito-contenedor_principal .carrito-texto_principal h1 {
-  font-size: 40px;
+  color: red;
+  font-size: 60px;
   font-style: oblique;
   font-weight: bold;
 }
@@ -929,7 +975,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto {
   width: auto;
   display: grid;
-  margin-top: 10px;
+  margin-top: 0px;
   gap: 10px;
   margin-bottom: 20px;
   margin-left: 5px;
@@ -946,10 +992,10 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto {
-  grid-area: contenedor_imagen_producto;
-  object-fit: cover;
   width: 280px;
   height: 230px;
+  grid-area: contenedor_imagen_producto;
+  object-fit: cover;
   padding: 5px;
 }
 
@@ -970,11 +1016,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   padding-left: 10px;
 }
 
-.carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto {
-  /* Entrada de texto para aumentar las cantidades */
-  /* Boton de eliminar producto en card producto */
-}
-
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto input {
   width: 100px;
   padding: 5px;
@@ -987,11 +1028,11 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto .eliminar_producto {
+  background-color: red;
+  color: #ebf5fc;
   bottom: 20px;
   margin-left: 22px;
   padding: 10px 25px;
-  background-color: red;
-  color: #ebf5fc;
   cursor: pointer;
   border-radius: 5px;
   text-decoration: none;
@@ -1008,35 +1049,40 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 .carrito-contenedor_principal .carrito-contenedor_precios {
   grid-area: contenedor_precio_total;
   max-height: 500px;
-  /* personalizacion de componentes del contenedor precio total */
   /* Texto del card pagar */
   /* Boton de card pagar(personalización establecida anteriormente) */
 }
 
-.carrito-contenedor_principal .carrito-contenedor_precios .carrito-contenedor_precios p {
+.carrito-contenedor_principal .carrito-contenedor_precios p {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
   font-size: 20px;
 }
 
-.carrito-contenedor_principal .carrito-contenedor_precios .carrito-contenedor_precios a {
+.carrito-contenedor_principal .carrito-contenedor_precios a {
   margin-left: 80px;
 }
 
-/* ============= pagina descuentos =========== */
+/* ============= pagina descuentos (Revisado)=========== */
 .contenedor_principal-descuentos-fechas {
   width: 100%;
   height: 100%;
   display: grid;
   gap: 10px;
   background-color: #ebf5fc;
+  margin-top: 2px;
   /* Indicar cuantas columnas tendra */
   grid-template-columns: repeat(3, 1fr);
   /* Indicar cuantas filas tendra */
   grid-template-rows: auto 295px 295px auto auto auto;
   /* acomodar el grid */
-  grid-template-areas: "titulo_descuentos_fechas     titulo_descuentos_fechas     titulo_descuentos_fechas " "contenedor_carousel   contenedor_carousel   contenedor_secundario1" "contenedor_carousel   contenedor_carousel   contenedor_secundario2" "contenedor_descuentos contenedor_descuentos contenedor_descuentos " "titulo_fechas         titulo_fechas         titulo_fechas " "contenedor_fechas     contenedor_fechas     contenedor_fechas ";
+  grid-template-areas: "titulo_descuentos_fechas     titulo_descuentos_fechas     titulo_descuentos_fechas "
+    "contenedor_carousel   contenedor_carousel   contenedor_secundario1"
+    "contenedor_carousel   contenedor_carousel   contenedor_secundario2"
+    "contenedor_descuentos contenedor_descuentos contenedor_descuentos "
+    "titulo_fechas         titulo_fechas         titulo_fechas "
+    "contenedor_fechas     contenedor_fechas     contenedor_fechas ";
   /* Contenedor del titulo principal de descuentos */
   /* contenedor y card de la seccion descuentos */
 }
@@ -1044,14 +1090,14 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 .contenedor_principal-descuentos-fechas .titulo_descuentos_fechas {
   grid-area: titulo_descuentos_fechas;
   color: red;
-  background-color: white;
+  background-color: #ebf5fc;
   text-align: center;
   font-size: 100%;
   /* Texto tiulo descuentos */
 }
 
 .contenedor_principal-descuentos-fechas .titulo_descuentos_fechas h2 {
-  font-size: 30px;
+  font-size: 44px;
   font-style: oblique;
   font-weight: bold;
 }
@@ -1068,19 +1114,17 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 {
   grid-area: contenedor_secundario1;
-  background-color: blue;
   background-image: url(../imagenes/imagenes_descuentos/descuentos_blusas2.jpg);
   background-size: 460px 300px;
-  background-color: pink;
   padding: 10px;
   text-align: center;
   image-rendering: optimizeSpeed;
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 .descuentos_secundario1-texto-boton {
-  background-color: transparent;
   width: 230px;
   height: 210px;
+  background-color: transparent;
   margin: 0px auto;
   margin-top: 25px;
 }
@@ -1096,13 +1140,13 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 .descuentos_secundario1-texto-boton .descuentos_secundario1-boton a {
   color: white;
-  background-color: green;
+  background-color: #038a03;
   text-decoration: none;
   font-weight: bold;
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 .descuentos_secundario1-texto-boton .descuentos_secundario1-boton .btn_descuentos {
-  border: 2px solid #fff;
+  border: 2px solid white;
   padding: 10px 35px;
   border-radius: 30px;
 }
@@ -1117,9 +1161,9 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario2 .descuentos_secundario2-texto-boton {
-  background-color: transparent;
   width: 230px;
   height: 220px;
+  background-color: transparent;
   margin: 0px auto;
 }
 
@@ -1151,6 +1195,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     transform: translate(100px);
     opacity: 0;
   }
+
   100% {
     transform: translate(0px);
     opacity: 1;
@@ -1161,7 +1206,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   grid-area: titulo_descuentos;
   color: red;
   text-align: center;
-  background-color: khaki;
   font-size: 100%;
   margin-top: 10px;
   /* Texto tiulo descuentos */
@@ -1191,10 +1235,10 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .cobertura_img_card {
-  background-color: #ebf5fc;
   width: 460px;
   height: 250px;
   display: flex;
+  background-color: #ebf5fc;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
@@ -1212,7 +1256,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .color_variado3 {
-  background-color: #0095ff;
+  background-color: #0390f4;
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .color_variado4 {
@@ -1220,7 +1264,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .color_variado5 {
-  background-color: green;
+  background-color: #018901;
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .color_variado6 {
@@ -1233,13 +1277,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   margin-left: 20px;
   justify-content: center;
   display: none;
-}
-
-.contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .texto_card_descuento h3 {
-  color: blue;
-  margin-bottom: 5px;
-  font-size: 24px;
-  text-align: center;
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento:hover .cobertura_img_card {
@@ -1279,7 +1316,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   height: 180px;
   display: flex;
   flex-wrap: wrap;
-  background-color: white;
   margin-left: 12px;
   margin-top: 23px;
   padding-left: 15px;
@@ -1296,20 +1332,20 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-texto {
-  margin-left: 10px;
   display: flex;
   flex-wrap: wrap;
   width: 290px;
   height: 130px;
-  background-color: white;
+  background-color: #ebf5fc;
   min-height: 130px;
   margin-top: 22px;
+  margin-left: 10px;
   margin-right: 5px;
   padding: 5px;
 }
 
 .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-texto h3 {
-  font-size: 28px;
+  font-size: 25px;
   color: red;
 }
 
@@ -1317,44 +1353,47 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   0% {
     transform: skewX(1deg);
   }
+
   100% {
     transform: skewX(-1deg);
   }
 }
 
-/* ================= Pagina Quienes somos ==================*/
+/* ================= Pagina Quienes somos (revisada)==================*/
 .contenedor_principal_quienes-somos {
+  display: grid;
   width: 100%;
   height: 100%;
-  display: grid;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 2px;
   background-color: #ebf5fc;
   /* Indicar cuantas columnas tendra */
   grid-template-columns: repeat(4, 1fr);
   /* Indicar cuantas filas tendra */
   grid-template-rows: auto auto 100px auto;
   /* acomodar el grid */
-  grid-template-areas: "texto_conocenos     texto_conocenos     contenedor_servicios contenedor_servicios" "texto_conocenos     texto_conocenos     contenedor_servicios contenedor_servicios" "titulo_amigos       titulo_amigos       titulo_amigos        titulo_amigos " "contenedor_marcas   contenedor_marcas   contenedor_marcas    contenedor_marcas";
+  grid-template-areas: "texto_conocenos     texto_conocenos     contenedor_servicios contenedor_servicios"
+    "texto_conocenos     texto_conocenos     contenedor_servicios contenedor_servicios"
+    "titulo_amigos       titulo_amigos       titulo_amigos        titulo_amigos "
+    "contenedor_marcas   contenedor_marcas   contenedor_marcas    contenedor_marcas";
   /* Contenedor de titulo y parrafo de la empresa */
   /* Contenedor de cards de marcas */
 }
 
 .contenedor_principal_quienes-somos .conocenos_textos {
+  grid-area: texto_conocenos;
   width: 800px;
   height: auto;
+  background-color: #ecf0f3;
   box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
-  grid-area: texto_conocenos;
-  margin-left: 10px;
   font-size: 20px;
-  background-color: azure;
+  margin-left: 10px;
 }
 
 .contenedor_principal_quienes-somos .contenedor_servicios {
   grid-area: contenedor_servicios;
   width: 500px;
   height: auto;
-  /* background-color: blue; */
   margin-left: 30px;
 }
 
@@ -1390,9 +1429,9 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-texto {
-  background-color: white;
   width: calc(100% - 90px);
   height: auto;
+  background-color: white;
   padding-left: 6px;
 }
 
@@ -1406,6 +1445,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 .contenedor_principal_quienes-somos .titulo_amigos {
   grid-area: titulo_amigos;
+  color: #0095ff;
   text-align: center;
   padding-bottom: 120px;
 }
@@ -1419,6 +1459,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   0% {
     transform: skewX(20deg);
   }
+
   100% {
     transform: skewX(-20deg);
   }
@@ -1427,8 +1468,8 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 .contenedor_principal_quienes-somos .contenedor-marcas {
   grid-area: contenedor_marcas;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .contenedor_principal_quienes-somos .contenedor-marcas .card_instagram_marca {
@@ -1436,11 +1477,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   margin-right: 20px;
   margin-bottom: 22px;
   margin-top: 13px;
-}
-
-.contenedor_principal_quienes-somos .contenedor-marcas .card_instagram_marca iframe {
-  width: 300px;
-  height: 420;
 }
 
 .contenedor_principal_quienes-somos .contenedor-marcas .card_instagram_marca:hover {
@@ -1453,21 +1489,25 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   height: 100%;
   display: grid;
   gap: 10px;
-  background-color: white;
+  margin-top: 2px;
+  background-color: #ebf5fc;
   /* Indicar cuantas columnas tendra */
   grid-template-columns: repeat(2, 1fr);
   /* Indicar cuantas filas tendra */
   grid-template-rows: 100px 300px 300px;
   /* acomodar el grid */
-  grid-template-areas: "titulo_contactanos titulo_contactanos" "contenedor_info_empresa contenedor_formulario" "contenedor_info_empresa contenedor_formulario";
+  grid-template-areas: "titulo_contactanos titulo_contactanos"
+    "contenedor_info_empresa contenedor_formulario"
+    "contenedor_info_empresa contenedor_formulario";
   /* Contenedor principal formulario */
 }
 
 .contenedor_principal-contactanos .titulo_contactanos {
   grid-area: titulo_contactanos;
-  background-color: white;
+  background-color: #ebf5fc;
   color: red;
   font-size: 100%;
+  text-align: center;
   /* Texto tiulo descuentos */
 }
 
@@ -1521,6 +1561,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   header .navbar {
     display: none;
   }
+
   header .contenedor_principal-navbar_sidebar {
     display: block;
   }
@@ -1528,37 +1569,46 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 /* Smartphone modo vertical y horizontal para todas las páginas */
 @media screen and (max-width: 600px) and (min-width: 320px) {
+
   /* =========== Página index ===========*/
   .contenedor_principal {
     display: grid;
-    min-width: 310px;
+    min-width: 320px;
     max-width: 600px;
     overflow: hidden;
     grid-template-columns: 1fr;
     grid-template-rows: 600px auto auto 100px auto;
-    grid-template-areas: "landing_page" "principal_imagen" "principal_texto" "titulo_novedades" "contenedor_novedades";
+    grid-template-areas: "landing_page"
+      "principal_imagen"
+      "principal_texto"
+      "titulo_novedades"
+      "contenedor_novedades";
     gap: 10px;
     /* contenedor de imagen principal */
     /* contenedor de texto principal */
   }
+
   .contenedor_principal .contenedor_principal_landing {
     width: auto;
     height: auto;
     min-width: 320px;
     max-width: 600px;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing {
     width: auto;
     height: auto;
     min-width: 280px;
     margin-right: 12px;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo {
     width: auto;
     height: auto;
     min-width: 280px;
     background-color: red;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo .slide-left {
     width: auto;
     color: white;
@@ -1567,26 +1617,32 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     font-weight: bold;
     min-width: 260px;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_texto {
     width: 100%;
     height: auto;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_texto p {
     color: white;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones {
     display: inline-block;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones a {
     color: white;
     text-decoration: none;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones .btn {
     border: 2px solid white;
     padding: 10px 35px;
     border-radius: 30px;
     margin-right: 15px;
   }
+
   .contenedor_principal .contenedor_principal-imagen {
     width: auto;
     min-width: 310px;
@@ -1597,28 +1653,34 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-left: 0px;
     /* contenedor de imagen principal */
   }
+
   .contenedor_principal .contenedor_principal-imagen img {
     width: 100%;
     min-width: 310px;
     max-width: 590px;
     min-height: 200px;
   }
+
   .contenedor_principal .contenedor_principal-texto {
     width: auto;
     min-width: 310px;
     max-width: 590px;
+    background-color: white;
     padding-left: 5px;
     padding-right: 5px;
     margin-top: 0px;
     /* contenedor del boton checar */
   }
+
   .contenedor_principal .contenedor_principal-texto h1 {
     width: 100%;
     font-size: 24px;
   }
+
   .contenedor_principal .contenedor_principal-texto .contenido_principal-texto {
     width: auto;
     min-width: 310px;
+    background-color: white;
     font-size: 15px;
     text-align: start;
     margin-top: 0px;
@@ -1626,25 +1688,30 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     padding-right: 5px;
     padding-left: 5px;
   }
+
   .contenedor_principal .contenedor_principal-texto .contenedor_boton_checar {
     width: 100%;
     margin-bottom: 30px;
     margin-left: 0px;
   }
+
   .contenedor_principal .titulo_novedades {
     width: auto;
     min-width: 310px;
     padding-left: 5px;
     padding-right: 5px;
   }
+
   .contenedor_principal .contenedor_novedades {
     width: auto;
     justify-content: start;
     min-width: 320px;
     max-width: 590px;
+    background-color: white;
     padding-left: 5px;
     padding-right: 5px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades {
     width: auto;
     height: auto;
@@ -1654,6 +1721,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-left: 0px;
     margin-right: 0px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_imagen {
     width: 100%;
     height: auto;
@@ -1662,12 +1730,14 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-right: 5px;
     margin-top: 1px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_imagen img {
     width: 100%;
     height: 350px;
     min-width: 300px;
     object-fit: cover;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton {
     width: 100%;
     height: auto;
@@ -1675,235 +1745,296 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-left: 5px;
     margin-right: 5px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_texto {
     width: 100%;
     min-width: 187px;
     margin-left: 5px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_texto h2 {
-    padding-left: 0px;
     min-width: 187px;
     max-width: 200px;
+    padding-left: 0px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton {
     width: auto;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
     margin-left: 0px;
   }
+
   /* =========== Contenedor principal de filtro categorias y productos =========== */
   .contenedor_principal-filtroCategorias-listaProductos {
     display: grid;
     min-width: 320px;
+    max-width: 600px;
     overflow: hidden;
+    background-color: white;
     gap: 10px;
     /* Indicar cuantas columnas tendra */
     grid-template-columns: 1fr;
     /* Indicar cuantas filas tendra */
     grid-template-rows: auto auto auto;
-    grid-template-areas: "titulo_categoria" "filtro_categorias" "contenedor_cards_productos";
+    grid-template-areas: "titulo_categoria"
+      "filtro_categorias"
+      "contenedor_cards_productos";
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .titulo_categoria {
     width: auto;
     min-width: 310px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .titulo_categoria h2 {
     width: 100%;
     font-size: 40px;
     text-align: center;
     margin-bottom: 20px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_filtroCategorias {
-    min-width: 300px;
     width: 94%;
     height: auto;
+    min-width: 300px;
     margin-right: 0px;
     margin-left: 6px;
     padding-bottom: 10px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_filtroCategorias .list-group {
     min-width: auto;
     margin-right: 10px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos {
     width: auto;
     min-width: 320px;
     max-width: 590px;
+    background-color: white;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto {
     min-width: 310px;
     margin-right: 12px;
     height: auto;
+    background-color: #ebf5fc;
     /* contenedor de boton y texto del card */
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen {
     min-width: 305px;
     height: 350px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen img {
     min-width: 295px;
     height: 350px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton {
     min-width: 295px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton h2 {
     width: auto;
     margin-left: 5px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton a {
     margin-left: 100px;
   }
+
   /* =========== Footer =========== */
   .contenedor_footer {
     width: auto;
     height: auto;
     min-width: 320px;
     margin-top: 20px;
-    background-color: red;
     /* Indicar cuantas columnas tendra */
     grid-template-columns: 1fr;
     /* Indicar cuantas filas tendra */
     grid-template-rows: repeat(4, auto);
-    grid-template-areas: "footer_seccion1_logo" "footer_seccion2_contacto" "footer_cliente" "footer_seccion4_redes";
+    grid-template-areas: "footer_seccion1_logo"
+      "footer_seccion2_contacto"
+      "footer_cliente"
+      "footer_seccion4_redes";
   }
+
   /* =========== Pagina descuentos ============ */
   .contenedor_principal-descuentos-fechas {
     display: grid;
-    min-width: 320px;
-    max-width: 599px;
+    min-width: 310px;
+    max-width: 600px;
+    overflow: hidden;
+    background-color: white;
     padding-left: 5px;
     padding-right: 5px;
     height: auto;
-    overflow: hidden;
+    gap: 10px;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto auto auto auto auto;
-    grid-template-areas: "titulo_descuentos" "descuento_carousel" "contenedor_descuentos-secundario1" "contenedor_descuentos-secundario2" "card_img_descuento" "texto_descuentos" "contenedor_descuentos" "titulo_fechas" "contenedor_fechas";
-    gap: 10px;
+    grid-template-areas: "titulo_descuentos"
+      "descuento_carousel"
+      "contenedor_descuentos-secundario1"
+      "contenedor_descuentos-secundario2"
+      "card_img_descuento"
+      "texto_descuentos"
+      "contenedor_descuentos"
+      "titulo_fechas"
+      "contenedor_fechas";
     /* Contenedor del titulo principal de descuentos */
     /* contenedor y card de la seccion descuentos */
   }
+
   .contenedor_principal-descuentos-fechas .titulo_descuentos_fechas {
+    display: block;
     grid-area: titulo_descuentos;
     width: auto;
     min-width: 310px;
     max-width: 590px;
+    background-color: white;
   }
+
   .contenedor_principal-descuentos-fechas .titulo_descuentos_fechas h2 {
     width: 99%;
     font-size: 40px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_descuentos-carousel {
+    display: none;
+    grid-area: descuentos_carousel;
     width: auto;
     min-width: 310px;
     max-width: 590px;
-    grid-area: descuentos_carousel;
-    display: none;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 {
+    display: block;
     grid-area: contenedor_descuentos-secundario1;
     width: auto;
     min-width: 310px;
     max-width: 590px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario2 {
+    display: block;
     grid-area: contenedor_descuentos-secundario2;
     width: auto;
     min-width: 310px;
     max-width: 590px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos {
     width: auto;
     min-width: 310px;
     max-width: 590px;
+    background-color: white;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento {
     width: 100%;
     min-width: 310px;
     margin-left: 0px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .cobertura_img_card {
     width: 100%;
     min-width: 310px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .texto_card_descuento {
     width: 100%;
     min-width: 310px;
     margin-right: 24px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .texto_card_descuento p {
     margin-right: 34px;
   }
+
   .contenedor_principal-descuentos-fechas .titulo_fechas {
     width: auto;
     min-width: 310px;
   }
+
   .contenedor_principal-descuentos-fechas .titulo_fechas h2 {
     font-size: 40px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas {
     width: auto;
     min-width: 310px;
-    background-color: #0095ff;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha {
     margin-left: 0px;
-    background-color: beige;
     height: auto;
     border-radius: 20px;
     min-width: 300px;
     padding-bottom: 10px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-icono {
     padding-top: 5px;
     width: 90px;
     height: 60px;
     background-color: red;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-icono img {
+    filter: invert(1);
     width: 90px;
     height: auto;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-texto {
+    width: calc(100% - 110px);
+    height: auto;
     min-height: 100px;
     min-width: 180px;
     margin-left: 0px;
-    width: calc(100% - 110px);
-    height: auto;
+    background-color: white;
     padding-top: 20px;
-    background-color: #0095ff;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-texto h3 {
     font-size: 20px;
-    color: black;
     font-weight: 100;
   }
+
   /* =========== pagina Quienes somos =========== */
   .contenedor_principal_quienes-somos {
     display: grid;
+    min-width: 310px;
+    max-width: 600px;
+    overflow: hidden;
     height: auto;
-    min-width: 320px;
-    max-width: 599px;
+    background-color: white;
     padding-left: 5px;
     padding-right: 5px;
-    overflow: hidden;
-    background-color: azure;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, auto);
     /* acomodar el grid */
-    grid-template-areas: "texto_conocenos" "contenedor_servicios" "titulo_amigos" "contenedor_marcas";
+    grid-template-areas: "texto_conocenos"
+      "contenedor_servicios"
+      "titulo_amigos"
+      "contenedor_marcas";
     gap: 10px;
   }
+
   .contenedor_principal_quienes-somos .conocenos_textos {
-    box-shadow: 4px 2px 4px 3px rgba(0, 0, 0, 0.2);
-    justify-content: center;
     background-color: white;
+    justify-content: center;
     margin-left: 0px;
     font-size: 12px;
     width: auto;
     min-width: 310px;
     text-align: center;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios {
     grid-area: contenedor_servicios;
     width: auto;
@@ -1911,155 +2042,188 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     min-width: 310px;
     margin-left: 0px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .titulo_servicios {
     height: auto;
     min-width: 310px;
     padding-top: 0px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .titulo_servicios h1 {
     font-size: 35px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio {
     min-width: 310px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-img {
     width: 60px;
     height: auto;
     padding-left: 0px;
     margin-right: 8px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-img img {
     width: 60px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-texto {
-    background-color: #0095ff;
     width: calc(100% - 70px);
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-texto h1 {
     font-size: 20px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-texto p {
     font-size: 13px;
   }
+
   .contenedor_principal_quienes-somos .titulo_amigos {
     background-color: red;
+    color: white;
     min-width: 310px;
     height: auto;
     padding-bottom: 0px;
   }
+
   .contenedor_principal_quienes-somos .titulo_amigos h2 {
     font-size: 30px;
   }
+
   .contenedor_principal_quienes-somos .contenedor-marcas {
     height: auto;
     min-width: 310px;
   }
+
   .contenedor_principal_quienes-somos .contenedor-marcas .card_instagram_marca {
-    background-color: yellow;
+    background-color: red;
     margin-left: 0px;
     margin-right: 0px;
   }
+
   /* =========== pagina contactanos =========== */
   .contenedor_principal-contactanos {
     display: grid;
-    min-width: 320px;
-    max-width: 599px;
+    min-width: 310px;
+    max-width: 600px;
+    overflow: hidden;
+    background-color: white;
     padding-left: 5px;
     padding-right: 5px;
-    overflow: hidden;
     grid-template-columns: 1fr;
     /* Indicar cuantas filas tendra */
     grid-template-rows: auto auto auto;
     /* acomodar el grid */
-    grid-template-areas: "titulo_contactanos " "contenedor_info_empresa " "contenedor_formulario";
+    grid-template-areas: "titulo_contactanos "
+      "contenedor_info_empresa "
+      "contenedor_formulario";
     /* Contenedor principal formulario */
   }
+
   .contenedor_principal-contactanos .titulo_contactanos {
     width: auto;
     min-width: 310px;
+    background-color: white;
   }
+
   .contenedor_principal-contactanos .titulo_contactanos h2 {
     width: 100%;
     font-size: 45px;
     text-align: center;
     margin-bottom: 20px;
   }
+
   .contenedor_principal-contactanos .contenedor_datos_empresa {
     width: auto;
     min-width: 310px;
+    background-color: white;
     justify-content: center;
   }
+
   .contenedor_principal-contactanos .contenedor_datos_empresa .item {
     justify-content: center;
   }
+
   .contenedor_principal-contactanos .contenedor_datos_empresa .iconos_contacto {
     justify-content: start;
   }
+
   .contenedor_principal-contactanos .contenedor_formulario {
     width: auto;
     min-width: 310px;
-    background-color: #ecf7ff;
+    background-color: white;
   }
+
   .contenedor_principal-contactanos .contenedor_formulario form {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     min-width: 310px;
   }
+
   .contenedor_principal-contactanos .contenedor_formulario button {
     margin-left: 3px;
   }
 }
 
 /* =========== Smartphone pagina carrito =========== */
-@media screen and (max-width: 530px) and (min-width: 300px) {
+@media screen and (max-width: 590px) and (min-width: 320px) {
   .carrito-contenedor_principal {
     display: grid;
+    min-width: 310px;
+    max-width: 600px;
+    overflow: hidden;
+    background-color: white;
     height: auto;
-    min-width: 320px;
-    overflow-y: hidden;
-    overflow-x: hidden;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas: "texto_carrito" "contenedor_productos" "contenedor_precio_total";
     gap: 10px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "texto_carrito"
+      "contenedor_productos"
+      "contenedor_precio_total";
     /* contenedor principal del card pagar */
   }
+
   .carrito-contenedor_principal .carrito-texto_principal {
     grid-area: texto_carrito;
     height: 70px;
-    background-color: red;
     color: white;
     text-align: center;
     margin-top: 1px;
   }
+
   .carrito-contenedor_principal .carrito-texto_principal h1 {
     font-size: 40px;
     font-style: oblique;
     font-weight: bold;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos {
     grid-area: contenedor_productos;
     min-width: 320px;
     padding-left: 5px;
     padding-right: 5px;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto {
-    min-width: 310px;
-    min-height: 350px;
     display: grid;
-    width: auto;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    margin-left: 0px;
+    min-width: 310px;
+    max-width: 100%;
+    overflow: hidden;
     gap: 10px;
+    min-height: 350px;
+    margin-left: 0px;
     margin-top: 10px;
     background-color: white;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     /* acomodar el grid */
-    grid-template-areas: "contenedor_imagen_producto" "contenedor_texto_productos";
+    grid-template-areas: "contenedor_imagen_producto"
+      "contenedor_texto_productos";
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto {
     grid-area: contenedor_imagen_producto;
     width: 100%;
@@ -2067,17 +2231,20 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     min-height: 350px;
     background-color: red;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto img {
     width: 100%;
     height: 100%;
     min-width: 300px;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto {
     grid-area: contenedor_texto_productos;
     width: 100%;
     min-width: 310px;
     margin-top: 0px;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto .eliminar_producto {
     margin-left: 0px;
     color: white;
@@ -2085,6 +2252,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     border-radius: 5px;
     text-decoration: none;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_precios {
     width: auto;
     margin-left: 0px;

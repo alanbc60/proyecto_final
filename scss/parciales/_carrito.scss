@@ -15,13 +15,12 @@
 /* contenedor principal */
 .carrito-contenedor_principal {
     @include sizes($width-estandar, $height-estandar);
-    @include contenedorGrid(grid, 8px, 10px);
+    @include contenedorGrid(grid, 0px, 10px);
     background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
     /* Indicar cuantas columnas tendra */
     grid-template-columns: repeat(2, 1fr);
     /* Indicar cuantas filas tendra */
     grid-template-rows: auto auto;
-
     /* acomodar el grid */
     grid-template-areas:
         "texto_carrito  texto_carrito"
@@ -29,12 +28,12 @@
 
     .carrito-texto_principal {
         grid-area: texto_carrito;
-        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
         color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-        text-align: center;
+        text-align: $alineacionAlCentro;
 
         h1 {
-            font-size: 40px;
+            color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+            font-size: 60px;
             font-style: oblique;
             font-weight: bold;
         }
@@ -47,12 +46,12 @@
         /* personalizacion del card producto */
         .card_producto {
             width: auto;
-            @include contenedorGrid(grid, 10px, 10px);
+            @include contenedorGrid(grid, 0px, 10px);
             margin-bottom: 20px;
             margin-left: 5px;
             // background: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-            box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16),
-            -10px -10px 10px -1px rgba(255, 255, 255, 0.70);
+            box-shadow: 10px 10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow1'),
+                        -10px -10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow2');
             border-radius: 5px;
             /* Indicar cuantas columnas tendra */
             grid-template-columns: auto 400px;
@@ -65,11 +64,10 @@
 
             /* imagen del producto */
             .carrito_imagen_producto {
+                @include sizes(280px, 230px);
                 grid-area: contenedor_imagen_producto;
                 object-fit: $acoplamiento-imagen;
-                @include sizes(280px, 230px);
-                padding: 5px;
-                
+                padding: 5px;                
 
                 img {
                     @include sizes($width-estandar, $height-estandar);
@@ -85,17 +83,19 @@
             /* contenedor hijo de card_producto: Texto producto */
             .texto-producto {
                 grid-area: contenedor_texto_productos;
-                background: map-get($map: $paleta-colores, $key: 'colorCard');
                 width:  auto;
+                background: map-get($map: $paleta-colores, $key: 'colorCard');
                 margin-top: 40px;
                 padding-left: 10px;
                 .cantidad_producto{
+
                     /* Entrada de texto para aumentar las cantidades */
                     input {
                         width: 100px;
                         padding: 5px;
-                        text-align: center;
+                        text-align: $alineacionAlCentro;
                     }
+
                     input:hover {
                         background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
                         color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
@@ -103,23 +103,22 @@
                     
                     /* Boton de eliminar producto en card producto */
                     .eliminar_producto {
+                        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
                         bottom: 20px;
                         margin-left: 22px;
                         padding: 10px 25px;
-                        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-                        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
                         cursor: pointer;
                         border-radius: 5px;
                         text-decoration: none;
                         text-align: end;
-
                     }
 
                     .eliminar_producto:hover {
-                        background-color: skyblue;
+                        background-color: map-get($map: $paleta-colores, $key: 'colorFondoHoverBotonEliminar');
                         color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
                         font-weight: 600;
-                        border: 1px solid white;
+                        border: 1px solid map-get($map: $paleta-colores, $key: 'colorBlanco');
 
                     }
                 }
@@ -127,23 +126,21 @@
             }
         }
     }
+    /* personalizacion de componentes del contenedor precio total */
     .carrito-contenedor_precios{
         grid-area: contenedor_precio_total;
         max-height: 500px;
-        /* personalizacion de componentes del contenedor precio total */
 
-
-        /* Texto del card pagar */
-        .carrito-contenedor_precios p {
+        /* Texto del card pagar */ 
+        p {
             display: flex;
             justify-content: space-between;
             margin-bottom: 15px;
-            font-size: 20px;
-            
+            font-size: 20px;     
         }
 
         /* Boton de card pagar(personalización establecida anteriormente) */
-        .carrito-contenedor_precios a {
+        a {
             margin-left: 80px;
 
         }

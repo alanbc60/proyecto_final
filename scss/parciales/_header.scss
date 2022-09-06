@@ -1,58 +1,78 @@
+//Revisado
+
+.enlace_item-generico {
+    display: inline-block;
+    text-align: $alineacionAlCentro;
+    padding: 14px 16px;
+    text-decoration: none;
+    list-style: none;
+}
+
+.navbar-generica {
+    z-index: 2;
+    position: absolute;
+    position: -webkit-sticky;
+    flex-wrap: wrap;                       /*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
+    justify-content: space-between;       /*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
+    box-shadow: 10px 10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow1'),
+                -10px -10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow2');
+}
+
+@mixin sizes($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin margenIzquierdoDerecho($margen-izquierdo, $margen-derecho) {
+    margin-left: $margen-izquierdo;
+    margin-right: $margen-derecho;
+}
+
+
 header {
     position: -webkit-sticky;
     position: sticky;
     z-index: 3;
     width: 100%;
     top: 0;
-    // background-color: blue;
 }
-.navbar_general{
-    z-index: 2;
-    position: absolute;
-    position: -webkit-sticky;
-    flex-wrap: wrap;/*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
-    justify-content: space-between;/*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
-    background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+
+.navbar_general {
+    @extend .navbar-generica;
+    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
 
 }
 
-.navbar_landing_page{
-    z-index: 2;
-    position: absolute;
-    position: -webkit-sticky;
-    flex-wrap: wrap;/*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
-    justify-content: space-between;/*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
+.navbar_landing_page {
+    @extend .navbar-generica;
     background-color: map-get($map: $paleta-colores, $key: 'fondoTransparente');
 
 }
 
-.navbar_landing_page:hover{
-    background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+.navbar_landing_page:hover {
+    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
 }
 
-
-/* === Personalización de logo === */
+/* ====== Personalización de logo ======= */
 
 /* contenedor logo */
 .logo {
-    margin-right: 50px;
+    @include sizes(130px, 50px);
     background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-    color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
-    width: 130px;
-    height: 50px;
+    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+    // Espaciado externo
     margin-bottom: 10px;
-    margin-left: 10px;
+    @include margenIzquierdoDerecho(10px, 50px);
 
     /* texto logo */
-    a{
-        padding-top: 10px;
-        color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
-        text-decoration: none;
-        /*Quita el subrayado del enlace*/
+    a {
         display: inline-block;
-        text-align: center;
-        height: 100%;
-        width: 100%;
+        @include sizes($width-estandar, $height-estandar);
+        text-align: $alineacionAlCentro;
+        padding-top: 10px;
+        color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+        text-decoration: none;  /*Quita el subrayado del enlace*/
+
     }
 
     /* Modificar el texto al pasar el cursor */
@@ -60,88 +80,81 @@ header {
         color: map-get($map: $paleta-colores, $key: 'colorSecundario');
     }
 }
+
 /* modificar el contenedor logo cuando pasamos en el logo */
 .logo:hover {
-    background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');;
+    background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
     color: map-get($map: $paleta-colores, $key: 'colorSecundario');
 }
 
 
-
-
 /* Contenedor principal de productos*/
 .lista_enlaces {
-    list-style: none;/*   quitar viñetas a los números*/
-    display: flex;   /*colocar elemento uno a lado de otro hasta que haya espacio */
-    gap: 10px;       /*Espaciado entre botones*/
+    list-style: none;           /*quitar viñetas a los números*/
+    display: flex;              /*colocar elemento uno a lado de otro hasta que haya espacio */
+    gap: $espacioGridBase;      /*Espaciado entre botones*/
     background-color: map-get($map: $paleta-colores, $key: 'colorCard');
     margin-right: 5px;
-    
+
     /* Texto Hombre y Mujer */
-    .dropdown,.enlace_secciones{
+    .dropdown,
+    .enlace_secciones {
         span {
             color: map-get($map: $paleta-colores, $key: 'colorSecundario');
             font-size: 15px;
         }
-        
+
         /* Personalización general de los enlaces(tambien usado en las categorias de productos) */
         .enlace_item {
-            display: inline-block;
+            @extend .enlace_item-generico;
             color: map-get($map: $paleta-colores, $key: 'colorTextoSecundario');
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            list-style: none;
+
         }
+
         .enlace_item:hover {
             background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-            color: map-get($map: $paleta-colores, $key: 'colorTextoPrincipal');;
+            color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         }
 
         /*TODO: poner una clase auxilar para indicar que es la navbar de la landing page */
         // enlace item del landing page
         .enlace_item_landing_page {
-            display: inline-block;
-            color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            list-style: none;
+            @extend .enlace_item-generico;
+            color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+
         }
     }
 }
 
 // Personalizacion del navbar para landing page
-header.scroll_bajar{
-    background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+header.scroll_bajar {
+    background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
 }
 
 // cuando hacemos scroll aplicamos estilo el contenedor del enlace
-header.scroll_bajar .navbar_landing_page .enlace_item_landing_page{
-    color: red;
+header.scroll_bajar .navbar_landing_page .enlace_item_landing_page {
+    color: map-get($map: $paleta-colores, $key: 'colorSecundario');
 
 }
 
 
-header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
-    color: white;
+header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
+    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
 }
 
-.navbar_landing_page:hover .enlace_item_landing_page{
-    color: red;
+.navbar_landing_page:hover .enlace_item_landing_page {
+    color: map-get($map: $paleta-colores, $key: 'colorSecundario');
 }
 
 .navbar_landing_page .enlace_item_landing_page:hover {
-    background-color: red;
-    color: white;    
+    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 }
 
-// personalizacion de scroll del header general
 
-
-/* == Personalización  del contendor de la lista de enlaces  ===*/
+/* ========== Personalización  del contendor de la lista de enlaces  =============*/
 
 /* contenedor principal donde se encuentra producto-hombre y producto-mujer */
 .dropdown-contenedor {
@@ -151,11 +164,11 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
     background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
     height: 290px;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px map-get($map: $paleta-colores, $key: 'colorBoxShadowCategorias');
 
     /* Al pasar el cursor en  una categoria*/
     a:hover {
-        background-color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
+        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         color: map-get($map: $paleta-colores, $key: 'colorTextoSecundario');
     }
 }
@@ -168,42 +181,41 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
 
 /* contendor tipo lista de productos */
 .lista_subenlaces {
-    list-style: none;
-    /*   quitar viñetas a los números*/
     display: block;
-    gap: 10px;
-    /*Espaciado entre botones*/
+    list-style: none;        /*quitar viñetas a los números*/
+    gap: $espacioGridBase;   /*Espaciado entre botones*/
     background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
     margin-right: 5px;
 }
 
 
-/* == Personalización de categorias == */
+/* ====== Personalización de categorias ====== */
 
 /* Contenedor principal de las categorias hombre y mujer */
 .dropdown_contenedor-categorias {
-    display: none;
-    /*para esconder el contenedor*/
+    display: none;         /*para esconder el contenedor*/
     background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
     width: 160px;
     max-height: 0;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 12px 0px map-get($map: $paleta-colores, $key: 'colorBoxShadowCategorias');
     transition: max-height .6s ease-out;
+
     /* enlaces de las categorias */
     .categorias_item {
-        color: map-get($map: $paleta-colores, $key: 'colorFondoBlanco');
-        padding: 12px 16px;
-        text-decoration: none;
         display: none;
         flex-wrap: wrap;
+        color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+        text-decoration: none;
         text-align: left;
+        padding: 12px 16px;
     }
 }
 
 
 .item_mujer:hover .dropdown_contenedor-categorias {
-    max-height: 400px;
     display: block;
+    max-height: 400px;
+
     .categorias_item {
         display: block;
     }
@@ -211,9 +223,9 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
 
 
 .item_hombre:hover .dropdown_contenedor-categorias {
-    max-height: 400px;
     display: block;
-    
+    max-height: 400px;
+
     .categorias_item {
         display: block;
     }
@@ -222,101 +234,107 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
 
 /* Cuando pasamos el cursor en productos mantenemos el contenedor de categorias */
 .dropdown:hover .dropdown_contenedor-categorias {
-    display: block;
-    /*uno abajo de otro*/
+    display: block;     /*uno abajo de otro*/
 }
 
 
 //sidebar
-.contenedor_principal-navbar_sidebar{
+.contenedor_principal-navbar_sidebar {
     display: none;
     // navbar
-    
-
     .sidebar {
         display: none;
-        background: #4063b9;
+        @include sizes(210px, 100%);
+        background: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
         position: fixed;
         top: 0;
         left: 0;
-        width: 210px;
-        height: 100%;
         transition: all 0.5s ease;
-        
+
         .profile {
             margin-bottom: 30px;
-            text-align: center;
+            text-align: $alineacionAlCentro;
+
             h3 {
-                color: #ffffff;
+                color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                 margin: 10px 0 5px;
             }
-            
+
             p {
                 color: rgb(206, 240, 253);
                 font-size: 14px;
             }
         }
-        
+
         img {
             display: block;
-            width: 100px;
-            height: 100px;
+            @include sizes(100px, 100px);
             border-radius: 50%;
             margin: 0 auto;
         }
+
         // lista que contiene la sidebar
-        ul{
-            
+        ul {
+
             width: 220px;
             margin-left: -20px;
             text-decoration: none;
         }
 
-        ul li{
+        ul li {
             width: 190px;
             list-style: none;
             text-decoration: none;
         }
-        .sidebar_subcategorias_productos{
+
+        .sidebar_subcategorias_productos {
             width: 190px;
-            background-color: aqua;
+            background-color: map-get($map: $paleta-colores, $key: 'colorSubategoriasSidebar');
             margin-left: 20px;
             align-items: center;
-            a{
+
+            a {
                 width: 100%;
                 padding: 4px 10px;
-                color: blue;
+                color: map-get($map: $paleta-colores, $key: 'colorAzul');
             }
 
-        } 
-        .sidebar_subcategorias_productos:hover{
-            background-color: red;
-            color: white;
         }
-        
+
+        .sidebar_subcategorias_productos:hover {
+            background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+            color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+            ;
+        }
+
 
         // enlaces de la sidebar
         ul li a {
             display: block;
             padding: 13px 10px;
-            border-bottom: 1px solid orange;
-            color: rgb(241, 237, 237);
+            border-bottom: 1px solid map-get($map: $paleta-colores, $key: 'colorBlanco');
+            color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             font-size: 16px;
             position: relative;
             text-decoration: none;
+
             .icon {
-                color: #dee4ec;
+                color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                 width: 30px;
                 display: inline-block;
             }
         }
-        ul li a:hover, ul li a.active {
-            color: #0c7db1;
-            background: white;
+
+        ul li a:hover,
+        ul li a.active {
+            color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
+            background: map-get($map: $paleta-colores, $key: 'colorBlanco');
+
             .icon {
-                color: #0c7db1;
+                color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
             }
         }
+
         ul li a:hover:before,
         ul li a.active:before {
             display: block;
@@ -324,58 +342,58 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover{
     }
 
     .top_navbar {
-        width: 100%;
+        @include sizes(100%, auto);
         transition: all 0.5s ease;
         // background: map-get($map: $paleta-colores, $key: 'colornavbarSidebar');
-        background-color: transparent;
-        height: auto;
+        background-color: map-get($map: $paleta-colores, $key: 'fondoTransparente');
+
         display: flex;
         padding-left: 7px;
-        .logo_mini{
+
+        .logo_mini {
             display: block;
-            background-color: red;
-            height: 40px;
-            width: 100px;
+            @include sizes(100px, 40px);
+            background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+            ;
             // espaciado externo
             margin-right: 136px;
             margin-top: 3px;
             margin-bottom: 6px;
-            
+
             // espaciado interno
             padding-top: 5px;
             padding-left: 4px;
-        
-            a{
-                font-size: 14px;
-                font-weight: bold;
-                text-decoration: none;
-                text-align: center;
+
+            a {
                 width: 80%;
-                color: white;
+                color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+                font-size: 14px;
+                font-weight: $letrasNegrillas;
+                text-decoration: none;
+                text-align: $alineacionAlCentro;
             }
         }
-        .hamburger{
-            
-            margin-left: auto;
-            margin-right: 7px;
+
+        .hamburger {
+            @include margenIzquierdoDerecho(auto, 7px);
         }
+
         .hamburger a {
             font-size: 28px;
-            color: rgba(255, 0, 0, 0.808);
+            color: map-get($map: $paleta-colores, $key: 'colorIconoHamburguesa');
         }
-        
-        .hamburger a:hover {
-            color: rgba(255, 0, 0, 0.808);
-        }
-    
-    }
 
+        .hamburger a:hover {
+            color: map-get($map: $paleta-colores, $key: 'colorIconoHamburguesa');
+        }
+
+    }
 
 }
 
 
 //Despues de oprimir el icono de menu hamburguesa
-body.active .contenedor_principal-navbar_sidebar{
+body.active .contenedor_principal-navbar_sidebar {
 
     // desplaza el icono que muestra a la navbar
 
@@ -383,18 +401,21 @@ body.active .contenedor_principal-navbar_sidebar{
         display: block;
         left: -2px;
     }
+
     .top_navbar {
-        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
         width: calc(100% - 210px);
         margin-left: 210px;
-        .logo_mini{
+
+        .logo_mini {
             display: none;
         }
-        .hamburger{
-            margin-left: auto;
-            margin-right: 5px;
-            a{
-                color: #4063b9;
+
+        .hamburger {
+            @include margenIzquierdoDerecho(auto, 5px);
+
+            a {
+                color: map-get($map: $paleta-colores, $key: 'colorSecundario');
             }
         }
     }
