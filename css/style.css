@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -13,8 +14,10 @@ body {
   background-color: #ecf7ff;
 }
 
-.enlace_item-generico, .lista_enlaces .dropdown .enlace_item,
-.lista_enlaces .enlace_secciones .enlace_item, .lista_enlaces .dropdown .enlace_item_landing_page,
+.enlace_item-generico,
+.lista_enlaces .dropdown .enlace_item,
+.lista_enlaces .enlace_secciones .enlace_item,
+.lista_enlaces .dropdown .enlace_item_landing_page,
 .lista_enlaces .enlace_secciones .enlace_item_landing_page {
   display: inline-block;
   text-align: center;
@@ -23,7 +26,9 @@ body {
   list-style: none;
 }
 
-.navbar-generica, .navbar_general, .navbar_landing_page {
+.navbar-generica,
+.navbar_general,
+.navbar_landing_page {
   z-index: 2;
   position: absolute;
   position: -webkit-sticky;
@@ -92,21 +97,12 @@ header {
 
 /* Contenedor principal de productos*/
 .lista_enlaces {
-  list-style: none;
-  /*quitar viñetas a los números*/
-  display: flex;
-  /*colocar elemento uno a lado de otro hasta que haya espacio */
-  gap: 10px;
-  /*Espaciado entre botones*/
-  margin-right: 5px;
-  /* Texto Hombre y Mujer */
+  list-style: none; /*quitar viñetas a los números*/
+  display: flex;    /*colocar elemento uno a lado de otro hasta que haya espacio */
+  gap: 10px;        /*Espaciado entre botones*/
+  margin-right: 5px;/* Texto Hombre y Mujer */
 }
 
-.lista_enlaces .dropdown,
-.lista_enlaces .enlace_secciones {
-  /* Personalización general de los enlaces(tambien usado en las categorias de productos) */
-  /*TODO: poner una clase auxilar para indicar que es la navbar de la landing page */
-}
 
 .lista_enlaces .dropdown span,
 .lista_enlaces .enlace_secciones span {
@@ -161,7 +157,6 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
   height: 290px;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  /* Al pasar el cursor en  una categoria*/
 }
 
 .dropdown-contenedor a:hover {
@@ -171,17 +166,14 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 
 /* El cursor abre un contenedor cuando esta en productos */
 .dropdown:hover .dropdown-contenedor {
-  display: block;
-  /*uno abajo de otro*/
+  display: block; /*uno abajo de otro*/
 }
 
 /* contendor tipo lista de productos */
 .lista_subenlaces {
   display: block;
-  list-style: none;
-  /*quitar viñetas a los números*/
-  gap: 10px;
-  /*Espaciado entre botones*/
+  list-style: none; /*quitar viñetas a los números*/
+  gap: 10px;        /*Espaciado entre botones*/
   background-color: #ebf5fc;
   margin-right: 5px;
 }
@@ -189,14 +181,12 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 /* ====== Personalización de categorias ====== */
 /* Contenedor principal de las categorias hombre y mujer */
 .dropdown_contenedor-categorias {
-  display: none;
-  /*para esconder el contenedor*/
+  display: none;  /*para esconder el contenedor*/
   background-color: #3f2c89;
   width: 160px;
   max-height: 0;
   box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.2);
-  transition: max-height .6s ease-out;
-  /* enlaces de las categorias */
+  transition: max-height .6s ease-out; /* enlaces de las categorias */
 }
 
 .dropdown_contenedor-categorias .categorias_item {
@@ -228,8 +218,7 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 
 /* Cuando pasamos el cursor en productos mantenemos el contenedor de categorias */
 .dropdown:hover .dropdown_contenedor-categorias {
-  display: block;
-  /*uno abajo de otro*/
+  display: block; /*uno abajo de otro*/
 }
 
 .contenedor_principal-navbar_sidebar {
@@ -462,7 +451,9 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 }
 
 /* boton checar(se usa en el contenedor novideades u contenedor-principal-imagen) */
-.btn_checar, .contenedor_principal .contenedor_principal-texto .contenedor_boton_checar a, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
+.btn_checar,
+.contenedor_principal .contenedor_principal-texto .contenedor_boton_checar a,
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
   height: 40px;
   display: inline-block;
   text-decoration: none;
@@ -483,22 +474,29 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     background-color: #3f2c89;
     box-shadow: 0 8px 0 #3f2c89;
   }
+
   to {
     background-color: #3a5eb2;
     box-shadow: 0 8px 0 #3a5eb2;
   }
 }
 
-.btn_checar:hover, .contenedor_principal .contenedor_principal-texto .contenedor_boton_checar a:hover, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:hover {
+.btn_checar:hover,
+.contenedor_principal .contenedor_principal-texto .contenedor_boton_checar a:hover,
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:hover {
   color: white;
 }
 
-.btn_checar:active, .contenedor_principal .contenedor_principal-texto .contenedor_boton_checar a:active, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:active {
+.btn_checar:active,
+.contenedor_principal .contenedor_principal-texto .contenedor_boton_checar a:active,
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a:active {
   transform: translateY(4px);
   box-shadow: 0 4px 0 #3f2c89;
 }
 
-.box_shadow-generico, .contenedor_principal .contenedor_novedades .card_novedades, .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
+.box_shadow-generico,
+.contenedor_principal .contenedor_novedades .card_novedades,
+.contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
   background: #ebf5fc;
   box-shadow: 10px 10px 10px -1px rgba(10, 99, 169, 0.16), -10px -10px 10px -1px rgba(255, 255, 255, 0.7);
 }
@@ -516,12 +514,10 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   /* Indicar cuantas filas tendra */
   grid-template-rows: 950px 450px 100px 900px;
   /* acomodar el grid */
-  grid-template-areas: "landing_page          landing_page" "principal_imagen      principal_texto" "titulo_novedades     titulo_novedades" "contenedor_novedades contenedor_novedades";
-  /* contenedor de la imagen */
-  /* contenedor donde esta el texto principal y el boton */
-  /* ================ Novedades ================ */
-  /* Personalización del contenedor con texto animado(pensado para la sección inicio y Quienes somos) */
-  /* contenedor principal novedades */
+  grid-template-areas: "landing_page          landing_page"
+    "principal_imagen      principal_texto"
+    "titulo_novedades     titulo_novedades"
+    "contenedor_novedades contenedor_novedades";
 }
 
 .contenedor_principal .contenedor_principal_landing {
@@ -558,6 +554,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     transform: translate(100px);
     opacity: 0;
   }
+
   100% {
     transform: translate(0px);
     opacity: 1;
@@ -635,6 +632,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     transform: scale(1) translate(0, 0);
     transform-origin: 84% 16%;
   }
+
   100% {
     transform: scale(1.25) translate(20px, -15px);
     transform-origin: right top;
@@ -670,6 +668,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     transform: translate(40px);
     opacity: 0;
   }
+
   100% {
     transform: translate(0px);
     opacity: 1;
@@ -704,7 +703,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* card del contenedor novedades */
 }
 
 .contenedor_principal .contenedor_novedades .card_novedades {
@@ -771,7 +769,8 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 /* ==================pagina productos-hombre-mujer (revisado)  ========== */
 /* boton checar(se usa en la página carrito igual) */
-.btn_agregarProducto, .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto_boton a {
+.btn_agregarProducto,
+.contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto-boton .card_producto_boton a {
   text-decoration: none;
   text-align: center;
   border-radius: 5px;
@@ -789,7 +788,8 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   grid-template-columns: repeat(3, auto);
   /* Indicar cuantas filas tendra */
   grid-template-rows: auto auto;
-  grid-template-areas: "titulo_categoria titulo_categoria titulo_categoria" "filtro_categorias contenedor_cards_productos contenedor_cards_productos";
+  grid-template-areas: "titulo_categoria titulo_categoria titulo_categoria"
+    "filtro_categorias contenedor_cards_productos contenedor_cards_productos";
   /* contenedores hijos */
   /* Ocultar el scrollbar de la  lista productos*/
 }
@@ -818,118 +818,147 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   0% {
     opacity: 0;
   }
+
   10.1% {
     opacity: 1;
     text-shadow: none;
   }
+
   10.2% {
     opacity: 0;
     text-shadow: none;
   }
+
   20% {
     opacity: 0;
     text-shadow: none;
   }
+
   20.1% {
     opacity: 1;
     text-shadow: 0 0 30px;
   }
+
   20.6% {
     opacity: 0;
     text-shadow: none;
   }
+
   30% {
     opacity: 0;
     text-shadow: none;
   }
+
   30.1% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px;
   }
+
   30.5% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px;
   }
+
   30.6% {
     opacity: 0;
     text-shadow: none;
   }
+
   45% {
     opacity: 0;
     text-shadow: none;
   }
+
   45.1% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px;
   }
+
   50% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px;
   }
+
   55% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px;
   }
+
   55.1% {
     opacity: 0;
     text-shadow: none;
   }
+
   57% {
     opacity: 0;
     text-shadow: none;
   }
+
   57.1% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px;
   }
+
   60% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px;
   }
+
   60.1% {
     opacity: 0;
     text-shadow: none;
   }
+
   65% {
     opacity: 0;
     text-shadow: none;
   }
+
   65.1% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px, 0 0 100px;
   }
+
   75% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px, 0 0 100px;
   }
+
   75.1% {
     opacity: 0;
     text-shadow: none;
   }
+
   77% {
     opacity: 0;
     text-shadow: none;
   }
+
   77.1% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px, 0 0 110px, 0 0 100px;
   }
+
   85% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px, 0 0 110px, 0 0 100px;
   }
+
   85.1% {
     opacity: 0;
     text-shadow: none;
   }
+
   86% {
     opacity: 0;
     text-shadow: none;
   }
+
   86.1% {
     opacity: 1;
     text-shadow: 0 0 30px, 0 0 60px, 0 0 110px, 0 0 100px;
   }
+
   100% {
     opacity: 1;
   }
@@ -976,7 +1005,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   transition-delay: 1s;
   transition: width 3s;
   animation: animacion_card_producto 8.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  /* Auste de tamaño de la imagen de cada card */
 }
 
 .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen {
@@ -1106,7 +1134,8 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   /* Indicar cuantas filas tendra */
   grid-template-rows: auto auto;
   /* acomodar el grid */
-  grid-template-areas: "texto_carrito  texto_carrito" "contenedor_productos  contenedor_precio_total";
+  grid-template-areas: "texto_carrito  texto_carrito"
+    "contenedor_productos  contenedor_precio_total";
   /* personalizacion del contenedor de productos */
   /* personalizacion de componentes del contenedor precio total */
 }
@@ -1148,8 +1177,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   grid-template-rows: auto;
   /* acomodar el grid */
   grid-template-areas: "contenedor_imagen_producto contenedor_texto_productos";
-  /* imagen del producto */
-  /* contenedor hijo de card_producto: Texto producto */
 }
 
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto {
@@ -1175,11 +1202,6 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   width: auto;
   margin-top: 40px;
   padding-left: 10px;
-}
-
-.carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto {
-  /* Entrada de texto para aumentar las cantidades */
-  /* Boton de eliminar producto en card producto */
 }
 
 .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto input {
@@ -1218,31 +1240,38 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     animation-timing-function: ease-in;
     opacity: 0;
   }
+
   38% {
     transform: translateX(0);
     animation-timing-function: ease-out;
     opacity: 1;
   }
+
   55% {
     transform: translateX(-68px);
     animation-timing-function: ease-in;
   }
+
   72% {
     transform: translateX(0);
     animation-timing-function: ease-out;
   }
+
   81% {
     transform: translateX(-28px);
     animation-timing-function: ease-in;
   }
+
   90% {
     transform: translateX(0);
     animation-timing-function: ease-out;
   }
+
   95% {
     transform: translateX(-8px);
     animation-timing-function: ease-in;
   }
+
   100% {
     transform: translateX(0);
     animation-timing-function: ease-out;
@@ -1252,8 +1281,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 .carrito-contenedor_principal .carrito-contenedor_precios {
   grid-area: contenedor_precio_total;
   max-height: 500px;
-  /* Texto del card pagar */
-  /* Boton de card pagar(personalización establecida anteriormente) */
+
 }
 
 .carrito-contenedor_principal .carrito-contenedor_precios p {
@@ -1280,9 +1308,13 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   /* Indicar cuantas filas tendra */
   grid-template-rows: auto 295px 295px auto auto auto;
   /* acomodar el grid */
-  grid-template-areas: "titulo_descuentos_fechas     titulo_descuentos_fechas     titulo_descuentos_fechas " "contenedor_carousel   contenedor_carousel   contenedor_secundario1" "contenedor_carousel   contenedor_carousel   contenedor_secundario2" "contenedor_descuentos contenedor_descuentos contenedor_descuentos " "titulo_fechas         titulo_fechas         titulo_fechas " "contenedor_fechas     contenedor_fechas     contenedor_fechas ";
-  /* Contenedor del titulo principal de descuentos */
-  /* contenedor y card de la seccion descuentos */
+  grid-template-areas: "titulo_descuentos_fechas     titulo_descuentos_fechas     titulo_descuentos_fechas "
+    "contenedor_carousel   contenedor_carousel   contenedor_secundario1"
+    "contenedor_carousel   contenedor_carousel   contenedor_secundario2"
+    "contenedor_descuentos contenedor_descuentos contenedor_descuentos "
+    "titulo_fechas         titulo_fechas         titulo_fechas "
+    "contenedor_fechas     contenedor_fechas     contenedor_fechas ";
+
 }
 
 .contenedor_principal-descuentos-fechas .titulo_descuentos_fechas {
@@ -1355,6 +1387,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     transform: translate(-100px);
     opacity: 0;
   }
+
   100% {
     transform: translate(0px);
     opacity: 1;
@@ -1405,6 +1438,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     transform: translate(100px);
     opacity: 0;
   }
+
   100% {
     transform: translate(0px);
     opacity: 1;
@@ -1562,6 +1596,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   0% {
     transform: skewX(1deg);
   }
+
   100% {
     transform: skewX(-1deg);
   }
@@ -1580,7 +1615,10 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   /* Indicar cuantas filas tendra */
   grid-template-rows: auto auto 100px auto;
   /* acomodar el grid */
-  grid-template-areas: "texto_conocenos     texto_conocenos     contenedor_servicios contenedor_servicios" "texto_conocenos     texto_conocenos     contenedor_servicios contenedor_servicios" "titulo_amigos       titulo_amigos       titulo_amigos        titulo_amigos " "contenedor_marcas   contenedor_marcas   contenedor_marcas    contenedor_marcas";
+  grid-template-areas: "texto_conocenos     texto_conocenos     contenedor_servicios contenedor_servicios"
+    "texto_conocenos     texto_conocenos     contenedor_servicios contenedor_servicios"
+    "titulo_amigos       titulo_amigos       titulo_amigos        titulo_amigos "
+    "contenedor_marcas   contenedor_marcas   contenedor_marcas    contenedor_marcas";
   /* Contenedor de titulo y parrafo de la empresa */
   /* Contenedor de cards de marcas */
 }
@@ -1659,6 +1697,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     animation-timing-function: ease-in;
     opacity: 0;
   }
+
   38% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -1666,36 +1705,42 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     animation-timing-function: ease-out;
     opacity: 1;
   }
+
   55% {
     -webkit-transform: translateX(68px);
     transform: translateX(68px);
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
+
   72% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
   }
+
   81% {
     -webkit-transform: translateX(32px);
     transform: translateX(32px);
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
+
   90% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
     -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out;
   }
+
   95% {
     -webkit-transform: translateX(8px);
     transform: translateX(8px);
     -webkit-animation-timing-function: ease-in;
     animation-timing-function: ease-in;
   }
+
   100% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -1724,6 +1769,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     filter: blur(12px);
     opacity: 0;
   }
+
   100% {
     -webkit-filter: blur(0px);
     filter: blur(0px);
@@ -1762,7 +1808,9 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   /* Indicar cuantas filas tendra */
   grid-template-rows: 100px 300px 300px;
   /* acomodar el grid */
-  grid-template-areas: "titulo_contactanos titulo_contactanos" "contenedor_info_empresa contenedor_formulario" "contenedor_info_empresa contenedor_formulario";
+  grid-template-areas: "titulo_contactanos titulo_contactanos"
+    "contenedor_info_empresa contenedor_formulario"
+    "contenedor_info_empresa contenedor_formulario";
   /* Contenedor principal formulario */
 }
 
@@ -1818,6 +1866,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     filter: blur(12px);
     opacity: 0;
   }
+
   100% {
     -webkit-filter: blur(0px);
     filter: blur(0px);
@@ -1838,6 +1887,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   header .navbar {
     display: none;
   }
+
   header .contenedor_principal-navbar_sidebar {
     display: block;
   }
@@ -1845,6 +1895,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
 
 /* Smartphone modo vertical y horizontal para todas las páginas */
 @media screen and (max-width: 600px) and (min-width: 320px) {
+
   /* =========== Página index ===========*/
   .contenedor_principal {
     display: grid;
@@ -1853,29 +1904,37 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     overflow: hidden;
     grid-template-columns: 1fr;
     grid-template-rows: 600px auto auto 100px auto;
-    grid-template-areas: "landing_page" "principal_imagen" "principal_texto" "titulo_novedades" "contenedor_novedades";
+    grid-template-areas: "landing_page"
+      "principal_imagen"
+      "principal_texto"
+      "titulo_novedades"
+      "contenedor_novedades";
     gap: 10px;
     /* contenedor de imagen principal */
     /* contenedor de texto principal */
   }
+
   .contenedor_principal .contenedor_principal_landing {
     width: auto;
     height: auto;
     min-width: 320px;
     max-width: 600px;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing {
     width: auto;
     height: auto;
     min-width: 280px;
     margin-right: 12px;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo {
     width: auto;
     height: auto;
     min-width: 280px;
     background-color: #3a5eb2;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo .slide-left {
     width: auto;
     color: white;
@@ -1885,26 +1944,32 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     min-width: 260px;
     text-align: center;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_texto {
     width: 100%;
     height: auto;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_texto p {
     color: white;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones {
     display: inline-block;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones a {
     color: white;
     text-decoration: none;
   }
+
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_botones .btn {
     border: 2px solid white;
     padding: 10px 35px;
     border-radius: 30px;
     margin-right: 15px;
   }
+
   .contenedor_principal .contenedor_principal-imagen {
     width: auto;
     min-width: 310px;
@@ -1915,12 +1980,14 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-left: 0px;
     /* contenedor de imagen principal */
   }
+
   .contenedor_principal .contenedor_principal-imagen img {
     width: 100%;
     min-width: 310px;
     max-width: 590px;
     min-height: 200px;
   }
+
   .contenedor_principal .contenedor_principal-texto {
     width: auto;
     min-width: 310px;
@@ -1930,10 +1997,12 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-top: 0px;
     /* contenedor del boton checar */
   }
+
   .contenedor_principal .contenedor_principal-texto h1 {
     width: 100%;
     font-size: 24px;
   }
+
   .contenedor_principal .contenedor_principal-texto .contenido_principal-texto {
     width: auto;
     min-width: 310px;
@@ -1944,17 +2013,20 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     padding-right: 5px;
     padding-left: 5px;
   }
+
   .contenedor_principal .contenedor_principal-texto .contenedor_boton_checar {
     width: 100%;
     margin-bottom: 30px;
     margin-left: 0px;
   }
+
   .contenedor_principal .titulo_novedades {
     width: auto;
     min-width: 310px;
     padding-left: 5px;
     padding-right: 5px;
   }
+
   .contenedor_principal .contenedor_novedades {
     width: auto;
     justify-content: start;
@@ -1963,6 +2035,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     padding-left: 5px;
     padding-right: 5px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades {
     width: auto;
     height: auto;
@@ -1972,6 +2045,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-left: 0px;
     margin-right: 0px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_imagen {
     width: 100%;
     height: auto;
@@ -1980,12 +2054,14 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-right: 5px;
     margin-top: 1px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades_imagen img {
     width: 100%;
     height: 350px;
     min-width: 300px;
     object-fit: cover;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton {
     width: 100%;
     height: auto;
@@ -1993,22 +2069,27 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-left: 5px;
     margin-right: 5px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_texto {
     width: 100%;
     min-width: 187px;
     margin-left: 5px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_texto h2 {
     min-width: 187px;
     max-width: 200px;
     padding-left: 0px;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton {
     width: auto;
   }
+
   .contenedor_principal .contenedor_novedades .card_novedades .card_novedades-texto-boton .card_novedades_boton a {
     margin-left: 0px;
   }
+
   /* =========== Contenedor principal de filtro categorias y productos =========== */
   .contenedor_principal-filtroCategorias-listaProductos {
     display: grid;
@@ -2022,8 +2103,11 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     grid-template-columns: 1fr;
     /* Indicar cuantas filas tendra */
     grid-template-rows: auto auto auto;
-    grid-template-areas: "titulo_categoria" "filtro_categorias" "contenedor_cards_productos";
+    grid-template-areas: "titulo_categoria"
+      "filtro_categorias"
+      "contenedor_cards_productos";
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .titulo_categoria {
     width: auto;
     min-width: 300px;
@@ -2032,6 +2116,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-top: 0px;
     margin-left: 0px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .titulo_categoria h2 {
     width: 100%;
     color: #3a5eb2;
@@ -2040,16 +2125,19 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-bottom: 20px;
     animation: animacionDesktop-titulo_categorias 0s linear both;
   }
+
   @keyframes animacion_titulo_categoria {
     0% {
       transform: translate(100px);
       opacity: 0;
     }
+
     100% {
       transform: translate(0px);
       opacity: 1;
     }
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_filtroCategorias {
     width: auto;
     height: auto;
@@ -2058,16 +2146,19 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-left: 6px;
     padding-bottom: 10px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_filtroCategorias .list-group {
     min-width: auto;
     margin-right: 10px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos {
     width: auto;
     margin-right: 0px;
     min-width: 310px;
     max-width: 590px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto {
     width: auto;
     min-width: 310px;
@@ -2077,26 +2168,32 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     animation: none;
     /* contenedor de boton y texto del card */
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen {
     min-width: 300px;
     height: 350px;
     width: auto;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen img {
     width: 100%;
     height: 350px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton {
     width: auto;
     min-width: 300px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton h2 {
     width: auto;
     margin-left: 5px;
   }
+
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto-texto_boton a {
     margin-left: 100px;
   }
+
   /* =========== Footer =========== */
   .contenedor_footer {
     width: auto;
@@ -2107,8 +2204,12 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     grid-template-columns: 1fr;
     /* Indicar cuantas filas tendra */
     grid-template-rows: repeat(4, auto);
-    grid-template-areas: "footer_seccion1_logo" "footer_seccion2_contacto" "footer_cliente" "footer_seccion4_redes";
+    grid-template-areas: "footer_seccion1_logo"
+      "footer_seccion2_contacto"
+      "footer_cliente"
+      "footer_seccion4_redes";
   }
+
   /* =========== Pagina descuentos ============ */
   .contenedor_principal-descuentos-fechas {
     display: grid;
@@ -2121,10 +2222,19 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     gap: 10px;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto auto auto auto auto;
-    grid-template-areas: "titulo_descuentos" "descuento_carousel" "contenedor_descuentos-secundario1" "contenedor_descuentos-secundario2" "card_img_descuento" "texto_descuentos" "contenedor_descuentos" "titulo_fechas" "contenedor_fechas";
+    grid-template-areas: "titulo_descuentos"
+      "descuento_carousel"
+      "contenedor_descuentos-secundario1"
+      "contenedor_descuentos-secundario2"
+      "card_img_descuento"
+      "texto_descuentos"
+      "contenedor_descuentos"
+      "titulo_fechas"
+      "contenedor_fechas";
     /* Contenedor del titulo principal de descuentos */
     /* contenedor y card de la seccion descuentos */
   }
+
   .contenedor_principal-descuentos-fechas .titulo_descuentos_fechas {
     display: block;
     grid-area: titulo_descuentos;
@@ -2132,10 +2242,12 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     min-width: 310px;
     max-width: 590px;
   }
+
   .contenedor_principal-descuentos-fechas .titulo_descuentos_fechas h2 {
     width: 99%;
     font-size: 40px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_descuentos-carousel {
     display: none;
     grid-area: descuentos_carousel;
@@ -2143,6 +2255,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     min-width: 310px;
     max-width: 590px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario1 {
     display: block;
     grid-area: contenedor_descuentos-secundario1;
@@ -2150,6 +2263,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     min-width: 310px;
     max-width: 590px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_descuentos-secundario2 {
     display: block;
     grid-area: contenedor_descuentos-secundario2;
@@ -2157,39 +2271,48 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     min-width: 310px;
     max-width: 590px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos {
     width: auto;
     min-width: 310px;
     max-width: 590px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento {
     width: 100%;
     min-width: 310px;
     margin-left: 0px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .cobertura_img_card {
     width: 100%;
     min-width: 310px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .texto_card_descuento {
     width: 100%;
     min-width: 310px;
     margin-right: 24px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_descuentos .card_descuento .texto_card_descuento p {
     margin-right: 34px;
   }
+
   .contenedor_principal-descuentos-fechas .titulo_fechas {
     width: auto;
     min-width: 310px;
   }
+
   .contenedor_principal-descuentos-fechas .titulo_fechas h2 {
     font-size: 40px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas {
     width: auto;
     min-width: 310px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha {
     margin-left: 0px;
     height: auto;
@@ -2197,15 +2320,18 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     min-width: 300px;
     padding-bottom: 10px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-icono {
     padding-top: 5px;
     width: 90px;
     height: 60px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-icono img {
     width: 90px;
     height: auto;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-texto {
     width: calc(100% - 110px);
     height: auto;
@@ -2214,11 +2340,13 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-left: 0px;
     padding-top: 20px;
   }
+
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-texto h3 {
     color: #3f2c89;
     font-size: 20px;
     font-weight: 100;
   }
+
   /* =========== pagina Quienes somos =========== */
   .contenedor_principal_quienes-somos {
     display: grid;
@@ -2231,9 +2359,13 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, auto);
     /* acomodar el grid */
-    grid-template-areas: "texto_conocenos" "contenedor_servicios" "titulo_amigos" "contenedor_marcas";
+    grid-template-areas: "texto_conocenos"
+      "contenedor_servicios"
+      "titulo_amigos"
+      "contenedor_marcas";
     gap: 10px;
   }
+
   .contenedor_principal_quienes-somos .conocenos_textos {
     justify-content: center;
     background-color: #ebf5fc;
@@ -2243,6 +2375,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     min-width: 310px;
     text-align: center;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios {
     grid-area: contenedor_servicios;
     width: auto;
@@ -2250,36 +2383,45 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     min-width: 310px;
     margin-left: 0px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .titulo_servicios {
     height: auto;
     min-width: 310px;
     padding-top: 0px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .titulo_servicios h1 {
     font-size: 35px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio {
     min-width: 310px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-img {
     width: 60px;
     height: auto;
     padding-left: 0px;
     margin-right: 8px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-img img {
     width: 60px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-texto {
     width: calc(100% - 70px);
     background-color: #ebf5fc;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-texto h1 {
     font-size: 20px;
   }
+
   .contenedor_principal_quienes-somos .contenedor_servicios .card_servicio .card_servicio-texto p {
     font-size: 13px;
   }
+
   .contenedor_principal_quienes-somos .titulo_amigos {
     background-color: #3f2c89;
     color: white;
@@ -2287,18 +2429,22 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     height: auto;
     padding-bottom: 0px;
   }
+
   .contenedor_principal_quienes-somos .titulo_amigos h2 {
     font-size: 30px;
   }
+
   .contenedor_principal_quienes-somos .contenedor-marcas {
     height: auto;
     min-width: 310px;
   }
+
   .contenedor_principal_quienes-somos .contenedor-marcas .card_instagram_marca {
     background-color: #3f2c89;
     margin-left: 0px;
     margin-right: 0px;
   }
+
   /* =========== pagina contactanos =========== */
   .contenedor_principal-contactanos {
     display: grid;
@@ -2312,40 +2458,50 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     /* Indicar cuantas filas tendra */
     grid-template-rows: auto auto auto;
     /* acomodar el grid */
-    grid-template-areas: "titulo_contactanos " "contenedor_info_empresa " "contenedor_formulario";
+    grid-template-areas: "titulo_contactanos "
+      "contenedor_info_empresa "
+      "contenedor_formulario";
     /* Contenedor principal formulario */
   }
+
   .contenedor_principal-contactanos .titulo_contactanos {
     width: auto;
     min-width: 310px;
   }
+
   .contenedor_principal-contactanos .titulo_contactanos h2 {
     width: 100%;
     font-size: 45px;
     text-align: center;
     margin-bottom: 20px;
   }
+
   .contenedor_principal-contactanos .contenedor_datos_empresa {
     width: auto;
     min-width: 310px;
     justify-content: center;
   }
+
   .contenedor_principal-contactanos .contenedor_datos_empresa .item {
     justify-content: center;
   }
+
   .contenedor_principal-contactanos .contenedor_datos_empresa .iconos_contacto {
     justify-content: start;
   }
+
   .contenedor_principal-contactanos .contenedor_formulario {
     width: auto;
     min-width: 310px;
   }
+
   .contenedor_principal-contactanos .contenedor_formulario form {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     min-width: 310px;
   }
+
   .contenedor_principal-contactanos .contenedor_formulario button {
     margin-left: 3px;
   }
@@ -2362,26 +2518,32 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     grid-template-columns: 1fr;
     gap: 10px;
     grid-template-rows: auto auto auto;
-    grid-template-areas: "texto_carrito" "contenedor_productos" "contenedor_precio_total";
+    grid-template-areas: "texto_carrito"
+      "contenedor_productos"
+      "contenedor_precio_total";
     /* contenedor principal del card pagar */
   }
+
   .carrito-contenedor_principal .carrito-texto_principal {
     grid-area: texto_carrito;
     height: 70px;
     text-align: center;
     margin-top: 1px;
   }
+
   .carrito-contenedor_principal .carrito-texto_principal h1 {
     font-size: 40px;
     font-style: oblique;
     font-weight: bold;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos {
     grid-area: contenedor_productos;
     min-width: 320px;
     padding-left: 5px;
     padding-right: 5px;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto {
     display: grid;
     min-width: 310px;
@@ -2394,8 +2556,10 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     /* acomodar el grid */
-    grid-template-areas: "contenedor_imagen_producto" "contenedor_texto_productos";
+    grid-template-areas: "contenedor_imagen_producto"
+      "contenedor_texto_productos";
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto {
     grid-area: contenedor_imagen_producto;
     width: 100%;
@@ -2403,17 +2567,20 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     min-height: 350px;
     background-color: #3f2c89;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .carrito_imagen_producto img {
     width: 100%;
     height: 100%;
     min-width: 300px;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto {
     grid-area: contenedor_texto_productos;
     width: 100%;
     min-width: 310px;
     margin-top: 0px;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_productos .card_producto .texto-producto .cantidad_producto .eliminar_producto {
     margin-left: 0px;
     color: white;
@@ -2421,6 +2588,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     border-radius: 5px;
     text-decoration: none;
   }
+
   .carrito-contenedor_principal .carrito-contenedor_precios {
     width: auto;
     margin-left: 0px;
