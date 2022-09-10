@@ -1,20 +1,13 @@
 /* Footer (Revisado)*/
 
 
-@mixin atributoSeccionFooter($color,$margen,$alineacionTexto) {
-    color: $color;
-    margin: $margen;
-    text-align: $alineacionTexto;
-}
-
 .contenedor_footer {
     width: auto;
     margin-top: auto;
     display: grid;
     gap: 10px;
-    box-shadow: 6px 1px 10px 6px map-get($map: $paleta-colores, $key: 'colorSecundario');
     margin-top: 10px;
-    background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
     /* Indicar cuantas columnas tendra */
     grid-template-columns: repeat(4, 1fr);
     /* Indicar cuantas filas tendra */

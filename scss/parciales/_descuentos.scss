@@ -1,16 +1,5 @@
 /* ============= pagina descuentos (Revisado)=========== */
-@mixin sizes($width, $height) {
-    width: $width;
-    height: $height;
-}
 
-@mixin atributosDisplayFlex($display, $marginTop, $wrap, $contenidoJustificado, $marginBottom) {
-    display: $display;
-    margin-top: $marginTop;
-    flex-wrap: $wrap;
-    justify-content: $contenidoJustificado;
-    margin-bottom: $marginBottom;
-}
 
 .contenedor_principal-descuentos-fechas {
     @include sizes($width-estandar, $height-estandar);
@@ -81,6 +70,7 @@
                 h1 {
                     font-size: 40px;
                     color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+                    animation: animacion_descuento_secundario1 8s linear both;
                 }
             }
 
@@ -89,7 +79,7 @@
 
                 a {
                     color: map-get($map: $paleta-colores, $key: 'colorBlanco');
-                    background-color: map-get($map: $paleta-colores, $key: 'colorBotonDescuentos1');
+                    background-color: map-get($map: $paleta_colores-descuentos, $key: 'colorBotonDescuentos1');
                     text-decoration: none;
                     font-weight: bold;
 
@@ -102,6 +92,18 @@
 
 
                 }
+            }
+        }
+
+        @keyframes animacion_descuento_secundario1 {
+            0% {
+                transform: translate(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translate(0px);
+                opacity: 1;
             }
         }
 
@@ -125,7 +127,7 @@
                 h1 {
                     font-size: 40px;
                     color: map-get($map: $paleta-colores, $key: 'colorNegro');
-                    animation: animacion_descuento_secundario2 12s linear;
+                    animation: animacion_descuento_secundario2 8s linear;
                 }
             }
 
@@ -134,7 +136,7 @@
 
                 a {
                     color: map-get($map: $paleta-colores, $key: 'colorBlanco');
-                    background-color: map-get($map: $paleta-colores, $key: 'colorBotonDescuentos2');
+                    background-color: map-get($map: $paleta_colores-descuentos, $key: 'colorBotonDescuentos2');
                     text-decoration: none;
                     font-weight: bold;
                 }
@@ -195,32 +197,32 @@
                 border-radius: 8px;
 
                 border: 3px solid map-get($map: $paleta-colores, $key: 'colorBlanco');
-                box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7);
+                box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.7); //usada solo una vez
                 opacity: .8;
             }
 
             .color_variado1 {
-                background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                background-color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
             }
 
             .color_variado2 {
-                background-color: map-get($map: $paleta-colores, $key: 'colorVariadoDescuento2');
+                background-color: map-get($map: $paleta_colores-descuentos, $key: 'colorVariadoDescuento2');
             }
 
             .color_variado3 {
-                background-color: map-get($map: $paleta-colores, $key: 'colorVariadoDescuento3');
+                background-color: map-get($map: $paleta_colores-descuentos, $key: 'colorVariadoDescuento3');
             }
 
             .color_variado4 {
-                background-color: map-get($map: $paleta-colores, $key: 'colorVariadoDescuento4');
+                background-color: map-get($map: $paleta_colores-descuentos, $key: 'colorVariadoDescuento4');
             }
 
             .color_variado5 {
-                background-color: map-get($map: $paleta-colores, $key: 'colorVariadoDescuento5');
+                background-color: map-get($map: $paleta_colores-descuentos, $key: 'colorVariadoDescuento5');
             }
 
             .color_variado6 {
-                background-color: map-get($map: $paleta-colores, $key: 'colorVariadoDescuento6');
+                background-color: map-get($map: $paleta_colores-descuentos, $key: 'colorVariadoDescuento6');
             }
 
             .texto_card_descuento {
@@ -247,7 +249,7 @@
         color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
         // width: 800px;
         text-align: $alineacionAlCentro;
-        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
         font-size: $fontMaxima;
 
         h2 {
@@ -296,7 +298,7 @@
 
                 h3 {
                     font-size: 25px;
-                    color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                    color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
                 }
             }
 

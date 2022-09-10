@@ -1,16 +1,6 @@
 /* ================ Página carrito ================ */
 
 
-@mixin sizes($width, $height){
-    width: $width;
-    height: $height;
-}
-
-@mixin contenedorGrid($grid,$marginTop,$gap){
-    display: $grid;
-    margin-top: $marginTop;
-    gap: $gap;
-}
 
 /* contenedor principal */
 .carrito-contenedor_principal {
@@ -32,7 +22,7 @@
         text-align: $alineacionAlCentro;
 
         h1 {
-            color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+            color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
             font-size: 60px;
             font-style: oblique;
             font-weight: bold;
@@ -49,9 +39,14 @@
             @include contenedorGrid(grid, 0px, 10px);
             margin-bottom: 20px;
             margin-left: 5px;
-            // background: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-            box-shadow: 10px 10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow1'),
-                        -10px -10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow2');
+            background: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+            box-shadow: 10px 10px 10px -1px map-get($map: $paleta_colores-BoxText_Shadow, $key: 'colorBoxShadow1'),
+                        -10px -10px 10px -1px map-get($map: $paleta_colores-BoxText_Shadow, $key: 'colorBoxShadow2');
+            backdrop-filter: blur(12px);
+            //Animación
+            -webkit-animation: bounce-in-left 1.1s both;
+	        animation: bounce-in-left 1.1s both;
+            
             border-radius: 5px;
             /* Indicar cuantas columnas tendra */
             grid-template-columns: auto 400px;
@@ -103,7 +98,7 @@
                     
                     /* Boton de eliminar producto en card producto */
                     .eliminar_producto {
-                        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
                         color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
                         bottom: 20px;
                         margin-left: 22px;
@@ -115,7 +110,7 @@
                     }
 
                     .eliminar_producto:hover {
-                        background-color: map-get($map: $paleta-colores, $key: 'colorFondoHoverBotonEliminar');
+                        background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
                         color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
                         font-weight: 600;
                         border: 1px solid map-get($map: $paleta-colores, $key: 'colorBlanco');
@@ -123,6 +118,43 @@
                     }
                 }
 
+            }
+        }
+        //Animacion de card producto
+        @keyframes bounce-in-left {
+            0% {
+                transform: translateX(-600px);
+                animation-timing-function: ease-in;
+                opacity: 0;
+            }
+            38% {
+                transform: translateX(0);
+                animation-timing-function: ease-out;
+                opacity: 1;
+            }
+            55% {
+                transform: translateX(-68px);
+                animation-timing-function: ease-in;
+            }
+            72% {
+                transform: translateX(0);
+                animation-timing-function: ease-out;
+            }
+            81% {
+                transform: translateX(-28px);
+                animation-timing-function: ease-in;
+            }
+            90% {
+                transform: translateX(0);
+                animation-timing-function: ease-out;
+            }
+            95% {
+                transform: translateX(-8px);
+                animation-timing-function: ease-in;
+            }
+            100% {
+                transform: translateX(0);
+                animation-timing-function: ease-out;
             }
         }
     }

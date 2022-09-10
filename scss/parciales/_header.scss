@@ -14,8 +14,8 @@
     position: -webkit-sticky;
     flex-wrap: wrap;                       /*permite que los elementos dentro de la navbar pasan en la siguiente fila si no hay espacio */
     justify-content: space-between;       /*Se agrega espacio entre cada elemento secundario de un contenedor flex.*/
-    box-shadow: 10px 10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow1'),
-                -10px -10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow2');
+    box-shadow: 10px 10px 10px -1px map-get($map: $paleta_colores-BoxText_Shadow, $key: 'colorBoxShadow1'),
+                -10px -10px 10px -1px map-get($map: $paleta_colores-BoxText_Shadow, $key: 'colorBoxShadow2');
 }
 
 @mixin sizes($width, $height) {
@@ -70,7 +70,8 @@ header {
         @include sizes($width-estandar, $height-estandar);
         text-align: $alineacionAlCentro;
         padding-top: 10px;
-        color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+        font-style: italic;
+        color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
         text-decoration: none;  /*Quita el subrayado del enlace*/
 
     }
@@ -107,7 +108,7 @@ header {
         /* Personalización general de los enlaces(tambien usado en las categorias de productos) */
         .enlace_item {
             @extend .enlace_item-generico;
-            color: map-get($map: $paleta-colores, $key: 'colorTextoSecundario');
+            color: map-get($map: $paleta-colores, $key: 'colorNegro');
 
         }
 
@@ -128,7 +129,7 @@ header {
 
 // Personalizacion del navbar para landing page
 header.scroll_bajar {
-    background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
 
 }
 
@@ -140,7 +141,7 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page {
 
 
 header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
-    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+    color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
 
 }
 
@@ -150,7 +151,7 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 
 .navbar_landing_page .enlace_item_landing_page:hover {
     background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+    color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
 }
 
 
@@ -164,12 +165,12 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
     background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
     height: 290px;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px map-get($map: $paleta-colores, $key: 'colorBoxShadowCategorias');
+    box-shadow: 0px 8px 16px 0px map-get($map: $paleta_colores-BoxText_Shadow, $key: 'colorBoxShadowCategorias');
 
     /* Al pasar el cursor en  una categoria*/
     a:hover {
         background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
-        color: map-get($map: $paleta-colores, $key: 'colorTextoSecundario');
+        color: map-get($map: $paleta-colores, $key: 'colorSecundario');
     }
 }
 
@@ -197,7 +198,7 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
     background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
     width: 160px;
     max-height: 0;
-    box-shadow: 0px 8px 12px 0px map-get($map: $paleta-colores, $key: 'colorBoxShadowCategorias');
+    box-shadow: 0px 8px 12px 0px map-get($map: $paleta_colores-BoxText_Shadow, $key: 'colorBoxShadowCategorias');
     transition: max-height .6s ease-out;
 
     /* enlaces de las categorias */
@@ -254,6 +255,7 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
         .profile {
             margin-bottom: 30px;
             text-align: $alineacionAlCentro;
+            margin-top: 5px;
 
             h3 {
                 color: map-get($map: $paleta-colores, $key: 'colorBlanco');
@@ -261,7 +263,7 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
             }
 
             p {
-                color: rgb(206, 240, 253);
+                color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
                 font-size: 14px;
             }
         }
@@ -289,22 +291,23 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 
         .sidebar_subcategorias_productos {
             width: 190px;
-            background-color: map-get($map: $paleta-colores, $key: 'colorSubategoriasSidebar');
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             margin-left: 20px;
             align-items: center;
 
             a {
                 width: 100%;
                 padding: 4px 10px;
-                color: map-get($map: $paleta-colores, $key: 'colorAzul');
+                color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
             }
 
         }
 
         .sidebar_subcategorias_productos:hover {
-            background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-            color: map-get($map: $paleta-colores, $key: 'colorBlanco');
-            ;
+            a{
+                color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+                font-weight: $letrasNegrillas;
+            }
         }
 
 
@@ -344,8 +347,9 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
     .top_navbar {
         @include sizes(100%, auto);
         transition: all 0.5s ease;
-        // background: map-get($map: $paleta-colores, $key: 'colornavbarSidebar');
-        background-color: map-get($map: $paleta-colores, $key: 'fondoTransparente');
+        // background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+
+
 
         display: flex;
         padding-left: 7px;
@@ -354,7 +358,7 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
             display: block;
             @include sizes(100px, 40px);
             background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-            ;
+            
             // espaciado externo
             margin-right: 136px;
             margin-top: 3px;
@@ -387,6 +391,12 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
             color: map-get($map: $paleta-colores, $key: 'colorIconoHamburguesa');
         }
 
+    }
+    .top_navbar-color_soloIndex{
+        background-color: map-get($map: $paleta-colores, $key: 'fondoTransparente');
+    }
+    .top_navbar-color_general{
+        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
     }
 
 }

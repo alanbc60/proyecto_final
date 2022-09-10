@@ -1,11 +1,5 @@
 /* =================== página contactanos ================*/
 
-
-@mixin sizes($width, $height){
-    width: $width;
-    height: $height;
-}
-
 .contenedor_principal-contactanos {
     @include sizes($width-estandar, $height-estandar);
     display: grid;
@@ -26,9 +20,10 @@
     .titulo_contactanos {
         grid-area: titulo_contactanos;
         background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
-        color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+        color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
         font-size: $fontMaxima;
         text-align: $alineacionAlCentro;
+
 
         /* Texto tiulo descuentos */
         h2 {
@@ -36,8 +31,10 @@
             font-style: oblique;
             font-weight: bold;
             margin-top: 0px;
+
         }
     }
+
 
     .contenedor_datos_empresa {
         grid-area: contenedor_info_empresa;
@@ -46,14 +43,19 @@
         align-items: center;
         text-align: $alineacionAlCentro;
 
+
         .item {
             margin-bottom: 65px;
             h3 {
                 letter-spacing: 2px;
                 margin-bottom: 20px;
+                color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
+                animation: animacion_datos_empresa 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
             }
             span {
                 font-size: 18px;
+                animation: animacion_datos_empresa 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             }
             
         }
@@ -64,8 +66,23 @@
                 font-size: 24px;
             }
         }
+        // Animacion del contenedor_datos_empresa
+        @keyframes animacion_datos_empresa {
+            0% {
+              letter-spacing: -0.5em;
+              -webkit-filter: blur(12px);
+                      filter: blur(12px);
+              opacity: 0;
+            }
+            100% {
+              -webkit-filter: blur(0px);
+                      filter: blur(0px);
+              opacity: 1;
+            }
+        }
         
     }
+
 
     /* Contenedor principal formulario */
     .contenedor_formulario {
@@ -75,11 +92,6 @@
         flex-direction: column;
         align-items: center;
     }
-
-    .contenedor_formulario:hover {
-        transform: scale(1.03);
-    }
-
 
 }
 

@@ -1,10 +1,5 @@
 /* ================= Pagina Quienes somos (revisada)==================*/
 
-@mixin sizes($width, $height) {
-    width: $width;
-    height: $height;
-}
-
 
 .contenedor_principal_quienes-somos {
     display: grid;
@@ -28,12 +23,13 @@
     .conocenos_textos {
         grid-area: texto_conocenos;
         @include sizes(800px, auto);
-        background-color: map-get($map: $paleta-colores, $key: 'colorTerciario');
-        box-shadow: 10px 10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow1'),
-            -10px -10px 10px -1px map-get($map: $paleta-colores, $key: 'colorBoxShadow2');
+        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+        box-shadow: 10px 10px 10px -1px map-get($map: $paleta_colores-BoxText_Shadow, $key: 'colorBoxShadow1'),
+            -10px -10px 10px -1px map-get($map: $paleta_colores-BoxText_Shadow, $key: 'colorBoxShadow2');
 
         font-size: 20px;
         margin-left: 10px;
+        color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
 
     }
 
@@ -42,11 +38,14 @@
         grid-area: contenedor_servicios;
         @include sizes(500px, auto);
         margin-left: 30px;
+        //Animacion del contenedor
+        -webkit-animation: bounce-in-right 1s both;
+        animation: bounce-in-right 3s both;
 
         .titulo_servicios {
             @include sizes(100%, 80px);
             text-align: $alineacionAlCentro;
-            background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
+            background-color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
             color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             // espaciado  interno
             padding-top: 10px;
@@ -58,13 +57,12 @@
             display: flex;
             flex-wrap: wrap;
             @include sizes(100%, auto);
-
             margin-bottom: 5px;
+
 
             .card_servicio-img {
                 @include sizes(90px, auto);
-                background-color: map-get($map: $paleta-colores, $key: 'colorSecundario');
-                ;
+                background-color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
                 // Espaciado interno 
                 padding-left: 12px;
 
@@ -85,35 +83,92 @@
                 }
             }
         }
-
         .card_servicio:hover {
             transform: scale(1.1);
         }
 
+        @keyframes bounce-in-right {
+            0% {
+              -webkit-transform: translateX(600px);
+                      transform: translateX(600px);
+              -webkit-animation-timing-function: ease-in;
+                      animation-timing-function: ease-in;
+              opacity: 0;
+            }
+            38% {
+              -webkit-transform: translateX(0);
+                      transform: translateX(0);
+              -webkit-animation-timing-function: ease-out;
+                      animation-timing-function: ease-out;
+              opacity: 1;
+            }
+            55% {
+              -webkit-transform: translateX(68px);
+                      transform: translateX(68px);
+              -webkit-animation-timing-function: ease-in;
+                      animation-timing-function: ease-in;
+            }
+            72% {
+              -webkit-transform: translateX(0);
+                      transform: translateX(0);
+              -webkit-animation-timing-function: ease-out;
+                      animation-timing-function: ease-out;
+            }
+            81% {
+              -webkit-transform: translateX(32px);
+                      transform: translateX(32px);
+              -webkit-animation-timing-function: ease-in;
+                      animation-timing-function: ease-in;
+            }
+            90% {
+              -webkit-transform: translateX(0);
+                      transform: translateX(0);
+              -webkit-animation-timing-function: ease-out;
+                      animation-timing-function: ease-out;
+            }
+            95% {
+              -webkit-transform: translateX(8px);
+                      transform: translateX(8px);
+              -webkit-animation-timing-function: ease-in;
+                      animation-timing-function: ease-in;
+            }
+            100% {
+              -webkit-transform: translateX(0);
+                      transform: translateX(0);
+              -webkit-animation-timing-function: ease-out;
+                      animation-timing-function: ease-out;
+            }
+        }
+          
     }
 
 
     .titulo_amigos {
         grid-area: titulo_amigos;
-        color: map-get($map: $paleta-colores, $key: 'colorAzulClaro-Auxiliar');
+        color: map-get($map: $paleta-colores, $key: 'colorSecundario');
         text-align: $alineacionAlCentro;
         padding-bottom: 120px;
 
         h2 {
             font-size: 90px;
             font-family: cursive;
+            animation: animacion-titulo_amigos 4.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
         }
-    }
-
-    @keyframes titulo_amigoMes {
-        0% {
-            transform: skewX(20deg);
-        }
-
-        100% {
-            transform: skewX(-20deg);
-        }
+        @keyframes animacion-titulo_amigos {
+            0% {
+              letter-spacing: 1em;
+              -webkit-filter: blur(12px);
+                      filter: blur(12px);
+              opacity: 0;
+            }
+            100% {
+              -webkit-filter: blur(0px);
+                      filter: blur(0px);
+              opacity: 1;
+            }
+          }
+          
     }
 
     /* Contenedor de cards de marcas */

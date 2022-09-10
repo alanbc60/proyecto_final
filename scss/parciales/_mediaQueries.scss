@@ -1,26 +1,3 @@
-@mixin sizes($width, $height){
-    width: $width;
-    height: $height;
-}
-
-@mixin tamWidthMinimosMaximos($minWidth,$maxWidth){
-    min-width: $minWidth;
-    max-width: $maxWidth;
-}
-@mixin contenedorDisplayGrid($display,$minWidth,$maxWidth,$overflow){
-    display: $display;
-    min-width: $minWidth;
-    max-width: $maxWidth;
-    overflow: $overflow;
-}
-
-@mixin contenedorGeneralDescuentos($miDisplay,$gridArea,$tamWidth,$minWidth,$maxWidth){
-    display: $miDisplay;
-    grid-area: $gridArea;
-    width: $tamWidth;
-    min-width: $minWidth;
-    max-width: $maxWidth;
-}
 
 /* navbar responsive*/
 @media screen and (max-width: 600px) {
@@ -121,6 +98,7 @@
                 width: $width-estandar;
                 @include tamWidthMinimosMaximos(310px , 590px);
                 min-height: 200px;
+                // border: 0px;
             }
 
         }
@@ -128,7 +106,6 @@
         .contenedor_principal-texto {
             width: auto;
             @include tamWidthMinimosMaximos(310px , 590px);
-            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             //Espaciado interno
             padding-left: 5px;
             padding-right: 5px;
@@ -142,7 +119,6 @@
             .contenido_principal-texto {
                 width: auto;
                 min-width: 310px;
-                background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                 font-size: 15px;
                 text-align: start;
                 // Espaciado externo
@@ -173,7 +149,6 @@
             width: auto;
             justify-content: start;
             @include tamWidthMinimosMaximos(320px , 590px);
-            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             // Espaciado interno
             padding-left: 5px;
             padding-right: 5px;
@@ -181,7 +156,7 @@
             .card_novedades {
                 @include sizes(auto, auto);
                 @include tamWidthMinimosMaximos(310px, 590);
-                background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+                background-color: map-get($map: $paleta-colores, $key: 'segundoColorPrincipal');
                 // Espaciado Externo
                 margin-left: 0px;
                 margin-right: 0px;
@@ -235,8 +210,9 @@
     /* =========== Contenedor principal de filtro categorias y productos =========== */
     .contenedor_principal-filtroCategorias-listaProductos {
         @include contenedorDisplayGrid(grid, 320px, 600px, hidden);
-        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         gap: $espacioGridBase;
+        padding-left: 5px;
+        padding-right: 5px;
         /* Indicar cuantas columnas tendra */
         grid-template-columns: 1fr;
         /* Indicar cuantas filas tendra */
@@ -249,18 +225,35 @@
 
         .titulo_categoria {
             width: auto;
-            min-width: 310px;
+            min-width: 300px;
+            background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+            animation: animacion_titulo_categoria 8s alternate-reverse;
+            margin-top: 0px;
+            margin-left: 0px;
 
             h2 {
                 width: 100%;
+                color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
                 font-size: 40px;
                 text-align: center;
                 margin-bottom: 20px;
+                animation: animacionDesktop-titulo_categorias 0s linear both;
+            }
+        }
+        @keyframes animacion_titulo_categoria {
+            0% {
+                transform: translate(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translate(0px);
+                opacity: 1;
             }
         }
 
         .contenedor_filtroCategorias {
-            @include sizes(94%, auto);
+            @include sizes(auto, auto);
             min-width: 300px;
             margin-right: 0px;
             margin-left: 6px;
@@ -275,27 +268,32 @@
 
         .contenedor_listaProductos {
             width: auto;
-            @include tamWidthMinimosMaximos(320px , 590px);
-            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+            margin-right: 0px;
+            @include tamWidthMinimosMaximos(310px , 590px);
 
             .card_producto {
+                width: auto;
                 min-width: 310px;
-                margin-right: 12px;
-                height: auto;
-                background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+                margin-right: 0px;
+                margin-left: 0px;
+                padding:0px;
+                background-color: map-get($map: $paleta-colores, $key: 'SegundoColorPrincipal');
+                
                 .card_producto_imagen {
-                    min-width: 305px;
+                    min-width: 300px;
                     height: 350px;
+                    width: auto;
 
                     img {
-                        min-width: 295px;
+                        width: 100%;
                         height: 350px;
                     }
                 }
 
                 /* contenedor de boton y texto del card */
                 .card_producto-texto_boton {
-                    min-width: 295px;
+                    width: auto;
+                    min-width: 300px;
 
                     h2 {
                         width: auto;
@@ -329,7 +327,6 @@
     /* =========== Pagina descuentos ============ */
     .contenedor_principal-descuentos-fechas {
         @include contenedorDisplayGrid(grid, 310px, 600px, hidden);
-        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         // Espaciado interno
         padding-left: 5px;
         padding-right: 5px;
@@ -353,7 +350,6 @@
 
         .titulo_descuentos_fechas {
             @include contenedorGeneralDescuentos(block, titulo_descuentos, auto, 310px, 590px);
-            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
             h2 {
                 width: 99%;
@@ -375,7 +371,6 @@
         .contenedor_cards_descuentos {
             width: auto;
             @include tamWidthMinimosMaximos(310px , 590px);
-            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
             .card_descuento {
                 width: $width-estandar;
@@ -434,7 +429,6 @@
                     min-height:  100px;
                     min-width:   180px;
                     margin-left: 0px;
-                    background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                     padding-top: 20px;
                     
                     h3{
@@ -451,7 +445,6 @@
     .contenedor_principal_quienes-somos {
         @include contenedorDisplayGrid(grid, 310px, 600px, hidden);
         height: auto;
-        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         // Espaciado interno
         padding-left: 5px;
         padding-right: 5px;
@@ -466,8 +459,8 @@
         gap: $espacioGridBase;
 
         .conocenos_textos {
-            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             justify-content: center;
+            background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
             margin-left: 0px;
             font-size: 12px;
             width: auto;
@@ -507,6 +500,7 @@
 
                 .card_servicio-texto{
                     width: calc(100% - 70px);
+                    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
                     h1{
                         font-size: 20px;
                     }
@@ -543,9 +537,9 @@
     /* =========== pagina contactanos =========== */
     .contenedor_principal-contactanos {
         @include contenedorDisplayGrid(grid, 310px, 600px, hidden);
-        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         padding-left: 5px;
         padding-right: 5px;
+        margin-bottom: 20px;
         grid-template-columns: 1fr;
         /* Indicar cuantas filas tendra */
         grid-template-rows: auto auto auto;
@@ -559,7 +553,6 @@
         .titulo_contactanos {
             width: auto;
             min-width: 310px;
-            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
             h2 {
                 width: $width-estandar;
@@ -572,7 +565,6 @@
         .contenedor_datos_empresa {
             width: auto;
             min-width: 310px;
-            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             justify-content: center;
 
             .item{
@@ -589,7 +581,6 @@
         .contenedor_formulario {
             width: auto;
             min-width: 310px;
-            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
 
             form {
                 display: flex;
@@ -611,7 +602,6 @@
 
     .carrito-contenedor_principal {
         @include contenedorDisplayGrid(grid, 310px, 600px, hidden);
-        background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
         height: auto;
         grid-template-columns: 1fr;
         gap: $espacioGridBase;
@@ -624,7 +614,7 @@
         .carrito-texto_principal {
             grid-area: texto_carrito;
             height: 70px;
-            color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+
             text-align: center;
             margin-top: 1px;
             
@@ -647,7 +637,6 @@
                 min-height: 350px;
                 margin-left: 0px;
                 margin-top: 10px;
-                background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
                 grid-template-columns: 1fr;
                 grid-template-rows: auto auto;
         
@@ -695,6 +684,7 @@
         .carrito-contenedor_precios {
             width: auto;
             margin-left: 0px;
+            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
             border: 1px solid map-get($map: $paleta-colores, $key: 'colorSecundario');
             border-radius: 5px;
             margin: 10px;

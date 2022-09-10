@@ -1,11 +1,5 @@
 /* ==================pagina productos-hombre-mujer (revisado)  ========== */
 
-@mixin sizes($width, $height) {
-    width: $width;
-    height: $height;
-}
-
-
 /* boton checar(se usa en la página carrito igual) */
 .btn_agregarProducto {
     color: map-get($map: $paleta-colores, $key: 'colorTextoPrincipal');
@@ -37,10 +31,13 @@
         width: 500px;
         min-width: 320px;
         color: map-get($map: $paleta-colores, $key: 'colorBlanco');
-        background-color: map-get($map: $paleta-colores, $key: 'colorBordeProducto');
+        background-color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
         font-size: $fontMaxima;
         text-align: $alineacionAlCentro;
-        margin-top: 6px;
+        margin-top: 14px;
+        margin-left: 28px;
+
+
 
         /* personalizacion del contenedor titulo_categoria */
 
@@ -48,7 +45,152 @@
             font-size: 70px;
             font-style: oblique;
             font-weight: $letrasNegrillas;
+            //Animacion
+            animation: animacionDesktop-titulo_categorias 4s linear both;
         }
+        
+
+        @keyframes animacionDesktop-titulo_categorias {
+            0% {
+              opacity: 0;
+            }
+            10.1% {
+              opacity: 1;
+              text-shadow: none;
+            }
+            10.2% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            20% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            20.1% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow2');
+            }
+            20.6% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            30% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            30.1% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow1'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow2');
+            }
+            30.5% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow1'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow2');
+            }
+            30.6% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            45% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            45.1% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow1'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow2');
+            }
+            50% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow1'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow2');
+            }
+            55% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow1'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow2');
+            }
+            55.1% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            57% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            57.1% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow3'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow4');
+            }
+            60% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow3'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow4');
+            }
+            60.1% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            65% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            65.1% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow3'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow4'), 0 0 100px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow5');
+            }
+            75% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow3'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow4'), 0 0 100px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow5');
+            }
+            75.1% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            77% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            77.1% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow3'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow5'), 0 0 110px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow5'), 0 0 100px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow5');
+            }
+            85% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow3'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow5'), 0 0 110px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow2'), 0 0 100px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow5');
+            }
+            85.1% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            86% {
+              opacity: 0;
+              text-shadow: none;
+            }
+            86.1% {
+              opacity: 1;
+              text-shadow: 0 0 30px map-get($map: $paleta-colores, $key: 'colortextShadow3'), 0 0 60px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow1'), 0 0 110px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow2'), 0 0 100px 
+                                    map-get($map: $paleta-colores, $key: 'colortextShadow5');
+            }
+            100% {
+              opacity: 1;
+            }
+        }
+          
     }
 
     .contenedor_filtroCategorias {
@@ -60,9 +202,11 @@
         margin-right: 10px;
         margin-left: 10px;
         margin-top: 10px;
-
         border-radius: 15px;
         padding-left: 20px;
+        h1{
+            color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
+        }
     }
 
     .contenedor_listaProductos {
@@ -79,9 +223,7 @@
 
         .card_producto {
             @include sizes(225px, auto);
-            background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
-            border: 2px solid map-get($map: $paleta-colores, $key: 'colorBordeProducto');
-            border-radius: 10px;
+            background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
             backdrop-filter: blur(12px);
 
             // espacio entre cards
@@ -95,6 +237,10 @@
             transition-delay: 1s;
             transition: width 3s;
 
+            //Animacion
+            animation: animacion_card_producto 8.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+
+
 
             /* Auste de tamaño de la imagen de cada card */
             .card_producto_imagen {
@@ -106,7 +252,7 @@
                     @include sizes(208px, 250px);
                     object-fit: $acoplamiento-imagen;
                     padding-right: 2px;
-
+                    border-radius: 5px;
                 }
 
                 img:hover {
@@ -119,8 +265,8 @@
                     position: relative;
                     width: 50px;
                     height: 26px;
-                    background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
-                    color: map-get($map: $paleta-colores, $key: 'colorAzul');
+                    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+                    color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
                     text-align: $alineacionAlCentro;
 
                     // padding-bottom: 6px;
@@ -135,8 +281,8 @@
                     position: relative;
                     width: 50px;
                     height: 26px;
-                    background-color: map-get($map: $paleta-colores, $key: 'colorBlanco');
-                    color: map-get($map: $paleta-colores, $key: 'colorNumDescuento');
+                    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipal');
+                    color: map-get($map: $paleta-colores, $key: 'colorBotonDescuentos1');
                     text-align: $alineacionAlCentro;
 
                     // padding-bottom: 6px;
@@ -154,6 +300,7 @@
                 .card_producto-texto {
                     @include sizes(100%, 46px);
                     margin-bottom: 5px;
+                    color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
 
                     h2 {
                         font-size: 17px;
@@ -162,7 +309,6 @@
 
                     p {
                         font-size: 15px;
-
                     }
 
                 }
@@ -170,13 +316,24 @@
                 .card_producto_boton {
                     @include sizes(100%, 28px);
                     text-align: $alineacionAlCentro;
-                    background-color: map-get($map: $paleta-colores, $key: 'colorBordeProducto');
+                    background-color: map-get($map: $paleta-colores, $key: 'colorPrincipalSidebar');
 
                     a {
                         @include sizes(200px, 28px);
                         @extend .btn_agregarProducto;
                         color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+                    }
 
+                }
+                .card_producto_boton:hover{
+                    color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+                    background-color: map-get($map: $paleta-colores, $key: 'colorAuxiliarProductos');
+                    border: 2px solid map-get($map: $paleta-colores, $key: 'colorBlanco');
+                    border-radius: 4px;
+                    
+                    a{
+                        color: map-get($map: $paleta-colores, $key: 'colorBlanco');
+                        background-color: map-get($map: $paleta-colores, $key: 'colorAzulClaro-Auxiliar');
                     }
 
                 }
@@ -191,6 +348,15 @@
         .card_producto:hover {
             transform: scale(1.06);
         }
+
+        // Animacion
+        @keyframes animacion_card_producto {
+            100% {
+                //Solo se usa en productos y solo esta instancia
+                box-shadow: 0 0 10px 0px rgba(0, 0, 0, 0.30);
+            }
+        }
+
 
     }
 
