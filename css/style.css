@@ -369,11 +369,11 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 
 .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
   font-size: 28px;
-  color: rgba(255, 0, 0, 0.808);
+  color: #3f2c89;
 }
 
 .contenedor_principal-navbar_sidebar .top_navbar .hamburger a:hover {
-  color: rgba(255, 0, 0, 0.808);
+  color: #3f2c89;
 }
 
 .contenedor_principal-navbar_sidebar .top_navbar-color_soloIndex {
@@ -1874,7 +1874,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     width: auto;
     height: auto;
     min-width: 280px;
-    background-color: #3f2c89;
+    background-color: #3a5eb2;
   }
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_titulo .slide-left {
     width: auto;
@@ -1883,6 +1883,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     line-height: 140px;
     font-weight: bold;
     min-width: 260px;
+    text-align: center;
   }
   .contenedor_principal .contenedor_principal_landing .contenedor_landing .landing_page_contenedor_texto {
     width: 100%;
@@ -2073,6 +2074,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     margin-right: 0px;
     margin-left: 0px;
     padding: 0px;
+    animation: none;
     /* contenedor de boton y texto del card */
   }
   .contenedor_principal-filtroCategorias-listaProductos .contenedor_listaProductos .card_producto .card_producto_imagen {
@@ -2199,10 +2201,8 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     padding-top: 5px;
     width: 90px;
     height: 60px;
-    background-color: #3f2c89;
   }
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-icono img {
-    filter: invert(1);
     width: 90px;
     height: auto;
   }
@@ -2215,6 +2215,7 @@ body.active .contenedor_principal-navbar_sidebar .top_navbar .hamburger a {
     padding-top: 20px;
   }
   .contenedor_principal-descuentos-fechas .contenedor_cards_fechas .card_fecha .card_fecha-texto h3 {
+    color: #3f2c89;
     font-size: 20px;
     font-weight: 100;
   }

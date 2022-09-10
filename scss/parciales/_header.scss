@@ -384,11 +384,11 @@ header.scroll_bajar .navbar_landing_page .enlace_item_landing_page:hover {
 
         .hamburger a {
             font-size: 28px;
-            color: map-get($map: $paleta-colores, $key: 'colorIconoHamburguesa');
+            color: map-get($map: $paleta-colores, $key: 'colorSecundario');
         }
 
         .hamburger a:hover {
-            color: map-get($map: $paleta-colores, $key: 'colorIconoHamburguesa');
+            color: map-get($map: $paleta-colores, $key: 'colorSecundario');
         }
 
     }
